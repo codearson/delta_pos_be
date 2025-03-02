@@ -1,8 +1,8 @@
 spring:
   application:
     name: pos_main_api
-  profiles:
-    active: "prod"
+  # profiles:
+  #   active: "prod"
   mail:
     host: smtp.gmail.com
     port: 587
