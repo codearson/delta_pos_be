@@ -1,0 +1,61 @@
+app:
+  name: pos_main_api
+
+#database
+spring:
+  datasource:
+    url: jdbc:mysql://crossover.proxy.rlwy.net:59219/pos_main_db?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: elORnYEDEjDFYubvcyzBDmHJKFoEhQaZ
+    tomcat:
+      initial-size: 10
+      max-wait: 20000
+      max-active: 50
+      max-idle: 15
+      min-idle: 5
+    hikari:
+      connection-timeout: 120000
+      idle-timeout: 60000
+      max-lifetime: 120000
+      minimum-idle: 2
+      maximum-pool-size: 4   
+  jpa:
+    hibernate.ddl-auto: create
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    open-in-view: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+  main: 
+    allow-circular-references: true
+
+#File upload location in C drive    
+#fileupload:
+#  url: /pos-main/
+#  path: 
+
+file:
+  upload.location: /Uploads
+        
+entitymanager:
+  packagesToScan: com.pos_main
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    #    eureka-service-url-poll-interval-seconds: 0
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
