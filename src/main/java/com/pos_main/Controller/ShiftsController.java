@@ -1,0 +1,42 @@
+package com.pos_main.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pos_main.Dto.ResponseDto;
+import com.pos_main.Dto.ShiftsDto;
+import com.pos_main.Service.ShiftsService;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Title: ShiftsController.java. Company: www.codearson.com Copyright: Copyright (c) 2025.
+ *
+ * @author Purushorthaman Murugathas Rathakrishnan
+ * @date 19 Feb 2025
+ * @time 19:36:33
+ * @version 1.0
+ **/
+
+@Slf4j
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("shifts")
+public class ShiftsController {
+	
+	@Autowired
+	ShiftsService shiftsService;
+	
+	@PostMapping("/save")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto save(@RequestBody ShiftsDto shiftsDto) {
+		log.info("ShiftsController.save() invoked");
+		return shiftsService.save(shiftsDto);
+	}
+
+}

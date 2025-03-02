@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: pos_main_api
+  profiles:
+    active: "dev"
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "deltapos.codearson@gmail.com"
+    password: "ttbi wpim bfko qpls"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8090
+  
+# JWT Configuration
+pos:
+  web:
+    jwtSecret: "357638792F423F4428472B4B6250655368566D597133743677397A2443264629"
+
+logging:
+  file:
+    path: "log"
