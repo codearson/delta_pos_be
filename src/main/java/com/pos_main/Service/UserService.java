@@ -29,5 +29,7 @@ public interface UserService {
 	public ResponseDto updateUserDetails(UserDto userDto);
 	
 	public ResponseDto updateUserStatus(Integer userId, Boolean status);
+	
+	public ResponseDto getUserByEmailAddress(String emailAddress);
 
 }

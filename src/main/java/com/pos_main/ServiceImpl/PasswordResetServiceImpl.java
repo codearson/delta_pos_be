@@ -61,9 +61,9 @@ public class PasswordResetServiceImpl implements PasswordResetService {
         ResponseDto responseDto;
         
         try {
-            boolean success = passwordResetServiceBL.forgotPassword(request);
+            String success = passwordResetServiceBL.forgotPassword(request);
             
-            if (success) {
+            if (success=="Password reset email sent successfully") {
                 log.info("Password reset email sent successfully.");
                 responseDto = serviceUtil.getServiceResponse("Reset password link sent successfully!");
             } else {

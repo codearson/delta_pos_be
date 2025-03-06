@@ -43,6 +43,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+        	.cors()	//Enable CORS support
+        	.and()	//Disable CSRF if not needed
             .csrf().disable()
             .authorizeHttpRequests()
             .antMatchers("/user/**", "/auth/reset-password", "/auth/forgot-password").permitAll()  // Allow access without JWT

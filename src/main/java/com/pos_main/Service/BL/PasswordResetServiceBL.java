@@ -1,6 +1,7 @@
 package com.pos_main.Service.BL;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,27 +50,43 @@ public class PasswordResetServiceBL {
 	@Autowired
     private UserLogsService userLogsService;
 
-	public boolean forgotPassword(PasswordResetRequestDto request) {
-		log.info("PasswordResetServiceBL.forgotPassword processing for email: {}", request.getEmail());
+	public String forgotPassword(PasswordResetRequestDto request) {
+		String message;
+	    log.info("PasswordResetServiceBL.forgotPassword processing for email: {}", request.getEmail());
 
-		Optional<User> userOpt = Optional.ofNullable(userDao.findByByEmail(request.getEmail()));
+	    Optional<User> userOpt = Optional.ofNullable(userDao.findByByEmail(request.getEmail()));
 
-		if (userOpt.isEmpty()) {
-			log.warn("User not found for email: {}", request.getEmail());
-			return false;
-		}
+	    if (userOpt.isEmpty()) {
+	        log.warn("User not found for email: {}", request.getEmail());
+	        message = "User not found";
+	        return message;
+	    }
 
-		User user = userOpt.get();
-		PasswordResetToken token = PasswordResetTokenTransformer.toEntity(user);
-		tokenDao.save(token);
+	    User user = userOpt.get();
 
-		String emailBody = "Hi " + user.getFirstName() + ",\n\n" + "Your password reset code is: *" + token.getToken()
-				+ "*\n\n" + "This token will expire in 1 hour.\n\n" + "Regards,\nDelta POS";
+	    // Check if the user has 'USER' role
+	    List<UserDto> userRoleList = userDao.getUserByRole("USER");
+	    boolean isUserRole = userRoleList.stream().anyMatch(u -> u.getId().equals(user.getId()));
 
-		emailService.sendEmail(request.getEmail(), "Password Reset Request", emailBody);
+	    if (isUserRole) {
+	    	log.warn("Access denied for password reset request. User role: USER");
+	    	message = "Access Denied: You do not have permission to change the password. Please contact your manager for assistance";
+	        return message;
+	    }
 
-		log.info("Password reset email sent to: {}", request.getEmail());
-		return true;
+	    PasswordResetToken token = PasswordResetTokenTransformer.toEntity(user);
+	    tokenDao.save(token);
+
+	    String emailBody = "Hi " + user.getFirstName() + ",\n\n" + 
+	                       "Your password reset code is: " + token.getToken() + "\n\n" + 
+	                       "This token will expire in 1 hour.\n\n" + 
+	                       "Regards,\nDelta POS";
+
+	    emailService.sendEmail(request.getEmail(), "Password Reset Request", emailBody);
+
+	    log.info("Password reset email sent to: {}", request.getEmail());
+	    message = "Password reset email sent successfully";
+	    return message;
 	}
 
 	public boolean resetPassword(ResetPasswordDto request) {

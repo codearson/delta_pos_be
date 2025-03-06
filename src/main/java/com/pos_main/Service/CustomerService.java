@@ -9,10 +9,18 @@ public interface CustomerService {
 
 	public ResponseDto saveCustomer(CustomerDto customerDto);
 	
-	public ResponseDto getAllCustomer(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
-	public ResponseDto getCustomerBySearch(String firstName, String lastName);
+	public ResponseDto getCustomerBySearch(String name);
+	
+	public ResponseDto getCustomerByMobileNumber(String mobileNumber);
 	
 	public ResponseDto getCustomerById(Integer id);
+	
+	public ResponseDto updateCustomer(CustomerDto customerDto);
+	
+	public ResponseDto getAllCustomer();
+	
+	public ResponseDto updateCustomerStatus(Integer customerId, Boolean status);
 	
 }

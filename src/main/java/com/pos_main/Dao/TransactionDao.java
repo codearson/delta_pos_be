@@ -1,5 +1,6 @@
 package com.pos_main.Dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.pos_main.Domain.Transaction;
@@ -15,10 +16,15 @@ import com.pos_main.Dto.TransactionDto;
 
 public interface TransactionDao extends BaseDao<Transaction> {
 	
+	List<TransactionDto> getTransactionByDateRange (LocalDateTime startDate, LocalDateTime endDate);
+	
 	List<TransactionDto> getTransactionByBranchId(Integer branchId);
 	
 	List<TransactionDto> getTransactionById(Integer id);
+	
 	List<TransactionDto> getTransactionByUserId(Integer userId);
+	
+	List<TransactionDto> getTransactionByCustomerId(Integer customerId);
 	
 	List<TransactionDto> getTransactionByPaymentMethodId(Integer paymentMethodId);
 	
@@ -26,9 +32,10 @@ public interface TransactionDao extends BaseDao<Transaction> {
 	
 	List<TransactionDto> getTransactionByStatus(Boolean isActive);
 	
-	TransactionDto save(TransactionDto transactionDto);
+	TransactionDto save(TransactionDto transactionDto, String alertMessage);
 	
 	TransactionDto updateTransaction(TransactionDto transactionDto);
 	
+	List<TransactionDto> getTransactionByProductId(Integer productId);
 	
 }

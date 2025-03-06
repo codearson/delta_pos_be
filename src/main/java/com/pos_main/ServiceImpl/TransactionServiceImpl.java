@@ -1,5 +1,6 @@
 package com.pos_main.ServiceImpl;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -35,6 +36,29 @@ public class TransactionServiceImpl implements TransactionService {
 	@Autowired
 	TransactionServiceBL transactionServiceBL;
 
+	@Transactional	
+	@Override
+    public ResponseDto getTransactionByDateRange (LocalDateTime startDate, LocalDateTime endDate) {
+        log.info("transactionServiceBL.getTransactionByDateRange () invoked");
+        ResponseDto responseDto = null;
+        try {
+            List<TransactionDto> transactionDtoList = transactionServiceBL.getTransactionByDateRange(startDate, endDate);
+            if (transactionDtoList != null && !transactionDtoList.isEmpty()) {
+                log.info("Retrieve Transaction Details by DateRange.");
+                responseDto = serviceUtil.getServiceResponse(transactionDtoList);
+            } else {
+                log.info("Unable to retrieve Transaction by DateRange.");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                        ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TRANSACTION_BY_DATERANGE);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurs while retrieving Transaction by DateRange.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                    ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TRANSACTION_BY_DATERANGE);
+        }
+        return responseDto;
+    }
+	
 	@Transactional
 	@Override
 	public ResponseDto getTransactionByBranchId(Integer branchId) {
@@ -102,6 +126,27 @@ public class TransactionServiceImpl implements TransactionService {
 		return responseDto;
 	}
 
+	public ResponseDto getTransactionByCustomerId(Integer customerId) {
+		log.info("TransactionServiceImpl.getTransactionByCustomerId() invoked with customerId: {}", customerId);
+		ResponseDto responseDto = null;
+		try {
+			List<TransactionDto> transactionDtoList = transactionServiceBL.getTransactionByCustomerId(customerId);
+			if (transactionDtoList != null && !transactionDtoList.isEmpty()) {
+				log.info("Transactions retrieved successfully for customerId: {}", customerId);
+				responseDto = serviceUtil.getServiceResponse(transactionDtoList);
+			} else {
+				log.info("No transactions found for customerId: {}", customerId);
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TRANSACTION_BY_CUSTOMER_ID);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurred while retrieving transactions by customerId: {}", customerId, e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TRANSACTION_BY_CUSTOMER_ID);
+		}
+		return responseDto;
+	}
+	
 	@Transactional
 	@Override
 	public ResponseDto getTransactionByPaymentMethodId(Integer paymentMethodId) {
@@ -128,11 +173,11 @@ public class TransactionServiceImpl implements TransactionService {
 	}
 
 	@Override
-	public ResponseDto save(TransactionDto transactionDto) {
+	public ResponseDto save(TransactionDto transactionDto, String alertMessage) {
 		log.info("TransactionServiceImpl.save() invoked");
 		ResponseDto responseDto = null;
 		try {
-			TransactionDto savedTransaction = transactionServiceBL.save(transactionDto);
+			TransactionDto savedTransaction = transactionServiceBL.save(transactionDto, alertMessage);
 			if (savedTransaction != null) {
 				log.info("Transaction details saved.");
 				responseDto = serviceUtil.getServiceResponse(savedTransaction);
@@ -217,4 +262,30 @@ public class TransactionServiceImpl implements TransactionService {
 		}
 		return responseDto;
 	}
+	
+	@Transactional
+	@Override
+	public ResponseDto getTransactionByProductId(Integer productId) {
+		log.info("TransactionServiceImpl.getTransactionByProductId() invoked with productId: {}",
+				productId);
+		ResponseDto responseDto = null;
+		try {
+			List<TransactionDto> transactionDtoList = transactionServiceBL
+					.getTransactionByProductId(productId);
+			if (transactionDtoList != null && !transactionDtoList.isEmpty()) {
+				log.info("Transactions retrieved successfully for productId: {}", productId);
+				responseDto = serviceUtil.getServiceResponse(transactionDtoList);
+			} else {
+				log.info("No transactions found for productId: {}", productId);
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TRANSACTION_BY_PRODUCT_ID);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurred while retrieving transactions by productId: {}", productId, e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TRANSACTION_BY_PRODUCT_ID);
+		}
+		return responseDto;
+	}
+
 }

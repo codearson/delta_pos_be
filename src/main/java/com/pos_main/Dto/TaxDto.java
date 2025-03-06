@@ -6,7 +6,7 @@ import lombok.Data;
 public class TaxDto {
 	
 	private Integer id;
-	private Integer taxPersentage;
+	private Integer taxPercentage;
 	private Boolean isActive;
 	
 }

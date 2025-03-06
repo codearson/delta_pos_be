@@ -1,6 +1,9 @@
 package com.pos_main.Controller;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +36,13 @@ public class TransactionController {
 	@Autowired
 	TransactionService transactionService;
 	
+	@GetMapping("/getByDateRange")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseDto getTransactionByDateRange(@RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate, @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  LocalDateTime endDate) {
+        log.info("TransactionController.getTransactionByDateRange() invoked" );
+        return transactionService.getTransactionByDateRange(startDate, endDate);
+    }
+	
 	@GetMapping("/getByBranchId")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseDto getTransactionByBranchId(@RequestParam("branchId") Integer branchId) {
@@ -54,6 +64,13 @@ public class TransactionController {
 	    return transactionService.getTransactionByUserId(userId);
 	}
 	
+	@GetMapping("/getByCustomerId")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto getTransactionByCustomerId(@RequestParam("customerId") Integer customerId) {
+	    log.info("TransactionController.getTransactionByCustomerId() invoked with customerId: {}", customerId);
+	    return transactionService.getTransactionByCustomerId(customerId);
+	}
+	
 	@GetMapping("/getByPaymentMethodId")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseDto getTransactionByPaymentMethodId(@RequestParam("paymentMethodId") Integer paymentMethodId) {
@@ -63,9 +80,9 @@ public class TransactionController {
 	
 	@PostMapping("/save")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseDto save(@RequestBody TransactionDto transactionDto) {
+    public ResponseDto save(@RequestBody TransactionDto transactionDto, String alertMessage) {
         log.info("TransactionController.save() invoked");
-        return transactionService.save(transactionDto);
+        return transactionService.save(transactionDto, alertMessage);
     }
 	
 	@PostMapping("/update")
@@ -86,5 +103,12 @@ public class TransactionController {
 	public ResponseDto getTransactionByStatus(@RequestParam("isActive") Boolean isActive) {
 	    log.info("TransactionController.getTransactionByStatus() invoked with isActive: {}", isActive);
 	    return transactionService.getTransactionByStatus(isActive);
+	}
+	
+	@GetMapping("/getByProductId")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto getTransactionByProductId(@RequestParam("productId") Integer productId) {
+	    log.info("TransactionController.getTransactionByProductId() invoked with productId: {}", productId);
+	    return transactionService.getTransactionByProductId(productId);
 	}
 }

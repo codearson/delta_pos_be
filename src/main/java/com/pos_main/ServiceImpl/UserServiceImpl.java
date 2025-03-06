@@ -205,5 +205,27 @@ public class UserServiceImpl implements UserService {
 		}
 		return responseDto;
 	}
+	
+	@Transactional
+	@Override
+	public ResponseDto getUserByEmailAddress(String emailAddress) {
+		ResponseDto responseDto = null;
+		try {
+			List<UserDto> userDtoList = userServiceBL.getUserByEmailAddress(emailAddress);
+			if (userDtoList != null && !userDtoList.isEmpty()) {
+				log.info("user detail retreived successfully.");
+				responseDto = serviceUtil.getServiceResponse(userDtoList);
+			} else {
+				log.info("Unable to Retrive user detail with email address");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_USER_BY_EMAIL_ADDRESS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while Retrive the user detail with email address.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_USER_BY_EMAIL_ADDRESS);
+		}
+		return responseDto;
+	}
 
 }

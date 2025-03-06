@@ -12,5 +12,7 @@ import com.pos_main.Dto.UserRoleDto;
 public interface UserRoleService {
 	
 	public ResponseDto saveUserRole(UserRoleDto userRoleDto);
+	
+	public ResponseDto getAllUserRole();
 
 }

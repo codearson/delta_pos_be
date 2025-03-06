@@ -18,6 +18,7 @@ public class TransactionDto {
 	private ShopDetailsDto shopDetailsDto;
 	private UserDto userDto;
 	private CustomerDto customerDto;
+	private String notification;
 	private Boolean isActive;
 	private List<TransactionDetailsListDto> transactionDetailsList = new ArrayList<>();
     private List<TransactionPaymentMethodDto> transactionPaymentMethod = new ArrayList<>();

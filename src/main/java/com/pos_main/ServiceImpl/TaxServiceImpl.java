@@ -1,5 +1,7 @@
 package com.pos_main.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,4 +45,84 @@ public class TaxServiceImpl implements TaxService{
 		}
 		return responseDto;
 	}
+	
+	@Override
+    public ResponseDto update(TaxDto taxDto) {
+        log.info("TaxServiceImpl.update() invoked");
+        ResponseDto responseDto = null;
+        try {
+            TaxDto updatedTaxDto = taxServiceBL.update(taxDto);
+            if (updatedTaxDto != null) {
+                log.info("Tax Details updated.");
+                responseDto = serviceUtil.getServiceResponse(updatedTaxDto);
+            } else {
+                log.info("Unable to update Tax details.");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_TAX_DETAILS);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurs while updating Tax details.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_TAX_DETAILS);
+        }
+        return responseDto;
+    }
+
+    @Override
+    public ResponseDto updateTaxStatus(Integer id, Boolean status) {
+        log.info("TaxServiceImpl.updateTaxStatus() invoked");
+        ResponseDto responseDto = null;
+        try {
+            TaxDto updatedTaxStatusDto = taxServiceBL.updateTaxStatus(id, status);
+            if (updatedTaxStatusDto != null) {
+                log.info("Tax Status updated.");
+                responseDto = serviceUtil.getServiceResponse(updatedTaxStatusDto);
+            } else {
+                log.info("Unable to update Tax status.");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_TAX_STATUS);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurs while updating Tax status.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_TAX_STATUS);
+        }
+        return responseDto;
+    }
+	
+	@Override
+    public ResponseDto getTaxByName(Integer taxPercentage) {
+        log.info("TaxServiceImpl.getTaxByName() invoked");
+        ResponseDto responseDto;
+        try {
+            List<TaxDto> taxDtoList = taxServiceBL.getTaxByName(taxPercentage);
+            responseDto = (taxDtoList != null && !taxDtoList.isEmpty()) 
+                ? serviceUtil.getServiceResponse(taxDtoList)
+                : serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TAX_BY_NAME);
+        } catch (Exception e) {
+            log.error("Exception occurs while retrieving Tax by taxPercentage.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TAX_BY_NAME);
+        }
+        return responseDto;
+    }
+    
+    @Override
+    public ResponseDto getAll() {
+        log.info("TaxServiceImpl.getAll() invoked");
+        ResponseDto responseDto;
+        try {
+            List<TaxDto> taxDtoList = taxServiceBL.getAll();
+            responseDto = (taxDtoList != null && !taxDtoList.isEmpty())
+                ? serviceUtil.getServiceResponse(taxDtoList)
+                : serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_TAX_DETAILS);
+        } catch (Exception e) {
+            log.error("Exception occurs while retrieving All Tax details.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_TAX_DETAILS);
+        }
+        return responseDto;
+    }
 }

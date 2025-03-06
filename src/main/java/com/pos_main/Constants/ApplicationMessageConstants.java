@@ -133,8 +133,38 @@ public interface ApplicationMessageConstants {
 		String EX_FORGOT_PASSWORD_EMAIL = "ex.forgot.password.email";
 		String ERR_RESET_PASSWORD = "err.reset.password";
 		String EX_RESET_PASSWORD = "ex.reset.password";
+		String ERR_RETRIEVE_TRANSACTION_BY_PRODUCT_ID = "err.retrieve.transaction.by.product.id";
+		String EX_RETRIEVE_TRANSACTION_BY_PRODUCT_ID = "ex.retrieve.transaction.by.product.id";
 		String ERR_RETRIEVE_STOCK_BY_QUANTITYRANGE = "err.retrieve.stock.by.quantityrange";
 		String EX_RETRIEVE_STOCK_BY_QUANTITYRANGE = "ex.retrieve.stock.by.quantityrange";
+		String ERR_RETRIEVE_TRANSACTION_BY_CUSTOMER_ID = "err.retrieve.transaction.by.customer.id";
+		String EX_RETRIEVE_TRANSACTION_BY_CUSTOMER_ID = "ex.retrieve.transaction.by.customer.id";
+		String ERR_RETRIEVE_TRANSACTION_BY_DATERANGE= "err.retrieve.transaction.by.daterange";
+		String EX_RETRIEVE_TRANSACTION_BY_DATERANGE= "ex.retrieve.transaction.by.daterange";
+		String ERR_RETRIEVE_USER_BY_EMAIL_ADDRESS = "err.retrieve.user.by.email.address";
+		String EX_RETRIEVE_USER_BY_EMAIL_ADDRESS = "ex.retrieve.user.by.email.address";
+		String ERR_RETRIEVE_TAX_BY_NAME = "err.retrieve.get.all.tax.by.percentage";
+		String EX_RETRIEVE_TAX_BY_NAME = "ex.retrieve.get.all.tax.by.percentage";
+		String ERR_RETRIEVE_ALL_TAX_DETAILS = "err.retrieve.all.tax.details";
+		String EX_RETRIEVE_ALL_TAX_DETAILS = "ex.retrieve.all.tax.details";
+		String ERR_UPDATE_TAX_DETAILS = "err.update.tax.details";
+        String EX_UPDATE_TAX_DETAILS = "ex.update.tax.details";
+        String ERR_UPDATE_TAX_STATUS = "err.update.tax.status";
+        String EX_UPDATE_TAX_STATUS = "ex.update.tax.status";
+		String ERR_SAVE_PURCHASE_LIST_DETAILS = "err.save.purchase.list.details";
+		String EX_SAVE_PURCHASE_LIST_DETAILS = "ex.save.purchase.list.details"; 
+		String ERR_RETRIEVE_ALL_DETAILS = "err.retrieve.all.details";
+		String EX_RETRIEVE_ALL_DETAILS = "ex.retrieve.all.details";
+		String ERR_DELETE_ALL_PURCHASE_LIST_DETAILS = "err.delete.all.purchase.list.details";
+		String EX_DELETE_ALL_PURCHASE_LIST_DETAILS = "ex.delete.all.purchase.list.details";
+        String ERR_UPDATE_CUSTOMER_DETAILS = "err.update.customer.details";
+        String EX_UPDATE_CUSTOMER_DETAILS = "ex.update.customer.details";
+        String ERR_RETRIEVE_CUSTOMER_BY_MOBILE_NUMBER = "err.retrieve.customer.by.mobile.number";
+        String EX_RETRIEVE_CUSTOMER_BY_MOBILE_NUMBER = "ex.retrieve.customer.by.mobile.number";
+        String ERR_UPDATE_CUSTOMER_STATUS = "err.update.customer.status";
+        String EX_UPDATE_CUSTOMER_STATUS = "ex.update.customer.status";
+        String ERR_RETRIEVE_ALL_USERROLE_DETAILS = "err.get.all.user.details";
+		String EX_RETRIEVE_ALL_USERROLE_DETAILS = "ex.get.all.user.details";
 		
 	}
 }
