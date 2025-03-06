@@ -221,6 +221,36 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 		}
 		return userDto;
 	}
+	
+	@Override
+    public List<UserDto> getUserByEmailAddress(String emailAddress) {
+        org.hibernate.Session session = null;
+        List<UserDto> userDtoList = null;
+        try {
+            session = sessionFactory.openSession();
+            Criteria criteria = session.createCriteria(User.class, "user");
+            criteria.add(Restrictions.eq("user.emailAddress", emailAddress));
+            criteria.add(Restrictions.eq("isActive", true));
+            
+            List<User> userList = criteria.list();
+
+            if (userList != null && !userList.isEmpty()) {
+                userDtoList = new ArrayList<>();
+                for (User user : userList) {
+                    userDtoList.add(userTransfomer.transform(user));
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace(); 
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+        return userDtoList;
+    }
 
 
 }

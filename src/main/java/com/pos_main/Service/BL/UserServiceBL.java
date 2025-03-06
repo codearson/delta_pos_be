@@ -111,5 +111,10 @@ public class UserServiceBL {
 			return null;
 		}
 	}
+	
+	public List<UserDto> getUserByEmailAddress(String emailAddress) {
+		log.info("UserServiceBL.getUserByEmailAddress()invoked");
+		return userDao.getUserByEmailAddress(emailAddress);
+	}
 
 }

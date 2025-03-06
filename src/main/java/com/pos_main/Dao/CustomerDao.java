@@ -6,16 +6,23 @@ import java.util.Map;
 import com.pos_main.Domain.Customer;
 import com.pos_main.Dto.CustomerDto;
 import com.pos_main.Dto.PaginatedResponseDto;
-import com.pos_main.Dto.ProductDto;
 
 public interface CustomerDao extends BaseDao<Customer>{
 	
-	List<CustomerDto> getCustomerBySearch(String firstName, String lastName);
+	List<CustomerDto> getCustomerBySearch(String name);
+	
+	List<CustomerDto> getCustomerByMobileNumber(String mobileNumber);
 
-	PaginatedResponseDto getAllCustomer(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParams);
 	
 	CustomerDto saveCustomer (CustomerDto customerDto);
 	
 	List<CustomerDto> getCustomerById(Integer id);
-
+	
+	CustomerDto updateCustomer (CustomerDto customerDto);
+	
+	List<CustomerDto> getAllCustomer();
+	
+	CustomerDto checkCustomerAvailability(Integer customerId);
+	
 }

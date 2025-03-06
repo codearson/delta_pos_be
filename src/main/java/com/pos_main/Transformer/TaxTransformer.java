@@ -15,7 +15,7 @@ public class TaxTransformer implements BaseTransformer<Tax, TaxDto>{
 		if (tax != null) {
 			taxDto = new TaxDto();
 			taxDto.setId(tax.getId());
-			taxDto.setTaxPersentage(tax.getTaxPersentage());
+			taxDto.setTaxPercentage(tax.getTaxPercentage());
 			taxDto.setIsActive(tax.getIsActive());
 		}
 		return taxDto;
@@ -27,7 +27,7 @@ public class TaxTransformer implements BaseTransformer<Tax, TaxDto>{
 		if (taxDto != null) {
 			tax = new Tax();
 			tax.setId(taxDto.getId());
-			tax.setTaxPersentage(taxDto.getTaxPersentage());
+			tax.setTaxPercentage(taxDto.getTaxPercentage());
 			tax.setIsActive(taxDto.getIsActive());
 		}
 		return tax;

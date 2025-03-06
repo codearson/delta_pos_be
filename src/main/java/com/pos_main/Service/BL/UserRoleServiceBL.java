@@ -1,9 +1,12 @@
 package com.pos_main.Service.BL;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.UserRoleDao;
+import com.pos_main.Dto.CustomerDto;
 import com.pos_main.Dto.UserRoleDto;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +27,11 @@ public class UserRoleServiceBL {
 	public UserRoleDto saveUserRole(UserRoleDto userRoleDto) {
 		log.info("UserRoleServiceBL.saveUserRole() invoked.");
 		return userRoleDao.saveUserRole(userRoleDto);
+	}
+	
+	public List<UserRoleDto> getAllUserRole() {
+		log.info("UserRoleServiceBL.getAllUser()invoked");
+		return userRoleDao.getAllUserRole();
 	}
 
 

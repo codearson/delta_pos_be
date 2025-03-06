@@ -32,6 +32,11 @@ public class TransactionServiceBL {
 	@Autowired
 	ProductDao productDao;
 	
+	public List<TransactionDto> getTransactionByDateRange(LocalDateTime startDate, LocalDateTime endDate) {
+        log.info("TransactionServiceBL.getTransactionByDateRange() invoked.");
+        return transactionDao.getTransactionByDateRange(startDate, endDate);
+    }
+	
 	public List<TransactionDto> getTransactionByBranchId(Integer branchId) {
 	    log.info("TransactionServiceBL.getTransactionByBranchId() invoked with branchId: {}", branchId);
 	    return transactionDao.getTransactionByBranchId(branchId);
@@ -45,6 +50,11 @@ public class TransactionServiceBL {
 	public List<TransactionDto> getTransactionByUserId(Integer userId) {
 	    log.info("TransactionServiceBL.getTransactionByUserId() invoked with userId: {}", userId);
 	    return transactionDao.getTransactionByUserId(userId);
+	}
+	
+	public List<TransactionDto> getTransactionByCustomerId(Integer customerId) {
+	    log.info("TransactionServiceBL.getTransactionByCustomerId() invoked with customerId: {}", customerId);
+	    return transactionDao.getTransactionByCustomerId(customerId);
 	}
 	
 	public List<TransactionDto> getTransactionByPaymentMethodId(Integer paymentMethodId) {
@@ -62,8 +72,7 @@ public class TransactionServiceBL {
 	    return transactionDao.getTransactionByStatus(isActive);
 	}
 	
-
-	public TransactionDto save(TransactionDto transactionDto) {
+	public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
 	    log.info("TransactionServiceBL.save() invoked.");
 
 	    Double totalAmount = 0.0;
@@ -71,16 +80,30 @@ public class TransactionServiceBL {
 	    for (TransactionDetailsListDto details : transactionDto.getTransactionDetailsList()) {
 	        if (details.getProductDto() != null) {
 	            Integer productId = details.getProductDto().getId();
-	            
+
 	            List<ProductDto> productList = productDao.getProductById(productId);
 	            
+	            alertMessage = null;
+
 	            if (productList != null && !productList.isEmpty()) {
 	                ProductDto productDto = productList.get(0);
-	                
+
 	                details.setUnitPrice(productDto.getPricePerUnit());
-	                
+
 	                Double amountForProduct = (double) ((details.getUnitPrice() * details.getQuantity()) - details.getDiscount());
 	                totalAmount += amountForProduct;
+
+	                Integer newQuantity = productDto.getQuantity() - details.getQuantity();
+	                if (newQuantity < 0) {
+	                    log.info("Not enough stock for productId: " + productId);
+	                    throw new IllegalArgumentException("Insufficient stock for product ID: " + productId);
+	                }
+	                if (newQuantity <= productDto.getLowStock()) {
+	                    alertMessage = "ALERT: Product '" + productDto.getName() + "' (ID: " + productDto.getId() + ") is low on stock. Remaining quantity: " + newQuantity;
+	                    log.info(alertMessage);
+	                }
+	                productDto.setQuantity(newQuantity);
+	                productDao.updateProduct(productDto);
 	            } else {
 	                log.info("Product not found for productId: " + productId);
 	            }
@@ -88,12 +111,14 @@ public class TransactionServiceBL {
 	            log.info("ProductDto is null in TransactionDetailsListDto");
 	        }
 	    }
-	    
+
 	    transactionDto.setTotalAmount(totalAmount);
 	    transactionDto.setDateTime(LocalDateTime.now());
-
-	    return transactionDao.save(transactionDto);
+	    
+	    return transactionDao.save(transactionDto, alertMessage);
 	}
+
+
 	
 	public TransactionDto updateTransaction(TransactionDto transactionDto) {
 	    log.info("TransactionServiceBL.updateTransaction() invoked.");
@@ -127,6 +152,9 @@ public class TransactionServiceBL {
 	    return transactionDao.updateTransaction(transactionDto);
 	}
 
-	
+	public List<TransactionDto> getTransactionByProductId(Integer productId) {
+	    log.info("TransactionServiceBL.getTransactionByProductId() invoked with productId: {}", productId);
+	    return transactionDao.getTransactionByProductId(productId);
+	}
 
 }

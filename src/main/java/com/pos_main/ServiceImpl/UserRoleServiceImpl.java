@@ -1,9 +1,12 @@
 package com.pos_main.ServiceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.CustomerDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.UserRoleDto;
 import com.pos_main.Service.UserRoleService;
@@ -46,6 +49,28 @@ public class UserRoleServiceImpl implements UserRoleService{
 			log.error("Exception occurs while saving User Role details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_USER_ROLE_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllUserRole() {
+		log.info("UserRoleServiceImpl.getAllUserRole() invoked");
+		ResponseDto responseDto = null;
+		try {
+			List<UserRoleDto> userRoleDto = userRoleServiceBL.getAllUserRole();
+			if (userRoleDto != null) {
+				log.info("Retrieve All UserRole Details.");
+				responseDto = serviceUtil.getServiceResponse(userRoleDto);
+			} else {
+				log.info("Unable to retrieve All UserRole details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_USERROLE_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All UserRole details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_USERROLE_DETAILS);
 		}
 		return responseDto;
 	}

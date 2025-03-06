@@ -32,5 +32,7 @@ public interface UserDao extends BaseDao<User>{
 	UserDto update(UserDto userDto);
 	
 	UserDto checkUserAvailability(Integer userId);
+	
+	List<UserDto> getUserByEmailAddress(String emailAddress);
 
 }

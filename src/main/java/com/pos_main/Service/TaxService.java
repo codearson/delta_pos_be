@@ -6,5 +6,13 @@ import com.pos_main.Dto.TaxDto;
 public interface TaxService {
 	
 	public ResponseDto save(TaxDto taxDto);
+	
+	public ResponseDto getTaxByName(Integer taxPercentage);
+	
+    public ResponseDto getAll();
+    
+    public ResponseDto update(TaxDto taxDto);
+    
+    public ResponseDto updateTaxStatus(Integer id, Boolean status);
 
 }

@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.time.LocalDateTime;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TransactionDto;
 
@@ -13,19 +15,26 @@ import com.pos_main.Dto.TransactionDto;
 
 public interface TransactionService {
 	
+	ResponseDto getTransactionByDateRange(LocalDateTime startDate, LocalDateTime endDate);
+	
 	ResponseDto getTransactionByBranchId(Integer branchId);
 	
 	ResponseDto getTransactionById(Integer id);
+	
 	ResponseDto getTransactionByUserId(Integer userId);
+	
+	ResponseDto getTransactionByCustomerId(Integer customerId);
 	
 	ResponseDto getTransactionByPaymentMethodId(Integer paymentMethodId);
 
-	ResponseDto save(TransactionDto transactionDto);
+	ResponseDto save(TransactionDto transactionDto, String alertMessage);
 	
 	ResponseDto getAllTransaction();
 	
 	ResponseDto getTransactionByStatus(Boolean isActive);
 	
 	public ResponseDto updateTransaction(TransactionDto transactionDto);
+	
+	ResponseDto getTransactionByProductId(Integer productId);
 	
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Service.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.request.WebRequest;
 
@@ -28,21 +29,26 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
-	@GetMapping("/getBySearch")
+	@GetMapping("/getByName")
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseDto getCustomerBySearch(
-	        @RequestParam(value = "firstName", required = false) String firstName,
-	        @RequestParam(value = "lastName", required = false) String lastName) {
-	    log.info("CustomerController.getCustomerBySearch() invoked with firstName: {}, lastName: {}", firstName, lastName);
-	    return customerService.getCustomerBySearch(firstName, lastName);
+	public ResponseDto getCustomerBySearch(@RequestParam("name") String name) {
+	    log.info("CustomerController.getCustomerBySearch() invoked with name: {}", name);
+	    return customerService.getCustomerBySearch(name);
+	}
+	
+	@GetMapping("/getByMobileNumber")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto getCustomerByMobileNumber(@RequestParam("mobileNumber") String mobileNumber) {
+	    log.info("CustomerController.getCustomerByMobileNumber() invoked with mobileNumber: {}", mobileNumber);
+	    return customerService.getCustomerByMobileNumber(mobileNumber);
 	}
 
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseDto getAllCustomer(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+	public ResponseDto getAllPageCustomer(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
-		log.info("CustomerController.getAll() invoked.");
-		return customerService.getAllCustomer(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		log.info("CustomerController.getAllPage() invoked.");
+		return customerService.getAllPageCustomer(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 	@PostMapping("/save")
@@ -59,5 +65,25 @@ public class CustomerController {
     return customerService.getCustomerById(id);
 	}
 	
+	@PostMapping("/update")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto updateCustomer(@RequestBody CustomerDto customerDto) {
+		log.info("CustomerController.updateCustomer() invoked");
+		return customerService.updateCustomer(customerDto);
+	}
+	
+	@GetMapping("/getAll")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto getAllCustomer() {
+		log.info("CustomerController.getAll() invoked.");
+		return customerService.getAllCustomer();
+	}
+	
+	@PutMapping("/updateStatus")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto updateCustomerStatus(@RequestParam("customerId") Integer customerId, @RequestParam("status") Boolean status) {
+		log.info("ProductController.updateCustomerStatus() invoked.");
+		return customerService.updateCustomerStatus(customerId, status);
+	}
 	
 }

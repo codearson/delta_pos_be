@@ -51,5 +51,7 @@ public class Transaction implements Serializable {
 	private Boolean isActive;
     @OneToMany(mappedBy = "transaction")
     private List<TransactionPaymentMethod> transactionPaymentMethod;
+    @OneToMany(mappedBy = "transaction")
+    private List<TransactionDetailsList> transactionDetailsList;
     
 }

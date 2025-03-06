@@ -1,5 +1,6 @@
 package com.pos_main.DaoImpl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.TransactionDao;
 import com.pos_main.Domain.Branch;
+import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.Transaction;
 import com.pos_main.Domain.TransactionDetailsList;
 import com.pos_main.Domain.TransactionPaymentMethod;
@@ -81,6 +83,59 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
     TransactionPaymentMethodService transactionPaymentMethodService;
     
     @Override
+	@Transactional
+	public List<TransactionDto> getTransactionByDateRange (LocalDateTime startDate, LocalDateTime endDate) {
+		log.info("TransactionDaoImpl.getTransactionByDateRange() invoked");
+
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Transaction> cq = cb.createQuery(Transaction.class);
+        Root<Transaction> root = cq.from(Transaction.class);
+
+        cq.select(root).where(
+            cb.between(root.get("dateTime"), startDate, endDate)
+        );
+
+        List<Transaction> transactionList = entityManager.createQuery(cq).getResultList();
+
+        return transactionList.stream().map(transaction -> {
+            TransactionDto transactionDto = transactionTransformer.transform(transaction);
+
+            if (transactionDto.getUserDto() != null) {
+                transactionDto.getUserDto().setPassword(null);
+            }
+
+            ResponseDto transactionDetailsListResponse = transactionDetailsListService.getByTransactionId(transaction.getId());
+            List<TransactionDetailsListDto> transactionDetailsList = 
+                transactionDetailsListResponse.getResponseDto() instanceof List<?> 
+                ? (List<TransactionDetailsListDto>) transactionDetailsListResponse.getResponseDto() 
+                : new ArrayList<>();
+            
+            transactionDetailsList.forEach(details -> {
+                if (details.getTransactionDto() != null && details.getTransactionDto().getUserDto() != null) {
+                    details.getTransactionDto().getUserDto().setPassword(null);
+                }
+            });
+
+            ResponseDto paymentMethodResponse = transactionPaymentMethodService.getByTransactionId(transaction.getId());
+            List<TransactionPaymentMethodDto> transactionPaymentMethodList = 
+                paymentMethodResponse.getResponseDto() instanceof List<?>
+                ? (List<TransactionPaymentMethodDto>) paymentMethodResponse.getResponseDto()
+                : new ArrayList<>();
+            
+            transactionPaymentMethodList.forEach(payment -> {
+                if (payment.getTransactionDto() != null && payment.getTransactionDto().getUserDto() != null) {
+                    payment.getTransactionDto().getUserDto().setPassword(null);
+                }
+            });
+
+            transactionDto.setTransactionDetailsList(transactionDetailsList);
+            transactionDto.setTransactionPaymentMethod(transactionPaymentMethodList);
+
+            return transactionDto;
+        }).collect(Collectors.toList());
+    }
+    
+    @Override
     @Transactional
     public List<TransactionDto> getTransactionByBranchId(Integer branchId) {
         log.info("TransactionDaoImpl.getTransactionByBranchId() invoked with branchId: {}", branchId);
@@ -131,6 +186,7 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
             return transactionDto;
         }).collect(Collectors.toList());
     }
+    
     @Override
     @Transactional
     public List<TransactionDto> getTransactionById(Integer id) {
@@ -240,7 +296,64 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
             return transactionDto;
         }).collect(Collectors.toList());
     }
+    
+    @Override
+    @Transactional
+    public List<TransactionDto> getTransactionByCustomerId(Integer customerId) {
+        log.info("TransactionDaoImpl.getTransactionByCustomerId() invoked with customerId: {}", customerId);
 
+        CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+        CriteriaQuery<Transaction> cq = cb.createQuery(Transaction.class);
+        Root<Transaction> root = cq.from(Transaction.class);
+
+        Join<Transaction, Customer> customerJoin = root.join("customer");
+        cq.select(root).where(cb.equal(customerJoin.get("id"), customerId));
+
+        List<Transaction> transactionList = getCurrentSession().createQuery(cq).getResultList();
+
+        return transactionList.stream().map(transaction -> {
+            TransactionDto transactionDto = transactionTransformer.transform(transaction);
+
+            // Hide password in userDto inside TransactionDto
+            if (transactionDto.getUserDto() != null) {
+                transactionDto.getUserDto().setPassword(null);
+            }
+
+            // Fetch and process transaction details
+            ResponseDto transactionDetailsResponse = transactionDetailsListService.getByTransactionId(transaction.getId());
+            List<TransactionDetailsListDto> transactionDetailsList =
+                transactionDetailsResponse.getResponseDto() instanceof List<?> 
+                    ? (List<TransactionDetailsListDto>) transactionDetailsResponse.getResponseDto() 
+                    : new ArrayList<>();
+
+            // Hide password in userDto inside transactionDetailsList
+            transactionDetailsList.forEach(details -> {
+                if (details.getTransactionDto() != null && details.getTransactionDto().getUserDto() != null) {
+                    details.getTransactionDto().getUserDto().setPassword(null);
+                }
+            });
+
+            // Fetch and process payment methods
+            ResponseDto paymentMethodResponse = transactionPaymentMethodService.getByTransactionId(transaction.getId());
+            List<TransactionPaymentMethodDto> transactionPaymentMethod =
+                paymentMethodResponse.getResponseDto() instanceof List<?> 
+                    ? (List<TransactionPaymentMethodDto>) paymentMethodResponse.getResponseDto() 
+                    : new ArrayList<>();
+
+            // Hide password in userDto inside transactionPaymentMethod
+            transactionPaymentMethod.forEach(payment -> {
+                if (payment.getTransactionDto() != null && payment.getTransactionDto().getUserDto() != null) {
+                    payment.getTransactionDto().getUserDto().setPassword(null);
+                }
+            });
+
+            // Set the updated lists
+            transactionDto.setTransactionDetailsList(transactionDetailsList);
+            transactionDto.setTransactionPaymentMethod(transactionPaymentMethod);
+
+            return transactionDto;
+        }).collect(Collectors.toList());
+    }
     
     @Override
     @Transactional
@@ -295,12 +408,9 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
         }).collect(Collectors.toList());
     }
 
-
-
-
     @Override
     @Transactional
-    public TransactionDto save(TransactionDto transactionDto) {
+    public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
         log.info("TransactionDaoImpl.save() invoked.");
 
         Transaction transaction = transactionTransformer.reverseTransform(transactionDto);
@@ -320,8 +430,11 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
         }
 
         entityManager.flush();
+        
+        TransactionDto dto = transactionTransformer.transform(transaction);
+        dto.setNotification(alertMessage);
 
-        return transactionTransformer.transform(transaction);
+        return dto;
     }
     
     @Override
@@ -480,6 +593,59 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
             // Set the updated lists
             transactionDto.setTransactionDetailsList(transactionDetailsList);
             transactionDto.setTransactionPaymentMethod(transactionPaymentMethod);
+
+            return transactionDto;
+        }).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public List<TransactionDto> getTransactionByProductId(Integer productId) {
+        log.info("TransactionDaoImpl.getTransactionByProductId() invoked with productId: {}", productId);
+
+        CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+        CriteriaQuery<Transaction> cq = cb.createQuery(Transaction.class);
+        Root<Transaction> root = cq.from(Transaction.class);
+
+        Join<Transaction, TransactionDetailsList> detailsListJoin = root.join("transactionDetailsList");
+
+        cq.select(root).where(cb.equal(detailsListJoin.get("product").get("id"), productId));
+
+        List<Transaction> transactionList = getCurrentSession().createQuery(cq).getResultList();
+
+        return transactionList.stream().map(transaction -> {
+            TransactionDto transactionDto = transactionTransformer.transform(transaction);
+
+            if (transactionDto.getUserDto() != null) {
+                transactionDto.getUserDto().setPassword(null);
+            }
+
+            ResponseDto transactionDetailsListResponse = transactionDetailsListService.getByTransactionId(transaction.getId());
+            List<TransactionDetailsListDto> transactionDetailsList = 
+                transactionDetailsListResponse.getResponseDto() instanceof List<?> 
+                ? (List<TransactionDetailsListDto>) transactionDetailsListResponse.getResponseDto() 
+                : new ArrayList<>();
+            
+            transactionDetailsList.forEach(details -> {
+                if (details.getTransactionDto() != null && details.getTransactionDto().getUserDto() != null) {
+                    details.getTransactionDto().getUserDto().setPassword(null);
+                }
+            });
+
+            ResponseDto paymentMethodResponse = transactionPaymentMethodService.getByTransactionId(transaction.getId());
+            List<TransactionPaymentMethodDto> transactionPaymentMethodList = 
+                paymentMethodResponse.getResponseDto() instanceof List<?>
+                ? (List<TransactionPaymentMethodDto>) paymentMethodResponse.getResponseDto()
+                : new ArrayList<>();
+            
+            transactionPaymentMethodList.forEach(payment -> {
+                if (payment.getTransactionDto() != null && payment.getTransactionDto().getUserDto() != null) {
+                    payment.getTransactionDto().getUserDto().setPassword(null);
+                }
+            });
+
+            transactionDto.setTransactionDetailsList(transactionDetailsList);
+            transactionDto.setTransactionPaymentMethod(transactionPaymentMethodList);
 
             return transactionDto;
         }).collect(Collectors.toList());

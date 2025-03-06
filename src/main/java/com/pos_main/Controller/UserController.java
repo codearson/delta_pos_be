@@ -97,5 +97,11 @@ public class UserController {
 		log.info("UserController.updateInvoiceStatus() invoked.");
 		return userService.updateUserStatus(userId, status);
 	}
+	
+	@GetMapping("/getByEmailAddress")
+	public ResponseDto getUserByEmailAddress(@RequestParam("emailAddress") String emailAddress) {
+	    log.info("UserController.getUserByEmailAddress() invoked with emailAddress", emailAddress);
+	    return userService.getUserByEmailAddress(emailAddress);
+	}
 
 }
