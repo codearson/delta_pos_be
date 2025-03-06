@@ -12,24 +12,20 @@ public class MessageConfig {
 	@Autowired
 	private Environment env;
 
-	
 	public String getFullMessage(String code) {
 		return env.getProperty(code);
 	}
 
-	
 	public String getMessage(String code) {
 		String errorMessage = env.getProperty(code);
 		errorMessage = errorMessage.substring(errorMessage.indexOf(":") + 1).trim();
 		return errorMessage;
 	}
 
-	
 	public String getErrorCode(String code) {
 		String errorMessage = env.getProperty(code);
 		errorMessage = errorMessage.substring(0, errorMessage.indexOf(":")).trim();
 		return errorMessage;
 	}
 
-	
 }
