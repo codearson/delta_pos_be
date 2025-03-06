@@ -4,7 +4,7 @@ app:
 #database
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/pos_main_db?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/pos_db?allowPublicKeyRetrieval=true&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: admin
     password: password
