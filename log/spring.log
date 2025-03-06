@@ -1,24 +1,74 @@
-2025-03-05 02:15:47.945  INFO 14144 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Thuva_sri with PID 14144 (D:\Work\delta_pos_be\target\classes started by srith in D:\Work\delta_pos_be)
-2025-03-05 02:15:47.954  INFO 14144 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
-2025-03-05 02:15:49.445  INFO 14144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-05 02:15:49.487  INFO 14144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
-2025-03-05 02:15:50.660  INFO 14144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-03-05 02:15:50.678  INFO 14144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-05 02:15:50.679  INFO 14144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2025-03-05 02:15:50.885  INFO 14144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-05 02:15:50.886  INFO 14144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2858 ms
-2025-03-05 02:15:51.257  INFO 14144 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-05 02:15:51.406  INFO 14144 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
-2025-03-05 02:15:51.822  INFO 14144 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2025-03-05 02:15:52.059  INFO 14144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-05 02:15:52.438  INFO 14144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-05 02:15:52.472  INFO 14144 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2025-03-05 02:15:54.424  INFO 14144 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2025-03-05 02:15:54.442  INFO 14144 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-05 02:15:55.789  INFO 14144 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47fce2c4, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbf727a, org.springframework.security.web.header.HeaderWriterFilter@f1e1d66, org.springframework.security.web.authentication.logout.LogoutFilter@5bc40f5d, com.pos_main.Service.Utils.JwtCustomFilter@78b44fcb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23ee70a7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21be80f6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3810806c, org.springframework.security.web.session.SessionManagementFilter@3ffe74da, org.springframework.security.web.access.ExceptionTranslationFilter@53335328, org.springframework.security.web.access.intercept.AuthorizationFilter@1640a6b5]
-2025-03-05 02:15:56.638  INFO 14144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2025-03-05 02:15:56.655  INFO 14144 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 9.556 seconds (JVM running for 10.979)
-2025-03-05 02:20:05.111  INFO 14144 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-03-05 02:20:05.166  INFO 14144 --- [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-05 02:20:05.170  INFO 14144 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-03-05 02:20:05.178  INFO 14144 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06 13:35:09.348  INFO 17992 --- [restartedMain] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.6 on Lathusan-Thurairajah with PID 17992 (D:\Codearson\delta_pos\delta_pos\API\pos_main\target\classes started by Lathu in D:\Codearson\delta_pos\delta_pos\API\pos_main)
+2025-03-06 13:35:09.350  INFO 17992 --- [restartedMain] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-03-06 13:35:09.388  INFO 17992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 13:35:09.389  INFO 17992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 13:35:11.256  INFO 17992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 13:35:11.275  INFO 17992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2025-03-06 13:35:11.738  INFO 17992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6000 (http)
+2025-03-06 13:35:11.746  INFO 17992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06 13:35:11.746  INFO 17992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-06 13:35:11.795  INFO 17992 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06 13:35:11.795  INFO 17992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2406 ms
+2025-03-06 13:35:11.926  INFO 17992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 13:35:11.973  INFO 17992 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-03-06 13:35:12.130  INFO 17992 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-06 13:35:12.201  INFO 17992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06 13:35:12.352  INFO 17992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06 13:35:12.365  INFO 17992 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-06 13:35:13.145  INFO 17992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-06 13:35:13.151  INFO 17992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 13:35:13.560  INFO 17992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5242ecf6, org.springframework.security.web.context.SecurityContextPersistenceFilter@71ece98a, org.springframework.security.web.header.HeaderWriterFilter@2bb7af3e, org.springframework.security.web.authentication.logout.LogoutFilter@476fa4e, com.pos_main.Service.Utils.JwtCustomFilter@21de15c6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e71674f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b3efe05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e453651, org.springframework.security.web.session.SessionManagementFilter@dbc91fc, org.springframework.security.web.access.ExceptionTranslationFilter@1a25bc17, org.springframework.security.web.access.intercept.AuthorizationFilter@5879329b]
+2025-03-06 13:35:13.898  INFO 17992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-06 13:35:13.944  INFO 17992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6000 (http) with context path ''
+2025-03-06 13:35:13.950  INFO 17992 --- [restartedMain] com.pos_main.PosMainApplication          : Started PosMainApplication in 4.915 seconds (JVM running for 7.729)
+2025-03-06 13:36:22.890  INFO 17992 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 13:36:22.892  INFO 17992 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06 13:36:22.894  INFO 17992 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-06 13:36:22.975  INFO 17992 --- [restartedMain] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.6 on Lathusan-Thurairajah with PID 17992 (D:\Codearson\delta_pos\delta_pos\API\pos_main\target\classes started by Lathu in D:\Codearson\delta_pos\delta_pos\API\pos_main)
+2025-03-06 13:36:22.976  INFO 17992 --- [restartedMain] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-03-06 13:36:23.134  INFO 17992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 13:36:23.143  INFO 17992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2025-03-06 13:36:23.224  INFO 17992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-03-06 13:36:23.224  INFO 17992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06 13:36:23.224  INFO 17992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-06 13:36:23.235  INFO 17992 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06 13:36:23.236  INFO 17992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 259 ms
+2025-03-06 13:36:23.276  INFO 17992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 13:36:23.280  INFO 17992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-03-06 13:36:23.283  INFO 17992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-03-06 13:36:23.283  INFO 17992 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-06 13:36:23.491  INFO 17992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-06 13:36:23.491  INFO 17992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 13:36:23.718  INFO 17992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fb11c2b, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c5c330, org.springframework.security.web.header.HeaderWriterFilter@b58f23b, org.springframework.security.web.authentication.logout.LogoutFilter@404d76, com.pos_main.Service.Utils.JwtCustomFilter@13545bea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f7fa84c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53fa48b2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d98c556, org.springframework.security.web.session.SessionManagementFilter@5b34403e, org.springframework.security.web.access.ExceptionTranslationFilter@3e74aabe, org.springframework.security.web.access.intercept.AuthorizationFilter@63a1c3c3]
+2025-03-06 13:36:23.837  INFO 17992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-06 13:36:23.846  INFO 17992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-06 13:36:23.848  INFO 17992 --- [restartedMain] com.pos_main.PosMainApplication          : Started PosMainApplication in 0.904 seconds (JVM running for 77.628)
+2025-03-06 13:36:23.850  INFO 17992 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-06 14:14:44.092  INFO 17992 --- [RMI TCP Connection(52)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-06 14:14:44.101  INFO 17992 --- [RMI TCP Connection(52)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 14:14:44.102  INFO 17992 --- [RMI TCP Connection(52)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-03-06 14:14:44.103  INFO 17992 --- [RMI TCP Connection(52)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-03-06 14:49:12.350  INFO 4164 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.6 on Lathusan-Thurairajah with PID 4164 (D:\Codearson\delta_pos_be\target\classes started by Lathu in D:\Codearson\delta_pos_be)
+2025-03-06 14:49:12.352  INFO 4164 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: prod
+2025-03-06 14:49:13.350  INFO 4164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 14:49:13.370  INFO 4164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2025-03-06 14:49:13.711  INFO 4164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-03-06 14:49:13.717  INFO 4164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-06 14:49:13.717  INFO 4164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-06 14:49:13.768  INFO 4164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-06 14:49:13.769  INFO 4164 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1389 ms
+2025-03-06 14:49:13.875  INFO 4164 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 14:49:13.907  INFO 4164 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-03-06 14:49:14.010  INFO 4164 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-06 14:49:14.067  INFO 4164 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-06 14:49:15.809  INFO 4164 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-06 14:49:15.819  INFO 4164 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-06 14:49:23.941  INFO 4164 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-06 14:49:23.950  INFO 4164 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 14:49:24.306  INFO 4164 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3bbdf835, org.springframework.security.web.context.SecurityContextPersistenceFilter@153d14e3, org.springframework.security.web.header.HeaderWriterFilter@7f2542f, org.springframework.security.web.authentication.logout.LogoutFilter@7cadf3ca, com.pos_main.Service.Utils.JwtCustomFilter@1f365a26, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11cdf948, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fd8b081, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d114d27, org.springframework.security.web.session.SessionManagementFilter@7eea934d, org.springframework.security.web.access.ExceptionTranslationFilter@870a9f2, org.springframework.security.web.access.intercept.AuthorizationFilter@2cb53bfc]
+2025-03-06 14:49:24.599  INFO 4164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-06 14:49:24.606  INFO 4164 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 12.538 seconds (JVM running for 12.949)
+2025-03-06 14:50:05.197  INFO 4164 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-06 14:50:05.209  INFO 4164 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 14:50:05.210  INFO 4164 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-06 14:50:05.214  INFO 4164 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
