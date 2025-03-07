@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class TaxDto {
-	
-	private Integer id;
-	private double taxPercentage;
-	private Boolean isActive;
-	
+    
+    private Integer id;
+    private Double taxPercentage; // Changed from Integer to Double
+    private Boolean isActive;
+    
 }
