@@ -165,6 +165,8 @@ public interface ApplicationMessageConstants {
         String EX_UPDATE_CUSTOMER_STATUS = "ex.update.customer.status";
         String ERR_RETRIEVE_ALL_USERROLE_DETAILS = "err.get.all.user.details";
 		String EX_RETRIEVE_ALL_USERROLE_DETAILS = "ex.get.all.user.details";
+		String ERR_SAVE_COUNTRY_DETAILS = "err.save.country.details";
+        String EX_SAVE_COUNTRY_DETAILS = "ex.save.country.details";
 		
 	}
 }

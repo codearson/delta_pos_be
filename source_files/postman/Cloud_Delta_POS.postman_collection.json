@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "cda00f90-7235-4092-83d3-18d76644bd10",
+		"_postman_id": "4d71885c-29e4-4ae0-85a7-b3b10b975250",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41171280"
+		"_exporter_id": "41170782"
 	},
 	"item": [
 		{
@@ -1547,7 +1547,10 @@
 					"name": "updateStatus",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -2698,7 +2701,10 @@
 					"name": "getById",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -2744,7 +2750,10 @@
 					"name": "getAll",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -2881,6 +2890,84 @@
 							"path": [
 								"shifts",
 								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMzQxNzk5fQ.Ypfw7ae9eYd6NI4cU5QWdJkSylgATV3ejz4t0QjPPz5K8Fgif96e0dw94uTPXT3x",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"countryName\":\"UK\",\r\n    \"priceSymbol\":\"€\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/country/save",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"country",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMzQxNzk5fQ.Ypfw7ae9eYd6NI4cU5QWdJkSylgATV3ejz4t0QjPPz5K8Fgif96e0dw94uTPXT3x",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/country/getAll",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"country",
+								"getAll"
 							]
 						}
 					},
