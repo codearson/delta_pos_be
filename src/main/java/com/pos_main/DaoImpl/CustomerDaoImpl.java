@@ -186,7 +186,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 	public List<CustomerDto> getAllCustomer() {
 		log.info("CustomerDaoImpl.getAllCustomer() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Customer.class, "customer");
-	 	criteria.add(Restrictions.eq("isActive", true));
+//	 	criteria.add(Restrictions.eq("isActive", true));
 		List<CustomerDto> customerDtoList = null;
 		List<Customer> customerList = (List<Customer>) criteria.list();
 		if (customerList != null && !customerList.isEmpty()) {

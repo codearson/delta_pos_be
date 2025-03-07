@@ -43,7 +43,7 @@ public class ProductCategoryDaoImpl extends BaseDaoImpl<ProductCategory> impleme
 		Criteria criteria = getCurrentSession().createCriteria(ProductCategory.class, "productCategory");
 		
 		// Next line using for filter only active product Category
-		criteria.add(Restrictions.eq("isActive", true));
+//		criteria.add(Restrictions.eq("isActive", true));
 		
 		List<ProductCategoryDto> productCategoryDtoList = null;
 		List<ProductCategory> productCategoryList = (List<ProductCategory>) criteria.list();

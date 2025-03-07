@@ -90,14 +90,13 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
     @Override
     @Transactional
     public List<TaxDto> getAll() {
-        log.info("TaxDaoImpl.getAll() invoked"); // Fixed typo 'gellAll'
+        log.info("TaxDaoImpl.getAll() invoked");
         
         CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
         CriteriaQuery<Tax> cq = cb.createQuery(Tax.class);
         Root<Tax> root = cq.from(Tax.class);
         
-        cq.select(root)
-            .where(cb.equal(root.get("isActive"), true));
+        cq.select(root);
         
         List<Tax> taxList = getCurrentSession().createQuery(cq).getResultList();
         return taxList.stream()

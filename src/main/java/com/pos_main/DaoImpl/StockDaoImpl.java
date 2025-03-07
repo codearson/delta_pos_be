@@ -70,7 +70,7 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao{
 	public List<StockDto> getAllStock() {
 		log.info("StockDaoImpl.getAllStock() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Stock.class, "stock");
-	 	criteria.add(Restrictions.eq("isActive", true));
+//	 	criteria.add(Restrictions.eq("isActive", true));
 		List<StockDto> stockDtoList = null;
 		List<Stock> stockList = (List<Stock>) criteria.list();
 		if (stockList != null && !stockList.isEmpty()) {
