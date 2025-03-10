@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4d71885c-29e4-4ae0-85a7-b3b10b975250",
+		"_postman_id": "b9c62f40-1348-40ab-a6e6-a8cac50f6347",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41170782"
+		"_exporter_id": "40723516"
 	},
 	"item": [
 		{
@@ -403,6 +403,52 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxNjMzNjAyfQ.J6WlX2jIUGgPSwAEnn3GBwcrA1iZgof1U6L70DwjQBDXiCAGlzwhpliizBmL9oPN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/user/updatePassword?userId=4&password=Bavi123&changedByUserId=1",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"user",
+								"updatePassword"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "4"
+								},
+								{
+									"key": "password",
+									"value": "Bavi123"
+								},
+								{
+									"key": "changedByUserId",
+									"value": "1"
 								}
 							]
 						}

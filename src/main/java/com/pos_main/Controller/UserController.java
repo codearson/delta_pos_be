@@ -98,6 +98,13 @@ public class UserController {
 		return userService.updateUserStatus(userId, status);
 	}
 	
+	@PutMapping("/updatePassword")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseDto updatePassword(@RequestParam("userId") Integer userId, @RequestParam("password") String password, @RequestParam("changedByUserId") Integer changedByUserId) {
+	    log.info("UserController.updatePassword() invoked.");
+	    return userService.updatePassword(userId, password, changedByUserId);
+	}
+	
 	@GetMapping("/getByEmailAddress")
 	public ResponseDto getUserByEmailAddress(@RequestParam("emailAddress") String emailAddress) {
 	    log.info("UserController.getUserByEmailAddress() invoked with emailAddress", emailAddress);

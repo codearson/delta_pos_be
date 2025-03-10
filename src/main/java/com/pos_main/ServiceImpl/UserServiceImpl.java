@@ -206,6 +206,28 @@ public class UserServiceImpl implements UserService {
 		return responseDto;
 	}
 	
+	@Override
+	public ResponseDto updatePassword(Integer userId, String password, Integer changedByUserId) {
+	    log.info("UserServiceImpl.updatePassword() invoked");
+	    ResponseDto responseDto = null;
+	    try {
+	        UserDto updatedUserPasswordDto = userServiceBL.updatePassword(userId, password, changedByUserId);
+	        if (updatedUserPasswordDto != null) {
+	            log.info("User Password updated.");
+	            responseDto = serviceUtil.getServiceResponse(updatedUserPasswordDto);
+	        } else {
+	            log.info("Unable to update User Password.");
+	            responseDto = serviceUtil.getErrorServiceResponse(
+	                ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_USER_PASSWORD);
+	        }
+	    } catch (Exception e) {
+	        log.error("Exception occurs while updating User password.", e);
+	        responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+	            ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_USER_PASSWORD);
+	    }
+	    return responseDto;
+	}
+	
 	@Transactional
 	@Override
 	public ResponseDto getUserByEmailAddress(String emailAddress) {

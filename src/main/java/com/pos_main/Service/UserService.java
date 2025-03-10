@@ -30,6 +30,8 @@ public interface UserService {
 	
 	public ResponseDto updateUserStatus(Integer userId, Boolean status);
 	
+	public ResponseDto updatePassword(Integer userId, String password, Integer changedByUserId);
+	
 	public ResponseDto getUserByEmailAddress(String emailAddress);
 
 }
