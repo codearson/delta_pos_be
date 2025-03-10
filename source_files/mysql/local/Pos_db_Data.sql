@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: pos_db
 -- ------------------------------------------------------
--- Server version	8.3.0
+-- Server version	8.0.41
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,6 +23,16 @@ LOCK TABLES `branch` WRITE;
 /*!40000 ALTER TABLE `branch` DISABLE KEYS */;
 INSERT INTO `branch` VALUES (1,'No. 1, Galle Road','Col001','Kfc Colombo','0212223447','kfc.colombo@gmail.com',_binary ''),(2,'No. 12, Peradeniya Road','Kan001','Kfc Kandy','0212223448','kfc.kandy@gmail.com',_binary ''),(3,'No. 45, Stanley Road','Jan001','Kfc Jaffna','0212223449','kfc.jaffna@gmail.com',_binary ''),(4,'No. 77, Lighthouse Street','Gal001','Kfc Galle','0212223450','kfc.galle@gmail.com',_binary ''),(5,'No. 30, Trinco Road','Bat001','Kfc Batticaloa','0212223451','kfc.batticaloa@gmail.com',_binary '');
 /*!40000 ALTER TABLE `branch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `country`
+--
+
+LOCK TABLES `country` WRITE;
+/*!40000 ALTER TABLE `country` DISABLE KEYS */;
+INSERT INTO `country` VALUES (1,'Srilanka','LKR'),(2,'US','$'),(3,'UK','€');
+/*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -223,4 +233,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-06 17:09:54
+-- Dump completed on 2025-03-07 16:02:47

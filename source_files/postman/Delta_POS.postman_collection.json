@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "7beb09d4-c027-4f52-87d9-0ef0bf40dfd2",
+		"_postman_id": "c822e15d-08f0-4ef5-82f3-d0bb744f9f3b",
 		"name": "Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "9802460",
-		"_collection_link": "https://grey-spaceship-295309.postman.co/workspace/New-Team-Workspace~782a63dc-aca7-4d20-a281-4dd8d062cbff/collection/9802460-7beb09d4-c027-4f52-87d9-0ef0bf40dfd2?action=share&source=collection_link&creator=9802460"
+		"_exporter_id": "41170782"
 	},
 	"item": [
 		{
@@ -2684,6 +2683,80 @@
 							"path": [
 								"purchaseList",
 								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMzQxNzk5fQ.Ypfw7ae9eYd6NI4cU5QWdJkSylgATV3ejz4t0QjPPz5K8Fgif96e0dw94uTPXT3x",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"countryName\":\"UK\",\r\n    \"priceSymbol\":\"€\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/country/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"country",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMzQxNzk5fQ.Ypfw7ae9eYd6NI4cU5QWdJkSylgATV3ejz4t0QjPPz5K8Fgif96e0dw94uTPXT3x",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/country/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"country",
+								"getAll"
 							]
 						}
 					},

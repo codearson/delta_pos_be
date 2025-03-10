@@ -128,7 +128,7 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 	public List<SupplierDto> getAllSupplier() {
 		log.info("SupplierDaoImpl.getAllSupplier() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Supplier.class, "supplier");
-	 	criteria.add(Restrictions.eq("isActive", true));
+//	 	criteria.add(Restrictions.eq("isActive", true));
 		List<SupplierDto> supplierDtoList = null;
 		List<Supplier> supplierList = (List<Supplier>) criteria.list();
 		if (supplierList != null && !supplierList.isEmpty()) {

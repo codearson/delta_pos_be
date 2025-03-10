@@ -86,7 +86,7 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
 	public List<ProductDto> getAllProducts() {
 		log.info("ProductDaoImpl.getAllProducts() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
-	 	criteria.add(Restrictions.eq("isActive", true));
+//	 	criteria.add(Restrictions.eq("isActive", true));
 		List<ProductDto> productDtoList = null;
 		List<Product> productList = (List<Product>) criteria.list();
 		if (productList != null && !productList.isEmpty()) {
