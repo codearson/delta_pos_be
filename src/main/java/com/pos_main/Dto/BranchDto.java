@@ -21,5 +21,6 @@ public class BranchDto {
 	private String emailAddress;
 	private String branchCode;
 	private Boolean isActive;
+	private CountryDto countryDto;
 	
 }
