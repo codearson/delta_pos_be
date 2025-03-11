@@ -79,7 +79,7 @@ public class BranchDaoImpl extends BaseDaoImpl<Branch> implements BranchDao {
 	public List<BranchDto> getAllBranches() {
 		log.info("BranchDaoImpl.gellAllBranches() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Branch.class, "branch");
-	 	criteria.add(Restrictions.eq("isActive", true));
+//	 	criteria.add(Restrictions.eq("isActive", true));
 		List<BranchDto> branchDtoList = null;
 		List<Branch> branchList = (List<Branch>) criteria.list();
 		if (branchList != null && !branchList.isEmpty()) {
