@@ -6,6 +6,7 @@ import com.pos_main.Dto.JwtResponseDto;
 import com.pos_main.Dto.LoginRequestDto;
 import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Exception.EmailDuplicationException;
+import com.pos_main.Service.EmailService;
 import com.pos_main.Service.Utils.JwtUtil;
 
 import java.util.List;
@@ -44,6 +45,9 @@ public class UserServiceBL {
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
+	@Autowired
+    private EmailService emailService;
 
 	public UserDto saveUser(UserDto userDto) {
 		log.info("UserServiceBL.saveUser() invoked.");
@@ -112,6 +116,34 @@ public class UserServiceBL {
 		} else {
 			return null;
 		}
+	}
+	
+	public UserDto updatePassword(Integer userId, String password, Integer changedByUserId) {
+	    UserDto userDto = userDao.checkUserAvailability(userId);
+	    if (userDto != null) {
+	        UserDto adminUser = userDao.checkUserAvailability(changedByUserId);
+	        if (adminUser != null) {
+	            String encodedPassword = passwordEncoder.encode(password);
+	            userDto.setPassword(encodedPassword);
+	            
+	            UserDto updatedUser = userDao.update(userDto);
+	            if (updatedUser != null) {
+	                String emailText = String.format(
+	                    "Your password has been changed by %s.\n" +
+	                    "Your new password is: %s",
+	                    adminUser.getFirstName(),
+	                    password
+	                );
+	                emailService.sendEmail(
+	                    userDto.getEmailAddress(),
+	                    "Password Change Notification",
+	                    emailText
+	                );
+	                return updatedUser;
+	            }
+	        }
+	    }
+	    return null;
 	}
 	
 	public List<UserDto> getUserByEmailAddress(String emailAddress) {

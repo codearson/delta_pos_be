@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c822e15d-08f0-4ef5-82f3-d0bb744f9f3b",
+		"_postman_id": "571a48d6-7cf3-4a69-a926-78ece5a9322a",
 		"name": "Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41170782"
+		"_exporter_id": "40723516"
 	},
 	"item": [
 		{
@@ -343,6 +343,90 @@
 								{
 									"key": "emailAddress",
 									"value": "lathusanthurairajah@codearson.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxNjI3MzY2fQ.O_kZ6qbKZJ2MmYqu4PO0wO4Fd_h1td5RATgijIQYplYDmtFNOa2JhV1Uk5WkMnS2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/getAll?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxNjMzNjAyfQ.J6WlX2jIUGgPSwAEnn3GBwcrA1iZgof1U6L70DwjQBDXiCAGlzwhpliizBmL9oPN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/updatePassword?userId=4&password=Bavi123&changedByUserId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"updatePassword"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "4"
+								},
+								{
+									"key": "password",
+									"value": "Bavi123"
+								},
+								{
+									"key": "changedByUserId",
+									"value": "1"
 								}
 							]
 						}
