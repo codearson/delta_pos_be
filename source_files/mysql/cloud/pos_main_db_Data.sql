@@ -21,8 +21,18 @@
 
 LOCK TABLES `branch` WRITE;
 /*!40000 ALTER TABLE `branch` DISABLE KEYS */;
-INSERT INTO `branch` VALUES (1,'No. 1, Galle Road','Col001','Kfc Colombo','0212223447','kfc.colombo@gmail.com',NULL),(2,'No. 12, Peradeniya Road','Kan001','Kfc Kandy','0212223448','kfc.kandy@gmail.com',NULL),(3,'No. 45, Stanley Road','Jan001','Kfc Jaffna','0212223449','kfc.jaffna@gmail.com',NULL),(4,'No. 77, Lighthouse Street','Gal001','Kfc Galle','0212223450','kfc.galle@gmail.com',NULL),(5,'No. 30, Trinco Road','Bat001','Kfc Batticaloa','0212223451','kfc.batticaloa@gmail.com',NULL);
+INSERT INTO `branch` VALUES (1,'No. 1, Galle Road','Col002','Kfc Colombo','0212223447','kfc.colombo@gmail.com',_binary '',1),(2,'No. 12, London Road','Lon001','Kfc London','441589522562','kfc.london@gmail.com',_binary '',3),(3,'No. 45, Stanley Road','Jan001','Kfc Jaffna','0212223449','kfc.jaffna@gmail.com',_binary '',1),(4,'No. 77, Lighthouse Street','Gal001','Kfc Galle','0212223450','kfc.galle@gmail.com',_binary '',1),(5,'No. 30, Trinco Road','Bat001','Kfc Batticaloa','0212223451','kfc.batticaloa@gmail.com',_binary '',1);
 /*!40000 ALTER TABLE `branch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `country`
+--
+
+LOCK TABLES `country` WRITE;
+/*!40000 ALTER TABLE `country` DISABLE KEYS */;
+INSERT INTO `country` VALUES (1,'Srilanka','LKR'),(2,'United States','$'),(3,'United Kingdom','€');
+/*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -51,7 +61,6 @@ UNLOCK TABLES;
 
 LOCK TABLES `password_reset_token` WRITE;
 /*!40000 ALTER TABLE `password_reset_token` DISABLE KEYS */;
-INSERT INTO `password_reset_token` VALUES (1,'2025-02-20 17:26:15','cac53cc1-6db4-4bd3-a107-cdd4d1f01b2a',4),(2,'2025-02-20 17:37:11','815fac85-87b7-4f84-81a3-fd78f89376ee',4),(3,'2025-02-20 17:40:08','2jrs60',4),(4,'2025-02-20 17:41:06','CE2LDV',4),(5,'2025-02-20 17:45:43','GUTE77',4),(6,'2025-02-21 01:35:00','5VLK2P',4);
 /*!40000 ALTER TABLE `password_reset_token` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +80,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'48200123456','2025-01-21 18:24:10',_binary '','Coca-Cola',550,1,1,'2025-06-21 00:00:00',10,450,50),(2,'48200198765','2025-01-21 18:25:08',_binary '','Pepsi',550,1,1,'2025-05-05 00:00:00',15,425,60),(3,'67283455678','2025-01-21 18:26:03',_binary '','Fries',1200,2,2,'2025-08-25 00:00:00',10,1000,45),(4,'84726583901','2025-01-21 18:26:46',_binary '','Chicken Wings',2000,4,3,'2025-04-18 00:00:00',12,1800,25),(5,'12897634578','2025-01-21 18:27:54',_binary '','Zinger Burger',2400,3,3,'2026-01-17 00:00:00',15,2300,10),(6,'57283669266','2025-01-21 18:28:19',_binary '','Double Cheese Burger',2600,3,3,'2025-06-28 00:00:00',10,2480,89),(7,'98200123856','2025-01-21 18:29:06',_binary '','Chocolate Sundae',1100,5,2,'2025-07-21 00:00:00',8,975,32),(8,'98200983745','2025-01-21 18:29:30',_binary '','Strawberry Sundae',1100,5,2,'2025-12-30 00:00:00',5,950,15),(9,'29384712345','2025-01-21 18:30:03',_binary '','Spicy Chicken Bucket',5500,4,4,'2025-05-08 00:00:00',10,1000,81),(10,'48392056789','2025-01-21 18:30:35',_binary '','Popcorn Chicken',2400,4,3,'2025-03-24 00:00:00',15,2250,27),(11,'50583841666','2025-02-16 23:30:35',_binary '','Seven Up',2,1,2,'2025-07-24 23:59:59',12,1680,47),(12,'48392056555','2025-02-22 11:30:16',_binary '','DR Pepper',500,4,3,'2025-12-31 23:59:59',6,450.5,10);
+INSERT INTO `product` VALUES (1,'48200123456','2025-01-21 18:24:10',_binary '','Coca-Cola',550,1,1,'2025-06-21 00:00:00',10,450,50),(2,'48200198765','2025-03-06 12:47:09',_binary '','Pepsi',550,1,1,'2025-12-31 23:59:59',15,425,0),(3,'67283455678','2025-01-21 18:26:03',_binary '','Fries',1200,2,2,'2025-08-25 00:00:00',10,1000,45),(4,'84726583901','2025-01-21 18:26:46',_binary '','Chicken Wings',2000,4,3,'2025-04-18 00:00:00',12,1800,25),(5,'12897634578','2025-01-21 18:27:54',_binary '','Zinger Burger',2400,3,3,'2026-01-17 00:00:00',15,2300,10),(6,'57283669266','2025-03-06 15:59:04',_binary '','Double Cheese Burger',2600,3,3,'2025-12-31 23:59:59',10,2480,13),(7,'98200123856','2025-01-21 18:29:06',_binary '\0','Chocolate Sundae',1100,5,2,'2025-07-21 00:00:00',8,975,32),(8,'98200983745','2025-03-06 12:43:26',_binary '','Strawberry Sundae',1100,5,2,'2025-12-31 23:59:59',5,950,0),(9,'29384712345','2025-01-21 18:30:03',_binary '','Spicy Chicken Bucket',5500,4,4,'2025-05-08 00:00:00',10,1000,81),(10,'48392056789','2025-03-07 19:23:22',_binary '\0','Popcorn Chicken',2400,4,3,'2025-12-31 23:59:59',15,2245,27),(11,'50583841666','2025-03-06 17:43:03',_binary '','Seven Up',2120.25,1,2,'2025-12-31 23:59:59',12,1680,47),(12,'48392056555','2025-03-06 12:40:56',_binary '','DR Pepper',500,4,3,'2025-12-31 23:59:59',15,450.5,10);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,8 +90,17 @@ UNLOCK TABLES;
 
 LOCK TABLES `product_category` WRITE;
 /*!40000 ALTER TABLE `product_category` DISABLE KEYS */;
-INSERT INTO `product_category` VALUES (1,_binary '','Soft Drinks'),(2,_binary '','Snacks'),(3,_binary '','Burgers'),(4,_binary '','Chicken Items'),(5,_binary '','Desserts');
+INSERT INTO `product_category` VALUES (1,_binary '','Soft Drinks'),(2,_binary '','Snacks'),(3,_binary '','Burgers'),(4,_binary '\0','Chicken Items'),(5,_binary '','Desserts'),(6,_binary '','Fruits');
 /*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `purchase_list`
+--
+
+LOCK TABLES `purchase_list` WRITE;
+/*!40000 ALTER TABLE `purchase_list` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchase_list` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -121,7 +139,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `supplier` WRITE;
 /*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
-INSERT INTO `supplier` VALUES (1,'2025-01-21 18:44:57','chickenco@gmail.com',_binary '','0761234567','Fresh Chicken Co.','0751234567'),(2,'2025-01-21 18:48:17','packaging@gmail.com',_binary '','0784567890','Packaging Masters','0774567890'),(3,'2025-01-21 18:46:22','beveragesup@gmail.com',_binary '','0779876543','Beverage Suppliers','0769876543'),(4,'2025-01-21 18:49:14','spicespremium@gmail.com',_binary '','0712345678','Premium Spices Ltd','0702345678'),(5,'2025-01-21 18:49:55','dairydelights@gmail.com',_binary '','0725678901','Dairy Delights','0715678901');
+INSERT INTO `supplier` VALUES (1,'2025-01-21 18:44:57','chickenco@gmail.com',_binary '','0761234567','Fresh Chicken Co.','0751234567'),(2,'2025-01-21 18:48:17','packaging@gmail.com',_binary '','0784567890','Packaging Masters','0774567890'),(3,'2025-01-21 18:46:22','beveragesup@gmail.com',_binary '','0779876543','Beverage Suppliers','0769876543'),(4,'2025-03-08 00:34:46','spicespremium@gmail.com',_binary '','0712345677','Premium Spices Ltd','0702345600'),(5,'2025-03-07 21:00:19','dairydelights@gmail.com',_binary '','0725678901','Dairy Delights','0715678901'),(6,'2025-03-07 21:00:15','uthaman@gmail.com',_binary '\0','0745755525','Prusoth','0774858965');
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +149,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `tax` WRITE;
 /*!40000 ALTER TABLE `tax` DISABLE KEYS */;
-INSERT INTO `tax` VALUES (1,_binary '',5),(2,_binary '',10),(3,_binary '',15),(4,_binary '',20),(5,_binary '',25);
+INSERT INTO `tax` VALUES (1,_binary '',5),(2,_binary '',10),(3,_binary '',15),(4,_binary '\0',20),(5,_binary '',25),(6,_binary '',30),(7,_binary '\0',7);
 /*!40000 ALTER TABLE `tax` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +189,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Jaffna','Lathusan',_binary '','Thurairajah','076121266','$2a$10$fje4amNbEEQfTvzYNMSPBOo3/fuz4eMIOZHJaLF4sknnwSa6yyNRO',1,'lathusanthurairajah@codearson.com',NULL),(2,'Colombo','Vinothini',_binary '','Sathithyaseelan','076261862','$2a$10$AG71q.p3jWxX5YmhPUCzEOZmT6Kbfbw3MOLxnlbw4kknqv99WojCu',2,'svinothini96s@gmail.com',NULL),(3,'Colombo','Saravanan',_binary '','Guganathan','0765639528','$2a$10$o38YxJEgLvFOADxsHIQ1fu9NEoOC01IdjHU51cjFXTEaGWlzYGd4W',3,'saravanan.g@codearson.com','2025-01-21 19:29:19'),(4,'Jaffna','Bavithragithan',_binary '','Kuganesan','076261862','$2a$10$PNny.kLUlMkwAf2e9wAVJ.cAiEM9hAGlKVN/Q32Fq6GpsU7q/c7R6',2,'skbavi61@gmail.com','2025-02-20 16:36:24');
+INSERT INTO `user` VALUES (1,'Jaffna','2025-01-21 19:29:19','lathusanthurairajah@codearson.com','Lathusan',_binary '','Thurairajah','076121266','$2a$10$fje4amNbEEQfTvzYNMSPBOo3/fuz4eMIOZHJaLF4sknnwSa6yyNRO',1,1),(2,'Colombo','2025-01-21 19:29:19','svinothini96s@gmail.com','Vinothini',_binary '','Sathithyaseelan','076261862','$2a$10$AG71q.p3jWxX5YmhPUCzEOZmT6Kbfbw3MOLxnlbw4kknqv99WojCu',2,2),(3,'Colombo','2025-01-21 19:29:19','saravanan.g@codearson.com','Saravanan',_binary '','Guganathan','0765639528','$2a$10$o38YxJEgLvFOADxsHIQ1fu9NEoOC01IdjHU51cjFXTEaGWlzYGd4W',5,3),(4,'Jaffna','2025-02-20 16:36:24','skbavi61@gmail.com','Bavithragithan',_binary '','Kuganesan','076261862','$2a$10$PNny.kLUlMkwAf2e9wAVJ.cAiEM9hAGlKVN/Q32Fq6GpsU7q/c7R6',1,2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-24 19:49:27
+-- Dump completed on 2025-03-11 23:18:45

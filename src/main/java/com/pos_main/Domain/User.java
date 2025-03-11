@@ -52,5 +52,8 @@ public class User implements Serializable{
 	@JoinColumn(name = "userRoleId", referencedColumnName = "id")
 	@ManyToOne(optional = false)
 	private UserRole userRole;
+	@JoinColumn(name = "branchId", referencedColumnName = "id")
+	@ManyToOne(optional = false)
+	private Branch branch;
 	
 }
