@@ -1,5 +1,6 @@
 package com.pos_main.Transformer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pos_main.Domain.Branch;
@@ -17,6 +18,9 @@ import com.pos_main.Dto.BranchDto;
 @Component
 public class BranchTransformer implements BaseTransformer<Branch, BranchDto> {
 	
+	@Autowired
+	CountryTransformer countryTransformer;
+	
 	@Override
 	public BranchDto transform(Branch branch) {
 		BranchDto branchDto = null;
@@ -29,6 +33,9 @@ public class BranchTransformer implements BaseTransformer<Branch, BranchDto> {
 			branchDto.setEmailAddress(branch.getEmailAddress());
 			branchDto.setBranchCode(branch.getBranchCode());
 			branchDto.setIsActive(branch.getIsActive());
+			if (branch.getCountry() != null) {
+				branchDto.setCountryDto(countryTransformer.transform(branch.getCountry()));
+			}
 		}
 		return branchDto;
 	}
@@ -45,6 +52,10 @@ public class BranchTransformer implements BaseTransformer<Branch, BranchDto> {
 			branch.setEmailAddress(branchDto.getEmailAddress());
 			branch.setBranchCode(branchDto.getBranchCode());
 			branch.setIsActive(branchDto.getIsActive());
+			if (branchDto.getCountryDto() != null) {
+				branch.setCountry(
+						countryTransformer.reverseTransform(branchDto.getCountryDto()));
+			}
 		}
 		return branch;
 	}

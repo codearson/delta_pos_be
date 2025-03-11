@@ -23,5 +23,6 @@ public class UserDto {
 	private LocalDateTime createdDate;
 	private Boolean isActive;
 	private UserRoleDto userRoleDto;
+	private BranchDto branchDto;
 
 }

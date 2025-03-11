@@ -1,6 +1,5 @@
 package com.pos_main.Transformer;
 
-import com.pos_main.Dto.JwtResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +17,9 @@ public class UserTransfomer implements BaseTransformer<User, UserDto> {
 
 	@Autowired
 	UserRoleTransfomer userRoleTransfomer;
+	
+	@Autowired
+	BranchTransformer branchTransformer;
 
 	@Override
 	public UserDto transform(User user) {
@@ -35,6 +37,9 @@ public class UserTransfomer implements BaseTransformer<User, UserDto> {
 			userDto.setIsActive(user.getIsActive());
 			if (user.getUserRole() != null) {
 				userDto.setUserRoleDto(userRoleTransfomer.transform(user.getUserRole()));
+			}
+			if (user.getBranch() != null) {
+				userDto.setBranchDto(branchTransformer.transform(user.getBranch()));
 			}
 		}
 		return userDto;
@@ -56,6 +61,9 @@ public class UserTransfomer implements BaseTransformer<User, UserDto> {
 			user.setIsActive(userDto.getIsActive());
 			if (userDto.getUserRoleDto() != null) {
 				user.setUserRole(userRoleTransfomer.reverseTransform(userDto.getUserRoleDto()));
+			}
+			if (userDto.getBranchDto() != null) {
+				user.setBranch(branchTransformer.reverseTransform(userDto.getBranchDto()));
 			}
 		}
 		return user;
