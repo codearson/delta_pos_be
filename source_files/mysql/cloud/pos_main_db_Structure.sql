@@ -30,8 +30,26 @@ CREATE TABLE `branch` (
   `contact_number` varchar(255) DEFAULT NULL,
   `email_address` varchar(255) DEFAULT NULL,
   `is_active` bit(1) DEFAULT NULL,
+  `country_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK3vl5jamdhb1s3p7lgssx2h39h` (`country_id`),
+  CONSTRAINT `FK3vl5jamdhb1s3p7lgssx2h39h` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `country`
+--
+
+DROP TABLE IF EXISTS `country`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `country` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `country_name` varchar(255) NOT NULL,
+  `price_symbol` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +66,7 @@ CREATE TABLE `customer` (
   `mobile_number` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +100,7 @@ CREATE TABLE `password_reset_token` (
   UNIQUE KEY `UK_g0guo4k8krgpwuagos61oc06j` (`token`),
   KEY `FK5lwtbncug84d4ero33v3cfxvl` (`user_id`),
   CONSTRAINT `FK5lwtbncug84d4ero33v3cfxvl` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +158,22 @@ CREATE TABLE `product_category` (
   `is_active` bit(1) DEFAULT NULL,
   `product_category_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `purchase_list`
+--
+
+DROP TABLE IF EXISTS `purchase_list`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `purchase_list` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `barcode` varchar(255) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +254,7 @@ CREATE TABLE `supplier` (
   `name` varchar(255) DEFAULT NULL,
   `whatsapp_number` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,7 +269,7 @@ CREATE TABLE `tax` (
   `is_active` bit(1) DEFAULT NULL,
   `taxpercentage` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,16 +354,19 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `address` varchar(255) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `email_address` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `is_active` bit(1) DEFAULT NULL,
   `last_name` varchar(255) NOT NULL,
   `mobile_number` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `branch_id` int NOT NULL,
   `user_role_id` int NOT NULL,
-  `email_address` varchar(255) NOT NULL,
-  `created_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
+  KEY `FK9yy0ya980j002yvtxi9r7kv6b` (`branch_id`),
   KEY `FKh2wc2dtfdo8maylne7mgubowq` (`user_role_id`),
+  CONSTRAINT `FK9yy0ya980j002yvtxi9r7kv6b` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`),
   CONSTRAINT `FKh2wc2dtfdo8maylne7mgubowq` FOREIGN KEY (`user_role_id`) REFERENCES `user_role` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -379,4 +415,4 @@ CREATE TABLE `user_role` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-24 19:48:48
+-- Dump completed on 2025-03-11 23:18:01
