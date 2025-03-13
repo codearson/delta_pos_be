@@ -93,17 +93,24 @@ public class TransactionServiceBL {
 	                Double amountForProduct = (double) ((details.getUnitPrice() * details.getQuantity()) - details.getDiscount());
 	                totalAmount += amountForProduct;
 
-	                Integer newQuantity = productDto.getQuantity() - details.getQuantity();
-	                if (newQuantity < 0) {
-	                    log.info("Not enough stock for productId: " + productId);
-	                    throw new IllegalArgumentException("Insufficient stock for product ID: " + productId);
+	                boolean isCustomCategory = productDto.getProductCategoryDto() != null && 
+	                    "Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName());
+
+	                if (!isCustomCategory) { 
+	                    Integer newQuantity = productDto.getQuantity() - details.getQuantity();
+	                    if (newQuantity < 0) {
+	                        log.info("Not enough stock for productId: " + productId);
+	                        throw new IllegalArgumentException("Insufficient stock for product ID: " + productId);
+	                    }
+	                    if (newQuantity <= productDto.getLowStock()) {
+	                        alertMessage = "ALERT: Product '" + productDto.getName() + "' (ID: " + productDto.getId() + ") is low on stock. Remaining quantity: " + newQuantity;
+	                        log.info(alertMessage);
+	                    }
+	                    productDto.setQuantity(newQuantity);
+	                    productDao.updateProduct(productDto);
+	                } else {
+	                    log.info("Skipping quantity update for Custom category productId: " + productId);
 	                }
-	                if (newQuantity <= productDto.getLowStock()) {
-	                    alertMessage = "ALERT: Product '" + productDto.getName() + "' (ID: " + productDto.getId() + ") is low on stock. Remaining quantity: " + newQuantity;
-	                    log.info(alertMessage);
-	                }
-	                productDto.setQuantity(newQuantity);
-	                productDao.updateProduct(productDto);
 	            } else {
 	                log.info("Product not found for productId: " + productId);
 	            }
