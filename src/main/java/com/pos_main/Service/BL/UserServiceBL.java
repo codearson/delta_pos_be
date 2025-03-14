@@ -103,8 +103,8 @@ public class UserServiceBL {
 	
 	public UserDto updateUserDetails(UserDto userDto) {
 	    log.info("UserServiceBL.updateUserDetails() invoked.");
-	    String encodedPassword = passwordEncoder.encode(userDto.getPassword());
-		userDto.setPassword(encodedPassword);
+//	    String encodedPassword = passwordEncoder.encode(userDto.getPassword());
+//		userDto.setPassword(encodedPassword);
 	    return userDao.update(userDto);
 	}
 	
