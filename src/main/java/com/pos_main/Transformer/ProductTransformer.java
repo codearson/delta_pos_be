@@ -38,7 +38,6 @@ public class ProductTransformer implements BaseTransformer<Product, ProductDto> 
 			if (product.getProductCategory() != null) {
 				productDto.setProductCategoryDto(productCategoryTransfomer.transform(product.getProductCategory()));
 			}
-			productDto.setExpiryDate(product.getExpiryDate());
 			productDto.setQuantity(product.getQuantity());
 			productDto.setLowStock(product.getLowStock());
 			productDto.setPurchasePrice(product.getPurchasePrice());
@@ -65,7 +64,6 @@ public class ProductTransformer implements BaseTransformer<Product, ProductDto> 
 				product.setProductCategory(
 						productCategoryTransfomer.reverseTransform(productDto.getProductCategoryDto()));
 			}
-			product.setExpiryDate(productDto.getExpiryDate());
 			product.setQuantity(productDto.getQuantity());
 			product.setLowStock(productDto.getLowStock());
 			product.setPurchasePrice(productDto.getPurchasePrice());

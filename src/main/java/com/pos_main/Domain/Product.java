@@ -47,8 +47,6 @@ public class Product implements Serializable {
 	@JoinColumn(name = "productCategory", referencedColumnName = "id")
 	@ManyToOne(optional = false)
 	private ProductCategory productCategory;
-	@Column(name =  "expiryDate")
-	private LocalDateTime expiryDate;
 	@Column(name =  "quantity")
 	private Integer quantity;
 	@Column(name =  "lowStock")
