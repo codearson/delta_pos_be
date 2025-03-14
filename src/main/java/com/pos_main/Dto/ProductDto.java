@@ -21,7 +21,6 @@ public class ProductDto {
 	private LocalDateTime createdDate;
 	private Boolean isActive;
 	private ProductCategoryDto productCategoryDto;
-	private LocalDateTime expiryDate;
 	private Integer quantity;
 	private Integer lowStock;
 	private Double purchasePrice;
