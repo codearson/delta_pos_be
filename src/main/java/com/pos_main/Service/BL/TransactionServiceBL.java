@@ -88,9 +88,7 @@ public class TransactionServiceBL {
 	            if (productList != null && !productList.isEmpty()) {
 	                ProductDto productDto = productList.get(0);
 
-	                details.setUnitPrice(productDto.getPricePerUnit());
-
-	                Double amountForProduct = (double) ((details.getUnitPrice() * details.getQuantity()) - details.getDiscount());
+	                Double amountForProduct = (double) ((productDto.getPricePerUnit() * details.getQuantity()) - details.getDiscount());
 	                totalAmount += amountForProduct;
 
 	                boolean isCustomCategory = productDto.getProductCategoryDto() != null && 
@@ -119,14 +117,11 @@ public class TransactionServiceBL {
 	        }
 	    }
 
-	    transactionDto.setTotalAmount(totalAmount);
 	    transactionDto.setDateTime(LocalDateTime.now());
 	    
 	    return transactionDao.save(transactionDto, alertMessage);
 	}
 
-
-	
 	public TransactionDto updateTransaction(TransactionDto transactionDto) {
 	    log.info("TransactionServiceBL.updateTransaction() invoked.");
 	    
