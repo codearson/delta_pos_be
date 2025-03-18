@@ -3445,3 +3445,157 @@ java.lang.IllegalArgumentException: Insufficient stock for product ID: 8
 2025-03-18 19:42:32.737  INFO 11740 --- [RMI TCP Connection(38)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-18 19:42:32.744  INFO 11740 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-03-18 19:42:32.746  INFO 11740 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-18 22:51:20.881  INFO 1788 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.5 on SK_BAVI18 with PID 1788 (D:\delta_pos_be\target\classes started by skbav in D:\delta_pos_be)
+2025-03-18 22:51:20.885  INFO 1788 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-03-18 22:51:24.418  INFO 1788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-18 22:51:24.459  INFO 1788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
+2025-03-18 22:51:25.389  INFO 1788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-03-18 22:51:25.407  INFO 1788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-18 22:51:25.409  INFO 1788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-18 22:51:25.529  INFO 1788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-18 22:51:25.530  INFO 1788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4576 ms
+2025-03-18 22:51:25.794  INFO 1788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-18 22:51:25.885  INFO 1788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-03-18 22:51:26.161  INFO 1788 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-18 22:51:26.305  INFO 1788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-18 22:51:26.684  INFO 1788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-18 22:51:26.712  INFO 1788 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-18 22:51:28.424  INFO 1788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-18 22:51:28.447  INFO 1788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-18 22:51:29.761  INFO 1788 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7bf16972, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b7c0f39, org.springframework.security.web.header.HeaderWriterFilter@641cea11, org.springframework.web.filter.CorsFilter@eee26bd, org.springframework.security.web.authentication.logout.LogoutFilter@57ed8f95, com.pos_main.Service.Utils.JwtCustomFilter@5703c1fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fccd98f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b30b6f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d1c8f35, org.springframework.security.web.session.SessionManagementFilter@4419cd6e, org.springframework.security.web.access.ExceptionTranslationFilter@1b53e6fc, org.springframework.security.web.access.intercept.AuthorizationFilter@578c99ac]
+2025-03-18 22:51:30.206  INFO 1788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-18 22:51:30.217  INFO 1788 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 11.301 seconds (JVM running for 19.545)
+2025-03-18 22:51:35.070  INFO 1788 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-18 22:51:35.071  INFO 1788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-18 22:51:35.073  INFO 1788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-03-18 22:51:35.145  INFO 1788 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:51:35.410  INFO 1788 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:51:35.411  INFO 1788 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:51:35.425  WARN 1788 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:35.583  INFO 1788 --- [http-nio-8080-exec-2] c.pos_main.Controller.ProductController  : ProductController.gellAllProducts() invoked
+2025-03-18 22:51:35.590  INFO 1788 --- [http-nio-8080-exec-2] c.p.ServiceImpl.ProductServiceImpl       : ProductServiceImpl.getAllProducts() invoked
+2025-03-18 22:51:35.590  INFO 1788 --- [http-nio-8080-exec-2] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getAllProducts() invoked
+2025-03-18 22:51:35.596  INFO 1788 --- [http-nio-8080-exec-2] com.pos_main.DaoImpl.ProductDaoImpl      : ProductDaoImpl.getAllProducts() invoked
+2025-03-18 22:51:35.597  WARN 1788 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:35.619  INFO 1788 --- [http-nio-8080-exec-2] c.p.ServiceImpl.ProductServiceImpl       : Retrieve All Product Details.
+2025-03-18 22:51:41.771  INFO 1788 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:51:41.942  INFO 1788 --- [http-nio-8080-exec-4] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-03-18 22:51:41.956  INFO 1788 --- [http-nio-8080-exec-4] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-03-18 22:51:41.958  INFO 1788 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-03-18 22:51:42.065  INFO 1788 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:51:42.067  INFO 1788 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:51:42.070  WARN 1788 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:42.411  INFO 1788 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:51:42.413  INFO 1788 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:51:42.414  INFO 1788 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:51:42.414  WARN 1788 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:42.429  INFO 1788 --- [http-nio-8080-exec-6] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-03-18 22:51:42.430  INFO 1788 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-03-18 22:51:42.432  WARN 1788 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:42.443  INFO 1788 --- [http-nio-8080-exec-6] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-03-18 22:51:42.443  INFO 1788 --- [http-nio-8080-exec-6] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-03-18 22:51:45.693  INFO 1788 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:51:45.695  INFO 1788 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:51:45.697  INFO 1788 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:51:45.699  INFO 1788 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:51:45.699  INFO 1788 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:51:45.699  INFO 1788 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:51:45.699  WARN 1788 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:45.699  WARN 1788 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:45.711  INFO 1788 --- [http-nio-8080-exec-8] c.pos_main.Controller.ProductController  : ProductController.gellAllProducts() invoked
+2025-03-18 22:51:45.711  INFO 1788 --- [http-nio-8080-exec-7] c.pos_main.Controller.ProductController  : ProductController.gellAllProducts() invoked
+2025-03-18 22:51:45.711  INFO 1788 --- [http-nio-8080-exec-8] c.p.ServiceImpl.ProductServiceImpl       : ProductServiceImpl.getAllProducts() invoked
+2025-03-18 22:51:45.711  INFO 1788 --- [http-nio-8080-exec-7] c.p.ServiceImpl.ProductServiceImpl       : ProductServiceImpl.getAllProducts() invoked
+2025-03-18 22:51:45.711  INFO 1788 --- [http-nio-8080-exec-8] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getAllProducts() invoked
+2025-03-18 22:51:45.711  INFO 1788 --- [http-nio-8080-exec-7] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getAllProducts() invoked
+2025-03-18 22:51:45.712  INFO 1788 --- [http-nio-8080-exec-8] com.pos_main.DaoImpl.ProductDaoImpl      : ProductDaoImpl.getAllProducts() invoked
+2025-03-18 22:51:45.712  INFO 1788 --- [http-nio-8080-exec-7] com.pos_main.DaoImpl.ProductDaoImpl      : ProductDaoImpl.getAllProducts() invoked
+2025-03-18 22:51:45.712  WARN 1788 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:45.712  WARN 1788 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:51:45.722  INFO 1788 --- [http-nio-8080-exec-7] c.p.ServiceImpl.ProductServiceImpl       : Retrieve All Product Details.
+2025-03-18 22:51:45.727  INFO 1788 --- [http-nio-8080-exec-8] c.p.ServiceImpl.ProductServiceImpl       : Retrieve All Product Details.
+2025-03-18 22:52:19.404  INFO 1788 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:52:19.407  INFO 1788 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:52:19.407  INFO 1788 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:52:19.408  WARN 1788 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:52:19.433  INFO 1788 --- [http-nio-8080-exec-10] c.pos_main.Controller.ProductController  : ProductController.getProductByBarcode() invoked with barcode
+2025-03-18 22:52:19.435  INFO 1788 --- [http-nio-8080-exec-10] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getProductByBarcode()invoked
+2025-03-18 22:52:19.436  WARN 1788 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:52:19.441  INFO 1788 --- [http-nio-8080-exec-10] c.p.ServiceImpl.ProductServiceImpl       : product detail retreived successfully.
+2025-03-18 22:52:32.916  INFO 1788 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:52:32.920  INFO 1788 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:52:32.920  INFO 1788 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:52:32.920  WARN 1788 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:52:32.928  INFO 1788 --- [http-nio-8080-exec-2] c.pos_main.Controller.ProductController  : ProductController.getProductByBarcode() invoked with barcode
+2025-03-18 22:52:32.928  INFO 1788 --- [http-nio-8080-exec-2] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getProductByBarcode()invoked
+2025-03-18 22:52:32.928  WARN 1788 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:52:32.930  INFO 1788 --- [http-nio-8080-exec-2] c.p.ServiceImpl.ProductServiceImpl       : product detail retreived successfully.
+2025-03-18 22:53:30.931  INFO 1788 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:53:30.957  INFO 1788 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:53:30.959  INFO 1788 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:53:30.962  WARN 1788 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:53:31.028  INFO 1788 --- [http-nio-8080-exec-5] c.pos_main.Controller.ProductController  : ProductController.getProductByBarcode() invoked with barcode
+2025-03-18 22:53:31.029  INFO 1788 --- [http-nio-8080-exec-5] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getProductByBarcode()invoked
+2025-03-18 22:53:31.030  WARN 1788 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:53:31.037  INFO 1788 --- [http-nio-8080-exec-5] c.p.ServiceImpl.ProductServiceImpl       : product detail retreived successfully.
+2025-03-18 22:53:39.572  INFO 1788 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:53:39.585  INFO 1788 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:53:39.585  INFO 1788 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:53:39.585  WARN 1788 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:53:39.787  INFO 1788 --- [http-nio-8080-exec-7] c.p.Controller.TransactionController     : TransactionController.save() invoked
+2025-03-18 22:53:39.797  INFO 1788 --- [http-nio-8080-exec-7] c.p.ServiceImpl.TransactionServiceImpl   : TransactionServiceImpl.save() invoked
+2025-03-18 22:53:39.798  INFO 1788 --- [http-nio-8080-exec-7] c.p.Service.BL.TransactionServiceBL      : TransactionServiceBL.save() invoked.
+2025-03-18 22:53:39.799  WARN 1788 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:53:39.812  INFO 1788 --- [http-nio-8080-exec-7] c.p.Service.BL.TransactionServiceBL      : Skipping quantity update for Custom category productId: 25
+2025-03-18 22:53:39.812  WARN 1788 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:53:39.829  INFO 1788 --- [http-nio-8080-exec-7] c.p.Service.BL.TransactionServiceBL      : ALERT: Product 'Zinger Burger' (ID: 5) is low on stock. Remaining quantity: 5
+2025-03-18 22:53:39.831  INFO 1788 --- [http-nio-8080-exec-7] com.pos_main.DaoImpl.ProductDaoImpl      : ProductDaoImpl.updateProduct() invoked.
+2025-03-18 22:53:39.953  INFO 1788 --- [http-nio-8080-exec-7] com.pos_main.DaoImpl.TransactionDaoImpl  : TransactionDaoImpl.save() invoked.
+2025-03-18 22:53:40.095  INFO 1788 --- [http-nio-8080-exec-7] c.p.ServiceImpl.TransactionServiceImpl   : Transaction details saved.
+2025-03-18 22:54:54.715  INFO 1788 --- [http-nio-8080-exec-9] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:54:54.723  INFO 1788 --- [http-nio-8080-exec-9] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:54:54.723  INFO 1788 --- [http-nio-8080-exec-9] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:54:54.724  WARN 1788 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:54:54.757  INFO 1788 --- [http-nio-8080-exec-9] c.p.Controller.TransactionController     : TransactionController.save() invoked
+2025-03-18 22:54:54.758  INFO 1788 --- [http-nio-8080-exec-9] c.p.ServiceImpl.TransactionServiceImpl   : TransactionServiceImpl.save() invoked
+2025-03-18 22:54:54.758  INFO 1788 --- [http-nio-8080-exec-9] c.p.Service.BL.TransactionServiceBL      : TransactionServiceBL.save() invoked.
+2025-03-18 22:54:54.758  WARN 1788 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:54:54.765  INFO 1788 --- [http-nio-8080-exec-9] c.p.Service.BL.TransactionServiceBL      : Skipping quantity update for Custom category productId: 25
+2025-03-18 22:54:54.767  INFO 1788 --- [http-nio-8080-exec-9] com.pos_main.DaoImpl.TransactionDaoImpl  : TransactionDaoImpl.save() invoked.
+2025-03-18 22:54:54.795  INFO 1788 --- [http-nio-8080-exec-9] c.p.ServiceImpl.TransactionServiceImpl   : Transaction details saved.
+2025-03-18 22:59:20.849  INFO 1788 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 22:59:20.872  INFO 1788 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 22:59:20.873  INFO 1788 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 22:59:20.873  WARN 1788 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:59:20.908  INFO 1788 --- [http-nio-8080-exec-1] c.p.Controller.TransactionController     : TransactionController.save() invoked
+2025-03-18 22:59:20.908  INFO 1788 --- [http-nio-8080-exec-1] c.p.ServiceImpl.TransactionServiceImpl   : TransactionServiceImpl.save() invoked
+2025-03-18 22:59:20.908  INFO 1788 --- [http-nio-8080-exec-1] c.p.Service.BL.TransactionServiceBL      : TransactionServiceBL.save() invoked.
+2025-03-18 22:59:20.908  WARN 1788 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 22:59:20.913  INFO 1788 --- [http-nio-8080-exec-1] c.p.Service.BL.TransactionServiceBL      : Skipping quantity update for Custom category productId: 13
+2025-03-18 22:59:20.915  INFO 1788 --- [http-nio-8080-exec-1] com.pos_main.DaoImpl.TransactionDaoImpl  : TransactionDaoImpl.save() invoked.
+2025-03-18 22:59:20.945  INFO 1788 --- [http-nio-8080-exec-1] c.p.ServiceImpl.TransactionServiceImpl   : Transaction details saved.
+2025-03-18 23:05:14.148  INFO 1788 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 23:05:14.157  INFO 1788 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 23:05:14.157  INFO 1788 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 23:05:14.157  WARN 1788 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 23:05:14.183  INFO 1788 --- [http-nio-8080-exec-3] c.p.Controller.TransactionController     : TransactionController.save() invoked
+2025-03-18 23:05:14.183  INFO 1788 --- [http-nio-8080-exec-3] c.p.ServiceImpl.TransactionServiceImpl   : TransactionServiceImpl.save() invoked
+2025-03-18 23:05:14.183  INFO 1788 --- [http-nio-8080-exec-3] c.p.Service.BL.TransactionServiceBL      : TransactionServiceBL.save() invoked.
+2025-03-18 23:05:14.183  WARN 1788 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 23:05:14.190  INFO 1788 --- [http-nio-8080-exec-3] c.p.Service.BL.TransactionServiceBL      : Skipping quantity update for Custom category productId: 25
+2025-03-18 23:05:14.192  INFO 1788 --- [http-nio-8080-exec-3] com.pos_main.DaoImpl.TransactionDaoImpl  : TransactionDaoImpl.save() invoked.
+2025-03-18 23:05:14.236  INFO 1788 --- [http-nio-8080-exec-3] c.p.ServiceImpl.TransactionServiceImpl   : Transaction details saved.
+2025-03-18 23:09:20.523  INFO 1788 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-18 23:09:20.532  INFO 1788 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-18 23:09:20.532  INFO 1788 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-18 23:09:20.533  WARN 1788 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 23:09:20.554  INFO 1788 --- [http-nio-8080-exec-5] c.pos_main.Controller.ProductController  : ProductController.gellAllProducts() invoked
+2025-03-18 23:09:20.555  INFO 1788 --- [http-nio-8080-exec-5] c.p.ServiceImpl.ProductServiceImpl       : ProductServiceImpl.getAllProducts() invoked
+2025-03-18 23:09:20.555  INFO 1788 --- [http-nio-8080-exec-5] c.pos_main.Service.BL.ProductServiceBL   : ProductServiceBL.getAllProducts() invoked
+2025-03-18 23:09:20.558  INFO 1788 --- [http-nio-8080-exec-5] com.pos_main.DaoImpl.ProductDaoImpl      : ProductDaoImpl.getAllProducts() invoked
+2025-03-18 23:09:20.559  WARN 1788 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-18 23:09:20.579  INFO 1788 --- [http-nio-8080-exec-5] c.p.ServiceImpl.ProductServiceImpl       : Retrieve All Product Details.
+2025-03-18 23:31:07.162  INFO 1788 --- [RMI TCP Connection(49)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-18 23:31:07.445  INFO 1788 --- [RMI TCP Connection(49)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-18 23:31:07.471  INFO 1788 --- [RMI TCP Connection(49)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-18 23:31:07.478  INFO 1788 --- [RMI TCP Connection(49)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

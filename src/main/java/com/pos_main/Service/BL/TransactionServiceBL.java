@@ -119,31 +119,27 @@ public class TransactionServiceBL {
 
 	public TransactionDto updateTransaction(TransactionDto transactionDto) {
 	    log.info("TransactionServiceBL.updateTransaction() invoked.");
-	    
-	    Double totalAmount = 0.0;
-	    
-	    for (TransactionDetailsListDto details : transactionDto.getTransactionDetailsList()) {
-	        if (details.getProductDto() != null) {
-	            Integer productId = details.getProductDto().getId();
-	            
-	            List<ProductDto> productList = productDao.getProductById(productId);
-	            
-	            if (productList != null && !productList.isEmpty()) {
-	                ProductDto productDto = productList.get(0);
+	    	    
+	    if (transactionDto.getTransactionDetailsList() != null) {
+	        for (TransactionDetailsListDto details : transactionDto.getTransactionDetailsList()) {
+	            if (details.getProductDto() != null) {
+	                Integer productId = details.getProductDto().getId();
 	                
-	                details.setUnitPrice(productDto.getPricePerUnit());
+	                List<ProductDto> productList = productDao.getProductById(productId);
 	                
-	                Double amountForProduct = (double) ((details.getUnitPrice() * details.getQuantity()) - details.getDiscount());
-	                totalAmount += amountForProduct;
+	                if (productList != null && !productList.isEmpty()) {
+	                    ProductDto productDto = productList.get(0);
+	                } else {
+	                    log.info("Product not found for productId: " + productId);
+	                }
 	            } else {
-	                log.info("Product not found for productId: " + productId);
+	                log.info("ProductDto is null in TransactionDetailsListDto");
 	            }
-	        } else {
-	            log.info("ProductDto is null in TransactionDetailsListDto");
 	        }
+	    } else {
+	        log.warn("Transaction details list is null for transactionDto: {}", transactionDto.getId());
 	    }
 	    
-	    transactionDto.setTotalAmount(totalAmount);
 	    transactionDto.setDateTime(transactionDto.getDateTime());
 	    
 	    return transactionDao.updateTransaction(transactionDto);
