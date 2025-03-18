@@ -74,8 +74,6 @@ public class TransactionServiceBL {
 	
 	public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
 	    log.info("TransactionServiceBL.save() invoked.");
-
-	    Double totalAmount = 0.0;
 	    
 	    for (TransactionDetailsListDto details : transactionDto.getTransactionDetailsList()) {
 	        if (details.getProductDto() != null) {
@@ -87,9 +85,6 @@ public class TransactionServiceBL {
 
 	            if (productList != null && !productList.isEmpty()) {
 	                ProductDto productDto = productList.get(0);
-
-	                Double amountForProduct = (double) ((productDto.getPricePerUnit() * details.getQuantity()) - details.getDiscount());
-	                totalAmount += amountForProduct;
 
 	                boolean isCustomCategory = productDto.getProductCategoryDto() != null && 
 	                    "Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName());
