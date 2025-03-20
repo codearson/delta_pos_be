@@ -47,6 +47,8 @@ public class User implements Serializable{
 	private String mobileNumber;
 	@Column(name =  "createdDate")
 	private LocalDateTime createdDate;
+	@Column(name = "modifiedDate")
+	private LocalDateTime modifiedDate;
 	@Column(name = "isActive")
 	private Boolean isActive;
 	@JoinColumn(name = "userRoleId", referencedColumnName = "id")
