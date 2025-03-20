@@ -206,7 +206,17 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 	    log.info("UserDaoImpl.update() invoked.");
 	    User user = userTransfomer.reverseTransform(userDto);
 	    User updateUserDetails = saveOrUpdate(user);
+	    user.setModifiedDate(LocalDateTime.now());
 	    return userTransfomer.transform(updateUserDetails);
+	}
+	
+	@Override
+	@Transactional
+	public UserDto updateStatus(UserDto userDto) {
+	    log.info("UserDaoImpl.update() invoked.");
+	    User user = userTransfomer.reverseTransform(userDto);
+	    //user.setIsActive(true);
+	    return userTransfomer.transform(user);
 	}
 
 	@Override

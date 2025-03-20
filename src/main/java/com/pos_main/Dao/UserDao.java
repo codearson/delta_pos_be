@@ -33,6 +33,8 @@ public interface UserDao extends BaseDao<User>{
 	
 	UserDto checkUserAvailability(Integer userId);
 	
+	public UserDto updateStatus(UserDto userDto);
+	
 	List<UserDto> getUserByEmailAddress(String emailAddress);
 
 }
