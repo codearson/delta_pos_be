@@ -22,5 +22,6 @@ public class BranchDto {
 	private String branchCode;
 	private Boolean isActive;
 	private CountryDto countryDto;
+	private ShopDetailsDto shopDetailsDto;
 	
 }

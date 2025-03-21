@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -36,9 +34,6 @@ public class ShopDetails implements Serializable{
 	private String whatsappNumber;
 	@Column(name = "email")
 	private String email;
-	@JoinColumn(name = "branch", referencedColumnName = "id")
-	@ManyToOne(optional = false)
-	private Branch branch;
 	@Column(name = "isActive")
 	private Boolean isActive;
 

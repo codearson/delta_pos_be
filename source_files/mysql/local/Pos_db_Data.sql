@@ -21,7 +21,7 @@
 
 LOCK TABLES `branch` WRITE;
 /*!40000 ALTER TABLE `branch` DISABLE KEYS */;
-INSERT INTO `branch` VALUES (1,'No. 1, Galle Road','Col002','Kfc Colombo','0212223447','kfc.colombo@gmail.com',_binary '',1),(2,'No. 12, London Road','Lon001','Kfc London','441589522562','kfc.london@gmail.com',_binary '',3),(3,'No. 45, Stanley Road','Jan001','Kfc Jaffna','0212223449','kfc.jaffna@gmail.com',_binary '',1),(4,'No. 77, Lighthouse Street','Gal001','Kfc Galle','0212223450','kfc.galle@gmail.com',_binary '',1),(5,'No. 30, Trinco Road','Bat001','Kfc Batticaloa','0212223451','kfc.batticaloa@gmail.com',_binary '',1);
+INSERT INTO `branch` VALUES (1,'No. 1, Galle Road','Col002','Kfc Colombo','0212223447','kfc.colombo@gmail.com',_binary '',1,1),(2,'No. 12, London Road','Lon001','Kfc London','441589522562','kfc.london@gmail.com',_binary '',3,1),(3,'No. 45, Stanley Road','Jan001','Kfc Jaffna','0212223449','kfc.jaffna@gmail.com',_binary '',1,1),(4,'No. 77, Lighthouse Street','Gal001','Kfc Galle','0212223450','kfc.galle@gmail.com',_binary '',1,1),(5,'No. 30, Trinco Road','Bat001','Kfc Batticaloa','0212223451','kfc.batticaloa@gmail.com',_binary '',1,1);
 /*!40000 ALTER TABLE `branch` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,7 +80,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'48200123456','2025-01-21 18:24:10',_binary '','Coca-Cola',550,1,1,'2025-06-21 00:00:00',10,450,50),(2,'48200198765','2025-03-06 12:47:09',_binary '','Pepsi',550,1,1,'2025-12-31 23:59:59',15,425,0),(3,'67283455678','2025-01-21 18:26:03',_binary '','Fries',1200,2,2,'2025-08-25 00:00:00',10,1000,45),(4,'84726583901','2025-01-21 18:26:46',_binary '','Chicken Wings',2000,4,3,'2025-04-18 00:00:00',12,1800,25),(5,'12897634578','2025-01-21 18:27:54',_binary '','Zinger Burger',2400,3,3,'2026-01-17 00:00:00',15,2300,10),(6,'57283669266','2025-03-06 15:59:04',_binary '','Double Cheese Burger',2600,3,3,'2025-12-31 23:59:59',10,2480,13),(7,'98200123856','2025-01-21 18:29:06',_binary '\0','Chocolate Sundae',1100,5,2,'2025-07-21 00:00:00',8,975,32),(8,'98200983745','2025-03-06 12:43:26',_binary '','Strawberry Sundae',1100,5,2,'2025-12-31 23:59:59',5,950,0),(9,'29384712345','2025-01-21 18:30:03',_binary '','Spicy Chicken Bucket',5500,4,4,'2025-05-08 00:00:00',10,1000,81),(10,'48392056789','2025-03-07 19:23:22',_binary '\0','Popcorn Chicken',2400,4,3,'2025-12-31 23:59:59',15,2245,27),(11,'50583841666','2025-03-06 17:43:03',_binary '','Seven Up',2120.25,1,2,'2025-12-31 23:59:59',12,1680,47),(12,'48392056555','2025-03-06 12:40:56',_binary '','DR Pepper',500,4,3,'2025-12-31 23:59:59',15,450.5,10);
+INSERT INTO `product` VALUES (1,'48200123456','2025-01-21 18:24:10',_binary '','Coca-Cola',550,1,1,'2025-06-21 00:00:00',10,450,43),(2,'48200198765','2025-03-06 12:47:09',_binary '','Pepsi',550,1,1,'2025-12-31 23:59:59',15,425,0),(3,'5010478544710','2025-03-20 15:34:58',_binary '','orange lic',1200,6,2,'2025-08-25 00:00:00',10,1000,35),(4,'84726583901','2025-01-21 18:26:46',_binary '','Chicken Wings',2000,4,3,'2025-04-18 00:00:00',12,1800,23),(5,'12897634578','2025-01-21 18:27:54',_binary '','Zinger Burger',2400,3,3,'2026-01-17 00:00:00',15,2300,10),(6,'57283669266','2025-03-06 15:59:04',_binary '','Double Cheese Burger',2600,3,3,'2025-12-31 23:59:59',10,2480,13),(7,'98200123856','2025-01-21 18:29:06',_binary '\0','Chocolate Sundae',1100,5,2,'2025-07-21 00:00:00',8,975,32),(8,'4018077000638','2025-03-20 15:01:18',_binary '','Strawberry Sundae',1100,5,2,'2025-12-31 23:59:59',5,950,6),(9,'5000112662429','2025-03-20 15:07:21',_binary '','Spicy Chicken Bucket',5500,4,4,'2025-05-08 00:00:00',10,1000,80),(10,'48392056789','2025-03-21 12:16:00',_binary '','Popcorn Chicken',2400,4,3,'2025-12-31 23:59:59',15,2245,27),(11,'50583841666','2025-03-06 17:43:03',_binary '','Seven Up',2120.25,1,2,'2025-12-31 23:59:59',12,1680,47),(12,'5000112662430','2025-03-20 15:06:49',_binary '','DR Pepper',500,4,3,'2025-12-31 23:59:59',15,450.5,6),(13,'5029913000834','2025-03-20 15:00:23',_binary '','Organic Carrot',1250,7,8,NULL,250,1110,198),(14,'48392056555','2025-03-20 13:33:52',_binary '\0','Organic Carrot',1250,7,8,NULL,5,1110,20),(15,'1','2025-03-20 14:21:36',_binary '','Confectionery-?',100,8,1,NULL,0,100,100),(16,'2','2025-03-20 14:22:15',_binary '','Home Essentials-?',100,8,1,NULL,0,100,100),(17,'3','2025-03-20 14:22:28',_binary '','Magazines & Newspapers-?',100,8,1,NULL,0,100,100),(18,'4','2025-03-20 14:22:42',_binary '','Alcoholic Beverages-?',100,8,1,NULL,0,100,100),(19,'5','2025-03-20 14:22:54',_binary '','Dairy Products-?',100,8,1,NULL,0,100,100),(20,'6','2025-03-20 14:23:08',_binary '','Grocery Items-?',100,8,1,NULL,0,100,100),(21,'7','2025-03-20 14:23:22',_binary '','Soft Drinks-?',100,8,1,NULL,0,100,100),(22,'8','2025-03-20 14:23:35',_binary '','Holy Products-?',100,8,1,NULL,0,100,100),(23,'9','2025-03-20 14:23:51',_binary '','Pet Supplies-?',100,8,1,NULL,0,100,100),(24,'10','2025-03-20 14:24:05',_binary '','Instant Meals-⚡',100,8,1,NULL,0,100,100),(25,'11','2025-03-20 14:24:20',_binary '','Shopping Bags-?',100,8,1,NULL,0,100,100),(26,'12','2025-03-20 14:24:39',_binary '','Eggs-?',100,8,1,NULL,0,100,100),(27,'13','2025-03-20 14:24:56',_binary '','Frozen Foods-❄️',100,8,1,NULL,0,100,100),(28,'14','2025-03-20 14:25:11',_binary '','Ice Cream-?',100,8,1,NULL,0,100,100),(29,'15','2025-03-20 14:27:12',_binary '','Bakery Items-?',100,8,1,NULL,0,100,100);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `shop_details` WRITE;
 /*!40000 ALTER TABLE `shop_details` DISABLE KEYS */;
-INSERT INTO `shop_details` VALUES (1,'123 Main Street','0771234567','shop@example.com',_binary '','ABC Store','0777654321',1),(2,'23 Main Street colombo','0212214460','XyStore@gmail.com',_binary '','XY Store','0764528425',1),(3,'3/6 Main Street Baddula','0212314460','RTStore@gmail.com',_binary '','RT Store','0764528455',2),(4,'3/6 Main Street Vavuniya','0212414460','PKStore@gmail.com',_binary '','PK Store','0764828455',3);
+INSERT INTO `shop_details` VALUES (1,'123 Main Street Colombo Sri Lanka','0771234567','shop@kfc.com',_binary '','KFC','0777654321');
 /*!40000 ALTER TABLE `shop_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +189,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Jaffna','2025-01-21 19:29:19','lathusanthurairajah@codearson.com','Lathusan',_binary '','Thurairajah','076121266','$2a$10$fje4amNbEEQfTvzYNMSPBOo3/fuz4eMIOZHJaLF4sknnwSa6yyNRO',1,1),(2,'Colombo','2025-01-21 19:29:19','svinothini96s@gmail.com','Vinothini',_binary '','Sathithyaseelan','076261862','$2a$10$AG71q.p3jWxX5YmhPUCzEOZmT6Kbfbw3MOLxnlbw4kknqv99WojCu',2,2),(3,'Colombo','2025-01-21 19:29:19','saravanan.g@codearson.com','Saravanan',_binary '','Guganathan','0765639528','$2a$10$o38YxJEgLvFOADxsHIQ1fu9NEoOC01IdjHU51cjFXTEaGWlzYGd4W',5,3),(4,'Jaffna','2025-02-20 16:36:24','skbavi61@gmail.com','Bavithragithan',_binary '','Kuganesan','076261862','$2a$10$PNny.kLUlMkwAf2e9wAVJ.cAiEM9hAGlKVN/Q32Fq6GpsU7q/c7R6',1,2);
+INSERT INTO `user` VALUES (1,'Jaffna','2025-01-21 19:29:19','lathusanthurairajah@codearson.com','Lathusan',_binary '','Thurairajah','076121266','$2a$10$fje4amNbEEQfTvzYNMSPBOo3/fuz4eMIOZHJaLF4sknnwSa6yyNRO',1,1,NULL),(2,'Colombo','2025-01-21 19:29:19','svinothini96s@gmail.com','Vinothini',_binary '','Sathithyaseelan','076261862','$2a$10$AG71q.p3jWxX5YmhPUCzEOZmT6Kbfbw3MOLxnlbw4kknqv99WojCu',2,2,NULL),(3,'Colombo','2025-01-21 19:29:19','saravanan.g@codearson.com','Saravanan',_binary '','Guganathan','0765639528','$2a$10$o38YxJEgLvFOADxsHIQ1fu9NEoOC01IdjHU51cjFXTEaGWlzYGd4W',5,3,NULL),(4,'Jaffna','2025-02-20 16:36:24','skbavi61@gmail.com','Bavithragithan',_binary '','Kuganesan','076261862','$2a$10$PNny.kLUlMkwAf2e9wAVJ.cAiEM9hAGlKVN/Q32Fq6GpsU7q/c7R6',1,2,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-11 23:18:45
+-- Dump completed on 2025-03-21 20:41:30
