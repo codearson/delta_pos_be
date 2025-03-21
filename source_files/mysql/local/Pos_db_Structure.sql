@@ -31,9 +31,12 @@ CREATE TABLE `branch` (
   `email_address` varchar(255) DEFAULT NULL,
   `is_active` bit(1) DEFAULT NULL,
   `country_id` int NOT NULL,
+  `shop_details_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK3vl5jamdhb1s3p7lgssx2h39h` (`country_id`),
-  CONSTRAINT `FK3vl5jamdhb1s3p7lgssx2h39h` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
+  KEY `FKsu8cl7rnxw2cff1sp6khh8gk9` (`shop_details_id`),
+  CONSTRAINT `FK3vl5jamdhb1s3p7lgssx2h39h` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`),
+  CONSTRAINT `FKsu8cl7rnxw2cff1sp6khh8gk9` FOREIGN KEY (`shop_details_id`) REFERENCES `shop_details` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -143,7 +146,7 @@ CREATE TABLE `product` (
   KEY `FKsq4yh5m5uqhyfuoj7wsxjjq7t` (`tax`),
   CONSTRAINT `FKbvdd7owwhvkamc6unq83xdcrj` FOREIGN KEY (`product_category`) REFERENCES `product_category` (`id`),
   CONSTRAINT `FKsq4yh5m5uqhyfuoj7wsxjjq7t` FOREIGN KEY (`tax`) REFERENCES `tax` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,11 +213,8 @@ CREATE TABLE `shop_details` (
   `is_active` bit(1) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `whatsapp_number` varchar(255) DEFAULT NULL,
-  `branch` int NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK4bch3yl5fbwl4ehvibqt80py5` (`branch`),
-  CONSTRAINT `FK4bch3yl5fbwl4ehvibqt80py5` FOREIGN KEY (`branch`) REFERENCES `branch` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -363,6 +363,7 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `branch_id` int NOT NULL,
   `user_role_id` int NOT NULL,
+  `modified_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK9yy0ya980j002yvtxi9r7kv6b` (`branch_id`),
   KEY `FKh2wc2dtfdo8maylne7mgubowq` (`user_role_id`),
@@ -415,4 +416,4 @@ CREATE TABLE `user_role` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-11 23:18:01
+-- Dump completed on 2025-03-21 20:40:58

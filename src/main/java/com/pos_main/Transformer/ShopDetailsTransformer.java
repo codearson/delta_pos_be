@@ -22,11 +22,6 @@ public class ShopDetailsTransformer implements BaseTransformer<ShopDetails, Shop
 			shopDetailsDto.setAddress(shopDetails.getAddress());
 			shopDetailsDto.setContactNumber(shopDetails.getContactNumber());
 			shopDetailsDto.setWhatsappNumber(shopDetails.getWhatsappNumber());
-			shopDetailsDto.setEmail(shopDetails.getEmail());		
-			if (shopDetails.getBranch() != null) {
-				shopDetailsDto.setBranchDto(
-						branchTransformer.transform(shopDetails.getBranch()));
-			}
 			shopDetailsDto.setIsActive(shopDetails.getIsActive());
 		}
 		return shopDetailsDto;
@@ -43,11 +38,6 @@ public class ShopDetailsTransformer implements BaseTransformer<ShopDetails, Shop
 			shopDetails.setContactNumber(shopDetailsDto.getContactNumber());
 			shopDetails.setWhatsappNumber(shopDetailsDto.getWhatsappNumber());
 			shopDetails.setEmail(shopDetailsDto.getEmail());
-			if (shopDetailsDto.getBranchDto() != null) {
-				shopDetails.setBranch(
-						branchTransformer.reverseTransform(shopDetailsDto.getBranchDto()));
-			}
-
 			shopDetails.setIsActive(shopDetailsDto.getIsActive());
 		}
 		return shopDetails;
