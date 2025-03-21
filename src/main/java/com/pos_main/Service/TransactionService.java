@@ -37,4 +37,8 @@ public interface TransactionService {
 	
 	ResponseDto getTransactionByProductId(Integer productId);
 	
+	ResponseDto getXReport(Integer userId);
+	
+	ResponseDto getZReport(Integer userId);
+	
 }

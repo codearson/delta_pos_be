@@ -2,7 +2,9 @@ package com.pos_main.DaoImpl;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
@@ -650,6 +652,80 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
             return transactionDto;
         }).collect(Collectors.toList());
     }
+    
+    @Override
+    public Map<String, Object> getLastTransactionInfo() {
+        log.info("TransactionDaoImpl.getLastTransactionInfo() invoked");
+        Transaction lastTransaction = entityManager.createQuery(
+                "SELECT t FROM Transaction t ORDER BY t.id DESC", Transaction.class)
+                .setMaxResults(1)
+                .getSingleResult();
 
+        if (lastTransaction != null) {
+            Map<String, Object> result = new HashMap<>();
+            result.put("id", lastTransaction.getId());
+            result.put("generateDateTime", lastTransaction.getGenerateDateTime());
+            return result;
+        }
+        return null;
+    }
+
+    @Override
+    public LocalDateTime getFirstTransactionDateTime() {
+        log.info("TransactionDaoImpl.getFirstTransactionDateTime() invoked");
+        Transaction firstTransaction = entityManager.createQuery(
+                "SELECT t FROM Transaction t ORDER BY t.id ASC", Transaction.class)
+                .setMaxResults(1)
+                .getSingleResult();
+        return firstTransaction != null ? firstTransaction.getDateTime() : null;
+    }
+
+    @Override
+    public boolean areAllGenerateDateTimesNull() {
+        log.info("TransactionDaoImpl.areAllGenerateDateTimesNull() invoked");
+        Long count = entityManager.createQuery(
+                "SELECT COUNT(t) FROM Transaction t WHERE t.generateDateTime IS NOT NULL", Long.class)
+                .getSingleResult();
+        return count == 0;
+    }
+
+    @Override
+    public LocalDateTime getDateTimeForTransactionIdOne() {
+        log.info("TransactionDaoImpl.getDateTimeForTransactionIdOne() invoked");
+        Transaction transaction = entityManager.find(Transaction.class, 1);
+        return transaction != null ? transaction.getDateTime() : null;
+    }
+
+    @Override
+    public LocalDateTime getLastGenerateDateTime() {
+        log.info("TransactionDaoImpl.getLastGenerateDateTime() invoked");
+        Transaction lastTransaction = entityManager.createQuery(
+                "SELECT t FROM Transaction t WHERE t.generateDateTime IS NOT NULL ORDER BY t.generateDateTime DESC", Transaction.class)
+                .setMaxResults(1)
+                .getSingleResult();
+        return lastTransaction != null ? lastTransaction.getGenerateDateTime() : null;
+    }
+
+    @Override
+    @Transactional
+    public void updateGenerateDateTime(Integer transactionId, LocalDateTime generateDateTime) {
+        log.info("TransactionDaoImpl.updateGenerateDateTime() invoked for transactionId: {}", transactionId);
+        Transaction transaction = entityManager.find(Transaction.class, transactionId);
+        if (transaction != null) {
+            transaction.setGenerateDateTime(generateDateTime);
+            entityManager.merge(transaction);
+        }
+    }
+    
+    @Override
+    public LocalDateTime getNextTransactionDateTimeAfter(LocalDateTime startDate) {
+        log.info("TransactionDaoImpl.getNextTransactionDateTimeAfter() invoked with startDate: {}", startDate);
+        Transaction nextTransaction = entityManager.createQuery(
+                "SELECT t FROM Transaction t WHERE t.dateTime > :startDate ORDER BY t.dateTime ASC", Transaction.class)
+                .setParameter("startDate", startDate)
+                .setMaxResults(1)
+                .getSingleResult();
+        return nextTransaction != null ? nextTransaction.getDateTime() : null;
+    }
 
 }

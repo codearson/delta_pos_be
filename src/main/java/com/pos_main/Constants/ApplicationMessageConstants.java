@@ -169,6 +169,13 @@ public interface ApplicationMessageConstants {
         String EX_SAVE_COUNTRY_DETAILS = "ex.save.country.details";
         String ERR_UPDATE_USER_PASSWORD = "err.update.user.password";
         String EX_UPDATE_USER_PASSWORD = "ex.update.user.password";
+        String ERR_RETRIEVE_TRANSACTION_BY_X_REPORT = "err.retrieve.transaction.by.x.report";
+        String EX_RETRIEVE_TRANSACTION_BY_X_REPORT = "ex.retrieve.transaction.by.x.report";
+        String ERR_RETRIEVE_TRANSACTION_BY_Y_REPORT = "err.retrieve.transaction.by.y.report";
+        String ERR_NO_TRANSACTIONS_FOUND ="err.retrieve.no.transaction.found";
+        String EX_RETRIEVE_TRANSACTION_BY_Y_REPORT ="ex.retrieve.transaction.by.y.report";
+        String ERR_SAVE_SALES_REPORT = "err.retrieve.save.sales.report";
+        String EX_SAVE_SALES_REPORT = "ex.retrieve.save.sales.report";
 		
 	}
 }

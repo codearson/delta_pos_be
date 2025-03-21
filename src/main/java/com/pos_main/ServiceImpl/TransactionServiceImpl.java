@@ -1,7 +1,10 @@
 package com.pos_main.ServiceImpl;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -9,8 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dao.TransactionDao;
+import com.pos_main.Dto.CategoryTotalsDto;
+import com.pos_main.Dto.OverallPaymentTotalsDto;
 import com.pos_main.Dto.ResponseDto;
+import com.pos_main.Dto.SalesDateDetailsDto;
+import com.pos_main.Dto.SalesReportDto;
 import com.pos_main.Dto.TransactionDto;
+import com.pos_main.Dto.UserPaymentDetailsDto;
+import com.pos_main.Service.SalesReportService;
 import com.pos_main.Service.TransactionService;
 import com.pos_main.Service.BL.TransactionServiceBL;
 import com.pos_main.Service.Utils.ServiceUtil;
@@ -35,6 +45,12 @@ public class TransactionServiceImpl implements TransactionService {
 
 	@Autowired
 	TransactionServiceBL transactionServiceBL;
+	
+	@Autowired
+    private SalesReportService salesReportService;
+	
+	@Autowired
+    private TransactionDao transactionDao;
 
 	@Transactional	
 	@Override
@@ -288,4 +304,252 @@ public class TransactionServiceImpl implements TransactionService {
 		return responseDto;
 	}
 
+	@Override
+	@Transactional
+	public ResponseDto getXReport(Integer userId) {
+	    log.info("TransactionServiceImpl.getXReport() invoked with userId: {}", userId);
+	    ResponseDto responseDto;
+	    try {
+	        Map<String, Object> lastTransactionInfo = transactionServiceBL.getLastTransactionInfo();
+	        LocalDateTime endDate = LocalDateTime.now();
+	        LocalDateTime startDate;
+
+	        if (lastTransactionInfo != null) {
+	            if (transactionDao.areAllGenerateDateTimesNull()) {
+	                log.info("All generateDateTime values are null, using dateTime of transaction ID 1");
+	                startDate = transactionDao.getDateTimeForTransactionIdOne();
+	                if (startDate == null) {
+	                    log.warn("No transaction found with ID 1, using first transaction dateTime");
+	                    startDate = transactionServiceBL.getFirstTransactionDateTime();
+	                }
+	            } else {
+	                log.info("Using the last non-null generateDateTime as startDate");
+	                startDate = transactionDao.getLastGenerateDateTime();
+	                if (startDate == null) {
+	                    log.warn("No non-null generateDateTime found, falling back to first transaction dateTime");
+	                    startDate = transactionServiceBL.getFirstTransactionDateTime();
+	                }
+	            }
+
+	            LocalDateTime nextStartDate = transactionServiceBL.getNextTransactionDateTimeAfter(startDate);
+	            if (nextStartDate != null) {
+	                log.info("Found next transaction after startDate, new startDate: {}", nextStartDate);
+	                startDate = nextStartDate;
+	            } else {
+	                log.warn("No transaction found after startDate: {}, using original startDate", startDate);
+	            }
+
+	            Map<String, Object> xReport = transactionServiceBL.getXReport(userId, startDate, endDate);
+	            if (xReport != null) {
+	                log.info("X-Report generated successfully.");
+	                SalesReportDto salesReportDto = transformToSalesReportDtoForXReport(xReport);
+	                ResponseDto saveResponse = salesReportService.save(salesReportDto);
+	                if (saveResponse.getErrorCode() == 0) {
+	                    log.info("X-Report data saved successfully to salesReport table.");
+	                } else {
+	                    log.warn("Failed to save X-Report data: {}", saveResponse.getErrorDescription());
+	                }
+	                
+	                responseDto = serviceUtil.getServiceResponse(xReport);
+	            } else {
+	                log.info("Unable to generate X-Report.");
+	                responseDto = serviceUtil.getErrorServiceResponse(
+	                    ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TRANSACTION_BY_X_REPORT);
+	            }
+	        } else {
+	            log.info("No transactions found to generate X-Report.");
+	            responseDto = serviceUtil.getErrorServiceResponse(
+	                ApplicationMessageConstants.ServiceErrorMessages.ERR_NO_TRANSACTIONS_FOUND);
+	        }
+	    } catch (Exception e) {
+	        log.error("Exception occurred while generating X-Report: {}", e.getMessage(), e);
+	        responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+	            ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TRANSACTION_BY_X_REPORT);
+	    }
+	    return responseDto;
+	}
+
+	private SalesReportDto transformToSalesReportDtoForXReport(Map<String, Object> xReport) {
+	    SalesReportDto dto = new SalesReportDto();
+	    dto.setReportGeneratedBy((String) xReport.get("reportGeneratedBy"));
+	    dto.setStartDate((LocalDateTime) xReport.get("startDate"));
+	    dto.setEndDate((LocalDateTime) xReport.get("endDate"));
+	    dto.setFullyTotalSales((Double) xReport.get("totalSales"));
+	    dto.setReportType("xReport");
+
+	    List<SalesDateDetailsDto> salesDateDetails = new ArrayList<>();
+	    SalesDateDetailsDto dateDetailsDto = new SalesDateDetailsDto();
+	    dateDetailsDto.setSalesDate(dto.getStartDate().toLocalDate().toString());
+	    dateDetailsDto.setTotalTransactions((Integer) xReport.get("totalTransactions"));
+	    dateDetailsDto.setTotalSales((Double) xReport.get("totalSales"));
+
+	    Map<String, Double> categoryTotalsMap = (Map<String, Double>) xReport.get("categoryTotals");
+	    List<CategoryTotalsDto> categoryTotals = new ArrayList<>();
+	    for (Map.Entry<String, Double> category : categoryTotalsMap.entrySet()) {
+	        CategoryTotalsDto categoryDto = new CategoryTotalsDto();
+	        categoryDto.setCategoryName(category.getKey());
+	        categoryDto.setCategoryTotal(category.getValue());
+	        categoryTotals.add(categoryDto);
+	    }
+	    dateDetailsDto.setCategoryTotals(categoryTotals);
+
+	    Map<String, Double> overallPaymentTotalsMap = (Map<String, Double>) xReport.get("overallPaymentTotals");
+	    List<OverallPaymentTotalsDto> overallPaymentTotals = new ArrayList<>();
+	    for (Map.Entry<String, Double> payment : overallPaymentTotalsMap.entrySet()) {
+	        OverallPaymentTotalsDto paymentDto = new OverallPaymentTotalsDto();
+	        paymentDto.setPaymentMethod(payment.getKey());
+	        paymentDto.setPaymentTotal(payment.getValue());
+	        overallPaymentTotals.add(paymentDto);
+	    }
+	    dateDetailsDto.setOverallPaymentTotals(overallPaymentTotals);
+
+	    List<Map<String, Object>> userPaymentDetails = (List<Map<String, Object>>) xReport.get("userPaymentDetails");
+	    List<UserPaymentDetailsDto> userPaymentDetailsList = new ArrayList<>();
+	    for (Map<String, Object> userDetail : userPaymentDetails) {
+	        String userName = (String) userDetail.get("userName");
+	        Map<String, Double> payments = (Map<String, Double>) userDetail.get("payments");
+	        for (Map.Entry<String, Double> payment : payments.entrySet()) {
+	            UserPaymentDetailsDto userPaymentDto = new UserPaymentDetailsDto();
+	            userPaymentDto.setUserName(userName);
+	            userPaymentDto.setPaymentMethod(payment.getKey());
+	            userPaymentDto.setPaymentTotal(payment.getValue());
+	            userPaymentDetailsList.add(userPaymentDto);
+	        }
+	    }
+	    dateDetailsDto.setUserPaymentDetails(userPaymentDetailsList);
+
+	    salesDateDetails.add(dateDetailsDto);
+	    dto.setSalesDateDetails(salesDateDetails);
+
+	    return dto;
+	}
+	
+	@Override
+	@Transactional
+	public ResponseDto getZReport(Integer userId) {
+	    log.info("TransactionServiceImpl.getZReport() invoked with userId: {}", userId);
+	    ResponseDto responseDto;
+	    try {
+	        Map<String, Object> lastTransactionInfo = transactionServiceBL.getLastTransactionInfo();
+	        LocalDateTime endDate = LocalDateTime.now();
+	        LocalDateTime startDate;
+
+	        if (lastTransactionInfo != null) {
+	            if (transactionDao.areAllGenerateDateTimesNull()) {
+	                log.info("All generateDateTime values are null, using dateTime of transaction ID 1");
+	                startDate = transactionDao.getDateTimeForTransactionIdOne();
+	                if (startDate == null) {
+	                    log.warn("No transaction found with ID 1, using first transaction dateTime");
+	                    startDate = transactionServiceBL.getFirstTransactionDateTime();
+	                }
+	            } else {
+	                log.info("Using the last non-null generateDateTime as startDate");
+	                startDate = transactionDao.getLastGenerateDateTime();
+	                if (startDate == null) {
+	                    log.warn("No non-null generateDateTime found, falling back to first transaction dateTime");
+	                    startDate = transactionServiceBL.getFirstTransactionDateTime();
+	                }
+	            }
+
+	            LocalDateTime nextStartDate = transactionServiceBL.getNextTransactionDateTimeAfter(startDate);
+	            if (nextStartDate != null) {
+	                log.info("Found next transaction after startDate, new startDate: {}", nextStartDate);
+	                startDate = nextStartDate;
+	            } else {
+	                log.warn("No transaction found after startDate: {}, using original startDate", startDate);
+	            }
+
+	            Map<String, Object> zReport = transactionServiceBL.getZReport(userId, startDate, endDate);
+	            if (zReport != null) {
+	                log.info("Y-Report generated successfully.");
+	                SalesReportDto salesReportDto = transformToSalesReportDto(zReport);
+	                ResponseDto saveResponse = salesReportService.save(salesReportDto);
+	                if (saveResponse.getErrorCode() == 0) {
+	                    log.info("Z-Report data saved successfully to salesReport table.");
+	                } else {
+	                    log.warn("Failed to save Z-Report data: {}", saveResponse.getErrorDescription());
+	                }
+
+	                transactionServiceBL.updateGenerateDateTime(
+	                    (Integer) lastTransactionInfo.get("id"), endDate);
+	                responseDto = serviceUtil.getServiceResponse(zReport);
+	            } else {
+	                log.info("Unable to generate Z-Report.");
+	                responseDto = serviceUtil.getErrorServiceResponse(
+	                    ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TRANSACTION_BY_Y_REPORT);
+	            }
+	        } else {
+	            log.info("No transactions found to generate Z-Report.");
+	            responseDto = serviceUtil.getErrorServiceResponse(
+	                ApplicationMessageConstants.ServiceErrorMessages.ERR_NO_TRANSACTIONS_FOUND);
+	        }
+	    } catch (Exception e) {
+	        log.error("Exception occurred while generating Z-Report: {}", e.getMessage(), e);
+	        responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+	            ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TRANSACTION_BY_Y_REPORT);
+	    }
+	    return responseDto;
+	}
+
+	private SalesReportDto transformToSalesReportDto(Map<String, Object> zReport) {
+	    SalesReportDto dto = new SalesReportDto();
+	    dto.setReportGeneratedBy((String) zReport.get("reportGeneratedBy"));
+	    dto.setStartDate((LocalDateTime) zReport.get("startDate"));
+	    dto.setEndDate((LocalDateTime) zReport.get("endDate"));
+	    dto.setFullyTotalSales((Double) zReport.get("fullyTotalSales"));
+	    dto.setReportType("zReport");
+
+	    Map<String, Map<String, Object>> dateWiseTotals = (Map<String, Map<String, Object>>) zReport.get("dateWiseTotals");
+	    List<SalesDateDetailsDto> salesDateDetails = new ArrayList<>();
+
+	    for (Map.Entry<String, Map<String, Object>> entry : dateWiseTotals.entrySet()) {
+	        String salesDate = entry.getKey();
+	        Map<String, Object> details = entry.getValue();
+
+	        SalesDateDetailsDto dateDetailsDto = new SalesDateDetailsDto();
+	        dateDetailsDto.setSalesDate(salesDate);
+	        dateDetailsDto.setTotalTransactions((Integer) details.get("totalTransactions"));
+	        dateDetailsDto.setTotalSales((Double) details.get("totalSales"));
+
+	        Map<String, Double> categoryTotalsMap = (Map<String, Double>) details.get("categoryTotals");
+	        List<CategoryTotalsDto> categoryTotals = new ArrayList<>();
+	        for (Map.Entry<String, Double> category : categoryTotalsMap.entrySet()) {
+	            CategoryTotalsDto categoryDto = new CategoryTotalsDto();
+	            categoryDto.setCategoryName(category.getKey());
+	            categoryDto.setCategoryTotal(category.getValue());
+	            categoryTotals.add(categoryDto);
+	        }
+	        dateDetailsDto.setCategoryTotals(categoryTotals);
+
+	        Map<String, Double> overallPaymentTotalsMap = (Map<String, Double>) details.get("overallPaymentTotals");
+	        List<OverallPaymentTotalsDto> overallPaymentTotals = new ArrayList<>();
+	        for (Map.Entry<String, Double> payment : overallPaymentTotalsMap.entrySet()) {
+	            OverallPaymentTotalsDto paymentDto = new OverallPaymentTotalsDto();
+	            paymentDto.setPaymentMethod(payment.getKey());
+	            paymentDto.setPaymentTotal(payment.getValue());
+	            overallPaymentTotals.add(paymentDto);
+	        }
+	        dateDetailsDto.setOverallPaymentTotals(overallPaymentTotals);
+
+	        Map<String, Map<String, Double>> userPaymentDetailsMap = (Map<String, Map<String, Double>>) details.get("userPaymentDetails");
+	        List<UserPaymentDetailsDto> userPaymentDetails = new ArrayList<>();
+	        for (Map.Entry<String, Map<String, Double>> userEntry : userPaymentDetailsMap.entrySet()) {
+	            String userName = userEntry.getKey();
+	            Map<String, Double> payments = userEntry.getValue();
+	            for (Map.Entry<String, Double> payment : payments.entrySet()) {
+	                UserPaymentDetailsDto userPaymentDto = new UserPaymentDetailsDto();
+	                userPaymentDto.setUserName(userName);
+	                userPaymentDto.setPaymentMethod(payment.getKey());
+	                userPaymentDto.setPaymentTotal(payment.getValue());
+	                userPaymentDetails.add(userPaymentDto);
+	            }
+	        }
+	        dateDetailsDto.setUserPaymentDetails(userPaymentDetails);
+
+	        salesDateDetails.add(dateDetailsDto);
+	    }
+
+	    dto.setSalesDateDetails(salesDateDetails);
+	    return dto;
+	}
 }

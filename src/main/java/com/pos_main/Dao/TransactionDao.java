@@ -2,6 +2,7 @@ package com.pos_main.Dao;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 import com.pos_main.Domain.Transaction;
 import com.pos_main.Dto.TransactionDto;
@@ -37,5 +38,19 @@ public interface TransactionDao extends BaseDao<Transaction> {
 	TransactionDto updateTransaction(TransactionDto transactionDto);
 	
 	List<TransactionDto> getTransactionByProductId(Integer productId);
+	
+	Map<String, Object> getLastTransactionInfo();
+	
+	LocalDateTime getFirstTransactionDateTime();
+	
+	boolean areAllGenerateDateTimesNull(); 
+    
+	LocalDateTime getDateTimeForTransactionIdOne(); 
+    
+    LocalDateTime getLastGenerateDateTime();
+    
+    LocalDateTime getNextTransactionDateTimeAfter(LocalDateTime startDate);
+	
+	void updateGenerateDateTime(Integer transactionId, LocalDateTime generateDateTime);
 	
 }

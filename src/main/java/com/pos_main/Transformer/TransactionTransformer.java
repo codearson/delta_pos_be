@@ -49,6 +49,7 @@ public class TransactionTransformer implements BaseTransformer<Transaction,Trans
 				transactionDto.setCustomerDto(customerTransformer.transform(transaction.getCustomer()));
 			}
 			transactionDto.setIsActive(transaction.getIsActive());
+			transactionDto.setGenerateDateTime(transaction.getGenerateDateTime());
 		}
 		return transactionDto;
 	}
@@ -79,6 +80,7 @@ public class TransactionTransformer implements BaseTransformer<Transaction,Trans
 						customerTransformer.reverseTransform(transactionDto.getCustomerDto()));
 			}			
 			transaction.setIsActive(transactionDto.getIsActive());
+			transaction.setGenerateDateTime(transactionDto.getGenerateDateTime());
 		}
 		return transaction;
 	}
