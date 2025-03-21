@@ -48,5 +48,8 @@ public class Branch implements Serializable {
 	@JoinColumn(name = "countryId", referencedColumnName = "id")
 	@ManyToOne(optional = false)
 	private Country country;
+	@JoinColumn(name = "shopDetailsId", referencedColumnName = "id")
+	@ManyToOne(optional = false)
+	private ShopDetails shopDetails;
 
 }

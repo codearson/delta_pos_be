@@ -11,7 +11,6 @@ public class ShopDetailsDto {
 	private String contactNumber;
 	private String whatsappNumber;
 	private String email;
-	private BranchDto branchDto;
 	private Boolean isActive;
 
 

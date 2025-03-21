@@ -9,6 +9,7 @@ import com.pos_main.Exception.EmailDuplicationException;
 import com.pos_main.Service.EmailService;
 import com.pos_main.Service.Utils.JwtUtil;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -105,6 +106,8 @@ public class UserServiceBL {
 	    log.info("UserServiceBL.updateUserDetails() invoked.");
 //	    String encodedPassword = passwordEncoder.encode(userDto.getPassword());
 //		userDto.setPassword(encodedPassword);
+	    userDto.setModifiedDate(LocalDateTime.now()); 
+	    userDto.setCreatedDate(userDto.getCreatedDate());
 	    return userDao.update(userDto);
 	}
 	
@@ -112,7 +115,7 @@ public class UserServiceBL {
 		UserDto userDto = userDao.checkUserAvailability(userId);
 		if (userDto != null) {
 			userDto.setIsActive(status);
-			return userDao.update(userDto);
+			return userDao.updateStatus(userDto);
 		} else {
 			return null;
 		}
@@ -125,6 +128,7 @@ public class UserServiceBL {
 	        if (adminUser != null) {
 	            String encodedPassword = passwordEncoder.encode(password);
 	            userDto.setPassword(encodedPassword);
+	            userDto.setModifiedDate(LocalDateTime.now());
 	            
 	            UserDto updatedUser = userDao.update(userDto);
 	            if (updatedUser != null) {

@@ -124,6 +124,7 @@ public class TransactionServiceBL {
 	            log.info("ProductDto is null in TransactionDetailsListDto");
 	        }
 	    }
+
 	    transactionDto.setDateTime(LocalDateTime.now());
 	    
 	    return transactionDao.save(transactionDto, alertMessage);

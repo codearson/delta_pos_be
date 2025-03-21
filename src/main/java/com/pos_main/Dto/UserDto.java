@@ -21,6 +21,7 @@ public class UserDto {
 	private String emailAddress;
 	private String mobileNumber;
 	private LocalDateTime createdDate;
+	private LocalDateTime modifiedDate;
 	private Boolean isActive;
 	private UserRoleDto userRoleDto;
 	private BranchDto branchDto;

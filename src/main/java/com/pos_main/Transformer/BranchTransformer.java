@@ -21,6 +21,9 @@ public class BranchTransformer implements BaseTransformer<Branch, BranchDto> {
 	@Autowired
 	CountryTransformer countryTransformer;
 	
+	@Autowired
+	ShopDetailsTransformer shopDetailsTransformer;
+	
 	@Override
 	public BranchDto transform(Branch branch) {
 		BranchDto branchDto = null;
@@ -35,6 +38,9 @@ public class BranchTransformer implements BaseTransformer<Branch, BranchDto> {
 			branchDto.setIsActive(branch.getIsActive());
 			if (branch.getCountry() != null) {
 				branchDto.setCountryDto(countryTransformer.transform(branch.getCountry()));
+			}
+			if (branch.getShopDetails() != null) {
+				branchDto.setShopDetailsDto(shopDetailsTransformer.transform(branch.getShopDetails()));
 			}
 		}
 		return branchDto;
@@ -55,6 +61,10 @@ public class BranchTransformer implements BaseTransformer<Branch, BranchDto> {
 			if (branchDto.getCountryDto() != null) {
 				branch.setCountry(
 						countryTransformer.reverseTransform(branchDto.getCountryDto()));
+			}
+			if (branchDto.getShopDetailsDto() != null) {
+				branch.setShopDetails(
+						shopDetailsTransformer.reverseTransform(branchDto.getShopDetailsDto()));
 			}
 		}
 		return branch;
