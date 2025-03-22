@@ -34,28 +34,28 @@ spring:
   main: 
     allow-circular-references: true
 
+entitymanager:
+  packagesToScan: com.pos_main
+
 #File upload location in C drive    
 #fileupload:
 #  url: /pos-main/
 #  path: 
 
-file:
-  upload.location: /Uploads
-        
-entitymanager:
-  packagesToScan: com.pos_main
+#file:
+#  upload.location: /Uploads
 
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    #    eureka-service-url-poll-interval-seconds: 0
-    serviceUrl:
-      defaultZone: http://localhost:7000/eureka/
+#eureka:
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    #    eureka-service-url-poll-interval-seconds: 0
+#    serviceUrl:
+#      defaultZone: http://localhost:7000/eureka/
 
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 160000000
-        readTimeout: 160000000
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 160000000
+#        readTimeout: 160000000
