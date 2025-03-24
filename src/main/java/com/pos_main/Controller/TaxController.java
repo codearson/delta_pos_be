@@ -27,35 +27,35 @@ public class TaxController {
 	TaxService taxService;
 
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody TaxDto taxDto) {
 		log.info("TaxController.save() invoked");
 		return taxService.save(taxDto);
 	}
 	
 	@PutMapping("/update")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto update(@RequestBody TaxDto taxDto) {
         log.info("TaxController.update() invoked");
         return taxService.update(taxDto);
     }
 
     @PutMapping("/updateStatus")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto updateTaxStatus(@RequestParam("id") Integer id, @RequestParam("status") Boolean status) {
         log.info("TaxController.updateTaxStatus() invoked");
         return taxService.updateTaxStatus(id, status);
     }
 	
 	@GetMapping("/getByName")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getTaxByPercentage(@RequestParam("taxPercentage") Integer taxPercentage) {
         log.info("TaxController.getTaxByPercentage() invoked");
         return taxService.getTaxByName(taxPercentage);
     }
     
     @GetMapping("/getAll")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getAll() {
         log.info("TaxController.getAll() invoked");
         return taxService.getAll();

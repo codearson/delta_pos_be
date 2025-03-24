@@ -34,7 +34,7 @@ public class ShopDetailsController {
 	ShopDetailsService shopDetailsService;
 	
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody ShopDetailsDto shopDetailsDto) {
 		log.info("ShopDetailsController.save() invoked");
 		return shopDetailsService.save(shopDetailsDto);

@@ -30,21 +30,21 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@GetMapping("/getByName")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getCustomerBySearch(@RequestParam("name") String name) {
 	    log.info("CustomerController.getCustomerBySearch() invoked with name: {}", name);
 	    return customerService.getCustomerBySearch(name);
 	}
 	
 	@GetMapping("/getByMobileNumber")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getCustomerByMobileNumber(@RequestParam("mobileNumber") String mobileNumber) {
 	    log.info("CustomerController.getCustomerByMobileNumber() invoked with mobileNumber: {}", mobileNumber);
 	    return customerService.getCustomerByMobileNumber(mobileNumber);
 	}
 
 	@GetMapping("/getAllPage")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageCustomer(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("CustomerController.getAllPage() invoked.");
@@ -52,35 +52,35 @@ public class CustomerController {
 	}
 
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto saveCustomer(@RequestBody CustomerDto customerDto) {
 		log.info("CustomerController.saveCustomer() invoked");
 		return customerService.saveCustomer(customerDto);
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getCustomerById(@RequestParam("id") Integer id) {
 	log.info("CustomerController.getCustomerById() invoked with id", id);
     return customerService.getCustomerById(id);
 	}
 	
 	@PostMapping("/update")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateCustomer(@RequestBody CustomerDto customerDto) {
 		log.info("CustomerController.updateCustomer() invoked");
 		return customerService.updateCustomer(customerDto);
 	}
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllCustomer() {
 		log.info("CustomerController.getAll() invoked.");
 		return customerService.getAllCustomer();
 	}
 	
 	@PutMapping("/updateStatus")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateCustomerStatus(@RequestParam("customerId") Integer customerId, @RequestParam("status") Boolean status) {
 		log.info("ProductController.updateCustomerStatus() invoked.");
 		return customerService.updateCustomerStatus(customerId, status);

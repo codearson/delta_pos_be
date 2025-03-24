@@ -32,7 +32,7 @@ public class CountryController {
     private CountryService countryService;
 
     @PostMapping("/save")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseEntity<ResponseDto> save(@RequestBody CountryDto countryDto) {
         log.info("CountryController.save() invoked with country: {}", countryDto.getCountryName());
         ResponseDto response = countryService.save(countryDto);
@@ -40,7 +40,7 @@ public class CountryController {
     }
 
     @GetMapping("/getAll")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseEntity<ResponseDto> getAll() {
         log.info("CountryController.getAll() invoked");
         ResponseDto response = countryService.getAll();

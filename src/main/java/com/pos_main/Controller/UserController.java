@@ -54,7 +54,7 @@ public class UserController {
 	}
 
 	@GetMapping("/getAll")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("UserController.getAll() invoked.");
@@ -62,7 +62,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/getByName")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getUserByName(
 	        @RequestParam(value = "firstName", required = false) String firstName,
 	        @RequestParam(value = "lastName", required = false) String lastName) {
@@ -71,35 +71,35 @@ public class UserController {
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getUserById(@RequestParam("id") Integer id) {
 	    log.info("UserController.getUserById() invoked with id", id);
 	    return userService.getUserById(id);
 	}
 	
 	@GetMapping("/getByRole")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getUserByRole(@RequestParam("userRole") String userRole) {
 	    log.info("UserController.getUserByRole() invoked with userRole", userRole);
 	    return userService.getUserByRole(userRole);
 	}
 	
 	@PostMapping("/update")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateUserDetails(@RequestBody UserDto userDto) {
 		log.info("UserController.updateUserDetails() invoked");
 		return userService.updateUserDetails(userDto);
 	}
 
 	@PutMapping("/updateStatus")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateInvoiceStatus(@RequestParam("userId") Integer userId, @RequestParam("status") Boolean status) {
 		log.info("UserController.updateInvoiceStatus() invoked.");
 		return userService.updateUserStatus(userId, status);
 	}
 	
 	@PutMapping("/updatePassword")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updatePassword(@RequestParam("userId") Integer userId, @RequestParam("password") String password, @RequestParam("changedByUserId") Integer changedByUserId) {
 	    log.info("UserController.updatePassword() invoked.");
 	    return userService.updatePassword(userId, password, changedByUserId);
