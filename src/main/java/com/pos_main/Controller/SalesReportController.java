@@ -33,7 +33,7 @@ public class SalesReportController {
     private SalesReportService salesReportService;
 
     @PostMapping("/save")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto save(@RequestBody SalesReportDto salesReportDto) {
         log.info("SalesReportController.save() invoked");
         return salesReportService.save(salesReportDto);

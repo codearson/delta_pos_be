@@ -24,7 +24,7 @@ public class PaymentMethodController {
 	PaymentMethodService paymentMethodService;
 
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody PaymentMethodDto paymentMethodDto) {
 		log.info("PaymentMethodController.save() invoked");
 		return paymentMethodService.save(paymentMethodDto);	

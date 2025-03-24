@@ -31,7 +31,7 @@ public class TransactionPaymentMethodController {
 	TransactionPaymentMethodService transactionDetailsListService;
 	
 	@GetMapping("/getByTransactionId")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getByTransactionId(@RequestParam("transactionId") Integer transactionId) {
 	    log.info("TransactionPaymentMethodController.getByTransactionId() invoked with transactionId: {}", transactionId);
 	    return transactionDetailsListService.getByTransactionId(transactionId);

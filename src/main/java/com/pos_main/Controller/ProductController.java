@@ -36,14 +36,14 @@ public class ProductController {
 	ProductService productService;
 	
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody ProductDto productDto) {
 		log.info("ProductController.save() invoked");
 		return productService.save(productDto);
 	}
 	
 	@GetMapping("/getAllPage")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("ProductController.getAll() invoked.");
@@ -51,41 +51,42 @@ public class ProductController {
 	}
 	
 	@GetMapping("/getAll")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllProducts() {
 		log.info("ProductController.gellAllProducts() invoked");
 		return productService.getAllProducts();
 	}
 	
 	@GetMapping("/getByBarcode")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getProductByBarcode(@RequestParam("barcode") String barcode) {
 	    log.info("ProductController.getProductByBarcode() invoked with barcode", barcode);
 	    return productService.getProductByBarcode(barcode);
 	}
 	
 	@GetMapping("/getByName")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getProductByName(@RequestParam("name") String name) {
         log.info("ProductCategoryController.getAllProductCategoryByName() invoked" );
         return productService.getProductByName(name);
     }
 	
 	@PostMapping("/update")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateProduct(@RequestBody ProductDto productDto) {
 		log.info("ProductController.updateProduct() invoked");
 		return productService.updateProduct(productDto);
 	}
 	
 	@PutMapping("/updateStatus")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateProductStatus(@RequestParam("productId") Integer productId, @RequestParam("status") Boolean status) {
 		log.info("ProductController.updateProductStatus() invoked.");
 		return productService.updateProductStatus(productId, status);
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getProductById(@RequestParam("id") Integer id) {
 	log.info("ProductController.getProductById() invoked with id", id);
     return productService.getProductById(id);

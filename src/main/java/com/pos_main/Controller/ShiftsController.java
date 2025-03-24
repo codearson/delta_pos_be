@@ -33,7 +33,7 @@ public class ShiftsController {
 	ShiftsService shiftsService;
 	
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody ShiftsDto shiftsDto) {
 		log.info("ShiftsController.save() invoked");
 		return shiftsService.save(shiftsDto);

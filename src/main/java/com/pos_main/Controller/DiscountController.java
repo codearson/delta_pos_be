@@ -26,7 +26,7 @@ public class DiscountController {
 	DiscountService discountService;
 	
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody DiscountDto discountDto) {
 		log.info("discountController.save() invoked");
 		return discountService.save(discountDto);

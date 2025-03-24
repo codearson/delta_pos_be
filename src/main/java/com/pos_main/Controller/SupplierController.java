@@ -27,42 +27,42 @@ public class SupplierController {
 	SupplierService supplierService;
 
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto saveSupplier(@RequestBody SupplierDto supplierDto) {
 		log.info("SupplierController.saveSupplier() invoked");
 		return supplierService.saveSupplier(supplierDto);
 	}
 	
 	@GetMapping("/getByName")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getSupplierByName(@RequestParam("name") String name) {
 	    log.info("SupplierController.getSupplierByName() invoked with name", name);
 	    return supplierService.getSupplierByName(name);
 	}
 	
 	@PostMapping("/update")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateSupplier(@RequestBody SupplierDto supplierDto) {
 		log.info("SupplierController.updateSuppplier() invoked");
 		return supplierService.updateSupplier(supplierDto);
 	}
 	
 	@PutMapping("/updateStatus")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateSupplierStatus(@RequestParam("supplierId") Integer supplierId, @RequestParam("status") Boolean status) {
 		log.info("SupplierController.updateSupplierStatus() invoked.");
 		return supplierService.updateSupplierStatus(supplierId, status);
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getSupplierById(@RequestParam("id") Integer id) {
 		log.info("SupplierController.getSupplierById() invoked with id", id);
 		return supplierService.getSupplierById(id);
 	}
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllSupplier() {
 		log.info("SupplierController.getAllSupplier() invoked");
 		return supplierService.getAllSupplier();
