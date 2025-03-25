@@ -10,11 +10,11 @@ spring:
       username: root
       password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
 
-    mirror:
-      url: jdbc:mysql://shuttle.proxy.rlwy.net:36085/pos_mirror_db?allowPublicKeyRetrieval=true&useSSL=false
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      username: root
-      password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
+#    mirror:
+#      url: jdbc:mysql://shuttle.proxy.rlwy.net:36085/pos_mirror_db?allowPublicKeyRetrieval=true&useSSL=false
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
 
     hikari:
       connection-timeout: 120000
