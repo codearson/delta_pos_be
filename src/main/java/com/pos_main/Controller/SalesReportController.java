@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.SalesReportDto;
@@ -37,5 +38,19 @@ public class SalesReportController {
     public ResponseDto save(@RequestBody SalesReportDto salesReportDto) {
         log.info("SalesReportController.save() invoked");
         return salesReportService.save(salesReportDto);
+    }
+
+    @GetMapping("/getAllByXReports")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto getXReports() {
+        log.info("SalesReportController.getXReports() invoked");
+        return salesReportService.getXReports();
+    }
+
+    @GetMapping("/getAllByYReports")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto getZReports() {
+        log.info("SalesReportController.getZReports() invoked");
+        return salesReportService.getZReports();
     }
 }
