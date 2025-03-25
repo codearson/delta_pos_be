@@ -35,28 +35,28 @@ public class ProductCategoryController {
 	ProductCategoryService productCategoryService;
 
 	@GetMapping("/getAll")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll() {
 		log.info("ProductCategoryController.getAll() invoked");
 		return productCategoryService.getAll();
 	}
 
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody ProductCategoryDto productCategoryDto) {
 		log.info("ProductCategoryController.save() invoked");
 		return productCategoryService.save(productCategoryDto);
 	}
 
 	@PutMapping("/update")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto update(@RequestBody ProductCategoryDto productCategoryDto) {
 		log.info("ProductCategoryController.update() invoked");
 		return productCategoryService.update(productCategoryDto);
 	}
     
 	@GetMapping("/getByName")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getAllByName(@RequestParam("productCategoryName") String productCategoryName) {
         log.info("ProductCategoryController.getAllProductCategoryByName() invoked" );
         return productCategoryService.getAllByName(productCategoryName);
@@ -64,7 +64,7 @@ public class ProductCategoryController {
      
 	}
     @PutMapping("/updateStatus")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto updateInvoiceStatus(@RequestParam("id") Integer Id, @RequestParam("status") Boolean status) {
     log.info("ProductCategoryController.updateInvoiceStatus() invoked.");
     return productCategoryService.updateProductCategoryStatus(Id, status);

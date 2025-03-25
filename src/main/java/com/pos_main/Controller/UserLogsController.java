@@ -25,14 +25,14 @@ public class UserLogsController {
 	UserLogsService userLogsService;
 	
 	@PostMapping("/login")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto login(@RequestBody UserLogsDto userLogsDto) {
         log.info("UserLogsController.login() invoked");
         return userLogsService.login(userLogsDto);
     }
 	
 	@PostMapping("/save")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody UserLogsDto userLogsDto) {
 		log.info("UserLogsController.save() invoked");
 		return userLogsService.save(userLogsDto);

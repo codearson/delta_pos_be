@@ -31,13 +31,14 @@ public class UserRoleController {
 	UserRoleService userRoleService;
 	
 	@PostMapping("/save")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto saveUserRole(@RequestBody UserRoleDto userRoleDto) {
 		log.info("UserTypeController.save() invoked");
 		return userRoleService.saveUserRole(userRoleDto);
 	}
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllUserRole() {
 		log.info("UserRoleController.getAll() invoked.");
 		return userRoleService.getAllUserRole();

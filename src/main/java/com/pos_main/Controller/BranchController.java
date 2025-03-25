@@ -38,7 +38,7 @@ public class BranchController {
 	BranchService  branchService;
 	
 	@GetMapping("/getAllPage")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("BranchController.getAll() invoked.");
@@ -46,44 +46,49 @@ public class BranchController {
 	}
 	
 	@GetMapping("/getAll")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto gellAllBranches() {
 		log.info("BranchController.gellAllBranches() invoked");
 		return branchService.getAllBranches();
 	}
 	
 	@PostMapping("/save")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto save(@RequestBody BranchDto branchDto) {
 		log.info("BranchController.save() invoked");
 		return branchService.save(branchDto);
 	}
 	
 	@GetMapping("/getAllBySBUid")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto gellAllBranchesBySBU(@RequestParam("sbuId") Integer sbuId) {
 		log.info("BranchController.gellAllBranchesBySBU() invoked");
 		return branchService.getAllBranchesBySbuId(sbuId);
 	}
 	
 	@PostMapping("/update")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateBranch(@RequestBody BranchDto branchDto) {
 	    log.info("BranchController.updateBranch() invoked");
 	    return branchService.updateBranch(branchDto);
 	}
 	
 	@GetMapping("/getByName")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getBranchByName(@RequestParam("branchName") String branchName) {
 	    log.info("BranchController.getBranchByName() invoked");
 	    return branchService.getBranchByName(branchName);
 	}
 	
 	@PutMapping("/updateStatus")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateInvoiceStatus(@RequestParam("branchId") Integer branchId, @RequestParam("status") Boolean status) {
 		log.info("BranchController.updateInvoiceStatus() invoked.");
 		return branchService.updateBranchStatus(branchId, status);
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getBranchById(@RequestParam("id") Integer id) {
 	log.info("BranchController.getBranchById() invoked with id", id);
     return branchService.getBranchById(id);

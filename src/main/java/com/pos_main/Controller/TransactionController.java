@@ -38,90 +38,91 @@ public class TransactionController {
 	TransactionService transactionService;
 	
 	@GetMapping("/getByDateRange")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getTransactionByDateRange(@RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate, @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  LocalDateTime endDate) {
         log.info("TransactionController.getTransactionByDateRange() invoked" );
         return transactionService.getTransactionByDateRange(startDate, endDate);
     }
 	
 	@GetMapping("/getByBranchId")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionByBranchId(@RequestParam("branchId") Integer branchId) {
 	    log.info("TransactionController.getTransactionByBranchId() invoked with branchId: {}", branchId);
 	    return transactionService.getTransactionByBranchId(branchId);
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionById(@RequestParam("id") Integer id) {
 	    log.info("TransactionController.getTransactionById() invoked with id: {}", id);
 	    return transactionService.getTransactionById(id);
 	}
 	
 	@GetMapping("/getByUserId")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionByUserId(@RequestParam("userId") Integer userId) {
 	    log.info("TransactionController.getTransactionByUserId() invoked with userId: {}", userId);
 	    return transactionService.getTransactionByUserId(userId);
 	}
 	
 	@GetMapping("/getByCustomerId")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionByCustomerId(@RequestParam("customerId") Integer customerId) {
 	    log.info("TransactionController.getTransactionByCustomerId() invoked with customerId: {}", customerId);
 	    return transactionService.getTransactionByCustomerId(customerId);
 	}
 	
 	@GetMapping("/getByPaymentMethodId")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionByPaymentMethodId(@RequestParam("paymentMethodId") Integer paymentMethodId) {
 	    log.info("TransactionController.getTransactionByPaymentMethodId() invoked with paymentMethodId: {}", paymentMethodId);
 	    return transactionService.getTransactionByPaymentMethodId(paymentMethodId);
 	}
 	
 	@PostMapping("/save")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto save(@RequestBody TransactionDto transactionDto, String alertMessage) {
         log.info("TransactionController.save() invoked");
         return transactionService.save(transactionDto, alertMessage);
     }
 	
 	@PostMapping("/update")
-    @PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto updateTransaction(@RequestBody TransactionDto transactionDto) {
         log.info("TransactionController.updateTransaction() invoked");
         return transactionService.updateTransaction(transactionDto);
     }
 	
 	@GetMapping("/getAll")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllTransaction() {
 		log.info("TransactionController.gellAllTransaction() invoked");
 		return transactionService.getAllTransaction();
 	}
 	
 	@GetMapping("/getByStatus")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionByStatus(@RequestParam("isActive") Boolean isActive) {
 	    log.info("TransactionController.getTransactionByStatus() invoked with isActive: {}", isActive);
 	    return transactionService.getTransactionByStatus(isActive);
 	}
 	
 	@GetMapping("/getByProductId")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getTransactionByProductId(@RequestParam("productId") Integer productId) {
 	    log.info("TransactionController.getTransactionByProductId() invoked with productId: {}", productId);
 	    return transactionService.getTransactionByProductId(productId);
 	}
 	
 	@GetMapping("/xReport")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getXReport(@RequestParam("userId") Integer userId) {
 	    log.info("TransactionController.getXReport() invoked with userId: {}", userId);
 	    return transactionService.getXReport(userId);
 	}
 	
 	@GetMapping("/zReport")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getZReport(@RequestParam("userId") Integer userId) {
 	    log.info("TransactionController.getZReport() invoked with userId: {}", userId);
 	    return transactionService.getZReport(userId);
