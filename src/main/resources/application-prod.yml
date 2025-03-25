@@ -4,7 +4,7 @@ app:
 #database
 spring:
   datasource:
-    url: jdbc:mysql://tramway.proxy.rlwy.net:44894/pos_main_db?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://tramway.proxy.rlwy.net:44894,shuttle.proxy.rlwy.net:36085/pos_main_db?allowPublicKeyRetrieval=true&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
