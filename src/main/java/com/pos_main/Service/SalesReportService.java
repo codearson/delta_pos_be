@@ -16,4 +16,7 @@ public interface SalesReportService {
     
 	ResponseDto save(SalesReportDto salesReportDto);
 	
+	ResponseDto getXReports();
+	
+	ResponseDto getZReports();
 }

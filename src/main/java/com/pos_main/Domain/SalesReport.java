@@ -42,7 +42,7 @@ public class SalesReport implements Serializable {
 	private LocalDateTime endDate;
 	@Column(name = "fullyTotalSales")
 	private Double fullyTotalSales;
-	@Column(name = "report_type")
+	@Column(name = "reportType")
 	private String reportType;
 
 }

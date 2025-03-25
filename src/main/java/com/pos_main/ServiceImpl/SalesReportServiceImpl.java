@@ -21,6 +21,9 @@ import com.pos_main.Service.Utils.ServiceUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Slf4j
 @Service
 public class SalesReportServiceImpl implements SalesReportService {
@@ -49,6 +52,50 @@ public class SalesReportServiceImpl implements SalesReportService {
             log.error("Exception occurred while saving sales report", e);
             responseDto = serviceUtil.getExceptionServiceResponseByProperties(
                 ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_SALES_REPORT);
+        }
+        return responseDto;
+    }
+
+    @Override
+    public ResponseDto getXReports() {
+        log.info("SalesReportServiceImpl.getXReports() invoked");
+        ResponseDto responseDto = null;
+        try {
+            List<SalesReportDto> xReports = salesReportServiceBL.findByReportType("xReport");
+            if (xReports != null && !xReports.isEmpty()) {
+                log.info("X Reports retrieved successfully, count: {}", xReports.size());
+                responseDto = serviceUtil.getServiceResponse(xReports);
+            } else {
+                log.info("No X Reports found");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_NO_X_REPORTS_FOUND);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurred while retrieving X Reports", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_GET_X_REPORTS);
+        }
+        return responseDto;
+    }
+
+    @Override
+    public ResponseDto getZReports() {
+        log.info("SalesReportServiceImpl.getZReports() invoked");
+        ResponseDto responseDto = null;
+        try {
+            List<SalesReportDto> zReports = salesReportServiceBL.findByReportType("zReport");
+            if (zReports != null && !zReports.isEmpty()) {
+                log.info("Z Reports retrieved successfully, count: {}", zReports.size());
+                responseDto = serviceUtil.getServiceResponse(zReports);
+            } else {
+                log.info("No Z Reports found");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_NO_Z_REPORTS_FOUND);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurred while retrieving Z Reports", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_GET_Z_REPORTS);
         }
         return responseDto;
     }

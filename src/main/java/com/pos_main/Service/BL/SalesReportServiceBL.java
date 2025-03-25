@@ -17,6 +17,8 @@ import com.pos_main.Dto.SalesReportDto;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 @Slf4j
 @Service
 public class SalesReportServiceBL {
@@ -29,4 +31,8 @@ public class SalesReportServiceBL {
         return salesReportDao.save(salesReportDto);
     }
     
+    public List<SalesReportDto> findByReportType(String reportType) {
+        log.info("SalesReportServiceBL.findByReportType() invoked for: {}", reportType);
+        return salesReportDao.findByReportType(reportType);
+    }
 }

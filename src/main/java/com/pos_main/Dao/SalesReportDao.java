@@ -1,6 +1,7 @@
 package com.pos_main.Dao;
 
 import com.pos_main.Dto.SalesReportDto;
+import java.util.List;
 
 /**
  * Title: SalesReportDao.java. Company: www.codearson.com Copyright: Copyright (c) 2025.
@@ -14,5 +15,5 @@ import com.pos_main.Dto.SalesReportDto;
 public interface SalesReportDao {
     
 	SalesReportDto save(SalesReportDto salesReportDto);
-	
+	List<SalesReportDto> findByReportType(String reportType);
 }
