@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "571a48d6-7cf3-4a69-a926-78ece5a9322a",
+		"_postman_id": "a197964a-c63e-4acf-848a-2c7dc207697e",
 		"name": "Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "40723516"
+		"_exporter_id": "9802460",
+		"_collection_link": "https://grey-spaceship-295309.postman.co/workspace/New-Team-Workspace~782a63dc-aca7-4d20-a281-4dd8d062cbff/collection/9802460-a197964a-c63e-4acf-848a-2c7dc207697e?action=share&source=collection_link&creator=9802460"
 	},
 	"item": [
 		{
@@ -2841,6 +2842,159 @@
 							"path": [
 								"country",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff Leave",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2025-04-03\",\r\n    \"endDate\": \"2025-04-07\",\r\n    \"description\": \"Sick\",\r\n    \"isActive\":1,\r\n    \"userDto\":{\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/staffLeave/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffLeave",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/staffLeave/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffLeave",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"createdOn\": \"2025-03-20\",\r\n    \"startDate\": \"2025-04-03\",\r\n    \"endDate\": \"2025-04-07\",\r\n    \"description\": \"Casual\",\r\n    \"isActive\":1,\r\n    \"userDto\":{\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/staffLeave/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffLeave",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/staffLeave/updateStatus?id=1&status=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffLeave",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "1"
+								}
 							]
 						}
 					},

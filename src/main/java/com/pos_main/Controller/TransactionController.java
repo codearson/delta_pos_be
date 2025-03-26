@@ -94,7 +94,7 @@ public class TransactionController {
     }
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+//	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllTransaction() {
 		log.info("TransactionController.gellAllTransaction() invoked");
 		return transactionService.getAllTransaction();

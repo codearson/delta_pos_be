@@ -180,6 +180,14 @@ public interface ApplicationMessageConstants {
         String EX_GET_X_REPORTS = "ex.get.x.reports";
         String ERR_NO_Z_REPORTS_FOUND = "err.no.z.reports.found";
         String EX_GET_Z_REPORTS = "ex.get.z.reports";
+		String ERR_SAVE_STAFF_LEAVE_DETAILS = "err.save.staff.leave.details";
+		String EX_SAVE_STAFF_LEAVE_DETAILS = "ex.save.staff.leave.details";
+		String ERR_UPDATE_STAFF_LEAVE_DETAILS = "err.update.staff.leave.details";
+		String EX_UPDATE_STAFF_LEAVE_DETAILS = "ex.update.staff.leave.details";
+		String ERR_UPDATE_STAFF_LEAVE_STATUS = "err.update.status.staff.leave.details";
+		String EX_UPDATE_STAFF_LEAVE_STATUS = "ex.update.status.staff.leave.details";
+		String ERR_RETRIEVE_ALL_STAFF_LEAVE_DETAILS = "err.get.all.staff.leave.details";
+		String EX_RETRIEVE_ALL_STAFF_LEAVE_DETAILS = "ex.get.all.staff.leave.details";
 		
 	}
 }
