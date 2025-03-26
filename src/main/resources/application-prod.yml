@@ -1,44 +1,36 @@
 app:
   name: pos_main_api
 
-#Database
+#database
 spring:
   datasource:
-    main:
-      url: jdbc:mysql://tramway.proxy.rlwy.net:44894/pos_main_db?allowPublicKeyRetrieval=true&useSSL=false
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      username: root
-      password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
-
-#    mirror:
-#      url: jdbc:mysql://shuttle.proxy.rlwy.net:36085/pos_mirror_db?allowPublicKeyRetrieval=true&useSSL=false
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      username: root
-#      password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
-
+    url: jdbc:mysql://tramway.proxy.rlwy.net:44894/pos_main_db?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: OsyxbUBBlTAMIogZNfYpoYrCOAMUUmyV
+    tomcat:
+      initial-size: 10
+      max-wait: 20000
+      max-active: 50
+      max-idle: 15
+      min-idle: 5
     hikari:
       connection-timeout: 120000
       idle-timeout: 60000
       max-lifetime: 120000
       minimum-idle: 2
-      maximum-pool-size: 4
-
-    jpa:
-      hibernate:
-        ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-          packagesToScan: com.pos_main
-        show-sql: true
-        open-in-view: false
-
+      maximum-pool-size: 4   
+  jpa:
+    hibernate.ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    open-in-view: false
   servlet:
     multipart:
       enabled: true
       max-file-size: 100MB
       max-request-size: 100MB
-
   main: 
     allow-circular-references: true
 

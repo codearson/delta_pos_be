@@ -43,7 +43,6 @@ public class ProductController {
 	}
 	
 	@GetMapping("/getAllPage")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("ProductController.getAll() invoked.");
@@ -51,21 +50,18 @@ public class ProductController {
 	}
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllProducts() {
 		log.info("ProductController.gellAllProducts() invoked");
 		return productService.getAllProducts();
 	}
 	
 	@GetMapping("/getByBarcode")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getProductByBarcode(@RequestParam("barcode") String barcode) {
 	    log.info("ProductController.getProductByBarcode() invoked with barcode", barcode);
 	    return productService.getProductByBarcode(barcode);
 	}
 	
 	@GetMapping("/getByName")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getProductByName(@RequestParam("name") String name) {
         log.info("ProductCategoryController.getAllProductCategoryByName() invoked" );
         return productService.getProductByName(name);
@@ -86,7 +82,6 @@ public class ProductController {
 	}
 	
 	@GetMapping("/getById")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getProductById(@RequestParam("id") Integer id) {
 	log.info("ProductController.getProductById() invoked with id", id);
     return productService.getProductById(id);

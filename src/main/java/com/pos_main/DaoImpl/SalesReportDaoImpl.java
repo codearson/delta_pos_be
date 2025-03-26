@@ -26,6 +26,10 @@ import com.pos_main.Transformer.UserPaymentDetailsTransformer;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Title: SalesReportDaoImpl.java. Company: www.codearson.com Copyright: Copyright (c) 2025.
  *
@@ -93,5 +97,67 @@ public class SalesReportDaoImpl implements SalesReportDao {
         entityManager.flush();
         entityManager.clear();
         return salesReportTransformer.transform(salesReport);
+    }
+
+    @Override
+    public List<SalesReportDto> findByReportType(String reportType) {
+        log.info("SalesReportDaoImpl.findByReportType() invoked for: {}", reportType);
+        
+        String jpql = "SELECT sr FROM SalesReport sr WHERE sr.reportType = :reportType";
+        List<SalesReport> salesReports = entityManager.createQuery(jpql, SalesReport.class)
+                .setParameter("reportType", reportType)
+                .getResultList();
+        
+        List<SalesReportDto> reportDtos = new ArrayList<>();
+        
+        for (SalesReport report : salesReports) {
+            SalesReportDto dto = salesReportTransformer.transform(report);
+            
+            // Fetch and set SalesDateDetails for this report
+            String dateDetailsQuery = "SELECT sd FROM SalesDateDetails sd WHERE sd.salesReport.id = :reportId";
+            List<SalesDateDetails> dateDetailsList = entityManager.createQuery(dateDetailsQuery, SalesDateDetails.class)
+                    .setParameter("reportId", report.getId())
+                    .getResultList();
+            
+            List<SalesDateDetailsDto> dateDetailsDtos = new ArrayList<>();
+            
+            for (SalesDateDetails dateDetails : dateDetailsList) {
+                SalesDateDetailsDto dateDetailsDto = salesDateDetailsTransformer.transform(dateDetails);
+                
+                // Fetch and set CategoryTotals
+                String categoryQuery = "SELECT ct FROM CategoryTotals ct WHERE ct.salesDateDetails.id = :dateDetailsId";
+                List<CategoryTotals> categoryTotals = entityManager.createQuery(categoryQuery, CategoryTotals.class)
+                        .setParameter("dateDetailsId", dateDetails.getId())
+                        .getResultList();
+                dateDetailsDto.setCategoryTotals(categoryTotals.stream()
+                        .map(categoryTotalsTransformer::transform)
+                        .collect(Collectors.toList()));
+                
+                // Fetch and set OverallPaymentTotals
+                String paymentQuery = "SELECT pt FROM OverallPaymentTotals pt WHERE pt.salesDateDetails.id = :dateDetailsId";
+                List<OverallPaymentTotals> paymentTotals = entityManager.createQuery(paymentQuery, OverallPaymentTotals.class)
+                        .setParameter("dateDetailsId", dateDetails.getId())
+                        .getResultList();
+                dateDetailsDto.setOverallPaymentTotals(paymentTotals.stream()
+                        .map(overallPaymentTotalsTransformer::transform)
+                        .collect(Collectors.toList()));
+                
+                // Fetch and set UserPaymentDetails
+                String userPaymentQuery = "SELECT up FROM UserPaymentDetails up WHERE up.salesDateDetails.id = :dateDetailsId";
+                List<UserPaymentDetails> userPayments = entityManager.createQuery(userPaymentQuery, UserPaymentDetails.class)
+                        .setParameter("dateDetailsId", dateDetails.getId())
+                        .getResultList();
+                dateDetailsDto.setUserPaymentDetails(userPayments.stream()
+                        .map(userPaymentDetailsTransformer::transform)
+                        .collect(Collectors.toList()));
+                
+                dateDetailsDtos.add(dateDetailsDto);
+            }
+            
+            dto.setSalesDateDetails(dateDetailsDtos);
+            reportDtos.add(dto);
+        }
+        
+        return reportDtos;
     }
 }

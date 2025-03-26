@@ -176,6 +176,10 @@ public interface ApplicationMessageConstants {
         String EX_RETRIEVE_TRANSACTION_BY_Y_REPORT ="ex.retrieve.transaction.by.y.report";
         String ERR_SAVE_SALES_REPORT = "err.retrieve.save.sales.report";
         String EX_SAVE_SALES_REPORT = "ex.retrieve.save.sales.report";
+        String ERR_NO_X_REPORTS_FOUND = "err.no.x.reports.found";
+        String EX_GET_X_REPORTS = "ex.get.x.reports";
+        String ERR_NO_Z_REPORTS_FOUND = "err.no.z.reports.found";
+        String EX_GET_Z_REPORTS = "ex.get.z.reports";
 		String ERR_SAVE_STAFF_LEAVE_DETAILS = "err.save.staff.leave.details";
 		String EX_SAVE_STAFF_LEAVE_DETAILS = "ex.save.staff.leave.details";
 		String ERR_UPDATE_STAFF_LEAVE_DETAILS = "err.update.staff.leave.details";
