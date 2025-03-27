@@ -61,6 +61,9 @@ public class PurchaseListServiceBL {
         log.info("PurchaseListServiceBL.deleteAll() invoked");
         return purchaseListDao.deleteAll();
     }
-    
-}
 
+    public boolean deleteById(Integer id) {
+        log.info("PurchaseListServiceBL.deleteById() invoked with id: {}", id);
+        return purchaseListDao.deleteById(id);
+    }
+}
