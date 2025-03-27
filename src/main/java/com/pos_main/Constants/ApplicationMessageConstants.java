@@ -180,6 +180,8 @@ public interface ApplicationMessageConstants {
         String EX_GET_X_REPORTS = "ex.get.x.reports";
         String ERR_NO_Z_REPORTS_FOUND = "err.no.z.reports.found";
         String EX_GET_Z_REPORTS = "ex.get.z.reports";
-		
+        String ERR_DELETE_PURCHASE_LIST_BY_ID = "err.delete.purchase.list.by.id";
+		String EX_DELETE_PURCHASE_LIST_BY_ID = "ex.delete.purchase.list.by.id";
+        
 	}
 }

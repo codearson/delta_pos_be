@@ -24,7 +24,6 @@ public class PurchaseListController {
     private PurchaseListService purchaseListService;
 
     @PostMapping("/save")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto savePurchaseList(
             @RequestParam("barcode") String barcode) {
         log.info("PurchaseListController.savePurchaseList() invoked with barcode: {}", barcode);
@@ -36,7 +35,6 @@ public class PurchaseListController {
     }
     
     @GetMapping("/getAll")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll() {
 		log.info("PurchaseListController.getAll() invoked");
 		return purchaseListService.getAll();
@@ -47,5 +45,12 @@ public class PurchaseListController {
     public ResponseDto deleteAll() {
         log.info("PurchaseListController.deleteAll() invoked");
         return purchaseListService.deleteAll();
+    }
+    
+    @DeleteMapping("/deleteById")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto deleteById(@RequestParam("id") Integer id) {
+        log.info("PurchaseListController.deleteById() invoked with id: {}", id);
+        return purchaseListService.deleteById(id);
     }
 }

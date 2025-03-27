@@ -61,10 +61,20 @@ public class PurchaseListDaoImpl extends BaseDaoImpl<PurchaseList> implements Pu
         try {
             int deletedCount = entityManager.createQuery("DELETE FROM PurchaseList").executeUpdate();
             log.info("Deleted {} PurchaseList records", deletedCount);
-            return deletedCount > 0; // Return true if at least one record was deleted
+            return deletedCount > 0;
         } catch (Exception e) {
             log.error("Error while deleting all PurchaseList records", e);
-            throw e; // Re-throw to be handled by the service layer
+            throw e;
         }
-}
+    }
+    
+    @Override
+    @Transactional
+    public boolean deleteById(Integer id) {
+        log.info("PurchaseListDaoImpl.deleteById() invoked with id: {}", id);
+        int deletedCount = entityManager.createQuery("DELETE FROM PurchaseList p WHERE p.id = :id")
+                .setParameter("id", id)
+                .executeUpdate();
+        return deletedCount > 0;
+    }
 }
