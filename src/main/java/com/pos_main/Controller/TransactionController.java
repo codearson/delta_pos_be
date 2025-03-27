@@ -80,7 +80,7 @@ public class TransactionController {
 	}
 	
 	@PostMapping("/save")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto save(@RequestBody TransactionDto transactionDto, String alertMessage) {
         log.info("TransactionController.save() invoked");
         return transactionService.save(transactionDto, alertMessage);
