@@ -46,7 +46,7 @@ public class SalesReportController {
         return salesReportService.getXReports();
     }
 
-    @GetMapping("/getAllByYReports")
+    @GetMapping("/getAllByZReports")
     public ResponseDto getZReports() {
         log.info("SalesReportController.getZReports() invoked");
         return salesReportService.getZReports();
