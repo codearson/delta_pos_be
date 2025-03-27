@@ -41,14 +41,12 @@ public class SalesReportController {
     }
 
     @GetMapping("/getAllByXReports")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getXReports() {
         log.info("SalesReportController.getXReports() invoked");
         return salesReportService.getXReports();
     }
 
     @GetMapping("/getAllByYReports")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getZReports() {
         log.info("SalesReportController.getZReports() invoked");
         return salesReportService.getZReports();

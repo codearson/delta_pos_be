@@ -94,7 +94,7 @@ public class TransactionController {
     }
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+//	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllTransaction() {
 		log.info("TransactionController.gellAllTransaction() invoked");
 		return transactionService.getAllTransaction();
@@ -115,14 +115,12 @@ public class TransactionController {
 	}
 	
 	@GetMapping("/xReport")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getXReport(@RequestParam("userId") Integer userId) {
 	    log.info("TransactionController.getXReport() invoked with userId: {}", userId);
 	    return transactionService.getXReport(userId);
 	}
 	
 	@GetMapping("/zReport")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getZReport(@RequestParam("userId") Integer userId) {
 	    log.info("TransactionController.getZReport() invoked with userId: {}", userId);
 	    return transactionService.getZReport(userId);
