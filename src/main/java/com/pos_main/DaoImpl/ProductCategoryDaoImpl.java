@@ -9,6 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -41,10 +42,7 @@ public class ProductCategoryDaoImpl extends BaseDaoImpl<ProductCategory> impleme
 	public List<ProductCategoryDto> getAll() {
 		log.info("ProductCategoryDaoImpl.gellAll() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(ProductCategory.class, "productCategory");
-		
-		// Next line using for filter only active product Category
-//		criteria.add(Restrictions.eq("isActive", true));
-		
+		criteria.addOrder(Order.asc("id"));		
 		List<ProductCategoryDto> productCategoryDtoList = null;
 		List<ProductCategory> productCategoryList = (List<ProductCategory>) criteria.list();
 		if (productCategoryList != null && !productCategoryList.isEmpty()) {

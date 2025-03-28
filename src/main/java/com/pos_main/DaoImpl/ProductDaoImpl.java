@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -67,7 +68,7 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
 			pageSize = count;
 		}
 		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
-	 	criteria.add(Restrictions.eq("isActive", true));
+		criteria.addOrder(Order.asc("id"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allProductList = criteria.list();
@@ -86,7 +87,7 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
 	public List<ProductDto> getAllProducts() {
 		log.info("ProductDaoImpl.getAllProducts() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
-//	 	criteria.add(Restrictions.eq("isActive", true));
+		criteria.addOrder(Order.asc("id"));
 		List<ProductDto> productDtoList = null;
 		List<Product> productList = (List<Product>) criteria.list();
 		if (productList != null && !productList.isEmpty()) {

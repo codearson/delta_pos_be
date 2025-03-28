@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -87,7 +88,7 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 			pageSize = count;
 		}
 		Criteria criteria = getCurrentSession().createCriteria(User.class, "user");
-//		criteria.add(Restrictions.eq("isActive", true));
+		criteria.addOrder(Order.asc("id"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allUserList = criteria.list();

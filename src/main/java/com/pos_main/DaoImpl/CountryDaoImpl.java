@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.pos_main.Dao.CountryDao;
@@ -42,6 +43,7 @@ public class CountryDaoImpl extends BaseDaoImpl<Country> implements CountryDao {
 	public List<CountryDto> getAll() {
 		log.info("CountryDaoImpl.getAll() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Country.class, "country");
+		criteria.addOrder(Order.asc("id"));
 		List<CountryDto> countryDtoList = null;
 		List<Country> countryList = (List<Country>) criteria.list();
 		if (countryList != null && !countryList.isEmpty()) {
