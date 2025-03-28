@@ -88,7 +88,7 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 			pageSize = count;
 		}
 		Criteria criteria = getCurrentSession().createCriteria(User.class, "user");
-		criteria.addOrder(Order.asc("userRoleId"));
+		// criteria.addOrder(Order.asc("userRoleId"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allUserList = criteria.list();
