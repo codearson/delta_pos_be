@@ -188,6 +188,8 @@ public interface ApplicationMessageConstants {
 		String EX_UPDATE_STAFF_LEAVE_STATUS = "ex.update.status.staff.leave.details";
 		String ERR_RETRIEVE_ALL_STAFF_LEAVE_DETAILS = "err.get.all.staff.leave.details";
 		String EX_RETRIEVE_ALL_STAFF_LEAVE_DETAILS = "ex.get.all.staff.leave.details";
+		String ERR_RETRIEVE_ALL_TRANSACTION_DETAILS = "err.get.all.page.transaction.details";
+		String EX_RETRIEVE_ALL_TRANSACTION_DETAILS = "ex.get.all.page.transaction.details";
 		
 	}
 }

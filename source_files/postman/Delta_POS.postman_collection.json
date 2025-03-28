@@ -282,7 +282,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3Mjk3NjM1LCJleHAiOjE3MzczMDEyMzV9.ogEXUyLerIwJ3THMFSFVenjI-3UNaaSHwwZ9DOk5eA_fQnq9KlvkzW62iOCxzEz_",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDc5NDYyfQ.w0No0PGH97Px2pU9YsgsBr3uwIZn36I9hqK_g6xHiLfrMA-qQ7C9-riFZhpwPctb",
 									"type": "string"
 								}
 							]
@@ -290,7 +290,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/user/updateStatus?userId=2&status=0",
+							"raw": "http://localhost:8080/user/updateStatus?userId=3&status=0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -303,7 +303,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "3"
 								},
 								{
 									"key": "status",
@@ -2524,6 +2524,46 @@
 								{
 									"key": "customerId",
 									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMTY0ODU4fQ.8KzhPx6ngN0pBI5xmIPKsJcGyNji2TdY5elAHu8gcsHuceue53Zopcd2YVn7m8sR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transaction/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
 								}
 							]
 						}

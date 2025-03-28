@@ -3629,3 +3629,50 @@ Caused by: org.hibernate.NonUniqueObjectException: A different object with the s
 2025-03-26 18:04:46.172  INFO 6136 --- [RMI TCP Connection(25)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-03-26 18:04:46.174  INFO 6136 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-03-26 18:04:46.176  INFO 6136 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-28 12:26:35.263  INFO 9576 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.6 on Lathusan-Thurairajah with PID 9576 (D:\Codearson\delta_pos_be\target\classes started by Lathu in D:\Codearson\delta_pos_be)
+2025-03-28 12:26:35.265  INFO 9576 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-03-28 12:26:37.684  INFO 9576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-28 12:26:37.757  INFO 9576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 0 JPA repository interfaces.
+2025-03-28 12:26:38.231  INFO 9576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-03-28 12:26:38.239  INFO 9576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-28 12:26:38.240  INFO 9576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-28 12:26:40.540  INFO 9576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-28 12:26:40.541  INFO 9576 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5241 ms
+2025-03-28 12:26:40.766  INFO 9576 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-28 12:26:40.831  INFO 9576 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-03-28 12:26:40.995  INFO 9576 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-28 12:26:41.098  INFO 9576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-28 12:26:41.279  INFO 9576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-28 12:26:41.296  INFO 9576 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-28 12:26:42.292  INFO 9576 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-28 12:26:42.299  INFO 9576 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-28 12:26:43.058  INFO 9576 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2396408a, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d08a65c, org.springframework.security.web.header.HeaderWriterFilter@21be80f6, org.springframework.web.filter.CorsFilter@3e4ead73, org.springframework.security.web.authentication.logout.LogoutFilter@740fccd2, com.pos_main.Service.Utils.JwtCustomFilter@3f2afa8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d7f9b33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@608c7b5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64de9fa4, org.springframework.security.web.session.SessionManagementFilter@694f0655, org.springframework.security.web.access.ExceptionTranslationFilter@23ee70a7, org.springframework.security.web.access.intercept.AuthorizationFilter@7575f7e1]
+2025-03-28 12:26:43.365  INFO 9576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-28 12:26:43.372  INFO 9576 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 8.462 seconds (JVM running for 9.07)
+2025-03-28 12:27:52.046  INFO 9576 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-28 12:27:52.046  INFO 9576 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-28 12:27:52.047  INFO 9576 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-28 12:27:52.063  INFO 9576 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-28 12:27:52.160  INFO 9576 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-28 12:27:52.160  INFO 9576 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-28 12:27:52.166  WARN 9576 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-28 12:27:52.251  INFO 9576 --- [http-nio-8080-exec-1] c.p.Controller.TransactionController     : TransactionController.getAllPage() invoked.
+2025-03-28 12:27:52.268  INFO 9576 --- [http-nio-8080-exec-1] c.p.ServiceImpl.TransactionServiceImpl   : TransactionServiceImpl.getAllPageTransaction() invoked
+2025-03-28 12:27:52.270  INFO 9576 --- [http-nio-8080-exec-1] c.p.Service.BL.TransactionServiceBL      : TransactionServiceBL.getAllPageTransaction()invoked
+2025-03-28 12:27:52.275  INFO 9576 --- [http-nio-8080-exec-1] com.pos_main.DaoImpl.TransactionDaoImpl  : TransactionDaoImpl.getAllPageTransaction()invoked
+2025-03-28 12:27:52.284  WARN 9576 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-28 12:27:52.301  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.302  INFO 9576 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Sri Lanka, priceSymbol=LKR
+2025-03-28 12:27:52.309  INFO 9576 --- [http-nio-8080-exec-1] c.p.ServiceImpl.TransactionServiceImpl   : Retrieve All Transaction Details.
+2025-03-28 12:31:37.385  INFO 9576 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-28 12:31:37.402  INFO 9576 --- [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-28 12:31:37.403  INFO 9576 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-28 12:31:37.404  INFO 9576 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

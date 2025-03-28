@@ -15,6 +15,7 @@ import com.pos_main.Constants.ApplicationMessageConstants;
 import com.pos_main.Dao.TransactionDao;
 import com.pos_main.Dto.CategoryTotalsDto;
 import com.pos_main.Dto.OverallPaymentTotalsDto;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.SalesDateDetailsDto;
 import com.pos_main.Dto.SalesReportDto;
@@ -551,5 +552,27 @@ public class TransactionServiceImpl implements TransactionService {
 
 	    dto.setSalesDateDetails(salesDateDetails);
 	    return dto;
+	}
+
+	@Override
+	public ResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParameters) {
+		log.info("TransactionServiceImpl.getAllPageTransaction() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = transactionServiceBL.getAllPageTransaction(pageNumber, pageSize, searchParameters);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All Transaction Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All Transaction details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_TRANSACTION_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Transaction details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_TRANSACTION_DETAILS);
+		}
+		return responseDto;
 	}
 }

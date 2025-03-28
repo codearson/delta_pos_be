@@ -1,6 +1,7 @@
 package com.pos_main.Service;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TransactionDto;
@@ -40,5 +41,7 @@ public interface TransactionService {
 	ResponseDto getXReport(Integer userId);
 	
 	ResponseDto getZReport(Integer userId);
+	
+	public ResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParameters);
 	
 }
