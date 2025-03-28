@@ -87,4 +87,26 @@ public class PurchaseListServiceImpl implements PurchaseListService {
         }
         return responseDto;
     }
+    
+    @Override
+    public ResponseDto deleteById(Integer id) {
+        log.info("PurchaseListServiceImpl.deleteById() invoked with id: {}", id);
+        ResponseDto responseDto;
+        try {
+            boolean isDeleted = purchaseListServiceBL.deleteById(id);
+            if (isDeleted) {
+                log.info("Purchase list item deleted successfully.");
+                responseDto = serviceUtil.getServiceResponse("Purchase list item deleted successfully");
+            } else {
+                log.info("Purchase list item with ID {} not found", id);
+                responseDto = serviceUtil.getErrorServiceResponse(
+                        ApplicationMessageConstants.ServiceErrorMessages.ERR_DELETE_PURCHASE_LIST_BY_ID);
+            }
+        } catch (Exception e) {
+            log.error("Exception while deleting purchase list item with id: {}", id, e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                    ApplicationMessageConstants.ServiceErrorMessages.EX_DELETE_PURCHASE_LIST_BY_ID);
+        }
+        return responseDto;
+    }
 }

@@ -190,6 +190,8 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_STAFF_LEAVE_DETAILS = "ex.get.all.staff.leave.details";
 		String ERR_RETRIEVE_ALL_TRANSACTION_DETAILS = "err.get.all.page.transaction.details";
 		String EX_RETRIEVE_ALL_TRANSACTION_DETAILS = "ex.get.all.page.transaction.details";
+		String ERR_DELETE_PURCHASE_LIST_BY_ID = "err.delete.purchase.list.by.id";
+		String EX_DELETE_PURCHASE_LIST_BY_ID = "ex.delete.purchase.list.by.id";
 		
 	}
 }

@@ -1,3 +1,136 @@
+2025-03-27 00:40:55.349  INFO 2196 --- [RMI TCP Connection(71)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-27 00:40:55.414  INFO 2196 --- [RMI TCP Connection(71)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-27 00:40:55.418  INFO 2196 --- [RMI TCP Connection(71)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-27 00:40:55.421  INFO 2196 --- [RMI TCP Connection(71)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-27 21:55:41.302  INFO 21288 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Rajees_Black_09 with PID 21288 (F:\Codearson\delta_pos_be\target\classes started by Rajee in F:\Codearson\delta_pos_be)
+2025-03-27 21:55:41.304  INFO 21288 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-03-27 21:55:42.659  INFO 21288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-27 21:55:42.690  INFO 21288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JPA repository interfaces.
+2025-03-27 21:55:43.342  INFO 21288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-03-27 21:55:43.353  INFO 21288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-27 21:55:43.353  INFO 21288 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-27 21:55:43.468  INFO 21288 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-27 21:55:43.468  INFO 21288 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2119 ms
+2025-03-27 21:55:43.677  INFO 21288 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-27 21:55:43.746  INFO 21288 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-03-27 21:55:43.954  INFO 21288 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-27 21:55:44.068  INFO 21288 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-27 21:55:44.255  INFO 21288 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-27 21:55:44.271  INFO 21288 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-27 22:22:31.436  INFO 7824 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Rajees_Black_09 with PID 7824 (F:\Codearson\delta_pos_be\target\classes started by Rajee in F:\Codearson\delta_pos_be)
+2025-03-27 22:22:31.438  INFO 7824 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-03-27 22:22:32.188  INFO 7824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-27 22:22:32.217  INFO 7824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JPA repository interfaces.
+2025-03-27 22:22:32.772  INFO 7824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-03-27 22:22:32.781  INFO 7824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-27 22:22:32.781  INFO 7824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-03-27 22:22:32.880  INFO 7824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-27 22:22:32.881  INFO 7824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1408 ms
+2025-03-27 22:22:33.049  INFO 7824 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-27 22:22:33.094  INFO 7824 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-03-27 22:22:33.230  INFO 7824 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-27 22:22:33.315  INFO 7824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-27 22:22:33.476  INFO 7824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-27 22:22:33.489  INFO 7824 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-03-27 22:24:15.361  INFO 7824 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-27 22:24:15.377  INFO 7824 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-27 22:24:16.227  INFO 7824 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@237bdbcb, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c3223aa, org.springframework.security.web.header.HeaderWriterFilter@7ba623d1, org.springframework.web.filter.CorsFilter@16a15261, org.springframework.security.web.authentication.logout.LogoutFilter@12925d2, com.pos_main.Service.Utils.JwtCustomFilter@3407ded1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@513bec8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fc8163, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36ec4071, org.springframework.security.web.session.SessionManagementFilter@b859355, org.springframework.security.web.access.ExceptionTranslationFilter@24fc9aa5, org.springframework.security.web.access.intercept.AuthorizationFilter@1443539]
+2025-03-27 22:24:16.485  INFO 7824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-27 22:24:16.501  INFO 7824 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 105.518 seconds (JVM running for 106.351)
+2025-03-27 22:26:02.322  INFO 7824 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-27 22:26:02.322  INFO 7824 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-27 22:26:02.322  INFO 7824 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-27 22:26:02.352  INFO 7824 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:26:13.369  INFO 7824 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:26:13.469  INFO 7824 --- [http-nio-8080-exec-3] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-03-27 22:26:13.474  INFO 7824 --- [http-nio-8080-exec-3] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-03-27 22:26:13.474  INFO 7824 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-03-27 22:26:13.655  INFO 7824 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:26:13.656  INFO 7824 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:26:13.664  WARN 7824 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:28.821  INFO 7824 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:26:28.849  INFO 7824 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:26:28.849  INFO 7824 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:26:28.849  WARN 7824 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:28.879  INFO 7824 --- [http-nio-8080-exec-4] c.p.Controller.PurchaseListController    : PurchaseListController.savePurchaseList() invoked with barcode: 48200123456
+2025-03-27 22:26:28.879  INFO 7824 --- [http-nio-8080-exec-4] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.savePurchaseList invoked
+2025-03-27 22:26:28.880  INFO 7824 --- [http-nio-8080-exec-4] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.savePurchaseList() invoked with barcode: 48200123456
+2025-03-27 22:26:28.887  WARN 7824 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:28.907  INFO 7824 --- [http-nio-8080-exec-4] c.p.Transformer.PurchaseListTransformer  : Transformed DTO to PurchaseList: barcode=48200123456
+2025-03-27 22:26:28.911  INFO 7824 --- [http-nio-8080-exec-4] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.savePurchaseList() invoked.
+2025-03-27 22:26:28.936  INFO 7824 --- [http-nio-8080-exec-4] c.p.Transformer.PurchaseListTransformer  : Transformed PurchaseList to DTO: id=1, barcode=48200123456
+2025-03-27 22:26:28.936  INFO 7824 --- [http-nio-8080-exec-4] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseList Details saved.
+2025-03-27 22:26:43.613  INFO 7824 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:26:43.616  INFO 7824 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:26:43.616  INFO 7824 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:26:43.616  WARN 7824 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:43.633  INFO 7824 --- [http-nio-8080-exec-5] c.p.Controller.PurchaseListController    : PurchaseListController.savePurchaseList() invoked with barcode: 48200198765
+2025-03-27 22:26:43.633  INFO 7824 --- [http-nio-8080-exec-5] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.savePurchaseList invoked
+2025-03-27 22:26:43.633  INFO 7824 --- [http-nio-8080-exec-5] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.savePurchaseList() invoked with barcode: 48200198765
+2025-03-27 22:26:43.634  WARN 7824 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:43.639  INFO 7824 --- [http-nio-8080-exec-5] c.p.Transformer.PurchaseListTransformer  : Transformed DTO to PurchaseList: barcode=48200198765
+2025-03-27 22:26:43.639  INFO 7824 --- [http-nio-8080-exec-5] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.savePurchaseList() invoked.
+2025-03-27 22:26:43.647  INFO 7824 --- [http-nio-8080-exec-5] c.p.Transformer.PurchaseListTransformer  : Transformed PurchaseList to DTO: id=2, barcode=48200198765
+2025-03-27 22:26:43.647  INFO 7824 --- [http-nio-8080-exec-5] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseList Details saved.
+2025-03-27 22:26:56.047  INFO 7824 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:26:56.059  INFO 7824 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:26:56.062  INFO 7824 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:26:56.062  WARN 7824 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:56.100  INFO 7824 --- [http-nio-8080-exec-6] c.p.Controller.PurchaseListController    : PurchaseListController.savePurchaseList() invoked with barcode: 84726583901
+2025-03-27 22:26:56.100  INFO 7824 --- [http-nio-8080-exec-6] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.savePurchaseList invoked
+2025-03-27 22:26:56.100  INFO 7824 --- [http-nio-8080-exec-6] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.savePurchaseList() invoked with barcode: 84726583901
+2025-03-27 22:26:56.102  WARN 7824 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:26:56.113  INFO 7824 --- [http-nio-8080-exec-6] c.p.Transformer.PurchaseListTransformer  : Transformed DTO to PurchaseList: barcode=84726583901
+2025-03-27 22:26:56.115  INFO 7824 --- [http-nio-8080-exec-6] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.savePurchaseList() invoked.
+2025-03-27 22:26:56.128  INFO 7824 --- [http-nio-8080-exec-6] c.p.Transformer.PurchaseListTransformer  : Transformed PurchaseList to DTO: id=3, barcode=84726583901
+2025-03-27 22:26:56.128  INFO 7824 --- [http-nio-8080-exec-6] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseList Details saved.
+2025-03-27 22:27:12.916  INFO 7824 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:27:12.920  INFO 7824 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:27:12.920  INFO 7824 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:27:12.920  WARN 7824 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:27:12.933  INFO 7824 --- [http-nio-8080-exec-7] c.p.Controller.PurchaseListController    : PurchaseListController.savePurchaseList() invoked with barcode: 12897634578
+2025-03-27 22:27:12.933  INFO 7824 --- [http-nio-8080-exec-7] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.savePurchaseList invoked
+2025-03-27 22:27:12.934  INFO 7824 --- [http-nio-8080-exec-7] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.savePurchaseList() invoked with barcode: 12897634578
+2025-03-27 22:27:12.935  WARN 7824 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:27:12.940  INFO 7824 --- [http-nio-8080-exec-7] c.p.Transformer.PurchaseListTransformer  : Transformed DTO to PurchaseList: barcode=12897634578
+2025-03-27 22:27:12.941  INFO 7824 --- [http-nio-8080-exec-7] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.savePurchaseList() invoked.
+2025-03-27 22:27:12.948  INFO 7824 --- [http-nio-8080-exec-7] c.p.Transformer.PurchaseListTransformer  : Transformed PurchaseList to DTO: id=4, barcode=12897634578
+2025-03-27 22:27:12.948  INFO 7824 --- [http-nio-8080-exec-7] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseList Details saved.
+2025-03-27 22:27:27.879  INFO 7824 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:27:27.882  INFO 7824 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:27:27.883  INFO 7824 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:27:27.883  WARN 7824 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:27:27.898  INFO 7824 --- [http-nio-8080-exec-8] c.p.Controller.PurchaseListController    : PurchaseListController.savePurchaseList() invoked with barcode: 57283669266
+2025-03-27 22:27:27.898  INFO 7824 --- [http-nio-8080-exec-8] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.savePurchaseList invoked
+2025-03-27 22:27:27.898  INFO 7824 --- [http-nio-8080-exec-8] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.savePurchaseList() invoked with barcode: 57283669266
+2025-03-27 22:27:27.899  WARN 7824 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:27:27.904  INFO 7824 --- [http-nio-8080-exec-8] c.p.Transformer.PurchaseListTransformer  : Transformed DTO to PurchaseList: barcode=57283669266
+2025-03-27 22:27:27.905  INFO 7824 --- [http-nio-8080-exec-8] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.savePurchaseList() invoked.
+2025-03-27 22:27:27.910  INFO 7824 --- [http-nio-8080-exec-8] c.p.Transformer.PurchaseListTransformer  : Transformed PurchaseList to DTO: id=5, barcode=57283669266
+2025-03-27 22:27:27.911  INFO 7824 --- [http-nio-8080-exec-8] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseList Details saved.
+2025-03-27 22:28:39.352  INFO 7824 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:28:39.357  INFO 7824 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:28:39.357  INFO 7824 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:28:39.357  WARN 7824 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:28:39.376  INFO 7824 --- [http-nio-8080-exec-1] c.p.Controller.PurchaseListController    : PurchaseListController.deleteById() invoked with id: 1
+2025-03-27 22:28:39.376  INFO 7824 --- [http-nio-8080-exec-1] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.deleteById() invoked with id: 1
+2025-03-27 22:28:39.376  INFO 7824 --- [http-nio-8080-exec-1] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.deleteById() invoked with id: 1
+2025-03-27 22:28:39.378  INFO 7824 --- [http-nio-8080-exec-1] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.deleteById() invoked with id: 1
+2025-03-27 22:28:39.487  INFO 7824 --- [http-nio-8080-exec-1] c.p.ServiceImpl.PurchaseListServiceImpl  : Purchase list item deleted successfully.
+2025-03-27 22:29:00.080  INFO 7824 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-03-27 22:29:00.083  INFO 7824 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-03-27 22:29:00.083  INFO 7824 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-03-27 22:29:00.083  WARN 7824 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-03-27 22:29:00.094  INFO 7824 --- [http-nio-8080-exec-2] c.p.Controller.PurchaseListController    : PurchaseListController.deleteAll() invoked
+2025-03-27 22:29:00.094  INFO 7824 --- [http-nio-8080-exec-2] c.p.ServiceImpl.PurchaseListServiceImpl  : PurchaseListServiceImpl.deleteAll() invoked
+2025-03-27 22:29:00.094  INFO 7824 --- [http-nio-8080-exec-2] c.p.Service.BL.PurchaseListServiceBL     : PurchaseListServiceBL.deleteAll() invoked
+2025-03-27 22:29:00.095  INFO 7824 --- [http-nio-8080-exec-2] c.pos_main.DaoImpl.PurchaseListDaoImpl   : PurchaseListDaoImpl.deleteAll() invoked
+2025-03-27 22:29:00.101  INFO 7824 --- [http-nio-8080-exec-2] c.pos_main.DaoImpl.PurchaseListDaoImpl   : Deleted 4 PurchaseList records
+2025-03-27 22:29:00.103  INFO 7824 --- [http-nio-8080-exec-2] c.p.ServiceImpl.PurchaseListServiceImpl  : All PurchaseList details deleted successfully.
+2025-03-27 22:30:02.413  INFO 7824 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-27 22:30:02.466  INFO 7824 --- [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-27 22:30:02.468  INFO 7824 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-27 22:30:02.471  INFO 7824 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2025-03-26 16:43:42.095  INFO 12668 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.6 on Lathusan-Thurairajah with PID 12668 (D:\Codearson\delta_pos_be\target\classes started by Lathu in D:\Codearson\delta_pos_be)
 2025-03-26 16:43:42.099  INFO 12668 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
 2025-03-26 16:43:43.919  INFO 12668 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.

@@ -86,12 +86,12 @@ public class TransactionController {
 	}
 
 	@PostMapping("/save")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
-	public ResponseDto save(@RequestBody TransactionDto transactionDto, String alertMessage) {
-		log.info("TransactionController.save() invoked");
-		return transactionService.save(transactionDto, alertMessage);
-	}
-
+	// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto save(@RequestBody TransactionDto transactionDto, String alertMessage) {
+        log.info("TransactionController.save() invoked");
+        return transactionService.save(transactionDto, alertMessage);
+    }
+	
 	@PostMapping("/update")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto updateTransaction(@RequestBody TransactionDto transactionDto) {
@@ -121,14 +121,12 @@ public class TransactionController {
 	}
 
 	@GetMapping("/xReport")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getXReport(@RequestParam("userId") Integer userId) {
 		log.info("TransactionController.getXReport() invoked with userId: {}", userId);
 		return transactionService.getXReport(userId);
 	}
 
 	@GetMapping("/zReport")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getZReport(@RequestParam("userId") Integer userId) {
 		log.info("TransactionController.getZReport() invoked with userId: {}", userId);
 		return transactionService.getZReport(userId);
