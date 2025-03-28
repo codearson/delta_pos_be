@@ -89,7 +89,7 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 		}
 		Criteria criteria = getCurrentSession().createCriteria(User.class, "user");
 		criteria.createAlias("user.userRole", "userRole");
-        	criteria.addOrder(Order.asc("userRole.id"));   
+        	criteria.addOrder(Order.desc("userRole.id"));   
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allUserList = criteria.list();
