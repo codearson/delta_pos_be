@@ -17,6 +17,7 @@ import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -751,6 +752,7 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Transaction.class, "transaction");
+		criteria.addOrder(Order.asc("id"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allTransactionList = criteria.list();

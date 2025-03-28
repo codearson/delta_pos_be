@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -43,6 +44,7 @@ public class PurchaseListDaoImpl extends BaseDaoImpl<PurchaseList> implements Pu
 	public List<PurchaseListDto> getAll() {
 		log.info("PurchaseListDaoImpl.getAll() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(PurchaseList.class, "purchaseList");
+		criteria.addOrder(Order.asc("id"));
 		List<PurchaseListDto> purchaseListDtoList = null;
 		List<PurchaseList> purchaseListList = (List<PurchaseList>) criteria.list();
 		if (purchaseListList != null && !purchaseListList.isEmpty()) {

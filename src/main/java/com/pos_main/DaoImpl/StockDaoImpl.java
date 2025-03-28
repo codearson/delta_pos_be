@@ -14,6 +14,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -70,6 +71,7 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao{
 	public List<StockDto> getAllStock() {
 		log.info("StockDaoImpl.getAllStock() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Stock.class, "stock");
+		criteria.addOrder(Order.asc("id"));
 //	 	criteria.add(Restrictions.eq("isActive", true));
 		List<StockDto> stockDtoList = null;
 		List<Stock> stockList = (List<Stock>) criteria.list();

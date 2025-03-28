@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -128,7 +129,7 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 	public List<SupplierDto> getAllSupplier() {
 		log.info("SupplierDaoImpl.getAllSupplier() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Supplier.class, "supplier");
-//	 	criteria.add(Restrictions.eq("isActive", true));
+		criteria.addOrder(Order.asc("id"));
 		List<SupplierDto> supplierDtoList = null;
 		List<Supplier> supplierList = (List<Supplier>) criteria.list();
 		if (supplierList != null && !supplierList.isEmpty()) {

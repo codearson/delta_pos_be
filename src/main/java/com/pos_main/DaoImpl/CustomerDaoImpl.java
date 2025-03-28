@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -185,7 +186,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 	public List<CustomerDto> getAllCustomer() {
 		log.info("CustomerDaoImpl.getAllCustomer() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Customer.class, "customer");
-//	 	criteria.add(Restrictions.eq("isActive", true));
+		criteria.addOrder(Order.asc("id"));
 		List<CustomerDto> customerDtoList = null;
 		List<Customer> customerList = (List<Customer>) criteria.list();
 		if (customerList != null && !customerList.isEmpty()) {

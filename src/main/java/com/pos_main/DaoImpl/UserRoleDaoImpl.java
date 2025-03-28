@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -49,7 +50,7 @@ public class UserRoleDaoImpl extends BaseDaoImpl<UserRole> implements UserRoleDa
 	public List<UserRoleDto> getAllUserRole() {
 		log.info("UserRoleDaoImpl.getAllUserRole() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(UserRole.class, "userRole");
-	 	criteria.add(Restrictions.eq("isActive", true));
+		criteria.addOrder(Order.asc("id"));
 		List<UserRoleDto> userRoleDtoList = null;
 		List<UserRole> userRoleList = (List<UserRole>) criteria.list();
 		if (userRoleList != null && !userRoleList.isEmpty()) {
