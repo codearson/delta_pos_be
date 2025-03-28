@@ -179,7 +179,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDc4NTY2fQ.cQAZwhgQnNwGKp956cK6K3kF_ACOsU4xtzQo-FBFWF0Kbdg0-9Z571IaFGvyVQM5",
 									"type": "string"
 								}
 							]
@@ -187,10 +187,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/getById?id=2",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getById?id=5",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -202,7 +202,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "5"
 								}
 							]
 						}
@@ -296,7 +296,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDc4NTY2fQ.cQAZwhgQnNwGKp956cK6K3kF_ACOsU4xtzQo-FBFWF0Kbdg0-9Z571IaFGvyVQM5",
 									"type": "string"
 								}
 							]
@@ -304,10 +304,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/updateStatus?userId=2&status=0",
+							"raw": "https://deltaposbe-production.up.railway.app/user/updateStatus?userId=4&status=0",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -319,7 +319,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "2"
+									"value": "4"
 								},
 								{
 									"key": "status",
@@ -610,10 +610,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/login",
+							"raw": "https://deltaposbe-production.up.railway.app/user/login",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2253,10 +2253,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2800,6 +2800,48 @@
 						"header": [],
 						"url": {
 							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMTY0ODU4fQ.8KzhPx6ngN0pBI5xmIPKsJcGyNji2TdY5elAHu8gcsHuceue53Zopcd2YVn7m8sR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
 						}
 					},
 					"response": []

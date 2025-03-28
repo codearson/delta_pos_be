@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.pos_main.Domain.Transaction;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.TransactionDto;
 
 /**
@@ -53,4 +54,5 @@ public interface TransactionDao extends BaseDao<Transaction> {
 	
 	void updateGenerateDateTime(Integer transactionId, LocalDateTime generateDateTime);
 	
+	PaginatedResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParams);
 }

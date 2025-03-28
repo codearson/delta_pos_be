@@ -16,6 +16,7 @@ import com.pos_main.Dao.TransactionDao;
 import com.pos_main.Dao.UserDao;
 import com.pos_main.Dto.TransactionDto;
 import com.pos_main.Dto.TransactionPaymentMethodDto;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ProductDto;
 import com.pos_main.Dto.TransactionDetailsListDto;
 import com.pos_main.Dto.UserDto;
@@ -299,5 +300,10 @@ public class TransactionServiceBL {
     public LocalDateTime getNextTransactionDateTimeAfter(LocalDateTime startDate) {
         return transactionDao.getNextTransactionDateTimeAfter(startDate);
     }
+    
+    public PaginatedResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("TransactionServiceBL.getAllPageTransaction()invoked");
+		return transactionDao.getAllPageTransaction(pageNumber, pageSize, searchParams);
+	}
 
 }

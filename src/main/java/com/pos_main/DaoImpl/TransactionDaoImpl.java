@@ -16,7 +16,10 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.TransactionDao;
@@ -26,12 +29,14 @@ import com.pos_main.Domain.Transaction;
 import com.pos_main.Domain.TransactionDetailsList;
 import com.pos_main.Domain.TransactionPaymentMethod;
 import com.pos_main.Domain.User;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TransactionDetailsListDto;
 import com.pos_main.Dto.TransactionDto;
 import com.pos_main.Dto.TransactionPaymentMethodDto;
 import com.pos_main.Service.TransactionDetailsListService;
 import com.pos_main.Service.TransactionPaymentMethodService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.BranchTransformer;
 import com.pos_main.Transformer.CustomerTransfomer;
 import com.pos_main.Transformer.ShopDetailsTransformer;
@@ -83,6 +88,9 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
     
     @Autowired
     TransactionPaymentMethodService transactionPaymentMethodService;
+    
+    @Autowired
+	private JdbcTemplate jdbcTemplate;
     
     @Override
 	@Transactional
@@ -727,5 +735,33 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
                 .getSingleResult();
         return nextTransaction != null ? nextTransaction.getDateTime() : null;
     }
+
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("TransactionDaoImpl.getAllPageTransaction()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<Transaction> allTransactionList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM transaction";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(Transaction.class, "transaction");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allTransactionList = criteria.list();
+		recordCount = allTransactionList.size();
+		if (allTransactionList != null && !allTransactionList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allTransactionList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allTransactionList.stream().map(Invoice -> {
+				return transactionTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
+	}
 
 }

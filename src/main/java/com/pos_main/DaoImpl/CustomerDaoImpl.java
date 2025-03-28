@@ -61,7 +61,6 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Customer.class, "customer");
-	 	criteria.add(Restrictions.eq("isActive", true));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allCustomerList = criteria.list();
