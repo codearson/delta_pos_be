@@ -26,3 +26,8 @@ pos:
 logging:
   file:
     path: "log"
+
+# AI service
+huggingface:
+  api:
+    key: huggingface_api_key
