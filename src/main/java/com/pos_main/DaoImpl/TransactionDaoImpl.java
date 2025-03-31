@@ -737,33 +737,74 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
         return nextTransaction != null ? nextTransaction.getDateTime() : null;
     }
 
-	@Override
-	@Transactional
-	public PaginatedResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParams) {
-		log.info("TransactionDaoImpl.getAllPageTransaction()invoked");
-		PaginatedResponseDto paginatedResponseDto = null;
-		List<Transaction> allTransactionList = null;
-		int recordCount = 0;
-		String countString = "SELECT COUNT(*) FROM transaction";
-		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+    @Override
+    @Transactional
+    public PaginatedResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParams) {
+        log.info("TransactionDaoImpl.getAllPageTransaction() invoked");
+        
+        PaginatedResponseDto paginatedResponseDto = null;
+        List<Transaction> allTransactionList = null;
+        
+        // Count total transactions
+        String countString = "SELECT COUNT(*) FROM transaction";
+        int count = jdbcTemplate.queryForObject(countString, Integer.class);
 
-		if (pageSize == 0) {
-			pageSize = count;
-		}
+        if (pageSize == 0) {
+            pageSize = count;
+        }
 
-		Criteria criteria = getCurrentSession().createCriteria(Transaction.class, "transaction");
-		criteria.addOrder(Order.asc("id"));
-		criteria.setFirstResult((pageNumber - 1) * pageSize);
-		criteria.setMaxResults(pageSize);
-		allTransactionList = criteria.list();
-		recordCount = allTransactionList.size();
-		if (allTransactionList != null && !allTransactionList.isEmpty()) {
-			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allTransactionList, pageNumber, pageSize, count);
-			paginatedResponseDto.setPayload(allTransactionList.stream().map(Invoice -> {
-				return transactionTransformer.transform(Invoice);
-			}).collect(Collectors.toList()));
-		}
-		return paginatedResponseDto;
-	}
+        // Fetch paginated transaction list
+        Criteria criteria = getCurrentSession().createCriteria(Transaction.class, "transaction");
+        criteria.addOrder(Order.asc("id"));
+        criteria.setFirstResult((pageNumber - 1) * pageSize);
+        criteria.setMaxResults(pageSize);
+        
+        allTransactionList = criteria.list();
+
+        if (allTransactionList != null && !allTransactionList.isEmpty()) {
+            // Transform and enrich transactions with additional data
+            List<TransactionDto> transactionDtoList = allTransactionList.stream().map(transaction -> {
+                TransactionDto transactionDto = transactionTransformer.transform(transaction);
+
+                if (transactionDto != null && transactionDto.getUserDto() != null) {
+                    transactionDto.getUserDto().setPassword(null); // Mask password for security
+                }
+
+                // Fetch transaction details
+                ResponseDto transactionDetailsResponse = transactionDetailsListService.getByTransactionId(transaction.getId());
+                List<TransactionDetailsListDto> transactionDetailsList =
+                    transactionDetailsResponse.getResponseDto() instanceof List<?>
+                        ? (List<TransactionDetailsListDto>) transactionDetailsResponse.getResponseDto()
+                        : new ArrayList<>();
+
+                for (TransactionDetailsListDto details : transactionDetailsList) {
+                    if (details != null && details.getTransactionDto() != null 
+                        && details.getTransactionDto().getUserDto() != null) {
+                        details.getTransactionDto().getUserDto().setPassword(null);
+                    }
+                }
+
+                // Fetch payment methods
+                ResponseDto paymentMethodResponse = transactionPaymentMethodService.getByTransactionId(transaction.getId());
+                List<TransactionPaymentMethodDto> transactionPaymentMethodList =
+                    paymentMethodResponse.getResponseDto() instanceof List<?>
+                        ? (List<TransactionPaymentMethodDto>) paymentMethodResponse.getResponseDto()
+                        : new ArrayList<>();
+
+                // Set the additional details
+                transactionDto.setTransactionDetailsList(transactionDetailsList);
+                transactionDto.setTransactionPaymentMethod(transactionPaymentMethodList);
+
+                return transactionDto;
+            }).collect(Collectors.toList());
+
+            // Map the transformed data to the paginated response
+            paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(transactionDtoList, pageNumber, pageSize, count);
+            paginatedResponseDto.setPayload(transactionDtoList);
+        }
+        
+        return paginatedResponseDto;
+    }
+
 
 }
