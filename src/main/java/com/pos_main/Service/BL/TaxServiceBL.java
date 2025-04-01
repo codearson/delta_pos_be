@@ -38,7 +38,7 @@ public class TaxServiceBL {
         }
     }
 	
-	public List<TaxDto> getTaxByName(Integer taxPercentage) {
+	public List<TaxDto> getTaxByName(Double taxPercentage) {
         log.info("TaxServiceBL.getTaxByName() invoked");
         return taxDao.getTaxByName(taxPercentage);
     }

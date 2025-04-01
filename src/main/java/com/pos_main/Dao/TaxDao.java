@@ -12,7 +12,7 @@ public interface TaxDao {
 	
     TaxDto checkTaxAvailability(Integer id);
 	
-	List<TaxDto> getTaxByName(Integer taxPercentage);
+	List<TaxDto> getTaxByName(Double taxPercentage);
 	
     List<TaxDto> getAll();
 	
