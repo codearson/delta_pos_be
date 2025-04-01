@@ -66,7 +66,7 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
 	
 	@Override
     @Transactional
-    public List<TaxDto> getTaxByName(Integer taxPercentage) {
+    public List<TaxDto> getTaxByName(Double taxPercentage) {
         log.info("TaxDaoImpl.getTaxByName() invoked");
         
         CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();

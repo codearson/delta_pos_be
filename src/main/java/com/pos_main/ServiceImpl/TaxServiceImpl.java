@@ -91,7 +91,7 @@ public class TaxServiceImpl implements TaxService{
     }
 	
 	@Override
-    public ResponseDto getTaxByName(Integer taxPercentage) {
+    public ResponseDto getTaxByName(Double taxPercentage) {
         log.info("TaxServiceImpl.getTaxByName() invoked");
         ResponseDto responseDto;
         try {

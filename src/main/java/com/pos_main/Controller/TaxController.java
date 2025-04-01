@@ -49,7 +49,7 @@ public class TaxController {
 	
 	@GetMapping("/getByName")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
-    public ResponseDto getTaxByPercentage(@RequestParam("taxPercentage") Integer taxPercentage) {
+    public ResponseDto getTaxByPercentage(@RequestParam("taxPercentage") Double taxPercentage) {
         log.info("TaxController.getTaxByPercentage() invoked");
         return taxService.getTaxByName(taxPercentage);
     }

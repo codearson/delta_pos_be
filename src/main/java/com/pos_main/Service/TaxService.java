@@ -7,7 +7,7 @@ public interface TaxService {
 	
 	public ResponseDto save(TaxDto taxDto);
 	
-	public ResponseDto getTaxByName(Integer taxPercentage);
+	public ResponseDto getTaxByName(Double taxPercentage);
 	
     public ResponseDto getAll();
     
