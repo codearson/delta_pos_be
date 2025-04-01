@@ -755,7 +755,7 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
 
         // Fetch paginated transaction list
         Criteria criteria = getCurrentSession().createCriteria(Transaction.class, "transaction");
-        criteria.addOrder(Order.asc("id"));
+        criteria.addOrder(Order.desc("id"));
         criteria.setFirstResult((pageNumber - 1) * pageSize);
         criteria.setMaxResults(pageSize);
         
