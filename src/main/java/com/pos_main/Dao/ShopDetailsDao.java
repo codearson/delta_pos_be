@@ -1,5 +1,7 @@
 package com.pos_main.Dao;
 
+import java.util.List;
+
 import com.pos_main.Domain.ShopDetails;
 import com.pos_main.Dto.ShopDetailsDto;
 
@@ -15,5 +17,9 @@ import com.pos_main.Dto.ShopDetailsDto;
 public interface ShopDetailsDao extends BaseDao<ShopDetails>{
 	
 	ShopDetailsDto save(ShopDetailsDto shopDetailsDto);
+	
+	List<ShopDetailsDto> getAll();
+	
+	List<ShopDetailsDto> getByName (String name);
 
 }

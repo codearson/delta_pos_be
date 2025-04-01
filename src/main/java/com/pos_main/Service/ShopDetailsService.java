@@ -15,5 +15,9 @@ import com.pos_main.Dto.ShopDetailsDto;
 public interface ShopDetailsService {
 	
 	public ResponseDto save(ShopDetailsDto shopDetailsDto);
+	
+	ResponseDto getAll();
+	
+	ResponseDto getByName(String name);
 
 }

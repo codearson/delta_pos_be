@@ -1,6 +1,6 @@
 package com.pos_main.Service.BL;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +31,16 @@ public class ShopDetailsServiceBL {
 		log.info("ShopDetailsServiceBL.save() invoked.");
 		return shopDetailsDao.save(shopDetailsDto);
 	}
+	
+	public List<ShopDetailsDto> getAll() {
+		log.info("ShopDetailsServiceBL.getAll() invoked");
+		return shopDetailsDao.getAll();
+	}
+	
+	public List<ShopDetailsDto> getByName(String name) {
+        log.info("ShopDetailsServiceBL.getAllByName() invoked.");
+        return shopDetailsDao.getByName(name);
+    }
+	
 
 }

@@ -1,16 +1,24 @@
 package com.pos_main.DaoImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.ShopDetailsDao;
-import com.pos_main.Domain.Product;
 import com.pos_main.Domain.ShopDetails;
-import com.pos_main.Dto.ProductDto;
 import com.pos_main.Dto.ShopDetailsDto;
 import com.pos_main.Transformer.ShopDetailsTransformer;
 
@@ -45,6 +53,43 @@ public class ShopDetailsDaoImpl extends BaseDaoImpl<ShopDetails> implements Shop
 		ShopDetails shopDetails = shopDetailsTransformer.reverseTransform(shopDetailsDto);
 		ShopDetails saveShopDetails = saveOrUpdate(shopDetails);
 		return shopDetailsTransformer.transform(saveShopDetails);
+	}
+	
+	@Override
+	@Transactional
+	public List<ShopDetailsDto> getAll() {
+		log.info("ShopDetailsDaoImpl.getAll() invoked");
+		Criteria criteria = getCurrentSession().createCriteria(ShopDetails.class, "shopDetails");
+		criteria.addOrder(Order.asc("id"));
+		List<ShopDetailsDto> shopDetailsDtoList = null;
+		List<ShopDetails> shopDetailsList = (List<ShopDetails>) criteria.list();
+		if (shopDetailsList != null && !shopDetailsList.isEmpty()) {
+			shopDetailsDtoList = new ArrayList<>();
+			for (ShopDetails shopDetails : shopDetailsList) {
+				shopDetailsDtoList.add(shopDetailsTransformer.transform(shopDetails));
+			}
+		}
+		return shopDetailsDtoList;
+	}
+	
+	@Override
+	@Transactional
+	public List<ShopDetailsDto> getByName (String name) {
+	    log.info("ShopDetailsDaoImpl.getByName() invoked");
+		   
+	    CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+	    CriteriaQuery<ShopDetails> cq = cb.createQuery(ShopDetails.class);
+	    Root<ShopDetails> root = cq.from(ShopDetails.class);
+
+	    cq.select(root).where(cb.equal(root.get("name"),name));
+	    
+	    Criteria criteria = getCurrentSession().createCriteria(ShopDetails.class, "shopDetails");
+	 	criteria.add(Restrictions.eq("isActive", true));
+	    
+	    List<ShopDetails> shopDetailsList = getCurrentSession().createQuery(cq).getResultList();
+	    return shopDetailsList.stream()
+	            .map(shopDetailsTransformer::transform)
+	            .collect(Collectors.toList());
 	}
 
 }

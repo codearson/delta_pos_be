@@ -3,12 +3,13 @@ package com.pos_main.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pos_main.Dto.ProductDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
 import com.pos_main.Service.ShopDetailsService;
@@ -38,6 +39,21 @@ public class ShopDetailsController {
 	public ResponseDto save(@RequestBody ShopDetailsDto shopDetailsDto) {
 		log.info("ShopDetailsController.save() invoked");
 		return shopDetailsService.save(shopDetailsDto);
+	}
+	
+	@GetMapping("/getAll")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAll() {
+		log.info("ShopDetailsController.getAll() invoked");
+		return shopDetailsService.getAll();
+	}
+	
+	@GetMapping("/getByName")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto getAllByName(@RequestParam("name") String name) {
+        log.info("ShopDetailsController.getAllShopDetailsByName() invoked" );
+        return shopDetailsService.getByName(name);
+     
 	}
 
 }

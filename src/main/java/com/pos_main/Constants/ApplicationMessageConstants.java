@@ -192,6 +192,10 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_TRANSACTION_DETAILS = "ex.get.all.page.transaction.details";
 		String ERR_DELETE_PURCHASE_LIST_BY_ID = "err.delete.purchase.list.by.id";
 		String EX_DELETE_PURCHASE_LIST_BY_ID = "ex.delete.purchase.list.by.id";
+		String ERR_RETRIEVE_ALL_SHOP_DETAILS = "err.get.all.shop.details";
+		String EX_RETRIEVE_ALL_SHOP_DETAILS = "ex.get.all.shop.details";	
+		String ERR_RETRIEVE_SHOPDETAILS_BY_NAME = "err.get.product.by.name";
+		String EX_RETRIEVE_SHOPDETAILS_BY_NAME = "ex.get.product.by.name";
 		
 	}
 }

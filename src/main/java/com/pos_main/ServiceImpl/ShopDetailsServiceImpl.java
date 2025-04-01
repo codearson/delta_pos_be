@@ -1,10 +1,13 @@
 package com.pos_main.ServiceImpl;
 
+import java.util.List;
+
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
-import com.pos_main.Dto.ProductDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
 import com.pos_main.Service.ShopDetailsService;
@@ -53,5 +56,50 @@ public class ShopDetailsServiceImpl implements ShopDetailsService{
 		}
 		return responseDto;
 	}
+	
+	@Override
+	public ResponseDto getAll() {
+		log.info("ShopDetailsServiceImpl.getAll() invoked");
+		ResponseDto responseDto = null;
+		try {
+			List<ShopDetailsDto> shopDetailsDtoList = shopDetailsServiceBL.getAll();
+			if (shopDetailsDtoList != null && !shopDetailsDtoList.isEmpty()) {
+				log.info("Retrieve All ShopDetails Details.");
+				responseDto = serviceUtil.getServiceResponse(shopDetailsDtoList);
+			} else {
+				log.info("Unable to retrieve All ShopDetails details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_SHOP_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Shop details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SHOP_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Transactional	
+	@Override
+    public ResponseDto getByName (String name) {
+        log.info("ShopDetailsServiceImpl.getByName () invoked");
+        ResponseDto responseDto = null;
+        try {
+            List<ShopDetailsDto> shopDetailsDtoList = shopDetailsServiceBL.getByName(name);
+            if (shopDetailsDtoList != null && !shopDetailsDtoList.isEmpty()) {
+                log.info("Retrieve ShopDetails by Name.");
+                responseDto = serviceUtil.getServiceResponse(shopDetailsDtoList);
+            } else {
+                log.info("Unable to retrieve ShopDetails by name.");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                        ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_SHOPDETAILS_BY_NAME);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurs while retrieving ShopDetails by ShopDetailsName.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                    ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_SHOPDETAILS_BY_NAME);
+        }
+        return responseDto;
+    }
 
 }
