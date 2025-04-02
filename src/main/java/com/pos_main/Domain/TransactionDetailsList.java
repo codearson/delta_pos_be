@@ -38,5 +38,7 @@ public class TransactionDetailsList implements Serializable {
 	private Integer quantity;
 	@Column(name = "discount")
 	private Double discount;
+	@Column(name = "manualDiscount")
+	private Double manualDiscount;
 	
 }

@@ -30,6 +30,7 @@ public class TransactionDetailsListTransformer implements BaseTransformer<Transa
 			transactionDetailsListDto.setUnitPrice(transactionDetailsList.getUnitPrice());
 			transactionDetailsListDto.setQuantity(transactionDetailsList.getQuantity());
 			transactionDetailsListDto.setDiscount(transactionDetailsList.getDiscount());
+			transactionDetailsListDto.setManualDiscount(transactionDetailsList.getManualDiscount());
 		}
 		return transactionDetailsListDto;
 	}
@@ -49,6 +50,7 @@ public class TransactionDetailsListTransformer implements BaseTransformer<Transa
 			transactionDetailsList.setUnitPrice(transactionDetailsListDto.getUnitPrice());
 			transactionDetailsList.setQuantity(transactionDetailsListDto.getQuantity());
 			transactionDetailsList.setDiscount(transactionDetailsListDto.getDiscount());
+			transactionDetailsList.setManualDiscount(transactionDetailsListDto.getManualDiscount());
 		}
 		return transactionDetailsList;
 	}
