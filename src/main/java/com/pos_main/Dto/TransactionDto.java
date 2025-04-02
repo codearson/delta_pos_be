@@ -23,4 +23,5 @@ public class TransactionDto {
 	private List<TransactionDetailsListDto> transactionDetailsList = new ArrayList<>();
     private List<TransactionPaymentMethodDto> transactionPaymentMethod = new ArrayList<>();
     private LocalDateTime generateDateTime;
+    private Double manualDiscount;
 }

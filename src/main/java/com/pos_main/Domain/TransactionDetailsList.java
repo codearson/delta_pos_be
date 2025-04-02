@@ -39,4 +39,5 @@ public class TransactionDetailsList implements Serializable {
 	@Column(name = "discount")
 	private Double discount;
 	
+	
 }
