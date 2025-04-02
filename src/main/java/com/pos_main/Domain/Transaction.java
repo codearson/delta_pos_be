@@ -55,5 +55,7 @@ public class Transaction implements Serializable {
     private List<TransactionDetailsList> transactionDetailsList;
     @Column(name = "generateDateTime")
 	private LocalDateTime generateDateTime;
+    @Column(name = "manualDiscount")
+	private Double manualDiscount;
     
 }

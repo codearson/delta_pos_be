@@ -17,6 +17,5 @@ public class TransactionDetailsListDto {
 	
 	private Double discount;
 	
-	private Double manualDiscount;
 	
 }
