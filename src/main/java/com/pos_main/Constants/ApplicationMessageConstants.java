@@ -196,6 +196,15 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_SHOP_DETAILS = "ex.get.all.shop.details";	
 		String ERR_RETRIEVE_SHOPDETAILS_BY_NAME = "err.get.product.by.name";
 		String EX_RETRIEVE_SHOPDETAILS_BY_NAME = "ex.get.product.by.name";
+		String ERR_RETRIEVE_ALL_PAYOUT_DETAILS = "err.get.all.payout.details";
+		String EX_RETRIEVE_ALL_PAYOUT_DETAILS = "ex.get.all.payout.details";
+		String ERR_SAVE_RE_PAYOUT_DETAILS = "err.save.payout.details";
+		String EX_SAVE_RE_PAYOUT_DETAILS = "ex.save.payout.details";
+		String ERR_UPDATE_PAYOUT_DETAILS = "err.update.payout.details";
+	    String EX_UPDATE_PAYOUT_DETAILS = "ex.update.payout.details";
+	    String ERR_UPDATE_PAYOUT_STATUS = "err.update.payout.status";
+		String EX_UPDATE_PAYOUT_STATUS = "ex.update.payout.status";
+	    
 		
 	}
 }
