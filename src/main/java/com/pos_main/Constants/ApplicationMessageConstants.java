@@ -204,7 +204,10 @@ public interface ApplicationMessageConstants {
 	    String EX_UPDATE_PAYOUT_DETAILS = "ex.update.payout.details";
 	    String ERR_UPDATE_PAYOUT_STATUS = "err.update.payout.status";
 		String EX_UPDATE_PAYOUT_STATUS = "ex.update.payout.status";
-	    
+		String ERR_SAVE_RE_BANKING_DETAILS = "err.save.banking.details";
+		String EX_SAVE_RE_BANKING_DETAILS = "ex.save.banking.details";
+		String ERR_RETRIEVE_ALL_BANKING_DETAILS = "err.get.all.page.banking.details";
+		String EX_RETRIEVE_ALL_BANKING_DETAILS = "ex.get.all.page.banking.details";
 		
 	}
 }
