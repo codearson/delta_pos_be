@@ -46,7 +46,7 @@ public class BranchController {
 	}
 	
 	@GetMapping("/getAll")
-	//@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto gellAllBranches() {
 		log.info("BranchController.gellAllBranches() invoked");
 		return branchService.getAllBranches();
