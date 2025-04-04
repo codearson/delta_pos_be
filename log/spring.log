@@ -1,3 +1,37 @@
+2025-04-05 00:01:10.443  INFO 8788 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-05 00:01:10.449  INFO 8788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-05 00:01:10.451  INFO 8788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-05 00:01:10.481  INFO 8788 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-05 00:01:10.605  INFO 8788 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-05 00:01:10.605  INFO 8788 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-05 00:01:10.610  WARN 8788 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-05 00:01:10.725  INFO 8788 --- [http-nio-8080-exec-2] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.save() invoked
+2025-04-05 00:01:10.725  INFO 8788 --- [http-nio-8080-exec-2] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.save invoked
+2025-04-05 00:01:10.725  INFO 8788 --- [http-nio-8080-exec-2] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.save() invoked.
+2025-04-05 00:01:10.750  INFO 8788 --- [http-nio-8080-exec-2] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.save() invoked.
+2025-04-05 00:01:10.767  INFO 8788 --- [http-nio-8080-exec-2] c.p.S.EmployeeDiscountServiceImpl        : Employee Discount Details saved.
+2025-04-05 00:06:26.568  INFO 8788 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-05 00:06:26.571  INFO 8788 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-05 00:06:26.571  INFO 8788 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-05 00:06:26.572  WARN 8788 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-05 00:06:26.592  INFO 8788 --- [http-nio-8080-exec-5] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.update() invoked
+2025-04-05 00:06:26.598  INFO 8788 --- [http-nio-8080-exec-5] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.update() invoked
+2025-04-05 00:06:26.598  INFO 8788 --- [http-nio-8080-exec-5] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.update() invoked
+2025-04-05 00:06:26.600  INFO 8788 --- [http-nio-8080-exec-5] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.update() invoked
+2025-04-05 00:06:26.613  INFO 8788 --- [http-nio-8080-exec-5] c.p.S.EmployeeDiscountServiceImpl        : Employee Discount Details updated.
+2025-04-05 00:07:09.527  INFO 8788 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-05 00:07:09.530  INFO 8788 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-05 00:07:09.530  INFO 8788 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-05 00:07:09.532  WARN 8788 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-05 00:07:09.547  INFO 8788 --- [http-nio-8080-exec-6] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-05 00:07:09.559  INFO 8788 --- [http-nio-8080-exec-6] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-05 00:07:09.560  INFO 8788 --- [http-nio-8080-exec-6] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-05 00:07:09.561  INFO 8788 --- [http-nio-8080-exec-6] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-05 00:07:09.656  INFO 8788 --- [http-nio-8080-exec-6] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-05 00:10:05.392  INFO 8788 --- [RMI TCP Connection(31)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-05 00:10:05.418  INFO 8788 --- [RMI TCP Connection(31)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-05 00:10:05.420  INFO 8788 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-05 00:10:05.422  INFO 8788 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2025-04-04 00:40:12.073  INFO 17092 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Thuva_sri with PID 17092 (D:\Work\delta_pos_be\target\classes started by srith in D:\Work\delta_pos_be)
 2025-04-04 00:40:12.103  INFO 17092 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
 2025-04-04 00:40:13.083  INFO 17092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.

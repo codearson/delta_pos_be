@@ -38,7 +38,7 @@ public class BranchController {
 	BranchService  branchService;
 	
 	@GetMapping("/getAllPage")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	//@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("BranchController.getAll() invoked.");
