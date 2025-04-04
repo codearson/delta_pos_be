@@ -38,7 +38,7 @@ public class BranchController {
 	BranchService  branchService;
 	
 	@GetMapping("/getAllPage")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	//@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("BranchController.getAll() invoked.");
@@ -46,7 +46,7 @@ public class BranchController {
 	}
 	
 	@GetMapping("/getAll")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	//@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto gellAllBranches() {
 		log.info("BranchController.gellAllBranches() invoked");
 		return branchService.getAllBranches();

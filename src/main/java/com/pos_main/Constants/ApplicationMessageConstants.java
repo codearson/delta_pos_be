@@ -196,6 +196,22 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_SHOP_DETAILS = "ex.get.all.shop.details";	
 		String ERR_RETRIEVE_SHOPDETAILS_BY_NAME = "err.get.product.by.name";
 		String EX_RETRIEVE_SHOPDETAILS_BY_NAME = "ex.get.product.by.name";
+		String ERR_SAVE_MANAGER_TOGGLE_DETAILS = "err.save.manager.toggle.details";
+		String EX_SAVE_MANAGER_TOGGLE_DETAILS = "ex.save.manager.toggle.details";
+	    String ERR_UPDATE_MANAGER_TOGGLE_DETAILS = "err.update.manager.toggle.details";
+	    String EX_UPDATE_MANAGER_TOGGLE_DETAILS = "ex.update.manager.toggle.details";
+	    String ERR_UPDATE_MANAGER_TOGGLE_STATUS = "err.update.manager.toggle.status";
+	    String EX_UPDATE_MANAGER_TOGGLE_STATUS = "ex.update.manager.toggle.status";
+	    String ERR_RETRIEVE_ALL_MANAGER_TOGGLE_DETAILS = "err.get.all.manager.toggle.details";
+	    String EX_RETRIEVE_ALL_MANAGER_TOGGLE_DETAILS = "ex.get.all.manager.toggle.details";
+	    String ERR_RETRIEVE_MANAGER_TOGGLE_BY_NAME = "err.get.manager.toggle.by.name";
+	    String EX_RETRIEVE_MANAGER_TOGGLE_BY_NAME = "ex.get.manager.toggle.by.name";
+	    String ERR_SAVE_EMPLOYEE_DISCOUNT_DETAILS = "err.save.employee.discount.details";
+	    String EX_SAVE_EMPLOYEE_DISCOUNT_DETAILS = "ex.save.employee.discount.details";
+	    String ERR_UPDATE_EMPLOYEE_DISCOUNT_DETAILS = "err.update.employee.discount.details";
+	    String EX_UPDATE_EMPLOYEE_DISCOUNT_DETAILS = "ex.update.employee.discount.details";
+	    String ERR_RETRIEVE_ALL_EMPLOYEE_DISCOUNT_DETAILS = "err.get.all.employee.discount.details";
+	    String EX_RETRIEVE_ALL_EMPLOYEE_DISCOUNT_DETAILS = "ex.get.all.employee.discount.details";
 		
 	}
 }
