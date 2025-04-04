@@ -54,7 +54,7 @@ public class UserController {
 	}
 
 	@GetMapping("/getAll")
-	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
 			WebRequest webRequest) {
 		log.info("UserController.getAll() invoked.");
