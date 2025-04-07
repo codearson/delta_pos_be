@@ -55,5 +55,6 @@ public class Product implements Serializable {
 	private Double purchasePrice;
 	@Column(name = "isActive")
 	private Boolean isActive;
-	
+	@Column(name = "discountValidation")
+	private Boolean discountValidation;
 }

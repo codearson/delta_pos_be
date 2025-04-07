@@ -34,5 +34,7 @@ public class ProductCategory implements Serializable {
 	private String productCategoryName;
 	@Column(name = "isActive")
 	private Boolean isActive;
+	@Column(name = "agevalidation")
+	private Boolean agevalidation;
 
 }

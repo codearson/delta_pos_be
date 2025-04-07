@@ -24,5 +24,5 @@ public class ProductDto {
 	private Integer quantity;
 	private Integer lowStock;
 	private Double purchasePrice;
-
+	private Boolean discountValidation;
 }
