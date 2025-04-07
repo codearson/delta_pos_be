@@ -57,5 +57,7 @@ public class Transaction implements Serializable {
 	private LocalDateTime generateDateTime;
     @Column(name = "manualDiscount")
 	private Double manualDiscount;
+    @Column(name = "employeeDiscount")
+	private Double employeeDiscount;
     
 }
