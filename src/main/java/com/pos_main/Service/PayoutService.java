@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.PayoutDto;
 import com.pos_main.Dto.ResponseDto;
 
@@ -13,6 +15,8 @@ import com.pos_main.Dto.ResponseDto;
  **/
 
 public interface PayoutService {
+	
+	public ResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
 	ResponseDto getAllPayout();
 	
