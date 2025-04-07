@@ -22,6 +22,7 @@ public class ProductCategoryTransfomer implements BaseTransformer<ProductCategor
 			productCategoryDto.setId(productCategory.getId());
 			productCategoryDto.setProductCategoryName(productCategory.getProductCategoryName());
 			productCategoryDto.setIsActive(productCategory.getIsActive());
+			productCategoryDto.setAgevalidation(productCategory.getAgevalidation());
 		}
 		return productCategoryDto;
 	}
@@ -34,6 +35,7 @@ public class ProductCategoryTransfomer implements BaseTransformer<ProductCategor
 			productCategory.setId(productCategoryDto.getId());
 			productCategory.setProductCategoryName(productCategoryDto.getProductCategoryName());
 			productCategory.setIsActive(productCategoryDto.getIsActive());
+			productCategory.setAgevalidation(productCategoryDto.getAgevalidation());
 		}
 		return productCategory;
 	}

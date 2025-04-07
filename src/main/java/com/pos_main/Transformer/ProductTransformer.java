@@ -41,6 +41,7 @@ public class ProductTransformer implements BaseTransformer<Product, ProductDto> 
 			productDto.setQuantity(product.getQuantity());
 			productDto.setLowStock(product.getLowStock());
 			productDto.setPurchasePrice(product.getPurchasePrice());
+			productDto.setDiscountValidation(product.getDiscountValidation());
 		}
 		return productDto;
 	}
@@ -67,6 +68,7 @@ public class ProductTransformer implements BaseTransformer<Product, ProductDto> 
 			product.setQuantity(productDto.getQuantity());
 			product.setLowStock(productDto.getLowStock());
 			product.setPurchasePrice(productDto.getPurchasePrice());
+			product.setDiscountValidation(productDto.getDiscountValidation());
 		}
 		return product;
 	}
