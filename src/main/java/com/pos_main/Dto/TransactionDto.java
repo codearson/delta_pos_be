@@ -24,4 +24,5 @@ public class TransactionDto {
     private List<TransactionPaymentMethodDto> transactionPaymentMethod = new ArrayList<>();
     private LocalDateTime generateDateTime;
     private Double manualDiscount;
+    private Double employeeDiscount;
 }
