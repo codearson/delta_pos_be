@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.ProductCategoryDto;
 import com.pos_main.Dto.ResponseDto;
 
@@ -12,6 +14,8 @@ import com.pos_main.Dto.ResponseDto;
 public interface ProductCategoryService {
 	
 	ResponseDto getAll();
+	
+	public ResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParameters);
 	
 	public ResponseDto save(ProductCategoryDto productCategoryDto);
 	

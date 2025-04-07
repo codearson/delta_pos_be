@@ -1,8 +1,10 @@
 package com.pos_main.Dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.pos_main.Domain.ProductCategory;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ProductCategoryDto;
 
 
@@ -15,6 +17,8 @@ import com.pos_main.Dto.ProductCategoryDto;
 public interface ProductCategoryDao extends BaseDao<ProductCategory>{
 
 	List<ProductCategoryDto> getAll();
+	
+	PaginatedResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParams);
 
 	ProductCategoryDto save(ProductCategoryDto productCategoryDto);
 
