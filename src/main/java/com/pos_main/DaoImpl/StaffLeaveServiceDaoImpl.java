@@ -1,5 +1,6 @@
 package com.pos_main.DaoImpl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,16 +30,17 @@ import lombok.extern.slf4j.Slf4j;
  * @date Mar 26, 2025.
  * @version 1.0
  **/
+
 @Slf4j
 @Repository
-public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements StaffLeaveServiceDao{
+public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements StaffLeaveServiceDao {
 
 	@Autowired
 	StaffLeaveTransformer staffLeaveTransformer;
-	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	@Override
 	@Transactional
 	public StaffLeaveDto save(StaffLeaveDto staffLeaveDto) {
@@ -47,44 +49,56 @@ public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements
 		StaffLeave saveStaffLeave = saveOrUpdate(staffLeave);
 		return staffLeaveTransformer.transform(saveStaffLeave);
 	}
-	
-	@Override
-    @Transactional
-    public StaffLeaveDto update(StaffLeaveDto staffLeaveDto) {
-        log.info("StaffLeaveServiceDaoImpl.update() invoked");
-        StaffLeave staffLeave = staffLeaveTransformer.reverseTransform(staffLeaveDto);      
-        StaffLeave updatedStaffLeave = saveOrUpdate(staffLeave);
-        return staffLeaveTransformer.transform(updatedStaffLeave);
-    }
 
-    @Override
-    @Transactional
-    public StaffLeaveDto checkAvailability(Integer id) {
-        Criteria criteria = getCurrentSession().createCriteria(StaffLeave.class, "staffLeave");
-        criteria.add(Restrictions.eq("staffLeave.id", id));
-        StaffLeave staffLeave = (StaffLeave) criteria.uniqueResult();
-        StaffLeaveDto staffLeaveDto = null;
-        if (staffLeave != null) {
-        	staffLeaveDto = staffLeaveTransformer.transform(staffLeave);
-        }
-        return staffLeaveDto;
-    }
-    
+	@Override
+	@Transactional
+	public StaffLeaveDto update(StaffLeaveDto staffLeaveDto) {
+		log.info("StaffLeaveServiceDaoImpl.update() invoked");
+		StaffLeave staffLeave = staffLeaveTransformer.reverseTransform(staffLeaveDto);
+		StaffLeave updatedStaffLeave = saveOrUpdate(staffLeave);
+		return staffLeaveTransformer.transform(updatedStaffLeave);
+	}
+
+	@Override
+	@Transactional
+	public StaffLeaveDto checkAvailability(Integer id) {
+		Criteria criteria = getCurrentSession().createCriteria(StaffLeave.class, "staffLeave");
+		criteria.add(Restrictions.eq("staffLeave.id", id));
+		StaffLeave staffLeave = (StaffLeave) criteria.uniqueResult();
+		StaffLeaveDto staffLeaveDto = null;
+
+		if (staffLeave != null) {
+			if (staffLeave.getEndDate() != null && staffLeave.getEndDate().isBefore(LocalDate.now())) {
+				staffLeave.setIsActive(false);
+				saveOrUpdate(staffLeave);
+			}
+			staffLeaveDto = staffLeaveTransformer.transform(staffLeave);
+		}
+		return staffLeaveDto;
+	}
+
     @Override
     @Transactional
     public List<StaffLeaveDto> getAll() {
         log.info("StaffLeaveServiceDaoImpl.getAll() invoked");
-        
+ 
         CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
         CriteriaQuery<StaffLeave> cq = cb.createQuery(StaffLeave.class);
         Root<StaffLeave> root = cq.from(StaffLeave.class);
-        
+ 
         cq.select(root);
-        
-        List<StaffLeave> taxList = getCurrentSession().createQuery(cq).getResultList();
-        return taxList.stream()
-            .map(staffLeaveTransformer::transform)
-            .collect(Collectors.toList());
+ 
+        List<StaffLeave> staffLeaveList = getCurrentSession().createQuery(cq).getResultList();
+ 
+        staffLeaveList.forEach(staffLeave -> {
+            if (staffLeave.getEndDate() != null && staffLeave.getEndDate().isBefore(LocalDate.now())) {
+                staffLeave.setIsActive(false);
+                saveOrUpdate(staffLeave);
+            }
+        });
+ 
+        return staffLeaveList.stream()
+                .map(staffLeaveTransformer::transform)
+                .collect(Collectors.toList());
     }
-	
 }

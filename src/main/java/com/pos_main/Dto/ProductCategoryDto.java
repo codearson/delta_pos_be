@@ -15,5 +15,6 @@ public class ProductCategoryDto{
 	private Integer id;
 	private String productCategoryName;
 	private Boolean isActive;
+	private Boolean agevalidation;
 
 }
