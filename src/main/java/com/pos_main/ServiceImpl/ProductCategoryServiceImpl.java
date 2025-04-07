@@ -1,11 +1,13 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ProductCategoryDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Service.ProductCategoryService;
@@ -48,6 +50,28 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 			log.error("Exception occurs while retrieving All Product Category details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_CATRGORY_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("CustomerServiceImpl.getAllPageCustomer() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = productCategoryServiceBL.getAllPageProductCategory(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All ProductCategory Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All ProductCategory details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_CATEGORY_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Customer details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_CATEGORY_DETAILS);
 		}
 		return responseDto;
 	}

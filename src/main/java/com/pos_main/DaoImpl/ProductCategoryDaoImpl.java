@@ -2,6 +2,7 @@ package com.pos_main.DaoImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -15,8 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import com.pos_main.Dao.ProductCategoryDao;
+import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.ProductCategory;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ProductCategoryDto;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.ProductCategoryTransfomer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -52,6 +56,34 @@ public class ProductCategoryDaoImpl extends BaseDaoImpl<ProductCategory> impleme
 			}
 		}
 		return productCategoryDtoList;
+	}
+	
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ProductCategoryDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<ProductCategory> allProductCategoryList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM product_category";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(ProductCategory.class, "productCategory");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allProductCategoryList = criteria.list();
+		recordCount = allProductCategoryList.size();
+		if (allProductCategoryList != null && !allProductCategoryList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allProductCategoryList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allProductCategoryList.stream().map(Invoice -> {
+				return productCategoryTransfomer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
 	}
 
 	@Override

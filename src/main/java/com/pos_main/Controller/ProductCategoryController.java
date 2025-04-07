@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ProductCategoryDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Service.ProductCategoryService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,6 +42,15 @@ public class ProductCategoryController {
 		log.info("ProductCategoryController.getAll() invoked");
 		return productCategoryService.getAll();
 	}
+	
+	@GetMapping("/getAllPage")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAllPageProductCategory(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+			WebRequest webRequest) {
+		log.info("ProductCategoryController.getAllPage() invoked.");
+		return productCategoryService.getAllPageProductCategory(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
+
 
 	@PostMapping("/save")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")

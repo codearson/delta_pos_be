@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "45b49675-5c13-4356-86c3-05876c8a9459",
+		"_postman_id": "13996d01-1a60-431e-bfb2-b765b992e328",
 		"name": "Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -838,6 +838,14 @@
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}

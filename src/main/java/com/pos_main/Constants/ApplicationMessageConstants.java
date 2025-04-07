@@ -226,6 +226,8 @@ public interface ApplicationMessageConstants {
 	    String EX_RETRIEVE_ALL_EMPLOYEE_DISCOUNT_DETAILS = "ex.get.all.employee.discount.details";
 		String ERR_RETRIEVE_PAYOUT_DETAILS = "err.get.all.page.payout.details";
 		String EX_RETRIEVE_PAYOUT_DETAILS = "ex.get.all.page.payout.details";
+		String ERR_RETRIEVE_ALL_CATEGORY_DETAILS = "err.get.all.page.category.details";
+		String EX_RETRIEVE_ALL_CATEGORY_DETAILS = "ex.get.all.page.category.details";
 		
 	}
 }
