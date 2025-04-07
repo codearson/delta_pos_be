@@ -1,12 +1,14 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.PayoutDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Service.PayoutService;
@@ -25,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
  **/
 
 @Slf4j
-@Service
+@Component
 public class PayoutServiceImpl implements PayoutService {
 
 	@Autowired
@@ -44,6 +46,28 @@ public class PayoutServiceImpl implements PayoutService {
 			if (payoutDtoList != null && !payoutDtoList.isEmpty()) {
 				log.info("Retrieve All payout Details.");
 				responseDto = serviceUtil.getServiceResponse(payoutDtoList);
+			} else {
+				log.info("Unable to retrieve All Payout details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PAYOUT_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Payout details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PAYOUT_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("PayoutServiceImpl.getAllPagePayout() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = payoutServiceBL.getAllPagePayout(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All Payout Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
 			} else {
 				log.info("Unable to retrieve All Payout details.");
 				responseDto = serviceUtil.getErrorServiceResponse(
