@@ -1,7 +1,10 @@
 package com.pos_main.Dao;
 
 import java.util.List;
+import java.util.Map;
+
 import com.pos_main.Domain.Payout;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.PayoutDto;
 
 /**
@@ -17,11 +20,14 @@ public interface PayoutDao extends BaseDao<Payout> {
 	
 	List<PayoutDto> getAllPayout();
 	
+	PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParams);
+	
 	PayoutDto save (PayoutDto payoutDto);
 	
-	PayoutDto update(PayoutDto payoutDto);
+	PayoutDto updatePayout(PayoutDto payoutDto);
 
 	PayoutDto checkPayoutAvailability(Integer payoutId);
+
 
 
 
