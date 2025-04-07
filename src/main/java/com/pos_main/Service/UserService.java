@@ -5,6 +5,7 @@ import java.util.Map;
 import com.pos_main.Dto.LoginRequestDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.UserDto;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Feb 5, 2024 
@@ -33,5 +34,7 @@ public interface UserService {
 	public ResponseDto updatePassword(Integer userId, String password, Integer changedByUserId);
 	
 	public ResponseDto getUserByEmailAddress(String emailAddress);
+
+	public ResponseDto sendEmail(MultipartFile file, String period, String email);
 
 }

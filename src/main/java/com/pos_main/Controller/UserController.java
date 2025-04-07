@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.UserDto;
@@ -109,6 +110,15 @@ public class UserController {
 	public ResponseDto getUserByEmailAddress(@RequestParam("emailAddress") String emailAddress) {
 	    log.info("UserController.getUserByEmailAddress() invoked with emailAddress", emailAddress);
 	    return userService.getUserByEmailAddress(emailAddress);
+	}
+
+	@PostMapping("/sendEmail")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto sendEmail(@RequestParam("file") MultipartFile file,
+								@RequestParam("period") String period,
+								@RequestParam("email") String email) {
+		log.info("UserController.sendEmail() invoked");
+		return userService.sendEmail(file, period, email);
 	}
 
 }

@@ -19,6 +19,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pos_main.Dao.UserDao;
 import com.pos_main.Dto.UserDto;
@@ -153,6 +154,19 @@ public class UserServiceBL {
 	public List<UserDto> getUserByEmailAddress(String emailAddress) {
 		log.info("UserServiceBL.getUserByEmailAddress()invoked");
 		return userDao.getUserByEmailAddress(emailAddress);
+	}
+
+	public void sendEmail(MultipartFile file, String period, String email) throws Exception {
+		byte[] pdfBytes = file.getBytes();
+		String filename = "low_stock_" + period + ".pdf";
+		
+		emailService.sendEmailWithAttachment(
+			email,
+			"Low Stock Report - " + period,
+			"Please find attached the low stock report for " + period,
+			pdfBytes,
+			filename
+		);
 	}
 
 }

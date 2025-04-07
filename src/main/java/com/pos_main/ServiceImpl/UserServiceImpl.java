@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pos_main.Dto.UserDto;
 import com.pos_main.Dto.ResponseDto;
@@ -248,6 +249,18 @@ public class UserServiceImpl implements UserService {
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_USER_BY_EMAIL_ADDRESS);
 		}
 		return responseDto;
+	}
+
+	@Override
+	public ResponseDto sendEmail(MultipartFile file, String period, String email) {
+		log.info("UserServiceImpl.sendEmail() invoked");
+		try {
+			userServiceBL.sendEmail(file, period, email);
+			return serviceUtil.getServiceResponse("Email sent successfully");
+		} catch (Exception e) {
+			log.error("Exception occurs while sending email: {}", e.getMessage());
+			return serviceUtil.getErrorServiceResponse("Failed to send email: " + e.getMessage());
+		}
 	}
 
 }
