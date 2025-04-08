@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
 
@@ -19,5 +21,7 @@ public interface ShopDetailsService {
 	ResponseDto getAll();
 	
 	ResponseDto getByName(String name);
+	
+	public ResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
 }
