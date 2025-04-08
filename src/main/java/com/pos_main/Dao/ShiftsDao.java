@@ -1,6 +1,9 @@
 package com.pos_main.Dao;
 
+import java.util.Map;
+
 import com.pos_main.Domain.Shifts;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ShiftsDto;
 
 
@@ -16,5 +19,7 @@ import com.pos_main.Dto.ShiftsDto;
 public interface ShiftsDao extends BaseDao<Shifts>{
 	
 	ShiftsDto save(ShiftsDto shiftsDto);
+	
+	PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams);
 
 }

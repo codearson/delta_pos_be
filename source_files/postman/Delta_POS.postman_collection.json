@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b2bffd03-6662-460f-af32-945cb44fd279",
+		"_postman_id": "357897a7-5d8c-4cb4-a770-fc0b54e7c1b9",
 		"name": "Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -2713,12 +2713,41 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getAllPage",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MTI0NTIzfQ.iEIW7NkWU6NKAYYOL5bcpMKJs-pR-4WKosNoOwrP_ar2D3vxpiu_3SfBCxVH9ygt",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8080/shifts/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shifts",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
 						}
 					},
 					"response": []
@@ -3267,7 +3296,10 @@
 					"name": "New Request",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
