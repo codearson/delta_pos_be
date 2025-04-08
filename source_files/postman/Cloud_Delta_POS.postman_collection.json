@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "dbfb2ab5-3e6f-4d63-bbb9-51fb1cf0ca7b",
+		"_postman_id": "457120b4-9ce1-4f11-8fa2-b4c2294de309",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -3010,6 +3010,38 @@
 							"path": [
 								"shifts",
 								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/shifts/getAllPage?pageNumber=1&PageSize=10",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"shifts",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "PageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
