@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "13996d01-1a60-431e-bfb2-b765b992e328",
+		"_postman_id": "b2bffd03-6662-460f-af32-945cb44fd279",
 		"name": "Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -845,7 +845,10 @@
 					"name": "getAllPage",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -2819,6 +2822,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/purchaseList/getAllPage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"purchaseList",
+								"getAllPage"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -3237,6 +3260,14 @@
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}

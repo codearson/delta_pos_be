@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "205a0c97-4b93-412d-b767-1dd9adb337bc",
+		"_postman_id": "dbfb2ab5-3e6f-4d63-bbb9-51fb1cf0ca7b",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -3369,6 +3369,10 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
 		}
 	]
 }
