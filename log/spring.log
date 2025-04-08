@@ -19963,3 +19963,523 @@ Caused by: org.hibernate.StaleStateException: Batch update returned unexpected r
 2025-04-08 20:35:02.796  INFO 26268 --- [RMI TCP Connection(16)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-04-08 20:35:02.800  INFO 26268 --- [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-04-08 20:35:02.805  INFO 26268 --- [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-08 21:08:33.409  INFO 13052 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.5 on DESKTOP-7MOLV2K with PID 13052 (D:\Codearson\delta_pos_be\target\classes started by ASUS in D:\Codearson\delta_pos_be)
+2025-04-08 21:08:33.411  INFO 13052 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-04-08 21:08:41.395  INFO 13052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-08 21:08:41.422  INFO 13052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JPA repository interfaces.
+2025-04-08 21:08:41.890  INFO 13052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-04-08 21:08:41.901  INFO 13052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-08 21:08:41.901  INFO 13052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-04-08 21:08:41.978  INFO 13052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-08 21:08:41.978  INFO 13052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8525 ms
+2025-04-08 21:08:42.147  INFO 13052 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-08 21:08:42.199  INFO 13052 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-04-08 21:08:42.353  INFO 13052 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-04-08 21:08:42.471  INFO 13052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-08 21:08:42.609  INFO 13052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-08 21:08:42.624  INFO 13052 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-08 21:08:43.665  INFO 13052 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-08 21:08:43.674  INFO 13052 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08 21:08:44.391  INFO 13052 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60739eca, org.springframework.security.web.context.SecurityContextPersistenceFilter@513bec8c, org.springframework.security.web.header.HeaderWriterFilter@6dbdbb69, org.springframework.web.filter.CorsFilter@9ba167e, org.springframework.security.web.authentication.logout.LogoutFilter@612531a3, com.pos_main.Service.Utils.JwtCustomFilter@71891d6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fc8163, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62f73b0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17873842, org.springframework.security.web.session.SessionManagementFilter@7c3223aa, org.springframework.security.web.access.ExceptionTranslationFilter@7ba623d1, org.springframework.security.web.access.intercept.AuthorizationFilter@7833407]
+2025-04-08 21:08:44.611  INFO 13052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-08 21:08:44.621  INFO 13052 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 11.621 seconds (JVM running for 27.222)
+2025-04-08 21:09:40.890  INFO 13052 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-08 21:09:40.890  INFO 13052 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-08 21:09:40.892  INFO 13052 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-08 21:09:40.923  INFO 13052 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:40.923  INFO 13052 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:41.045  INFO 13052 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:41.045  INFO 13052 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:41.045  INFO 13052 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:41.045  INFO 13052 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:41.050  WARN 13052 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:41.051  WARN 13052 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:41.108  INFO 13052 --- [http-nio-8080-exec-3] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:09:41.108  INFO 13052 --- [http-nio-8080-exec-3] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:09:41.108  INFO 13052 --- [http-nio-8080-exec-3] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:09:41.112  INFO 13052 --- [http-nio-8080-exec-3] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:09:41.193  INFO 13052 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:41.194  INFO 13052 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:41.194  INFO 13052 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:41.194  INFO 13052 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.657  INFO 13052 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:44.688  INFO 13052 --- [http-nio-8080-exec-6] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-08 21:09:44.691  INFO 13052 --- [http-nio-8080-exec-6] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-08 21:09:44.691  INFO 13052 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-08 21:09:44.771  INFO 13052 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:44.772  INFO 13052 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:44.773  WARN 13052 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.883  INFO 13052 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:44.886  INFO 13052 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:44.886  INFO 13052 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:44.886  WARN 13052 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.899  INFO 13052 --- [http-nio-8080-exec-8] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-04-08 21:09:44.900  INFO 13052 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-04-08 21:09:44.901  WARN 13052 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.905  INFO 13052 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.906  INFO 13052 --- [http-nio-8080-exec-8] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-04-08 21:09:44.935  INFO 13052 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:44.938  INFO 13052 --- [http-nio-8080-exec-9] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:44.939  INFO 13052 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:44.939  INFO 13052 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:44.939  WARN 13052 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.940  INFO 13052 --- [http-nio-8080-exec-9] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:44.940  INFO 13052 --- [http-nio-8080-exec-9] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:44.940  WARN 13052 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.948  INFO 13052 --- [http-nio-8080-exec-10] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:09:44.949  INFO 13052 --- [http-nio-8080-exec-10] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:09:44.949  INFO 13052 --- [http-nio-8080-exec-10] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:09:44.949  INFO 13052 --- [http-nio-8080-exec-10] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:09:44.952  INFO 13052 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.952  INFO 13052 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.952  INFO 13052 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.952  INFO 13052 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.953  INFO 13052 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:44.957  INFO 13052 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:44.957  INFO 13052 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:44.958  WARN 13052 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.958  INFO 13052 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:44.961  INFO 13052 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:09:44.961  INFO 13052 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:44.961  WARN 13052 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:44.970  INFO 13052 --- [http-nio-8080-exec-2] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:09:44.970  INFO 13052 --- [http-nio-8080-exec-2] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:09:44.970  INFO 13052 --- [http-nio-8080-exec-2] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:09:44.970  INFO 13052 --- [http-nio-8080-exec-2] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:09:44.974  INFO 13052 --- [http-nio-8080-exec-2] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.975  INFO 13052 --- [http-nio-8080-exec-2] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.975  INFO 13052 --- [http-nio-8080-exec-2] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:44.975  INFO 13052 --- [http-nio-8080-exec-2] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:55.815  INFO 13052 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:55.817  INFO 13052 --- [http-nio-8080-exec-4] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-08 21:09:55.817  INFO 13052 --- [http-nio-8080-exec-4] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-08 21:09:55.817  INFO 13052 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-08 21:09:55.819  INFO 13052 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:09:55.819  INFO 13052 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:55.819  WARN 13052 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:55.919  INFO 13052 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:55.921  INFO 13052 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:09:55.922  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:55.922  WARN 13052 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:55.932  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-04-08 21:09:55.933  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-04-08 21:09:55.933  WARN 13052 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:55.935  INFO 13052 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:55.936  INFO 13052 --- [http-nio-8080-exec-5] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-04-08 21:09:58.038  INFO 13052 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:58.040  INFO 13052 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:09:58.040  INFO 13052 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:58.040  WARN 13052 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:58.049  INFO 13052 --- [http-nio-8080-exec-6] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:09:58.049  INFO 13052 --- [http-nio-8080-exec-6] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:09:58.049  INFO 13052 --- [http-nio-8080-exec-6] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:09:58.050  INFO 13052 --- [http-nio-8080-exec-6] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:09:58.064  INFO 13052 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:58.065  INFO 13052 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:09:58.065  INFO 13052 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:58.065  WARN 13052 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:58.075  INFO 13052 --- [http-nio-8080-exec-7] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:09:58.075  INFO 13052 --- [http-nio-8080-exec-7] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:09:58.075  INFO 13052 --- [http-nio-8080-exec-7] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:09:58.075  INFO 13052 --- [http-nio-8080-exec-7] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:09:58.077  INFO 13052 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:58.078  INFO 13052 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:09:58.078  INFO 13052 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:58.079  WARN 13052 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:58.097  INFO 13052 --- [http-nio-8080-exec-8] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:09:58.098  INFO 13052 --- [http-nio-8080-exec-8] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:09:58.098  INFO 13052 --- [http-nio-8080-exec-8] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:09:58.098  INFO 13052 --- [http-nio-8080-exec-8] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:09:58.100  INFO 13052 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:58.100  INFO 13052 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:58.100  INFO 13052 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:58.101  INFO 13052 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:09:59.595  INFO 13052 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:09:59.597  INFO 13052 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:09:59.597  INFO 13052 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:09:59.597  WARN 13052 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:59.607  INFO 13052 --- [http-nio-8080-exec-10] c.p.Controller.ManagerToggleController   : ManagerToggleController.updateStatus() invoked
+2025-04-08 21:09:59.607  INFO 13052 --- [http-nio-8080-exec-10] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.updateStatus() invoked
+2025-04-08 21:09:59.607  INFO 13052 --- [http-nio-8080-exec-10] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.updateStatus() invoked
+2025-04-08 21:09:59.608  WARN 13052 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:09:59.610  INFO 13052 --- [http-nio-8080-exec-10] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.update() invoked
+2025-04-08 21:09:59.647  INFO 13052 --- [http-nio-8080-exec-10] c.p.S.ManagerToggleServiceImpl           : Manager Toggle Status updated.
+2025-04-08 21:10:00.312  INFO 13052 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:00.316  INFO 13052 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:10:00.317  INFO 13052 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:00.317  WARN 13052 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:00.326  INFO 13052 --- [http-nio-8080-exec-2] c.p.Controller.ManagerToggleController   : ManagerToggleController.updateStatus() invoked
+2025-04-08 21:10:00.326  INFO 13052 --- [http-nio-8080-exec-2] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.updateStatus() invoked
+2025-04-08 21:10:00.326  INFO 13052 --- [http-nio-8080-exec-2] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.updateStatus() invoked
+2025-04-08 21:10:00.326  WARN 13052 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:00.330  INFO 13052 --- [http-nio-8080-exec-2] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.update() invoked
+2025-04-08 21:10:00.335  INFO 13052 --- [http-nio-8080-exec-2] c.p.S.ManagerToggleServiceImpl           : Manager Toggle Status updated.
+2025-04-08 21:10:00.352  INFO 13052 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:00.354  INFO 13052 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:10:00.354  INFO 13052 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:00.354  WARN 13052 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:00.361  INFO 13052 --- [http-nio-8080-exec-4] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:10:00.361  INFO 13052 --- [http-nio-8080-exec-4] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:10:00.361  INFO 13052 --- [http-nio-8080-exec-4] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:10:00.361  INFO 13052 --- [http-nio-8080-exec-4] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:10:00.363  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:00.365  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:00.365  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:00.365  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.335  INFO 13052 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:10.336  INFO 13052 --- [http-nio-8080-exec-3] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-08 21:10:10.336  INFO 13052 --- [http-nio-8080-exec-3] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-08 21:10:10.336  INFO 13052 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-08 21:10:10.337  INFO 13052 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:10.337  INFO 13052 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:10.338  WARN 13052 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.447  INFO 13052 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:10.449  INFO 13052 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:10.449  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:10.449  WARN 13052 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.456  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-04-08 21:10:10.457  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-04-08 21:10:10.457  WARN 13052 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.460  INFO 13052 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.461  INFO 13052 --- [http-nio-8080-exec-5] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-04-08 21:10:10.480  INFO 13052 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:10.480  INFO 13052 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:10.482  INFO 13052 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:10.482  INFO 13052 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:10.482  WARN 13052 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.483  INFO 13052 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:10.483  INFO 13052 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:10.483  WARN 13052 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.489  INFO 13052 --- [http-nio-8080-exec-7] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:10:10.489  INFO 13052 --- [http-nio-8080-exec-7] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:10:10.489  INFO 13052 --- [http-nio-8080-exec-7] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:10:10.490  INFO 13052 --- [http-nio-8080-exec-7] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:10:10.492  INFO 13052 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:10.493  INFO 13052 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.494  INFO 13052 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.494  INFO 13052 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.494  INFO 13052 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.494  INFO 13052 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:10.494  INFO 13052 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:10.494  WARN 13052 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.499  INFO 13052 --- [http-nio-8080-exec-9] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:10.500  INFO 13052 --- [http-nio-8080-exec-9] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:10.500  INFO 13052 --- [http-nio-8080-exec-9] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:10.500  WARN 13052 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:10.507  INFO 13052 --- [http-nio-8080-exec-9] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:10:10.507  INFO 13052 --- [http-nio-8080-exec-9] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:10:10.507  INFO 13052 --- [http-nio-8080-exec-9] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:10:10.507  INFO 13052 --- [http-nio-8080-exec-9] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:10:10.510  INFO 13052 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.510  INFO 13052 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.510  INFO 13052 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:10.510  INFO 13052 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.401  INFO 13052 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:57.402  INFO 13052 --- [http-nio-8080-exec-10] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-08 21:10:57.402  INFO 13052 --- [http-nio-8080-exec-10] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-08 21:10:57.402  INFO 13052 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-08 21:10:57.404  INFO 13052 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:57.404  INFO 13052 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:57.404  WARN 13052 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.543  INFO 13052 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:57.545  INFO 13052 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:57.545  INFO 13052 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:57.545  WARN 13052 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.553  INFO 13052 --- [http-nio-8080-exec-1] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-04-08 21:10:57.553  INFO 13052 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-04-08 21:10:57.554  WARN 13052 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.559  INFO 13052 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.559  INFO 13052 --- [http-nio-8080-exec-1] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-04-08 21:10:57.584  INFO 13052 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:57.585  INFO 13052 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:57.587  INFO 13052 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:57.587  INFO 13052 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:57.587  INFO 13052 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:57.588  WARN 13052 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.588  INFO 13052 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:57.588  WARN 13052 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.598  INFO 13052 --- [http-nio-8080-exec-4] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:10:57.598  INFO 13052 --- [http-nio-8080-exec-4] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:10:57.598  INFO 13052 --- [http-nio-8080-exec-4] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:10:57.598  INFO 13052 --- [http-nio-8080-exec-4] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:10:57.600  INFO 13052 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:57.602  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.602  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.602  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.602  INFO 13052 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.607  INFO 13052 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:57.607  INFO 13052 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:57.607  WARN 13052 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.609  INFO 13052 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:10:57.612  INFO 13052 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:10:57.612  INFO 13052 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:10:57.612  WARN 13052 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:10:57.618  INFO 13052 --- [http-nio-8080-exec-5] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:10:57.618  INFO 13052 --- [http-nio-8080-exec-5] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:10:57.618  INFO 13052 --- [http-nio-8080-exec-5] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:10:57.618  INFO 13052 --- [http-nio-8080-exec-5] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:10:57.620  INFO 13052 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.622  INFO 13052 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.622  INFO 13052 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:10:57.622  INFO 13052 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:04.324  INFO 13052 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-08 21:11:04.369  INFO 13052 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08 21:11:04.370  INFO 13052 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-08 21:11:04.374  INFO 13052 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-08 21:11:06.407  INFO 24792 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.5 on DESKTOP-7MOLV2K with PID 24792 (D:\Codearson\delta_pos_be\target\classes started by ASUS in D:\Codearson\delta_pos_be)
+2025-04-08 21:11:06.409  INFO 24792 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-04-08 21:11:07.052  INFO 24792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-08 21:11:07.078  INFO 24792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
+2025-04-08 21:11:07.460  INFO 24792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-04-08 21:11:07.468  INFO 24792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-08 21:11:07.469  INFO 24792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-04-08 21:11:07.523  INFO 24792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-08 21:11:07.523  INFO 24792 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1080 ms
+2025-04-08 21:11:07.657  INFO 24792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-08 21:11:07.706  INFO 24792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-04-08 21:11:07.855  INFO 24792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-04-08 21:11:07.937  INFO 24792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-08 21:11:08.073  INFO 24792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-08 21:11:08.087  INFO 24792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-08 21:11:09.339  INFO 24792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-08 21:11:09.347  INFO 24792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08 21:11:10.009  INFO 24792 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68838767, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d6014a7, org.springframework.security.web.header.HeaderWriterFilter@7f839ec5, org.springframework.web.filter.CorsFilter@315365ef, org.springframework.security.web.authentication.logout.LogoutFilter@164db8f0, com.pos_main.Service.Utils.JwtCustomFilter@435a2c7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4626f584, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e4ead73, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f381eaf, org.springframework.security.web.session.SessionManagementFilter@1d45c4b7, org.springframework.security.web.access.ExceptionTranslationFilter@4bec6682, org.springframework.security.web.access.intercept.AuthorizationFilter@17873842]
+2025-04-08 21:11:10.196  INFO 24792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-08 21:11:10.203  INFO 24792 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 4.09 seconds (JVM running for 4.636)
+2025-04-08 21:11:24.651  INFO 24792 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-08 21:11:24.651  INFO 24792 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-08 21:11:24.653  INFO 24792 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-08 21:11:24.695  INFO 24792 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:24.765  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-08 21:11:24.771  INFO 24792 --- [http-nio-8080-exec-1] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-08 21:11:24.771  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-08 21:11:24.915  INFO 24792 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:24.915  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:24.958  WARN 24792 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:25.429  INFO 24792 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:25.476  INFO 24792 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:25.478  INFO 24792 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:25.478  WARN 24792 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:25.623  INFO 24792 --- [http-nio-8080-exec-2] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-04-08 21:11:25.624  INFO 24792 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-04-08 21:11:25.646  WARN 24792 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:25.664  INFO 24792 --- [http-nio-8080-exec-2] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:25.666  INFO 24792 --- [http-nio-8080-exec-2] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-04-08 21:11:28.155  INFO 24792 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:28.157  INFO 24792 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:28.161  INFO 24792 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:28.161  INFO 24792 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:28.162  INFO 24792 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:28.162  INFO 24792 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:28.162  WARN 24792 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:28.162  WARN 24792 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:28.176  INFO 24792 --- [http-nio-8080-exec-4] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:28.177  INFO 24792 --- [http-nio-8080-exec-4] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:28.177  INFO 24792 --- [http-nio-8080-exec-4] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:28.177  INFO 24792 --- [http-nio-8080-exec-3] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:28.177  INFO 24792 --- [http-nio-8080-exec-3] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:28.177  INFO 24792 --- [http-nio-8080-exec-3] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:28.180  INFO 24792 --- [http-nio-8080-exec-4] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:28.181  INFO 24792 --- [http-nio-8080-exec-3] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:28.405  INFO 24792 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:28.407  INFO 24792 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:28.407  INFO 24792 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:28.407  INFO 24792 --- [http-nio-8080-exec-4] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:28.422  INFO 24792 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:28.443  INFO 24792 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:28.443  INFO 24792 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:28.444  WARN 24792 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:28.445  INFO 24792 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:28.680  INFO 24792 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:28.680  INFO 24792 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:28.680  WARN 24792 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:28.453  INFO 24792 --- [http-nio-8080-exec-5] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:28.682  INFO 24792 --- [http-nio-8080-exec-5] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:28.682  INFO 24792 --- [http-nio-8080-exec-5] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:28.682  INFO 24792 --- [http-nio-8080-exec-5] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:29.507  INFO 24792 --- [http-nio-8080-exec-6] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:29.508  INFO 24792 --- [http-nio-8080-exec-6] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:29.508  INFO 24792 --- [http-nio-8080-exec-6] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:29.509  INFO 24792 --- [http-nio-8080-exec-6] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:29.518  INFO 24792 --- [http-nio-8080-exec-6] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:29.518  INFO 24792 --- [http-nio-8080-exec-6] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:29.518  INFO 24792 --- [http-nio-8080-exec-6] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:29.518  INFO 24792 --- [http-nio-8080-exec-6] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.910  INFO 24792 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:36.910  INFO 24792 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:36.916  INFO 24792 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:36.916  INFO 24792 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:36.916  WARN 24792 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:36.917  INFO 24792 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:36.917  INFO 24792 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:36.917  WARN 24792 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:36.928  INFO 24792 --- [http-nio-8080-exec-8] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:36.928  INFO 24792 --- [http-nio-8080-exec-8] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:36.928  INFO 24792 --- [http-nio-8080-exec-8] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:36.929  INFO 24792 --- [http-nio-8080-exec-8] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:36.930  INFO 24792 --- [http-nio-8080-exec-7] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:36.930  INFO 24792 --- [http-nio-8080-exec-7] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:36.930  INFO 24792 --- [http-nio-8080-exec-7] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:36.931  INFO 24792 --- [http-nio-8080-exec-7] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:36.934  INFO 24792 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.934  INFO 24792 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.934  INFO 24792 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.934  INFO 24792 --- [http-nio-8080-exec-8] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.940  INFO 24792 --- [http-nio-8080-exec-9] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:36.940  INFO 24792 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:36.942  INFO 24792 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:36.942  INFO 24792 --- [http-nio-8080-exec-9] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:36.942  INFO 24792 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:36.942  INFO 24792 --- [http-nio-8080-exec-9] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:36.942  WARN 24792 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:36.942  WARN 24792 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:36.953  INFO 24792 --- [http-nio-8080-exec-9] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:36.953  INFO 24792 --- [http-nio-8080-exec-9] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:36.953  INFO 24792 --- [http-nio-8080-exec-9] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:36.953  INFO 24792 --- [http-nio-8080-exec-10] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:36.953  INFO 24792 --- [http-nio-8080-exec-10] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:36.953  INFO 24792 --- [http-nio-8080-exec-10] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:36.954  INFO 24792 --- [http-nio-8080-exec-9] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:36.955  INFO 24792 --- [http-nio-8080-exec-10] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:36.959  INFO 24792 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.959  INFO 24792 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.959  INFO 24792 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:36.959  INFO 24792 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:39.489  INFO 24792 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:39.493  INFO 24792 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:39.493  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:39.494  WARN 24792 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:39.505  INFO 24792 --- [http-nio-8080-exec-1] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:39.505  INFO 24792 --- [http-nio-8080-exec-1] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:39.505  INFO 24792 --- [http-nio-8080-exec-1] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:39.507  INFO 24792 --- [http-nio-8080-exec-1] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:39.513  INFO 24792 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:39.516  INFO 24792 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:39.516  INFO 24792 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:39.516  WARN 24792 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:39.527  INFO 24792 --- [http-nio-8080-exec-2] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:39.527  INFO 24792 --- [http-nio-8080-exec-2] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:39.527  INFO 24792 --- [http-nio-8080-exec-2] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:39.528  INFO 24792 --- [http-nio-8080-exec-2] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:39.535  INFO 24792 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:39.537  INFO 24792 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:39.537  INFO 24792 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:39.538  WARN 24792 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:39.546  INFO 24792 --- [http-nio-8080-exec-3] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:39.546  INFO 24792 --- [http-nio-8080-exec-3] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:39.546  INFO 24792 --- [http-nio-8080-exec-3] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:39.546  INFO 24792 --- [http-nio-8080-exec-3] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:39.549  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:39.549  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:39.549  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:39.549  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:41.292  INFO 24792 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:41.295  INFO 24792 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:41.295  INFO 24792 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:41.295  WARN 24792 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:41.315  INFO 24792 --- [http-nio-8080-exec-5] c.p.Controller.ManagerToggleController   : ManagerToggleController.updateStatus() invoked
+2025-04-08 21:11:41.316  INFO 24792 --- [http-nio-8080-exec-5] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.updateStatus() invoked
+2025-04-08 21:11:41.316  INFO 24792 --- [http-nio-8080-exec-5] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.updateStatus() invoked
+2025-04-08 21:11:41.316  WARN 24792 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:41.320  INFO 24792 --- [http-nio-8080-exec-5] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.update() invoked
+2025-04-08 21:11:41.345  INFO 24792 --- [http-nio-8080-exec-5] c.p.S.ManagerToggleServiceImpl           : Manager Toggle Status updated.
+2025-04-08 21:11:43.010  INFO 24792 --- [http-nio-8080-exec-7] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:43.010  INFO 24792 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:43.015  INFO 24792 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:43.015  INFO 24792 --- [http-nio-8080-exec-7] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:43.015  INFO 24792 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:43.015  INFO 24792 --- [http-nio-8080-exec-7] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:43.015  WARN 24792 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:43.015  WARN 24792 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:43.026  INFO 24792 --- [http-nio-8080-exec-7] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:43.026  INFO 24792 --- [http-nio-8080-exec-7] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:43.026  INFO 24792 --- [http-nio-8080-exec-7] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:43.026  INFO 24792 --- [http-nio-8080-exec-6] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:43.026  INFO 24792 --- [http-nio-8080-exec-6] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:43.026  INFO 24792 --- [http-nio-8080-exec-6] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:43.027  INFO 24792 --- [http-nio-8080-exec-7] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:43.027  INFO 24792 --- [http-nio-8080-exec-6] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:43.030  INFO 24792 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.030  INFO 24792 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.030  INFO 24792 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.038  INFO 24792 --- [http-nio-8080-exec-7] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.041  INFO 24792 --- [http-nio-8080-exec-8] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:43.043  INFO 24792 --- [http-nio-8080-exec-9] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:43.044  INFO 24792 --- [http-nio-8080-exec-8] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:43.044  INFO 24792 --- [http-nio-8080-exec-8] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:43.044  WARN 24792 --- [http-nio-8080-exec-8] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:43.045  INFO 24792 --- [http-nio-8080-exec-9] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :deltapos.codearson@gmail.com
+2025-04-08 21:11:43.045  INFO 24792 --- [http-nio-8080-exec-9] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:43.045  WARN 24792 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-8] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-8] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-8] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-9] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-9] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-9] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-8] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:43.051  INFO 24792 --- [http-nio-8080-exec-9] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:43.054  INFO 24792 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.054  INFO 24792 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.054  INFO 24792 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:43.054  INFO 24792 --- [http-nio-8080-exec-9] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.728  INFO 24792 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:51.730  INFO 24792 --- [http-nio-8080-exec-10] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-08 21:11:51.730  INFO 24792 --- [http-nio-8080-exec-10] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-08 21:11:51.730  INFO 24792 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-08 21:11:51.732  INFO 24792 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:11:51.733  INFO 24792 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:51.733  WARN 24792 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.879  INFO 24792 --- [http-nio-8080-exec-1] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:51.881  INFO 24792 --- [http-nio-8080-exec-1] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:11:51.881  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:51.881  WARN 24792 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.889  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Controller.UserController   : UserController.getUserByEmailAddress() invoked with emailAddress
+2025-04-08 21:11:51.890  INFO 24792 --- [http-nio-8080-exec-1] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByEmailAddress()invoked
+2025-04-08 21:11:51.890  WARN 24792 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.891  INFO 24792 --- [http-nio-8080-exec-1] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.892  INFO 24792 --- [http-nio-8080-exec-1] c.pos_main.ServiceImpl.UserServiceImpl   : user detail retreived successfully.
+2025-04-08 21:11:51.917  INFO 24792 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:51.918  INFO 24792 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:51.918  INFO 24792 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:11:51.919  INFO 24792 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:51.919  WARN 24792 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.920  INFO 24792 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:11:51.920  INFO 24792 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:51.920  WARN 24792 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-2] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-2] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-2] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-3] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-3] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-2] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:51.926  INFO 24792 --- [http-nio-8080-exec-3] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:51.928  INFO 24792 --- [http-nio-8080-exec-3] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:51.930  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.930  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.930  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.930  INFO 24792 --- [http-nio-8080-exec-3] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.935  INFO 24792 --- [http-nio-8080-exec-4] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:51.935  INFO 24792 --- [http-nio-8080-exec-5] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-08 21:11:51.938  INFO 24792 --- [http-nio-8080-exec-4] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:11:51.938  INFO 24792 --- [http-nio-8080-exec-4] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:51.938  INFO 24792 --- [http-nio-8080-exec-5] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :saravanan.g@codearson.com
+2025-04-08 21:11:51.938  WARN 24792 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.938  INFO 24792 --- [http-nio-8080-exec-5] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-08 21:11:51.938  WARN 24792 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-08 21:11:51.944  INFO 24792 --- [http-nio-8080-exec-5] c.p.C.EmployeeDiscountController         : EmployeeDiscountController.getAll() invoked
+2025-04-08 21:11:51.944  INFO 24792 --- [http-nio-8080-exec-4] c.p.Controller.ManagerToggleController   : ManagerToggleController.getAll() invoked
+2025-04-08 21:11:51.945  INFO 24792 --- [http-nio-8080-exec-5] c.p.S.EmployeeDiscountServiceImpl        : EmployeeDiscountServiceImpl.getAll() invoked
+2025-04-08 21:11:51.945  INFO 24792 --- [http-nio-8080-exec-4] c.p.S.ManagerToggleServiceImpl           : ManagerToggleServiceImpl.getAll() invoked
+2025-04-08 21:11:51.945  INFO 24792 --- [http-nio-8080-exec-5] c.p.S.BL.EmployeeDiscountServiceBL       : EmployeeDiscountServiceBL.getAll() invoked
+2025-04-08 21:11:51.945  INFO 24792 --- [http-nio-8080-exec-4] c.p.Service.BL.ManagerToggleServiceBL    : ManagerToggleServiceBL.getAll() invoked
+2025-04-08 21:11:51.945  INFO 24792 --- [http-nio-8080-exec-4] c.pos_main.DaoImpl.ManagerToggleDaoImpl  : ManagerToggleDaoImpl.getAll() invoked
+2025-04-08 21:11:51.945  INFO 24792 --- [http-nio-8080-exec-5] c.p.DaoImpl.EmployeeDiscountDaoImpl      : EmployeeDiscountDaoImpl.getAll() invoked
+2025-04-08 21:11:51.948  INFO 24792 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.949  INFO 24792 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.949  INFO 24792 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:11:51.949  INFO 24792 --- [http-nio-8080-exec-5] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-08 21:12:02.058  INFO 24792 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-08 21:12:02.076  INFO 24792 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08 21:12:02.078  INFO 24792 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-08 21:12:02.084  INFO 24792 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
