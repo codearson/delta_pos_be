@@ -49,7 +49,6 @@ public class EmployeeDiscountController {
     }
     
     @GetMapping("/getAll")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getAll() {
         log.info("EmployeeDiscountController.getAll() invoked");
         return employeeDiscountService.getAll();
