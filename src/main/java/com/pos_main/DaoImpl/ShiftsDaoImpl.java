@@ -1,18 +1,22 @@
 package com.pos_main.DaoImpl;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import javax.transaction.Transactional;
 
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.ShiftsDao;
-import com.pos_main.Domain.Product;
 import com.pos_main.Domain.Shifts;
-import com.pos_main.Dto.ProductDto;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ShiftsDto;
-import com.pos_main.Transformer.ProductTransformer;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.ShiftsTransformer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -46,6 +50,34 @@ public class ShiftsDaoImpl extends BaseDaoImpl<Shifts> implements ShiftsDao {
 		Shifts shifts = shiftsTransformer.reverseTransform(shiftsDto);
 		Shifts saveShifts = saveOrUpdate(shifts);
 		return shiftsTransformer.transform(saveShifts);
+	}
+	
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ShiftsDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<Shifts> allShiftsList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM shifts";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(Shifts.class, "shifts");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allShiftsList = criteria.list();
+		recordCount = allShiftsList.size();
+		if (allShiftsList != null && !allShiftsList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allShiftsList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allShiftsList.stream().map(Invoice -> {
+				return shiftsTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
 	}
 
 }

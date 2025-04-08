@@ -1,11 +1,13 @@
 package com.pos_main.Service.BL;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.ShopDetailsDao;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,6 +37,11 @@ public class ShopDetailsServiceBL {
 	public List<ShopDetailsDto> getAll() {
 		log.info("ShopDetailsServiceBL.getAll() invoked");
 		return shopDetailsDao.getAll();
+	}
+	
+	public PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ShopDetailsServiceBL.getAllPageShopDetails()invoked");
+		return shopDetailsDao.getAllPageShopDetails(pageNumber, pageSize, searchParams);
 	}
 	
 	public List<ShopDetailsDto> getByName(String name) {

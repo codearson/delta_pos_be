@@ -1,6 +1,8 @@
 package com.pos_main.Service;
 
 
+import java.util.Map;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShiftsDto;
 
@@ -16,5 +18,7 @@ import com.pos_main.Dto.ShiftsDto;
 public interface ShiftsService {
 	
 	public ResponseDto save(ShiftsDto shiftsDto);
+	
+	public ResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
 }

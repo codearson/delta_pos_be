@@ -1,9 +1,12 @@
 package com.pos_main.ServiceImpl;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShiftsDto;
 import com.pos_main.Service.ShiftsService;
@@ -49,6 +52,28 @@ public class ShiftsServiceImpl implements ShiftsService{
 			log.error("Exception occurs while saving Product details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_SHIFTS_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ShiftServiceImpl.getAllPageShift() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = shiftsServiceBL.getAllPageShifts(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All Shifts Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All Shifts details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_SHIFTS_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All shifts details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SHIFTS_DETAILS);
 		}
 		return responseDto;
 	}

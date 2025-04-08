@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f9efa712-c918-4392-9a21-6f1666bc9020",
+		"_postman_id": "76abd8bf-f2b9-4480-a60d-b9d9a66a9494",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -847,6 +847,38 @@
 								{
 									"key": "status",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productCategory",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
 								}
 							]
 						}
@@ -2936,6 +2968,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/shopDetails/getAllPage",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"shopDetails",
+								"getAllPage"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2978,6 +3032,38 @@
 							"path": [
 								"shifts",
 								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/shifts/getAllPage?pageNumber=1&PageSize=10",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"shifts",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "PageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -3337,6 +3423,10 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
 		}
 	]
 }
