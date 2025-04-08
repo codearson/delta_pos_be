@@ -2,6 +2,7 @@ package com.pos_main.DaoImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -18,8 +19,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.ShopDetailsDao;
+import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.ShopDetails;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.ShopDetailsTransformer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -70,6 +74,34 @@ public class ShopDetailsDaoImpl extends BaseDaoImpl<ShopDetails> implements Shop
 			}
 		}
 		return shopDetailsDtoList;
+	}
+	
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ShopDetailsDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<ShopDetails> allShopDetailsList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM shop_details";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(ShopDetails.class, "shopDetails");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allShopDetailsList = criteria.list();
+		recordCount = allShopDetailsList.size();
+		if (allShopDetailsList != null && !allShopDetailsList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allShopDetailsList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allShopDetailsList.stream().map(Invoice -> {
+				return shopDetailsTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
 	}
 	
 	@Override
