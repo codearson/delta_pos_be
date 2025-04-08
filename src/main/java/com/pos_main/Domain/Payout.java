@@ -35,8 +35,9 @@ public class Payout implements Serializable {
 	private Integer id;
 	@Column(name = "amount")
 	private Double amount;
-	@Column(name = "type")
-	private String type;
+	@JoinColumn(name = "payoutCategoryId", referencedColumnName = "id")
+	@ManyToOne(optional = false)
+	private PayoutCategory payoutcategory;
 	@Column(name =  "dateTime")
 	private LocalDateTime dateTime;
 	@JoinColumn(name = "userId", referencedColumnName = "id")

@@ -28,8 +28,4 @@ public interface PayoutDao extends BaseDao<Payout> {
 
 	PayoutDto checkPayoutAvailability(Integer payoutId);
 
-
-
-
-
 }
