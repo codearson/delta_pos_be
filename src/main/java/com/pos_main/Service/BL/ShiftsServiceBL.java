@@ -1,11 +1,13 @@
 package com.pos_main.Service.BL;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.ShiftsDao;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ShiftsDto;
 
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +33,11 @@ public class ShiftsServiceBL {
 	public ShiftsDto save(ShiftsDto shiftsDto) {
 		log.info("ShiftsServiceBL.save() invoked.");
 		return shiftsDao.save(shiftsDto);
+	}
+	
+	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ShiftsServiceBL.getAllPageShifts()invoked");
+		return shiftsDao.getAllPageShifts(pageNumber, pageSize, searchParams);
 	}
 
 }

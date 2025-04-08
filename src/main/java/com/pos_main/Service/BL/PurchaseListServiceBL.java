@@ -8,10 +8,12 @@ import com.pos_main.Domain.PurchaseList;
 import com.pos_main.Dao.ProductDao;
 import com.pos_main.Dto.PurchaseListDto;
 import com.pos_main.Transformer.PurchaseListTransformer;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ProductDto;
 
 import lombok.extern.slf4j.Slf4j;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -55,6 +57,11 @@ public class PurchaseListServiceBL {
     public List<PurchaseListDto> getAll() {
 		log.info("PurchaseListServiceBL.getAll() invoked");
 		return purchaseListDao.getAll();
+	}
+    
+	public PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("PurchaseListServiceBL.getAllPagePurchaseList()invoked");
+		return purchaseListDao.getAllPagePurchaseList(pageNumber, pageSize, searchParams);
 	}
     
     public boolean deleteAll() {
