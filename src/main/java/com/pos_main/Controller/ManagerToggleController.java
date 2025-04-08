@@ -58,7 +58,6 @@ public class ManagerToggleController {
     }
     
     @GetMapping("/getAll")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getAll() {
         log.info("ManagerToggleController.getAll() invoked");
         return managerToggleService.getAll();
