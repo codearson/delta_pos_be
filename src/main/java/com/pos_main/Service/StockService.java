@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.StockDto;
 
@@ -17,6 +19,8 @@ public interface StockService {
 	public ResponseDto save(StockDto stockDto);
 
 	public ResponseDto getAllStock();
+	
+	public ResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
 	public ResponseDto updateStock(StockDto stockDto);
 

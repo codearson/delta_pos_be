@@ -1,6 +1,7 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.StockDto;
 import com.pos_main.Service.StockService;
@@ -76,6 +78,28 @@ public class StockServiceImpl implements StockService {
 			log.error("Exception occurs while retrieving All Stock details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_STOCK_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("StockServiceImpl.getAllPageStock() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = stockServiceBL.getAllPageStock(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All Stock Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All Stock details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_STOCK_DETAILS_PAGE);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Stock details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_STOCK_DETAILS_PAGE);
 		}
 		return responseDto;
 	}
