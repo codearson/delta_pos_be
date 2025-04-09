@@ -3450,7 +3450,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/payout/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://grateful-playfulness-production.up.railway.app/payout/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
 								"grateful-playfulness-production",
@@ -3460,7 +3460,7 @@
 							],
 							"path": [
 								"payout",
-								"getAll"
+								"getAllPage"
 							],
 							"query": [
 								{

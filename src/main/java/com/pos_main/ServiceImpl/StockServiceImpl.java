@@ -94,12 +94,12 @@ public class StockServiceImpl implements StockService {
 			} else {
 				log.info("Unable to retrieve All Stock details.");
 				responseDto = serviceUtil.getErrorServiceResponse(
-						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_STOCK_DETAILS);
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_STOCK_DETAILS_PAGE);
 			}
 		} catch (Exception e) {
 			log.error("Exception occurs while retrieving All Stock details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
-					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_STOCK_DETAILS);
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_STOCK_DETAILS_PAGE);
 		}
 		return responseDto;
 	}
