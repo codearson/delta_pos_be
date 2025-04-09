@@ -234,5 +234,7 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_SHIFTS_DETAILS = "ex.get.all.page.shifts.details";
 		String ERR_RETRIEVE_ALL_SHOPDETAIL_DETAILS = "err.get.all.page.shop.details";
 		String EX_RETRIEVE_ALL_SHOPDETAIL_DETAILS = "ex.get.all.page.shop.details";
+		String ERR_RETRIEVE_ALL_STAFFLEAVE_DETAILS = "err.get.all.page.staff.leave.details";
+		String EX_RETRIEVE_ALL_STAFFLEAVE_DETAILS = "ex.get.all.page.staff.leave.details";
 	}
 }
