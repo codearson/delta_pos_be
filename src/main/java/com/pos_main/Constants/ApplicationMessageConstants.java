@@ -234,6 +234,8 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_SHIFTS_DETAILS = "ex.get.all.page.shifts.details";
 		String ERR_RETRIEVE_ALL_SHOPDETAIL_DETAILS = "err.get.all.page.shop.details";
 		String EX_RETRIEVE_ALL_SHOPDETAIL_DETAILS = "ex.get.all.page.shop.details";
+		String ERR_RETRIEVE_ALL_STAFFLEAVE_DETAILS = "err.get.all.page.staff.leave.details";
+		String EX_RETRIEVE_ALL_STAFFLEAVE_DETAILS = "ex.get.all.page.staff.leave.details";
 		String ERR_SAVE_PAYOUT_CATEGORY = "err.save.payout.category.details";
         String EX_SAVE_PAYOUT_CATEGORY = "ex.save.payout.category.details";
         String ERR_UPDATE_PAYOUT_CATEGORY = "err.update.payout.category.details";
@@ -244,6 +246,17 @@ public interface ApplicationMessageConstants {
         String EX_RETRIEVE_PAYOUT_CATEGORIES = "ex.get.all.payout.category.details";
         String ERR_RETRIEVE_PAYOUT_CATEGORY_BY_NAME ="err.get.all.payout.category.by.name";
         String EX_RETRIEVE_PAYOUT_CATEGORY_BY_NAME = "ex.get.all.payout.category.by.name";
-        
+		String ERR_RETRIEVE_TRANSACTION_EMPLOYEE_BY_TRANSACTION_ID = "err.get.transaction.employee.by.transaction.id";
+        String EX_RETRIEVE_TRANSACTION_EMPLOYEE_BY_TRANSACTION_ID = "ex.get.transaction.employee.by.transaction.id";
+        String ERR_RETRIEVE_ALL_NON_SCAN_PRODUCT_DETAILS = "err.get.all.non.scan.product.details";
+        String EX_RETRIEVE_ALL_NON_SCAN_PRODUCT_DETAILS = "ex.get.all.non.scan.product.details";
+        String ERR_RETRIEVE_NON_SCAN_PRODUCT_BY_NAME = "err.get.non.scan.product.by.name";
+        String EX_RETRIEVE_NON_SCAN_PRODUCT_BY_NAME = "ex.get.non.scan.product.by.name";
+        String ERR_SAVE_NON_SCAN_PRODUCT_DETAILS = "err.save.non.scan.product.details";
+        String EX_SAVE_NON_SCAN_PRODUCT_DETAILS = "ex.save.non.scan.product.details";
+        String ERR_UPDATE_NON_SCAN_PRODUCT_DETAILS = "err.update.non.scan.product.details";
+        String EX_UPDATE_NON_SCAN_PRODUCT_DETAILS = "ex.update.non.scan.product.details";
+        String ERR_UPDATE_NON_SCAN_PRODUCT_STATUS = "err.update.non.scan.product.status";
+        String EX_UPDATE_NON_SCAN_PRODUCT_STATUS = "ex.update.non.scan.product.status";
 	}
 }
