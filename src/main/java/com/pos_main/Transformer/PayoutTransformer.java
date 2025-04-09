@@ -12,6 +12,9 @@ public class PayoutTransformer implements BaseTransformer<Payout, PayoutDto>{
 	@Autowired
 	UserTransfomer userTransformer;
 	
+	@Autowired
+	PayoutCategoryTransformer payoutCategoryTransformer;
+
 	@Override
 	public PayoutDto transform(Payout payout) {
 		PayoutDto payoutDto = null;
@@ -19,11 +22,13 @@ public class PayoutTransformer implements BaseTransformer<Payout, PayoutDto>{
 			payoutDto = new PayoutDto();
 			payoutDto.setId(payout.getId());
 			payoutDto.setAmount(payout.getAmount());
-			payoutDto.setType(payout.getType());
 			payoutDto.setDateTime(payout.getDateTime());
 			payoutDto.setIsActive(payout.getIsActive());
 			if (payout.getUser() != null) {
 				payoutDto.setUserDto(userTransformer.transform(payout.getUser()));
+			}
+			if (payout.getPayoutcategory() != null) {
+				payoutDto.setPayoutCategoryDto(payoutCategoryTransformer.transform(payout.getPayoutcategory()));
 			}
 		}
 		return payoutDto;
@@ -36,11 +41,13 @@ public class PayoutTransformer implements BaseTransformer<Payout, PayoutDto>{
 			payout = new Payout();
 			payout.setId(payoutDto.getId());
 			payout.setAmount(payoutDto.getAmount());
-			payout.setType(payoutDto.getType());
 			payout.setDateTime(payoutDto.getDateTime());
 			payout.setIsActive(payoutDto.getIsActive());
 			if (payoutDto.getUserDto() != null) {
 				payout.setUser(userTransformer.reverseTransform(payoutDto.getUserDto()));
+			}
+			if (payoutDto.getPayoutCategoryDto() != null) {
+				payout.setPayoutcategory(payoutCategoryTransformer.reverseTransform(payoutDto.getPayoutCategoryDto()));
 			}
 		}
 		return payout;

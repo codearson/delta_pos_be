@@ -1,10 +1,12 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.PurchaseListDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Service.PurchaseListService;
@@ -62,6 +64,28 @@ public class PurchaseListServiceImpl implements PurchaseListService {
 			log.error("Exception occurs while retrieving All details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_DETAILS);
+		}
+		return responseDto;
+	}
+    
+	@Override
+	public ResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("PurchaseListServiceImpl.getAllPagePurchaseList() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = purchaseListServiceBL.getAllPagePurchaseList(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All PurchaseList Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All PurchaseList details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PURCHASE_LIST_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All PurchaseList details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PURCHASE_LIST_DETAILS);
 		}
 		return responseDto;
 	}
