@@ -27,6 +27,9 @@ public class TransactionTransformer implements BaseTransformer<Transaction,Trans
 	@Autowired
 	TransactionPaymentMethodTransformer transactionPaymentMethodTransformer;
 	
+	@Autowired
+	TransactionEmployeeTransformer transactionEmployeeTransformer;
+	
 	@Override
 	public TransactionDto transform(Transaction transaction) {
 		TransactionDto transactionDto = null;

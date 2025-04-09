@@ -22,6 +22,7 @@ public class TransactionDto {
 	private Boolean isActive;
 	private List<TransactionDetailsListDto> transactionDetailsList = new ArrayList<>();
     private List<TransactionPaymentMethodDto> transactionPaymentMethod = new ArrayList<>();
+    private List<TransactionEmployeeDto> transactionEmployee = new ArrayList<>();
     private LocalDateTime generateDateTime;
     private Double manualDiscount;
     private Double employeeDiscount;
