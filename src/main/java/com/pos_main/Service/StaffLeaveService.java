@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.StaffLeaveDto;
 
@@ -21,5 +23,7 @@ public interface StaffLeaveService {
 	public ResponseDto update(StaffLeaveDto staffLeaveDto);
 
 	public ResponseDto updateStatus(Integer id, Boolean status);
+	
+	public ResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
 }

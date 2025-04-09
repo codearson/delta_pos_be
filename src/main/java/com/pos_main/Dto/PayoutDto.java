@@ -18,7 +18,7 @@ public class PayoutDto {
 
 	private Integer id;
 	private Double amount;
-	private String type;
+	private PayoutCategoryDto payoutCategoryDto;
 	private LocalDateTime dateTime;
 	private UserDto userDto;
 	private Boolean isActive;

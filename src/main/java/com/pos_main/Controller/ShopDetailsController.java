@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
 import com.pos_main.Service.ShopDetailsService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,4 +58,11 @@ public class ShopDetailsController {
      
 	}
 
+	@GetMapping("/getAllPage")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAllPageShopDetails(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+			WebRequest webRequest) {
+		log.info("CustomerController.getAllPage() invoked.");
+		return shopDetailsService.getAllPageShopDetails(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
 }

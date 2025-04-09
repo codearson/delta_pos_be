@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
 import com.pos_main.Dto.PaginatedResponseDto;

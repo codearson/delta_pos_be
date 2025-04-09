@@ -1,6 +1,7 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.ShopDetailsDto;
 import com.pos_main.Service.ShopDetailsService;
@@ -75,6 +77,28 @@ public class ShopDetailsServiceImpl implements ShopDetailsService{
 			log.error("Exception occurs while retrieving All Shop details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SHOP_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("ShopDetailsServiceImpl.getAllPageShopDetails() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = shopDetailsServiceBL.getAllPageShopDetails(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All ShopDetails Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All ShopDetails details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_SHOPDETAIL_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All ShopDetails details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SHOPDETAIL_DETAILS);
 		}
 		return responseDto;
 	}
