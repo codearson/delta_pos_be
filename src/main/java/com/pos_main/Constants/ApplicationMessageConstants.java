@@ -244,6 +244,8 @@ public interface ApplicationMessageConstants {
         String EX_UPDATE_PAYOUT_CATEGORY_STATUS = "ex.update.payout.category.status";
         String ERR_RETRIEVE_PAYOUT_CATEGORIES = "err.get.all.payout.category.details";
         String EX_RETRIEVE_PAYOUT_CATEGORIES = "ex.get.all.payout.category.details";
+        String ERR_RETRIEVE_PAYOUT_CATEGORY_BY_NAME ="err.get.all.payout.category.by.name";
+        String EX_RETRIEVE_PAYOUT_CATEGORY_BY_NAME = "ex.get.all.payout.category.by.name";
 		String ERR_RETRIEVE_TRANSACTION_EMPLOYEE_BY_TRANSACTION_ID = "err.get.transaction.employee.by.transaction.id";
         String EX_RETRIEVE_TRANSACTION_EMPLOYEE_BY_TRANSACTION_ID = "ex.get.transaction.employee.by.transaction.id";
         String ERR_RETRIEVE_ALL_NON_SCAN_PRODUCT_DETAILS = "err.get.all.non.scan.product.details";
