@@ -1,18 +1,16 @@
 package com.pos_main.DaoImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -102,5 +100,27 @@ public class PayoutCategoryDaoImpl extends BaseDaoImpl<PayoutCategory> implement
         }
         return paginatedResponseDto;
     }
+    
+    @Override
+	@Transactional
+	public List<PayoutCategoryDto> getAllByName(String payoutCategory) {
+	    log.info("PayoutCategoryDaoImpl.getAllByName() invoked");
+	   
+	    CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+	    
+	    CriteriaQuery<PayoutCategory> cq = cb.createQuery(PayoutCategory.class);
+	    Root<PayoutCategory> root = cq.from(PayoutCategory.class);
+
+	    cq.select(root).where(cb.equal(root.get("payoutCategory"),payoutCategory));
+	    
+	    Criteria criteria = getCurrentSession().createCriteria(PayoutCategory.class, "payoutCategory");
+	 	criteria.add(Restrictions.eq("isActive", true));
+
+	    
+	    List<PayoutCategory> payoutCategoryList = getCurrentSession().createQuery(cq).getResultList();
+	    return payoutCategoryList.stream()
+	            .map(payoutCategoryTransformer::transform)
+	            .collect(Collectors.toList());
+	}
     
 }

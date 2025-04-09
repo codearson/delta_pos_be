@@ -65,4 +65,11 @@ public class PayoutCategoryController {
         return payoutCategoryService.getAllPagePayoutCategory(pageNumber, pageSize, 
                 HttpReqRespUtils.getSearchParameters(webRequest));
     }
+    
+    @GetMapping("/getByName")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto getAllByName(@RequestParam("payoutCategory") String payoutCategory) {
+        log.info("PayoutCategoryController.getAllPayoutCategoryByName() invoked" );
+        return payoutCategoryService.getAllByName(payoutCategory);
+}
 }
