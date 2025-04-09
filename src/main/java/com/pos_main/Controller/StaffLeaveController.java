@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.StaffLeaveDto;
 import com.pos_main.Service.StaffLeaveService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -62,5 +64,13 @@ public class StaffLeaveController {
         log.info("StaffLeaveController.getAll() invoked");
         return staffLeaveService.getAll();
     }
+    
+	@GetMapping("/getAllPage")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAllPageStaffLeave(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+			WebRequest webRequest) {
+		log.info("StaffLeaveController.getAllPage() invoked.");
+		return staffLeaveService.getAllPageStaffLeave(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
 
 }

@@ -1,3 +1,142 @@
+2025-04-09 00:03:58.910  INFO 20720 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-09 00:03:58.996  INFO 20720 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 00:03:58.999  INFO 20720 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-09 00:03:59.002  INFO 20720 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-09 00:04:06.613  INFO 14136 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Thuva_sri with PID 14136 (D:\Work\delta_pos_be\target\classes started by srith in D:\Work\delta_pos_be)
+2025-04-09 00:04:06.620  INFO 14136 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-04-09 00:04:07.643  INFO 14136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09 00:04:07.686  INFO 14136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 0 JPA repository interfaces.
+2025-04-09 00:04:08.359  INFO 14136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-04-09 00:04:08.369  INFO 14136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09 00:04:08.370  INFO 14136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-04-09 00:04:08.488  INFO 14136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09 00:04:08.488  INFO 14136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1817 ms
+2025-04-09 00:04:08.672  INFO 14136 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09 00:04:08.713  INFO 14136 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-04-09 00:04:08.872  INFO 14136 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-04-09 00:04:08.973  INFO 14136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09 00:04:09.182  INFO 14136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09 00:04:09.197  INFO 14136 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-09 00:04:10.389  INFO 14136 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-09 00:04:10.398  INFO 14136 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 00:04:11.461  INFO 14136 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c76b2fe, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ed88e31, org.springframework.security.web.header.HeaderWriterFilter@125ba798, org.springframework.web.filter.CorsFilter@7fa2473a, org.springframework.security.web.authentication.logout.LogoutFilter@22ba30b0, com.pos_main.Service.Utils.JwtCustomFilter@27ac3b6d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ad9fea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f5df012, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47629063, org.springframework.security.web.session.SessionManagementFilter@78e59b04, org.springframework.security.web.access.ExceptionTranslationFilter@64e247e, org.springframework.security.web.access.intercept.AuthorizationFilter@5abc488d]
+2025-04-09 00:04:11.742  INFO 14136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-09 00:04:11.750  INFO 14136 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 5.681 seconds (JVM running for 6.451)
+2025-04-09 00:04:56.683  INFO 14136 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09 00:04:56.683  INFO 14136 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09 00:04:56.687  INFO 14136 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-09 00:04:56.712  INFO 14136 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-09 00:04:56.908  INFO 14136 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-09 00:04:56.908  INFO 14136 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-09 00:04:56.920  WARN 14136 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 00:04:57.053  INFO 14136 --- [http-nio-8080-exec-2] c.p.Controller.StaffLeaveController      : StaffLeaveController.getAllPage() invoked.
+2025-04-09 00:04:57.054  INFO 14136 --- [http-nio-8080-exec-2] c.p.ServiceImpl.StaffLeaveServiceImpl    : StaffLeaveServiceImpl.getAllPageStaffLeave() invoked
+2025-04-09 00:04:57.054  INFO 14136 --- [http-nio-8080-exec-2] c.p.Service.BL.StaffLeaveServiceBL       : StaffLeaveServiceBL.getAllPageStaffLeave()invoked
+2025-04-09 00:04:57.060  INFO 14136 --- [http-nio-8080-exec-2] c.p.DaoImpl.StaffLeaveServiceDaoImpl     : StaffLeaveDaoImpl.getAll()invoked
+2025-04-09 00:04:57.071  WARN 14136 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 00:04:57.076  INFO 14136 --- [http-nio-8080-exec-2] c.p.ServiceImpl.StaffLeaveServiceImpl    : Unable to retrieve All StaffLeave details.
+2025-04-09 00:08:02.076  INFO 14136 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-09 00:08:02.124  INFO 14136 --- [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 00:08:02.127  INFO 14136 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-09 00:08:02.132  INFO 14136 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-09 19:28:41.449  INFO 15804 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Thuva_sri with PID 15804 (D:\Work\delta_pos_be\target\classes started by srith in D:\Work\delta_pos_be)
+2025-04-09 19:28:41.452  INFO 15804 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-04-09 19:28:46.868  INFO 15804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09 19:28:46.905  INFO 15804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+2025-04-09 19:28:47.811  INFO 15804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-04-09 19:28:47.825  INFO 15804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09 19:28:47.826  INFO 15804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-04-09 19:28:47.998  INFO 15804 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09 19:28:47.998  INFO 15804 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6485 ms
+2025-04-09 19:28:48.223  INFO 15804 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09 19:28:48.302  INFO 15804 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-04-09 19:28:48.548  INFO 15804 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-04-09 19:28:48.690  INFO 15804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09 19:28:48.900  INFO 15804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09 19:28:48.925  INFO 15804 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-09 19:28:50.338  INFO 15804 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-09 19:28:50.346  INFO 15804 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 19:28:51.481  INFO 15804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bdbfbc6, org.springframework.security.web.context.SecurityContextPersistenceFilter@c555e1e, org.springframework.security.web.header.HeaderWriterFilter@da5b46f, org.springframework.web.filter.CorsFilter@79735611, org.springframework.security.web.authentication.logout.LogoutFilter@1ec09a68, com.pos_main.Service.Utils.JwtCustomFilter@18adc20a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66df362c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3458be63, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@758ac46, org.springframework.security.web.session.SessionManagementFilter@356ab368, org.springframework.security.web.access.ExceptionTranslationFilter@11267e87, org.springframework.security.web.access.intercept.AuthorizationFilter@4197e859]
+2025-04-09 19:28:51.778  INFO 15804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-09 19:28:51.788  INFO 15804 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 10.951 seconds (JVM running for 11.885)
+2025-04-09 19:56:56.176  INFO 15804 --- [RMI TCP Connection(34)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-09 19:56:56.228  INFO 15804 --- [RMI TCP Connection(34)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 19:56:56.231  INFO 15804 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-09 19:56:56.235  INFO 15804 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-09 19:57:04.150  INFO 27760 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 15.0.2 on Thuva_sri with PID 27760 (D:\Work\delta_pos_be\target\classes started by srith in D:\Work\delta_pos_be)
+2025-04-09 19:57:04.160  INFO 27760 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
+2025-04-09 19:57:05.163  INFO 27760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-09 19:57:05.204  INFO 27760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 JPA repository interfaces.
+2025-04-09 19:57:05.940  INFO 27760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-04-09 19:57:05.957  INFO 27760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09 19:57:05.957  INFO 27760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-04-09 19:57:06.142  INFO 27760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09 19:57:06.142  INFO 27760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1911 ms
+2025-04-09 19:57:06.359  INFO 27760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-09 19:57:06.417  INFO 27760 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2025-04-09 19:57:06.649  INFO 27760 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-04-09 19:57:06.777  INFO 27760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-09 19:57:07.021  INFO 27760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-09 19:57:07.035  INFO 27760 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2025-04-09 19:57:08.252  INFO 27760 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-09 19:57:08.263  INFO 27760 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 19:57:09.236  INFO 27760 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5608e254, org.springframework.security.web.context.SecurityContextPersistenceFilter@16a15261, org.springframework.security.web.header.HeaderWriterFilter@1104ad6a, org.springframework.web.filter.CorsFilter@3d8b9dee, org.springframework.security.web.authentication.logout.LogoutFilter@7e35d743, com.pos_main.Service.Utils.JwtCustomFilter@2ce3d95a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d8112e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cf7433e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45cddfd3, org.springframework.security.web.session.SessionManagementFilter@5b160208, org.springframework.security.web.access.ExceptionTranslationFilter@3f030217, org.springframework.security.web.access.intercept.AuthorizationFilter@7621c3f7]
+2025-04-09 19:57:09.541  INFO 27760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-09 19:57:09.552  INFO 27760 --- [main] com.pos_main.PosMainApplication          : Started PosMainApplication in 6.035 seconds (JVM running for 7.023)
+2025-04-09 19:57:36.879  INFO 27760 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09 19:57:36.880  INFO 27760 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09 19:57:36.883  INFO 27760 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-09 19:57:36.919  INFO 27760 --- [http-nio-8080-exec-2] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-09 19:57:37.140  INFO 27760 --- [http-nio-8080-exec-2] com.pos_main.Controller.UserController   : UserController.getUserByName() invoked
+2025-04-09 19:57:37.151  INFO 27760 --- [http-nio-8080-exec-2] c.pos_main.ServiceImpl.UserServiceImpl   : UserServiceImpl.login().invoked
+2025-04-09 19:57:37.152  INFO 27760 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.login() invoked
+2025-04-09 19:57:37.511  INFO 27760 --- [http-nio-8080-exec-2] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-09 19:57:37.511  INFO 27760 --- [http-nio-8080-exec-2] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-09 19:57:37.524  WARN 27760 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 19:57:54.891  INFO 27760 --- [http-nio-8080-exec-3] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-09 19:57:54.950  INFO 27760 --- [http-nio-8080-exec-3] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-09 19:57:54.950  INFO 27760 --- [http-nio-8080-exec-3] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-09 19:57:54.950  WARN 27760 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 19:57:55.027  INFO 27760 --- [http-nio-8080-exec-3] c.p.Controller.StaffLeaveController      : StaffLeaveController.getAllPage() invoked.
+2025-04-09 19:57:55.029  INFO 27760 --- [http-nio-8080-exec-3] c.p.ServiceImpl.StaffLeaveServiceImpl    : StaffLeaveServiceImpl.getAllPageStaffLeave() invoked
+2025-04-09 19:57:55.030  INFO 27760 --- [http-nio-8080-exec-3] c.p.Service.BL.StaffLeaveServiceBL       : StaffLeaveServiceBL.getAllPageStaffLeave()invoked
+2025-04-09 19:57:55.039  INFO 27760 --- [http-nio-8080-exec-3] c.p.DaoImpl.StaffLeaveServiceDaoImpl     : StaffLeaveDaoImpl.getAll()invoked
+2025-04-09 19:57:55.072  WARN 27760 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 19:57:55.078  INFO 27760 --- [http-nio-8080-exec-3] c.p.ServiceImpl.StaffLeaveServiceImpl    : Unable to retrieve All StaffLeave details.
+2025-04-09 20:03:25.231  INFO 27760 --- [http-nio-8080-exec-6] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-09 20:03:25.238  INFO 27760 --- [http-nio-8080-exec-6] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-09 20:03:25.239  INFO 27760 --- [http-nio-8080-exec-6] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-09 20:03:25.239  WARN 27760 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 20:03:25.259  INFO 27760 --- [http-nio-8080-exec-6] c.p.Controller.StaffLeaveController      : StaffLeaveController.getAllPage() invoked.
+2025-04-09 20:03:25.259  INFO 27760 --- [http-nio-8080-exec-6] c.p.ServiceImpl.StaffLeaveServiceImpl    : StaffLeaveServiceImpl.getAllPageStaffLeave() invoked
+2025-04-09 20:03:25.259  INFO 27760 --- [http-nio-8080-exec-6] c.p.Service.BL.StaffLeaveServiceBL       : StaffLeaveServiceBL.getAllPageStaffLeave()invoked
+2025-04-09 20:03:25.262  INFO 27760 --- [http-nio-8080-exec-6] c.p.DaoImpl.StaffLeaveServiceDaoImpl     : StaffLeaveDaoImpl.getAll()invoked
+2025-04-09 20:03:25.264  WARN 27760 --- [http-nio-8080-exec-6] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 20:03:25.272  INFO 27760 --- [http-nio-8080-exec-6] c.p.ServiceImpl.StaffLeaveServiceImpl    : Unable to retrieve All StaffLeave details.
+2025-04-09 20:05:02.612  INFO 27760 --- [http-nio-8080-exec-9] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-09 20:05:02.625  INFO 27760 --- [http-nio-8080-exec-9] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-09 20:05:02.626  INFO 27760 --- [http-nio-8080-exec-9] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-09 20:05:02.626  WARN 27760 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 20:05:02.687  INFO 27760 --- [http-nio-8080-exec-9] c.p.Controller.StaffLeaveController      : StaffLeaveController.save() invoked
+2025-04-09 20:05:02.687  INFO 27760 --- [http-nio-8080-exec-9] c.p.ServiceImpl.StaffLeaveServiceImpl    : StaffLeaveServiceImpl.save invoked
+2025-04-09 20:05:02.687  INFO 27760 --- [http-nio-8080-exec-9] c.p.Service.BL.StaffLeaveServiceBL       : StaffLeaveServiceBL.save() invoked.
+2025-04-09 20:05:02.703  INFO 27760 --- [http-nio-8080-exec-9] c.p.DaoImpl.StaffLeaveServiceDaoImpl     : StaffLeaveServiceDaoImpl.save() invoked.
+2025-04-09 20:05:02.808  INFO 27760 --- [http-nio-8080-exec-9] c.p.ServiceImpl.StaffLeaveServiceImpl    : Staff Leave Details saved.
+2025-04-09 20:05:42.603  INFO 27760 --- [http-nio-8080-exec-10] c.p.Service.Utils.JwtCustomFilter        : request enter the custom filter
+2025-04-09 20:05:42.608  INFO 27760 --- [http-nio-8080-exec-10] c.p.ServiceImpl.UserDetailsServiceImpl   : UserDetailsImpl.loadUserByUsername() invoked with username :lathusanthurairajah@codearson.com
+2025-04-09 20:05:42.608  INFO 27760 --- [http-nio-8080-exec-10] com.pos_main.Service.BL.UserServiceBL    : UserServiceBL.getUserByUserName() invoked
+2025-04-09 20:05:42.609  WARN 27760 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 20:05:42.629  INFO 27760 --- [http-nio-8080-exec-10] c.p.Controller.StaffLeaveController      : StaffLeaveController.getAllPage() invoked.
+2025-04-09 20:05:42.630  INFO 27760 --- [http-nio-8080-exec-10] c.p.ServiceImpl.StaffLeaveServiceImpl    : StaffLeaveServiceImpl.getAllPageStaffLeave() invoked
+2025-04-09 20:05:42.630  INFO 27760 --- [http-nio-8080-exec-10] c.p.Service.BL.StaffLeaveServiceBL       : StaffLeaveServiceBL.getAllPageStaffLeave()invoked
+2025-04-09 20:05:42.631  INFO 27760 --- [http-nio-8080-exec-10] c.p.DaoImpl.StaffLeaveServiceDaoImpl     : StaffLeaveDaoImpl.getAll()invoked
+2025-04-09 20:05:42.633  WARN 27760 --- [http-nio-8080-exec-10] org.hibernate.orm.deprecation            : HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2025-04-09 20:05:42.655  INFO 27760 --- [http-nio-8080-exec-10] c.p.Transformer.CountryTransformer       : Transformed Country to DTO: id=1, countryName=Srilanka, priceSymbol=LKR
+2025-04-09 20:05:42.659  INFO 27760 --- [http-nio-8080-exec-10] c.p.ServiceImpl.StaffLeaveServiceImpl    : Retrieve All StaffLeave Details.
+2025-04-09 20:08:10.701  INFO 27760 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-09 20:08:10.749  INFO 27760 --- [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-09 20:08:10.753  INFO 27760 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-09 20:08:10.758  INFO 27760 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2025-04-08 20:03:30.449  INFO 25736 --- [main] com.pos_main.PosMainApplication          : Starting PosMainApplication using Java 21.0.6 on DESKTOP-948SQ9C with PID 25736 (D:\Codearson\delta_pos_be\target\classes started by DELL in D:\Codearson\delta_pos_be)
 2025-04-08 20:03:30.453  INFO 25736 --- [main] com.pos_main.PosMainApplication          : The following profiles are active: dev
 2025-04-08 20:03:32.566  INFO 25736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
