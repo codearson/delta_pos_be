@@ -28,20 +28,24 @@ import com.pos_main.Domain.Branch;
 import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.Transaction;
 import com.pos_main.Domain.TransactionDetailsList;
+import com.pos_main.Domain.TransactionEmployee;
 import com.pos_main.Domain.TransactionPaymentMethod;
 import com.pos_main.Domain.User;
 import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TransactionDetailsListDto;
 import com.pos_main.Dto.TransactionDto;
+import com.pos_main.Dto.TransactionEmployeeDto;
 import com.pos_main.Dto.TransactionPaymentMethodDto;
 import com.pos_main.Service.TransactionDetailsListService;
+import com.pos_main.Service.TransactionEmployeeService;
 import com.pos_main.Service.TransactionPaymentMethodService;
 import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.BranchTransformer;
 import com.pos_main.Transformer.CustomerTransfomer;
 import com.pos_main.Transformer.ShopDetailsTransformer;
 import com.pos_main.Transformer.TransactionDetailsListTransformer;
+import com.pos_main.Transformer.TransactionEmployeeTransformer;
 import com.pos_main.Transformer.TransactionPaymentMethodTransformer;
 import com.pos_main.Transformer.TransactionTransformer;
 import com.pos_main.Transformer.UserTransfomer;
@@ -70,6 +74,9 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
     TransactionPaymentMethodTransformer transactionPaymentMethodTransformer;
     
     @Autowired
+    TransactionEmployeeTransformer transactionEmployeeTransformer;
+    
+    @Autowired
     BranchTransformer branchTransformer;
     
     @Autowired
@@ -89,6 +96,9 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
     
     @Autowired
     TransactionPaymentMethodService transactionPaymentMethodService;
+    
+    @Autowired
+    TransactionEmployeeService transationEmployeeService;
     
     @Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -439,6 +449,12 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
             payment.setTransaction(transaction);
             entityManager.persist(payment);
         }
+        
+        for (TransactionEmployeeDto employeeDto : transactionDto.getTransactionEmployee()) {
+            TransactionEmployee employee = transactionEmployeeTransformer.reverseTransform(employeeDto);
+            employee.setTransaction(transaction);
+            entityManager.persist(employee);
+        }
 
         entityManager.flush();
         
@@ -544,9 +560,16 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
                 paymentMethodResponse.getResponseDto() instanceof List<?>
                     ? (List<TransactionPaymentMethodDto>) paymentMethodResponse.getResponseDto()
                     : new ArrayList<>();
+            
+            ResponseDto employeeResponse = transationEmployeeService.getByTransactionId(transaction.getId());
+            List<TransactionEmployeeDto> transactionEmployeeList =
+                employeeResponse.getResponseDto() instanceof List<?>
+                    ? (List<TransactionEmployeeDto>) employeeResponse.getResponseDto()
+                    : new ArrayList<>();
 
             transactionDto.setTransactionDetailsList(transactionDetailsList);
             transactionDto.setTransactionPaymentMethod(transactionPaymentMethodList);
+            transactionDto.setTransactionEmployee(transactionEmployeeList);
 
             return transactionDto;
         }).collect(Collectors.toList());
@@ -790,10 +813,18 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
                     paymentMethodResponse.getResponseDto() instanceof List<?>
                         ? (List<TransactionPaymentMethodDto>) paymentMethodResponse.getResponseDto()
                         : new ArrayList<>();
+                
+                // Fetch employee user
+                ResponseDto employeeResponse = transationEmployeeService.getByTransactionId(transaction.getId());
+                List<TransactionEmployeeDto> transactionEmployeeList =
+                    employeeResponse.getResponseDto() instanceof List<?>
+                        ? (List<TransactionEmployeeDto>) employeeResponse.getResponseDto()
+                        : new ArrayList<>();
 
                 // Set the additional details
                 transactionDto.setTransactionDetailsList(transactionDetailsList);
                 transactionDto.setTransactionPaymentMethod(transactionPaymentMethodList);
+                transactionDto.setTransactionEmployee(transactionEmployeeList);
 
                 return transactionDto;
             }).collect(Collectors.toList());
