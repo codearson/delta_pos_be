@@ -236,5 +236,13 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_SHOPDETAIL_DETAILS = "ex.get.all.page.shop.details";
 		String ERR_RETRIEVE_ALL_STAFFLEAVE_DETAILS = "err.get.all.page.staff.leave.details";
 		String EX_RETRIEVE_ALL_STAFFLEAVE_DETAILS = "ex.get.all.page.staff.leave.details";
+		String ERR_SAVE_PAYOUT_CATEGORY = "err.save.payout.category.details";
+        String EX_SAVE_PAYOUT_CATEGORY = "ex.save.payout.category.details";
+        String ERR_UPDATE_PAYOUT_CATEGORY = "err.update.payout.category.details";
+        String EX_UPDATE_PAYOUT_CATEGORY = "ex.update.payout.category.details";
+        String ERR_UPDATE_PAYOUT_CATEGORY_STATUS = "err.update.payout.category.status";
+        String EX_UPDATE_PAYOUT_CATEGORY_STATUS = "ex.update.payout.category.status";
+        String ERR_RETRIEVE_PAYOUT_CATEGORIES = "err.get.all.payout.category.details";
+        String EX_RETRIEVE_PAYOUT_CATEGORIES = "ex.get.all.payout.category.details";
 	}
 }
