@@ -86,6 +86,51 @@ public class TransactionServiceBL {
 	    return transactionDao.getTransactionByStatus(isActive);
 	}
 	
+//	public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
+//	    log.info("TransactionServiceBL.save() invoked.");
+//	    
+//	    for (TransactionDetailsListDto details : transactionDto.getTransactionDetailsList()) {
+//	        if (details.getProductDto() != null) {
+//	            Integer productId = details.getProductDto().getId();
+//
+//	            List<ProductDto> productList = productDao.getProductById(productId);
+//	            
+//	            alertMessage = null;
+//
+//	            if (productList != null && !productList.isEmpty()) {
+//	                ProductDto productDto = productList.get(0);
+//
+//	                boolean isCustomCategory = productDto.getProductCategoryDto() != null && 
+//	                    "Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName());
+//
+//	                if (!isCustomCategory) { 
+//	                    Integer newQuantity = productDto.getQuantity() - details.getQuantity();
+//	                    if (newQuantity < 0) {
+//	                        log.info("Not enough stock for productId: " + productId);
+//	                        throw new IllegalArgumentException("Insufficient stock for product ID: " + productId);
+//	                    }
+//	                    if (newQuantity <= productDto.getLowStock()) {
+//	                        alertMessage = "ALERT: Product '" + productDto.getName() + "' (ID: " + productDto.getId() + ") is low on stock. Remaining quantity: " + newQuantity;
+//	                        log.info(alertMessage);
+//	                    }
+//	                    productDto.setQuantity(newQuantity);
+//	                    productDao.updateProduct(productDto);
+//	                } else {
+//	                    log.info("Skipping quantity update for Custom category productId: " + productId);
+//	                }
+//	            } else {
+//	                log.info("Product not found for productId: " + productId);
+//	            }
+//	        } else {
+//	            log.info("ProductDto is null in TransactionDetailsListDto");
+//	        }
+//	    }
+//
+//	    transactionDto.setDateTime(LocalDateTime.now());
+//	    
+//	    return transactionDao.save(transactionDto, alertMessage);
+//	}
+	
 	public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
 	    log.info("TransactionServiceBL.save() invoked.");
 	    
@@ -100,10 +145,11 @@ public class TransactionServiceBL {
 	            if (productList != null && !productList.isEmpty()) {
 	                ProductDto productDto = productList.get(0);
 
-	                boolean isCustomCategory = productDto.getProductCategoryDto() != null && 
-	                    "Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName());
+	                boolean isSpecialCategory = productDto.getProductCategoryDto() != null && 
+	                    ("Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName()) ||
+	                     "nonScan".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName()));
 
-	                if (!isCustomCategory) { 
+	                if (!isSpecialCategory) { 
 	                    Integer newQuantity = productDto.getQuantity() - details.getQuantity();
 	                    if (newQuantity < 0) {
 	                        log.info("Not enough stock for productId: " + productId);
@@ -116,7 +162,7 @@ public class TransactionServiceBL {
 	                    productDto.setQuantity(newQuantity);
 	                    productDao.updateProduct(productDto);
 	                } else {
-	                    log.info("Skipping quantity update for Custom category productId: " + productId);
+	                    log.info("Skipping quantity update for special category productId: " + productId + " (Category: " + productDto.getProductCategoryDto().getProductCategoryName() + ")");
 	                }
 	            } else {
 	                log.info("Product not found for productId: " + productId);
