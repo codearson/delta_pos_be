@@ -48,4 +48,9 @@ public class PayoutCategoryServiceBL {
         log.info("PayoutCategoryServiceBL.getAllPagePayoutCategory() invoked");
         return payoutCategoryDao.getAllPagePayoutCategory(pageNumber, pageSize, searchParams);
     }
+    
+    public List<PayoutCategoryDto> getAllByName(String payoutCategory) {
+        log.info("PayoutCategoryServiceBL.getAllByName() invoked.");
+        return payoutCategoryDao.getAllByName(payoutCategory);
+    }
 }

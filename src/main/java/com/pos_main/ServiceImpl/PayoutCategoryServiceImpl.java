@@ -135,4 +135,26 @@ public class PayoutCategoryServiceImpl implements PayoutCategoryService {
         }
         return responseDto;
     }
+    
+    @Override
+    public ResponseDto getAllByName(String payoutCategory) {
+        log.info("PayoutCategoryServiceImpl.getAllByName() invoked");
+        ResponseDto responseDto = null;
+        try {
+            List<PayoutCategoryDto> payoutCategoryDtoList = payoutCategoryServiceBL.getAllByName(payoutCategory);
+            if (payoutCategoryDtoList != null && !payoutCategoryDtoList.isEmpty()) {
+                log.info("Retrieve Payout Category Details by Name.");
+                responseDto = serviceUtil.getServiceResponse(payoutCategoryDtoList);
+            } else {
+                log.info("Unable to retrieve Payout Category by payoutCategoryName.");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                        ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_PAYOUT_CATEGORY_BY_NAME);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurs while retrieving Payout Category by payoutCategoryName.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                    ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_PAYOUT_CATEGORY_BY_NAME);
+        }
+        return responseDto;
+    }
 }

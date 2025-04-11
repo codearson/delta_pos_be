@@ -140,5 +140,21 @@ public class StaffLeaveServiceImpl implements StaffLeaveService {
 		}
 		return responseDto;
 	}
+	
+	@Override
+	public ResponseDto sendEmail(String to, String subject, String body) {
+	    log.info("StaffLeaveServiceImpl.sendEmail() invoked");
+	    ResponseDto responseDto = null;
+	    try {
+	        staffLeaveServiceBL.sendEmail(to, subject, body);
+	        log.info("Email sent successfully to {}", to);
+	        responseDto = serviceUtil.getServiceResponse("Email sent successfully");
+	    } catch (Exception e) {
+	        log.error("Exception occurs while sending email to {}", to, e);
+	        responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+	                ApplicationMessageConstants.ServiceErrorMessages.EX_SEND_EMAIL);
+	    }
+	    return responseDto;
+	}
 
 }

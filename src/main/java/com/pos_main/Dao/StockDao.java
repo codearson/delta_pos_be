@@ -1,8 +1,10 @@
 package com.pos_main.Dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.pos_main.Domain.Stock;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.StockDto;
 
 
@@ -21,6 +23,8 @@ public interface StockDao extends BaseDao<Stock> {
 	StockDto save(StockDto stockDto);
 
 	List<StockDto> getAllStock();
+	
+	PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams);
 
 	StockDto updateStock(StockDto stockDto);
 
