@@ -1,6 +1,7 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.SupplierDto;
 import com.pos_main.Service.SupplierService;
@@ -153,6 +155,28 @@ public class SupplierServiceImpl implements SupplierService{
 			log.error("Exception occurs while retrieving All Supplier details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SUPPLIER_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("SupplierServiceImpl.getAllPageSupplier() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = supplierServiceBL.getAllPageSupplier(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All Supplier Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All Supplier details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Supplier details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS);
 		}
 		return responseDto;
 	}
