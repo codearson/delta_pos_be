@@ -262,5 +262,7 @@ public interface ApplicationMessageConstants {
         String EX_RETRIEVE_STOCK_DETAILS_PAGE = "ex.get.all.page.stock.details";
         String ERR_SEND_EMAIL = "err.send.email";
         String EX_SEND_EMAIL = "ex.send.email";
+        String ERR_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "err.get.all.page.supplier.details";
+        String EX_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "ex.get.all.page.supplier.details";
 	}
 }

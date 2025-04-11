@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.SupplierDto;
 import com.pos_main.Service.SupplierService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -66,6 +68,14 @@ public class SupplierController {
 	public ResponseDto getAllSupplier() {
 		log.info("SupplierController.getAllSupplier() invoked");
 		return supplierService.getAllSupplier();
+	}
+	
+	@GetMapping("/getAllPage")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAllPageCustomer(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+			WebRequest webRequest) {
+		log.info("SupplierController.getAllPage() invoked.");
+		return supplierService.getAllPageSupplier(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 

@@ -3,6 +3,8 @@ package com.pos_main.DaoImpl;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -15,8 +17,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.SupplierDao;
+import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.Supplier;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.SupplierDto;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.SupplierTransfomer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -140,5 +145,34 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 		}
 		return supplierDtoList;
 	}
+	
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("SupplierDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<Supplier> allSupplierList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM supplier";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(Supplier.class, "supplier");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allSupplierList = criteria.list();
+		recordCount = allSupplierList.size();
+		if (allSupplierList != null && !allSupplierList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allSupplierList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allSupplierList.stream().map(Invoice -> {
+				return supplierTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
+	}
+
 
 }
