@@ -72,5 +72,12 @@ public class StaffLeaveController {
 		log.info("StaffLeaveController.getAllPage() invoked.");
 		return staffLeaveService.getAllPageStaffLeave(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
+	
+	@PostMapping("/sendEmail")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto sendEmail(@RequestParam("to") String to, @RequestParam("subject") String subject, @RequestParam("body") String body) {
+	    log.info("StaffLeaveController.sendEmail() invoked");
+	    return staffLeaveService.sendEmail(to, subject, body);
+	}
 
 }

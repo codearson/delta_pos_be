@@ -260,5 +260,7 @@ public interface ApplicationMessageConstants {
         String EX_UPDATE_NON_SCAN_PRODUCT_STATUS = "ex.update.non.scan.product.status";
         String ERR_RETRIEVE_STOCK_DETAILS_PAGE = "err.get.all.page.stock.details";
         String EX_RETRIEVE_STOCK_DETAILS_PAGE = "ex.get.all.page.stock.details";
+        String ERR_SEND_EMAIL = "err.send.email";
+        String EX_SEND_EMAIL = "ex.send.email";
 	}
 }
