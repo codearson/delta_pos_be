@@ -8,28 +8,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pos_main.Dto.DiscountDto;
+import com.pos_main.Dto.ProductDiscountDto;
 import com.pos_main.Dto.ResponseDto;
-import com.pos_main.Service.DiscountService;
-
+import com.pos_main.Service.ProductDiscountService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("discount")
+@RequestMapping("productDiscount")
 
-public class DiscountController {
+public class productDiscountController {
 	
 	@Autowired
-	DiscountService discountService;
+	ProductDiscountService productDiscountService;
 	
 	@PostMapping("/save")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
-	public ResponseDto save(@RequestBody DiscountDto discountDto) {
-		log.info("discountController.save() invoked");
-		return discountService.save(discountDto);
+	public ResponseDto save(@RequestBody ProductDiscountDto productDiscountDto) {
+		log.info("ProductDiscountController.save() invoked");
+		return productDiscountService.save(productDiscountDto);
 	}
 
 }
