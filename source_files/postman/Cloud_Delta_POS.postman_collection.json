@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "76abd8bf-f2b9-4480-a60d-b9d9a66a9494",
+		"_postman_id": "08a8d965-14a1-4f9f-929e-0868a0059531",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41171280"
@@ -2092,6 +2092,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"supplier",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2450,6 +2482,38 @@
 								{
 									"key": "productCategoryId",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"stock",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
 								}
 							]
 						}
@@ -3307,6 +3371,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/staffLeave/getAllPage",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"getAllPage"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -3396,7 +3482,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/payout/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://grateful-playfulness-production.up.railway.app/payout/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
 								"grateful-playfulness-production",
@@ -3406,7 +3492,7 @@
 							],
 							"path": [
 								"payout",
-								"getAll"
+								"getAllPage"
 							],
 							"query": [
 								{

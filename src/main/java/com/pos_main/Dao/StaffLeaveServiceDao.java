@@ -1,7 +1,9 @@
 package com.pos_main.Dao;
 
 import java.util.List;
+import java.util.Map;
 
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.StaffLeaveDto;
 
 /**
@@ -22,5 +24,7 @@ public interface StaffLeaveServiceDao {
 	StaffLeaveDto checkAvailability(Integer id);
 
 	List<StaffLeaveDto> getAll();
+	
+	PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams);
 
 }

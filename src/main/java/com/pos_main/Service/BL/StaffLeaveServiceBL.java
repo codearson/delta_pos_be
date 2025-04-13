@@ -2,12 +2,15 @@ package com.pos_main.Service.BL;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.StaffLeaveServiceDao;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.StaffLeaveDto;
+import com.pos_main.Service.EmailService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,6 +29,9 @@ public class StaffLeaveServiceBL {
 
 	@Autowired
 	StaffLeaveServiceDao staffLeaveServiceDao;
+	
+	@Autowired
+	EmailService emailService;
 
 	public StaffLeaveDto save(StaffLeaveDto staffLeaveDto) {
 		log.info("StaffLeaveServiceBL.save() invoked.");
@@ -53,6 +59,16 @@ public class StaffLeaveServiceBL {
 	public List<StaffLeaveDto> getAll() {
 		log.info("StaffLeaveServiceBL.getAll() invoked");
 		return staffLeaveServiceDao.getAll();
+	}
+	
+	public PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("StaffLeaveServiceBL.getAllPageStaffLeave()invoked");
+		return staffLeaveServiceDao.getAllPageStaffLeave(pageNumber, pageSize, searchParams);
+	}
+	
+	public void sendEmail(String to, String subject, String body) {
+	    log.info("StaffLeaveServiceBL.sendEmail() invoked");
+	    emailService.sendEmail(to, subject, body);
 	}
 
 }

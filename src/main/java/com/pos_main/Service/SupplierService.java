@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.SupplierDto;
 
@@ -16,6 +18,9 @@ public interface SupplierService {
 	public ResponseDto getSupplierById(Integer id);
 	
 	public ResponseDto getAllSupplier();
+	
+	public ResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParameters);
+
 
 }
 

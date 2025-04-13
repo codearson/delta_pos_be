@@ -86,7 +86,6 @@ public class TransactionController {
 	}
 
 	@PostMapping("/save")
-	// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto save(@RequestBody TransactionDto transactionDto, String alertMessage) {
         log.info("TransactionController.save() invoked");
         return transactionService.save(transactionDto, alertMessage);
@@ -100,7 +99,6 @@ public class TransactionController {
 	}
 
 	@GetMapping("/getAll")
-//	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllTransaction() {
 		log.info("TransactionController.gellAllTransaction() invoked");
 		return transactionService.getAllTransaction();
@@ -133,7 +131,6 @@ public class TransactionController {
 	}
 
 	@GetMapping("/getAllPage")
-//	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageTransaction(@RequestParam("pageNumber") int pageNumber,
 			@RequestParam("pageSize") int pageSize, WebRequest webRequest) {
 		log.info("TransactionController.getAllPage() invoked.");

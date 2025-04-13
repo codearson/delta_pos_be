@@ -1,11 +1,13 @@
 package com.pos_main.Service.BL;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.StockDao;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.StockDto;
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,6 +37,11 @@ public class StockServiceBL {
 	public List<StockDto> getAllStock() {
 		log.info("StockServiceBL.getAllStock() invoked");
 		return stockDao.getAllStock();
+	}
+	
+	public PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("StockServiceBL.getAllPageStock()invoked");
+		return stockDao.getAllPageStock(pageNumber, pageSize, searchParams);
 	}
 
 	public StockDto updateStock(StockDto stockDto) {

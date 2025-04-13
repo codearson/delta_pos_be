@@ -1963,6 +1963,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0Mzk1MzU1fQ.PkR4tt7Qdma7QXbY8Zh_UDzP2B57yAqFXb2nVdvX7mJVfPmoZXzjDSE_5qCREEH0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/supplier/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"supplier",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2267,6 +2307,46 @@
 								{
 									"key": "maxQuantity",
 									"value": "150"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjIwMjc2fQ.utr6a-im6mJdxlCaSox9Ucgh8tQ1lyY4OmzxYfwL0u252tyxdRaLNObxjnduGVok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stock/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stock",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
 								}
 							]
 						}
@@ -3134,6 +3214,46 @@
 								{
 									"key": "status",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjA4ODU3fQ.tpo6dPrxrnXXEyOCztyjoZIDRwEJ5cyExSLFBXMW4e9OxHBLRpsyFtWGTMH5Kn9d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/staffLeave/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffLeave",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
 								}
 							]
 						}

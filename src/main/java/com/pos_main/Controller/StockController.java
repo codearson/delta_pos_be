@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.StockDto;
 import com.pos_main.Service.StockService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -49,6 +51,15 @@ public class StockController {
 		log.info("StockController.gellAllStock() invoked");
 		return stockService.getAllStock();
 	}
+	
+	@GetMapping("/getAllPage")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAllPageStock(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+			WebRequest webRequest) {
+		log.info("StockController.getAllPage() invoked.");
+		return stockService.getAllPageStock(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
+
 
 	@PostMapping("/update")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")

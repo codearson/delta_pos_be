@@ -2,6 +2,7 @@ package com.pos_main.DaoImpl;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -16,8 +17,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.StaffLeaveServiceDao;
+import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.StaffLeave;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.StaffLeaveDto;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.StaffLeaveTransformer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -101,4 +105,32 @@ public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements
                 .map(staffLeaveTransformer::transform)
                 .collect(Collectors.toList());
     }
+    
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("StaffLeaveDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<StaffLeave> allStaffLeaveList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM staff_leave";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(StaffLeave.class, "staffLeave");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allStaffLeaveList = criteria.list();
+		recordCount = allStaffLeaveList.size();
+		if (allStaffLeaveList != null && !allStaffLeaveList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allStaffLeaveList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allStaffLeaveList.stream().map(Invoice -> {
+				return staffLeaveTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
+	}
 }

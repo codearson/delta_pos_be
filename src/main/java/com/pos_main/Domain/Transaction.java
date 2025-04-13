@@ -53,6 +53,8 @@ public class Transaction implements Serializable {
     private List<TransactionPaymentMethod> transactionPaymentMethod;
     @OneToMany(mappedBy = "transaction")
     private List<TransactionDetailsList> transactionDetailsList;
+    @OneToMany(mappedBy = "transaction")
+    private List<TransactionEmployee> transactionEmployee;
     @Column(name = "generateDateTime")
 	private LocalDateTime generateDateTime;
     @Column(name = "manualDiscount")

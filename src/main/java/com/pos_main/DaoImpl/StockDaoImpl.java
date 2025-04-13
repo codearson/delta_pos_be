@@ -2,6 +2,7 @@ package com.pos_main.DaoImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
@@ -21,9 +22,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.StockDao;
+import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.Product;
 import com.pos_main.Domain.Stock;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.StockDto;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.ProductTransformer;
 import com.pos_main.Transformer.StockTransformer;
 
@@ -82,6 +86,34 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao{
 			}
 		}
 		return stockDtoList;
+	}
+	
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("StockDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<Stock> allStockList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM stock";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(Stock.class, "stock");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allStockList = criteria.list();
+		recordCount = allStockList.size();
+		if (allStockList != null && !allStockList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allStockList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allStockList.stream().map(Invoice -> {
+				return stockTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
 	}
 	
 	@Override

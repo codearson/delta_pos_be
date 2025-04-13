@@ -1,11 +1,13 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.StaffLeaveDto;
 import com.pos_main.Service.StaffLeaveService;
@@ -115,6 +117,44 @@ public class StaffLeaveServiceImpl implements StaffLeaveService {
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_STAFF_LEAVE_DETAILS);
 		}
 		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("StaffLeaveServiceImpl.getAllPageStaffLeave() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = staffLeaveServiceBL.getAllPageStaffLeave(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All StaffLeave Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All StaffLeave details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_STAFFLEAVE_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All staffLeave details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_STAFFLEAVE_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto sendEmail(String to, String subject, String body) {
+	    log.info("StaffLeaveServiceImpl.sendEmail() invoked");
+	    ResponseDto responseDto = null;
+	    try {
+	        staffLeaveServiceBL.sendEmail(to, subject, body);
+	        log.info("Email sent successfully to {}", to);
+	        responseDto = serviceUtil.getServiceResponse("Email sent successfully");
+	    } catch (Exception e) {
+	        log.error("Exception occurs while sending email to {}", to, e);
+	        responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+	                ApplicationMessageConstants.ServiceErrorMessages.EX_SEND_EMAIL);
+	    }
+	    return responseDto;
 	}
 
 }
