@@ -29,8 +29,8 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_USER_DETAILS = "ex.get.all.user.details";
 		String ERR_SAVE_PAYMENT_METHOD_DETAILS = "err.save.payment.method.details";
 		String EX_SAVE_PAYMENT_METHOD_DETAILS = "ex.save.payment.method.details";
-		String ERR_SAVE_DISCOUNT_DETAILS = "err.save.discount.details";
-		String EX_SAVE_DISCOUNT_DETAILS = "ex.save.discount.details";
+		String ERR_SAVE_PRODUCT_DISCOUNT_DETAILS = "err.save.product.discount.details";
+		String EX_SAVE_PRODUCT_DISCOUNT_DETAILS = "ex.save.product.discount.details";
 		String ERR_UPDATE_PRODUCT_CATRGORY_DETAILS="err.update.category.details";
 		String EX_UPDATE_PRODUCT_CATRGORY_DETAILS="ex.update.category.details";
 		String ERR_RETRIEVE_CATEGORY_BY_NAME="err.gel.all.by.name.category.details";
@@ -242,5 +242,17 @@ public interface ApplicationMessageConstants {
         String EX_UPDATE_PAYOUT_CATEGORY_STATUS = "ex.update.payout.category.status";
         String ERR_RETRIEVE_PAYOUT_CATEGORIES = "err.get.all.payout.category.details";
         String EX_RETRIEVE_PAYOUT_CATEGORIES = "ex.get.all.payout.category.details";
+        
+		String ERR_SAVE_PRODUCT_DISCOUNT = "err.save.product.discount.details";
+		String EX_SAVE_PRODUCT_DISCOUNT = "ex.save.product.discount.details";
+		
+		String ERR_UPDATE_PRODUCT_DISCOUNT = "err.update.product.discount.details";
+		String EX_UPDATE_PRODUCT_DISCOUNT = "ex.update.product.discount.details";
+		
+		String ERR_UPDATE_PRODUCT_DISCOUNT_STATUS = "err.update.product.discount.status";
+		String EX_UPDATE_PRODUCT_DISCOUNT_STATUS ="ex.update.product.discount.status";
+		
+		String ERR_RETRIEVE_PRODUCT_DISCOUNT = "err.get.all.product.discount.details";
+		String EX_RETRIEVE_PRODUCT_DISCOUNT = "ex.get.all.product.discount.details";
 	}
 }
