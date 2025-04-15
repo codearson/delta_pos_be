@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.PayoutDao;
-import com.pos_main.Dto.CustomerDto;
 import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.PayoutDto;
 
@@ -31,10 +30,15 @@ public class PayoutServiceBL {
 		return payoutDao.getAllPagePayout(pageNumber, pageSize, searchParams);
     }
 
-	public PayoutDto save(PayoutDto payoutDto) {
-		log.info("PayoutServiceBL.savePayout() invoked.");
-		return payoutDao.save(payoutDto);
-	}
+    public PayoutDto save(PayoutDto payoutDto) {
+        log.info("PayoutServiceBL.savePayout() invoked.");
+        if (payoutDto != null) {
+            if (payoutDto.getDateTime() == null) {
+                payoutDto.setDateTime(LocalDateTime.now());
+            }
+        }
+        return payoutDao.save(payoutDto);
+    }
 
 	public PayoutDto updatePayout(PayoutDto payoutDto) {
 		log.info("PayoutServiceBL.updatePayout() invoked.");
