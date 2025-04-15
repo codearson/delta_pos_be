@@ -42,6 +42,8 @@ public class Banking implements Serializable{
 	@JoinColumn(name = "userId", referencedColumnName = "id")
 	@ManyToOne(optional = false)
 	private User user;
+	@Column(name =  "generatedDateTime")
+	private LocalDateTime generatedDateTime;
 	
 }
 

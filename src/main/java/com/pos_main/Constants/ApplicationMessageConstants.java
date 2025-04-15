@@ -29,8 +29,8 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_USER_DETAILS = "ex.get.all.user.details";
 		String ERR_SAVE_PAYMENT_METHOD_DETAILS = "err.save.payment.method.details";
 		String EX_SAVE_PAYMENT_METHOD_DETAILS = "ex.save.payment.method.details";
-		String ERR_SAVE_DISCOUNT_DETAILS = "err.save.discount.details";
-		String EX_SAVE_DISCOUNT_DETAILS = "ex.save.discount.details";
+		String ERR_SAVE_PRODUCT_DISCOUNT_DETAILS = "err.save.product.discount.details";
+		String EX_SAVE_PRODUCT_DISCOUNT_DETAILS = "ex.save.product.discount.details";
 		String ERR_UPDATE_PRODUCT_CATRGORY_DETAILS="err.update.category.details";
 		String EX_UPDATE_PRODUCT_CATRGORY_DETAILS="ex.update.category.details";
 		String ERR_RETRIEVE_CATEGORY_BY_NAME="err.gel.all.by.name.category.details";
@@ -268,5 +268,21 @@ public interface ApplicationMessageConstants {
         String EX_RETRIEVE_ALL_PAGE_TAX_DETAILS = "ex.get.all.page.tax.details";
         String ERR_RETRIEVE_USER_LOGS_DETAILS = "err.get.all.page.user.logs.details";
         String EX_RETRIEVE_USER_LOGS_DETAILS = "ex.get.all.page.user.logs.details";
+        String ERR_SAVE_PRODUCT_DISCOUNT = "err.save.product.discount.details";
+		String EX_SAVE_PRODUCT_DISCOUNT = "ex.save.product.discount.details";
+		String ERR_UPDATE_PRODUCT_DISCOUNT = "err.update.product.discount.details";
+		String EX_UPDATE_PRODUCT_DISCOUNT = "ex.update.product.discount.details";
+		String ERR_UPDATE_PRODUCT_DISCOUNT_STATUS = "err.update.product.discount.status";
+		String EX_UPDATE_PRODUCT_DISCOUNT_STATUS = "ex.update.product.discount.status";
+		String ERR_RETRIEVE_PRODUCT_DISCOUNT = "err.get.all.product.discount.details";
+		String EX_RETRIEVE_PRODUCT_DISCOUNT = "ex.get.all.product.discount.details";
+		String ERR_SAVE_PRODUCT_DISCOUNT_TYPE = "err.save.product.discount.type.details";
+		String EX_SAVE_PRODUCT_DISCOUNT_TYPE = "ex.save.product.discount.type.details";
+		String ERR_UPDATE_PRODUCT_DISCOUNT_TYPE = "err.update.product.discount.type.details";
+		String EX_UPDATE_PRODUCT_DISCOUNT_TYPE = "ex.update.product.discount.type.details";
+		String ERR_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS = "err.update.product.discount.type.status";
+		String EX_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS = "ex.update.product.discount.type.status";
+		String ERR_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "err.get.all.page.product.discount.type.details";
+		String EX_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "ex.get.all.page.product.discount.type.details";
 	}
 }

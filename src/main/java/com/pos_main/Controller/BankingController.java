@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @CrossOrigin(origins = "*")
 @RequestMapping("banking")
 public class BankingController {
-
+	
 	@Autowired
 	BankingService bankingService;
 	
