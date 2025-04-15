@@ -24,6 +24,7 @@ public class PayoutTransformer implements BaseTransformer<Payout, PayoutDto>{
 			payoutDto.setAmount(payout.getAmount());
 			payoutDto.setDateTime(payout.getDateTime());
 			payoutDto.setIsActive(payout.getIsActive());
+			payoutDto.setGeneratedDateTime(payout.getGeneratedDateTime());
 			if (payout.getUser() != null) {
 				payoutDto.setUserDto(userTransformer.transform(payout.getUser()));
 			}
@@ -43,6 +44,7 @@ public class PayoutTransformer implements BaseTransformer<Payout, PayoutDto>{
 			payout.setAmount(payoutDto.getAmount());
 			payout.setDateTime(payoutDto.getDateTime());
 			payout.setIsActive(payoutDto.getIsActive());
+			payout.setGeneratedDateTime(payoutDto.getGeneratedDateTime());
 			if (payoutDto.getUserDto() != null) {
 				payout.setUser(userTransformer.reverseTransform(payoutDto.getUserDto()));
 			}
