@@ -264,13 +264,21 @@ public interface ApplicationMessageConstants {
         String EX_SEND_EMAIL = "ex.send.email";
         String ERR_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "err.get.all.page.supplier.details";
         String EX_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "ex.get.all.page.supplier.details";
-		String ERR_SAVE_PRODUCT_DISCOUNT = "err.save.product.discount.details";
+        String ERR_SAVE_PRODUCT_DISCOUNT = "err.save.product.discount.details";
 		String EX_SAVE_PRODUCT_DISCOUNT = "ex.save.product.discount.details";
 		String ERR_UPDATE_PRODUCT_DISCOUNT = "err.update.product.discount.details";
 		String EX_UPDATE_PRODUCT_DISCOUNT = "ex.update.product.discount.details";
 		String ERR_UPDATE_PRODUCT_DISCOUNT_STATUS = "err.update.product.discount.status";
-		String EX_UPDATE_PRODUCT_DISCOUNT_STATUS ="ex.update.product.discount.status";
+		String EX_UPDATE_PRODUCT_DISCOUNT_STATUS = "ex.update.product.discount.status";
 		String ERR_RETRIEVE_PRODUCT_DISCOUNT = "err.get.all.product.discount.details";
 		String EX_RETRIEVE_PRODUCT_DISCOUNT = "ex.get.all.product.discount.details";
+		String ERR_SAVE_PRODUCT_DISCOUNT_TYPE = "err.save.product.discount.type.details";
+		String EX_SAVE_PRODUCT_DISCOUNT_TYPE = "ex.save.product.discount.type.details";
+		String ERR_UPDATE_PRODUCT_DISCOUNT_TYPE = "err.update.product.discount.type.details";
+		String EX_UPDATE_PRODUCT_DISCOUNT_TYPE = "ex.update.product.discount.type.details";
+		String ERR_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS = "err.update.product.discount.type.status";
+		String EX_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS = "ex.update.product.discount.type.status";
+		String ERR_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "err.get.all.page.product.discount.type.details";
+		String EX_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "ex.get.all.page.product.discount.type.details";
 	}
 }
