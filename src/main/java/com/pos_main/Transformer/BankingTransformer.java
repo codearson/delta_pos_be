@@ -34,6 +34,7 @@ public class BankingTransformer implements BaseTransformer<Banking, BankingDto> 
 			if (banking.getUser() != null) {
 				bankingDto.setUserDto(userTransfomer.transform(banking.getUser()));
 			}
+			bankingDto.setGeneratedDateTime(banking.getGeneratedDateTime());
 		}
 		return bankingDto;
 	}
@@ -50,6 +51,7 @@ public class BankingTransformer implements BaseTransformer<Banking, BankingDto> 
 			if (bankingDto.getUserDto() != null) {
 				banking.setUser(userTransfomer.reverseTransform(bankingDto.getUserDto()));
 			}
+			banking.setGeneratedDateTime(bankingDto.getGeneratedDateTime());
 		}
 		return banking;
 	}
