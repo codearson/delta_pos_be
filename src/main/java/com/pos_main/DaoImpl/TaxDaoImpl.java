@@ -1,6 +1,7 @@
 package com.pos_main.DaoImpl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -16,7 +17,9 @@ import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.TaxDao;
 import com.pos_main.Domain.Tax;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.TaxDto;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 import com.pos_main.Transformer.TaxTransformer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -103,4 +106,32 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
             .map(taxTransformer::transform)
             .collect(Collectors.toList());
     }
+    
+	@Override
+	@Transactional
+	public PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("TaxDaoImpl.getAll()invoked");
+		PaginatedResponseDto paginatedResponseDto = null;
+		List<Tax> allTaxList = null;
+		int recordCount = 0;
+		String countString = "SELECT COUNT(*) FROM tax";
+		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+
+		if (pageSize == 0) {
+			pageSize = count;
+		}
+
+		Criteria criteria = getCurrentSession().createCriteria(Tax.class, "tax");
+		criteria.setFirstResult((pageNumber - 1) * pageSize);
+		criteria.setMaxResults(pageSize);
+		allTaxList = criteria.list();
+		recordCount = allTaxList.size();
+		if (allTaxList != null && !allTaxList.isEmpty()) {
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allTaxList, pageNumber, pageSize, count);
+			paginatedResponseDto.setPayload(allTaxList.stream().map(Invoice -> {
+				return taxTransformer.transform(Invoice);
+			}).collect(Collectors.toList()));
+		}
+		return paginatedResponseDto;
+	}
 }

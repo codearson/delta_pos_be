@@ -1,11 +1,13 @@
 package com.pos_main.Service.BL;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.TaxDao;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.TaxDto;
 
 import lombok.extern.slf4j.Slf4j;
@@ -47,4 +49,9 @@ public class TaxServiceBL {
         log.info("TaxServiceBL.getAll() invoked");
         return taxDao.getAll();
     }
+    
+	public PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("TaxServiceBL.getAllPageTax()invoked");
+		return taxDao.getAllPageTax(pageNumber, pageSize, searchParams);
+	}
 }

@@ -1,5 +1,7 @@
 package com.pos_main.Service;
 
+import java.util.Map;
+
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.UserLogsDto;
 
@@ -17,5 +19,7 @@ public interface UserLogsService {
 	public ResponseDto login(UserLogsDto userLogsDto);
 	
 	public ResponseDto save(UserLogsDto userLogsDto);
+	
+	public ResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParameters);
 
 }
