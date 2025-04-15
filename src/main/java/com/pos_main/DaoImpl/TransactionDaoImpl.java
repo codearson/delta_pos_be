@@ -24,6 +24,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.TransactionDao;
+import com.pos_main.Domain.Banking;
 import com.pos_main.Domain.Branch;
 import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.Transaction;
@@ -742,10 +743,26 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
     @Transactional
     public void updateGenerateDateTime(Integer transactionId, LocalDateTime generateDateTime) {
         log.info("TransactionDaoImpl.updateGenerateDateTime() invoked for transactionId: {}", transactionId);
+        
         Transaction transaction = entityManager.find(Transaction.class, transactionId);
         if (transaction != null) {
             transaction.setGenerateDateTime(generateDateTime);
             entityManager.merge(transaction);
+        } else {
+            log.warn("Transaction with ID {} not found", transactionId);
+            throw new EntityNotFoundException("Transaction not found with ID: " + transactionId);
+        }
+
+        Banking lastBanking = entityManager.createQuery(
+                "SELECT b FROM Banking b ORDER BY b.id DESC", Banking.class)
+                .setMaxResults(1)
+                .getSingleResult();
+        
+        if (lastBanking != null) {
+            lastBanking.setGeneratedDateTime(generateDateTime);
+            entityManager.merge(lastBanking);
+        } else {
+            log.warn("No Banking records found to update generatedDateTime");
         }
     }
     

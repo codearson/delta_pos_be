@@ -19,6 +19,7 @@ public class BankingDto {
 	private LocalDateTime dateTime;
 	private Boolean isActive;
 	private UserDto userDto;
+	private LocalDateTime generatedDateTime;
 	
 }
 
