@@ -43,6 +43,8 @@ public class Payout implements Serializable {
 	@JoinColumn(name = "userId", referencedColumnName = "id")
 	@ManyToOne(optional = false)
 	private User user;
+	@Column(name =  "generatedDateTime")
+	private LocalDateTime generatedDateTime;
 	@Column(name = "isActive")
 	private Boolean isActive;
 
