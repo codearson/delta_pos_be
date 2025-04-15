@@ -32,6 +32,7 @@ import com.pos_main.Domain.TransactionDetailsList;
 import com.pos_main.Domain.TransactionEmployee;
 import com.pos_main.Domain.TransactionPaymentMethod;
 import com.pos_main.Domain.User;
+import com.pos_main.Domain.Payout;
 import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TransactionDetailsListDto;
@@ -763,6 +764,18 @@ public class TransactionDaoImpl extends BaseDaoImpl<Transaction> implements Tran
             entityManager.merge(lastBanking);
         } else {
             log.warn("No Banking records found to update generatedDateTime");
+        }
+
+        Payout lastPayout = entityManager.createQuery(
+                "SELECT p FROM Payout p ORDER BY p.id DESC", Payout.class)
+                .setMaxResults(1)
+                .getSingleResult();
+        
+        if (lastPayout != null) {
+            lastPayout.setGeneratedDateTime(generateDateTime);
+            entityManager.merge(lastPayout);
+        } else {
+            log.warn("No Payout records found to update generatedDateTime");
         }
     }
     
