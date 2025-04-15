@@ -1,9 +1,12 @@
 package com.pos_main.ServiceImpl;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.UserLogsDto;
 import com.pos_main.Service.UserLogsService;
@@ -73,6 +76,28 @@ public class UserLogsServiceImpl implements UserLogsService {
 			log.error("Exception occurs while saving UserLogs details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_USER_LOGS_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("UserLogsServiceImpl.getAllPageUserLogs() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = userLogsServiceBL.getAllPageUserLogs(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All UserLogs Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All UserLogs details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_USER_LOGS_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All UserLogs details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_USER_LOGS_DETAILS);
 		}
 		return responseDto;
 	}

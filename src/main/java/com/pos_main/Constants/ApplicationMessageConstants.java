@@ -264,5 +264,9 @@ public interface ApplicationMessageConstants {
         String EX_SEND_EMAIL = "ex.send.email";
         String ERR_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "err.get.all.page.supplier.details";
         String EX_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "ex.get.all.page.supplier.details";
+        String ERR_RETRIEVE_ALL_PAGE_TAX_DETAILS = "err.get.all.page.tax.details";
+        String EX_RETRIEVE_ALL_PAGE_TAX_DETAILS = "ex.get.all.page.tax.details";
+        String ERR_RETRIEVE_USER_LOGS_DETAILS = "err.get.all.page.user.logs.details";
+        String EX_RETRIEVE_USER_LOGS_DETAILS = "ex.get.all.page.user.logs.details";
 	}
 }
