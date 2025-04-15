@@ -40,17 +40,17 @@ public class ProductDiscountTypeServiceImpl implements ProductDiscountTypeServic
 		try {
 			ProductDiscountTypeDto savedDto = productDiscountTypeServiceBL.save(productDiscountTypeDto);
 			if (savedDto != null) {
-				log.info("Product Discount saved successfully");
+				log.info("Product Discount type saved successfully");
 				responseDto = serviceUtil.getServiceResponse(savedDto);
 			} else {
-				log.info("Failed to save Product Discount");
+				log.info("Failed to save Product Discount type");
 				responseDto = serviceUtil.getErrorServiceResponse(
-						ApplicationMessageConstants.ServiceErrorMessages.ERR_SAVE_PRODUCT_DISCOUNT);
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_SAVE_PRODUCT_DISCOUNT_TYPE);
 			}
 		} catch (Exception e) {
-			log.error("Exception while saving Product Discount", e);
+			log.error("Exception while saving Product Discount Type", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
-					ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_PRODUCT_DISCOUNT);
+					ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_PRODUCT_DISCOUNT_TYPE);
 		}
 		return responseDto;
 	}
@@ -62,17 +62,17 @@ public class ProductDiscountTypeServiceImpl implements ProductDiscountTypeServic
 		try {
 			ProductDiscountTypeDto updatedDto = productDiscountTypeServiceBL.update(productDiscountTypeDto);
 			if (updatedDto != null) {
-				log.info("Product Discount updated successfully");
+				log.info("Product Discount type updated successfully");
 				responseDto = serviceUtil.getServiceResponse(updatedDto);
 			} else {
-				log.info("Failed to update Product Discount");
+				log.info("Failed to update Product Discount type");
 				responseDto = serviceUtil.getErrorServiceResponse(
-						ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_PRODUCT_DISCOUNT);
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_PRODUCT_DISCOUNT_TYPE);
 			}
 		} catch (Exception e) {
-			log.error("Exception while updating Product Discount", e);
+			log.error("Exception while updating Product Discount type", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
-					ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_PRODUCT_DISCOUNT);
+					ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_PRODUCT_DISCOUNT_TYPE);
 		}
 		return responseDto;
 	}
@@ -84,17 +84,17 @@ public class ProductDiscountTypeServiceImpl implements ProductDiscountTypeServic
 		try {
 			ProductDiscountTypeDto updatedDto = productDiscountTypeServiceBL.updateStatus(id, status);
 			if (updatedDto != null) {
-				log.info("Product Discount status updated successfully");
+				log.info("Product Discount type status updated successfully");
 				responseDto = serviceUtil.getServiceResponse(updatedDto);
 			} else {
-				log.info("Failed to update Product Discount status");
+				log.info("Failed to update Product Discount type status");
 				responseDto = serviceUtil.getErrorServiceResponse(
-						ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_PRODUCT_DISCOUNT_STATUS);
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS);
 			}
 		} catch (Exception e) {
-			log.error("Exception while updating Product Discount status", e);
+			log.error("Exception while updating Product Discount type status", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
-					ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_PRODUCT_DISCOUNT_STATUS);
+					ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS);
 		}
 		return responseDto;
 	}
@@ -106,17 +106,17 @@ public class ProductDiscountTypeServiceImpl implements ProductDiscountTypeServic
 		try {
 			List<ProductDiscountTypeDto> dtoList = productDiscountTypeServiceBL.getAll();
 			if (dtoList != null && !dtoList.isEmpty()) {
-				log.info("Product Discount retrieved successfully");
+				log.info("Product Discount type retrieved successfully");
 				responseDto = serviceUtil.getServiceResponse(dtoList);
 			} else {
-				log.info("No Product Discount found");
+				log.info("No Product Discount type found");
 				responseDto = serviceUtil.getErrorServiceResponse(
-						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_PRODUCT_DISCOUNT);
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_PRODUCT_DISCOUNT_TYPE);
 			}
 		} catch (Exception e) {
-			log.error("Exception while retrieving Product Discount", e);
+			log.error("Exception while retrieving Product type Discount", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
-					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_PRODUCT_DISCOUNT);
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_PRODUCT_DISCOUNT_TYPE);
 		}
 		return responseDto;
 	}
