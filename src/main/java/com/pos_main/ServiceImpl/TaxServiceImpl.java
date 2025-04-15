@@ -1,11 +1,13 @@
 package com.pos_main.ServiceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Constants.ApplicationMessageConstants;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TaxDto;
 import com.pos_main.Service.TaxService;
@@ -125,4 +127,26 @@ public class TaxServiceImpl implements TaxService{
         }
         return responseDto;
     }
+    
+	@Override
+	public ResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("TaxServiceImpl.getAllPageTax() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = taxServiceBL.getAllPageTax(pageNumber, pageSize, searchParams);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieve All Tax Details.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve All Tax details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PAGE_TAX_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving All Tax details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PAGE_TAX_DETAILS);
+		}
+		return responseDto;
+	}
 }

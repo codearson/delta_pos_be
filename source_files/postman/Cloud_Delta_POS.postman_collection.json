@@ -1646,6 +1646,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/tax/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"tax",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2873,6 +2905,38 @@
 							"path": [
 								"userLogs",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://grateful-playfulness-production.up.railway.app/userLogs/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"grateful-playfulness-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"userLogs",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
