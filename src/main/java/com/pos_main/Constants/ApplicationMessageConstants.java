@@ -284,5 +284,7 @@ public interface ApplicationMessageConstants {
 		String EX_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS = "ex.update.product.discount.type.status";
 		String ERR_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "err.get.all.page.product.discount.type.details";
 		String EX_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "ex.get.all.page.product.discount.type.details";
+		String ERR_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST = "err.retrieve.all.transaction.details.list";
+		String EX_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST = "ex.retrieve.all.transaction.details.list";
 	}
 }

@@ -49,5 +49,28 @@ public class TransactionDetailsListServiceImpl implements TransactionDetailsList
 	    return responseDto;
 	}
 	
+	@Transactional
+	@Override
+	public ResponseDto getAll() {
+	    log.info("TransactionDetailsListServiceImpl.getAll() invoked");
+	    ResponseDto responseDto = null;
+	    try {
+	        List<TransactionDetailsListDto> transactionDetailsListDtoList = transactionDetailsListServiceBL.getAll();
+	        if (transactionDetailsListDtoList != null && !transactionDetailsListDtoList.isEmpty()) {
+	            log.info("All TransactionDetailsList retrieved successfully");
+	            responseDto = serviceUtil.getServiceResponse(transactionDetailsListDtoList);
+	        } else {
+	            log.info("No TransactionDetailsList found");
+	            responseDto = serviceUtil.getErrorServiceResponse(
+	                    ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST);
+	        }
+	    } catch (Exception e) {
+	        log.error("Exception occurred while retrieving all TransactionDetailsList", e);
+	        responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+	                ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST);
+	    }
+	    return responseDto;
+	}
+	
 	
 }

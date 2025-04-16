@@ -17,4 +17,6 @@ public interface TransactionDetailsListDao extends BaseDao<TransactionDetailsLis
 	
 	List<TransactionDetailsListDto> getByTransactionId(Integer transactionId);
 	
+	List<TransactionDetailsListDto> getAll();
+	
 }
