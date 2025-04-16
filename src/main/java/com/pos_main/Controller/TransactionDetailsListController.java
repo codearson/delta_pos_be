@@ -29,4 +29,13 @@ public class TransactionDetailsListController {
 	    return transactionDetailsListService.getByTransactionId(transactionId);
 	}
 	
+	@GetMapping("/getAll")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAll() {
+	    log.info("TransactionDetailsListController.getAll() invoked");
+	    return transactionDetailsListService.getAll();
+	}
+	
+	
+	
 }

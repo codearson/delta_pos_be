@@ -54,5 +54,23 @@ public class TransactionDetailsListDaoImpl extends BaseDaoImpl<TransactionDetail
                 .collect(Collectors.toList());
     }
 	
+	@Override
+	@Transactional
+	public List<TransactionDetailsListDto> getAll() {
+		log.info("TransactionDetailsListDaoImpl.getAll() invoked");
+
+		CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+		CriteriaQuery<TransactionDetailsList> cq = cb.createQuery(TransactionDetailsList.class);
+		Root<TransactionDetailsList> root = cq.from(TransactionDetailsList.class);
+
+		cq.select(root);
+
+		List<TransactionDetailsList> transactionDetailsList = getCurrentSession().createQuery(cq).getResultList();
+
+		return transactionDetailsList.stream()
+				.map(transactionDetailsListTransformer::transform)
+				.collect(Collectors.toList());
+	}
+	
 	
 }
