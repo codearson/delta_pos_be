@@ -54,4 +54,14 @@ public class PayoutServiceBL {
 			return null;
 		}
     }
+    
+    public Double getTotalPayout() {
+        log.info("PayoutServiceBL.getTotalPayout() invoked");
+        return payoutDao.getTotalPayout();
+    }
+
+    public Integer getPayoutCount(LocalDateTime startDate, LocalDateTime endDate) {
+        log.info("PayoutServiceBL.getPayoutCount() invoked");
+        return payoutDao.getPayoutCount(startDate, endDate);
+    }
 }

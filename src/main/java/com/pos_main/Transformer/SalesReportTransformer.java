@@ -32,6 +32,11 @@ public class SalesReportTransformer implements BaseTransformer<SalesReport, Sale
 			salesReportDto.setEndDate(salesReport.getEndDate());
 			salesReportDto.setFullyTotalSales(salesReport.getFullyTotalSales());
 			salesReportDto.setReportType(salesReport.getReportType());
+			salesReportDto.setBanking(salesReport.getBanking());
+			salesReportDto.setPayout(salesReport.getPayout());
+			salesReportDto.setBankingCount(salesReport.getBankingCount());
+			salesReportDto.setPayoutCount(salesReport.getPayoutCount());
+			salesReportDto.setDifference(salesReport.getDifference());
 		}
 		return salesReportDto;
 	}
@@ -47,6 +52,11 @@ public class SalesReportTransformer implements BaseTransformer<SalesReport, Sale
 			salesReport.setEndDate(salesReportDto.getEndDate());
 			salesReport.setFullyTotalSales(salesReportDto.getFullyTotalSales());
 			salesReport.setReportType(salesReportDto.getReportType());
+			salesReport.setBanking(salesReportDto.getBanking());
+			salesReport.setPayout(salesReportDto.getPayout());
+			salesReport.setBankingCount(salesReportDto.getBankingCount());
+			salesReport.setPayoutCount(salesReportDto.getPayoutCount());
+			salesReport.setDifference(salesReportDto.getDifference());
 		}
 		return salesReport;
 	}

@@ -3,10 +3,14 @@ package com.pos_main.DaoImpl;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.time.LocalDateTime;
 
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -72,6 +76,84 @@ public class BankingDaoImpl extends BaseDaoImpl<Banking> implements BankingDao{
 			}).collect(Collectors.toList()));
 		}
 		return paginatedResponseDto;
+	}
+	
+	@Override
+	@Transactional
+	public Double getTotalBanking() {
+		log.info("BankingDaoImpl.getTotalBanking() invoked");
+		Double totalAmount = 0.0;
+		int count = 0;
+		
+		try {
+			// Get all banking records ordered by ID
+			Criteria criteria = getCurrentSession().createCriteria(Banking.class);
+			criteria.addOrder(Order.asc("id"));
+			List<Banking> allBankingList = criteria.list();
+			
+			if (allBankingList != null && !allBankingList.isEmpty()) {
+				// Check if any record has generatedDateTime
+				boolean hasGeneratedDateTime = allBankingList.stream()
+						.anyMatch(banking -> banking.getGeneratedDateTime() != null);
+				
+				if (hasGeneratedDateTime) {
+					// Find the last record with generatedDateTime
+					Banking lastGeneratedRecord = null;
+					int lastGeneratedIndex = -1;
+					
+					for (int i = 0; i < allBankingList.size(); i++) {
+						Banking banking = allBankingList.get(i);
+						if (banking.getGeneratedDateTime() != null) {
+							lastGeneratedRecord = banking;
+							lastGeneratedIndex = i;
+						}
+					}
+					
+					// Sum amounts from records after the last generatedDateTime
+					for (int i = lastGeneratedIndex + 1; i < allBankingList.size(); i++) {
+						Banking banking = allBankingList.get(i);
+						if (banking.getAmount() != null) {
+							totalAmount += banking.getAmount();
+							count++;
+						}
+					}
+					
+					log.info("Found last generatedDateTime at ID: {}, summing {} records after this", 
+							lastGeneratedRecord.getId(), count);
+				} else {
+					// Sum all amounts if no record has generatedDateTime
+					for (Banking banking : allBankingList) {
+						if (banking.getAmount() != null) {
+							totalAmount += banking.getAmount();
+							count++;
+						}
+					}
+					log.info("No generatedDateTime found, summing all {} records", count);
+				}
+			}
+			
+			log.info("Total amount: {}, Count of records summed: {}", totalAmount, count);
+			
+		} catch (Exception e) {
+			log.error("Exception occurs while calculating total banking amount.", e);
+		}
+		
+		return totalAmount;
+	}
+
+	@Override
+	@Transactional
+	public Integer getBankingCount(LocalDateTime startDate, LocalDateTime endDate) {
+		log.info("BankingDaoImpl.getBankingCount() invoked for period: {} to {}", startDate, endDate);
+		try {
+			Criteria criteria = getCurrentSession().createCriteria(Banking.class);
+			criteria.add(Restrictions.between("dateTime", startDate, endDate));
+			criteria.add(Restrictions.eq("isActive", true));
+			return criteria.list().size();
+		} catch (Exception e) {
+			log.error("Error counting banking transactions: {}", e.getMessage(), e);
+			return 0;
+		}
 	}
 
 }

@@ -37,6 +37,16 @@ public class BankingServiceBL {
 		log.info("BankingServiceBL.getAllPage()invoked");
 		return bankingDao.getAllPage(pageNumber, pageSize, searchParams);
 	}
+	
+	public Double getTotalBanking() {
+		log.info("BankingServiceBL.getTotalBanking() invoked");
+		return bankingDao.getTotalBanking();
+	}
+
+	public Integer getBankingCount(LocalDateTime startDate, LocalDateTime endDate) {
+		log.info("BankingServiceBL.getBankingCount() invoked");
+		return bankingDao.getBankingCount(startDate, endDate);
+	}
 
 }
 

@@ -63,4 +63,11 @@ public class PayoutController {
         log.info("PayoutController.updateInvoiceStatus() invoked with id: {}, status: {}", id, status);
         return payoutService.updatePayoutStatus(id, status);
     }
+    
+    @GetMapping("/getTotalPayout")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto getTotalPayout() {
+        log.info("PayoutController.getTotalPayout() invoked");
+        return payoutService.getTotalPayout();
+    }
 }

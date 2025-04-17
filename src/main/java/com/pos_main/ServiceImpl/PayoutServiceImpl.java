@@ -148,5 +148,26 @@ public class PayoutServiceImpl implements PayoutService {
 		return responseDto;
 	}
 	
+	@Override
+	public ResponseDto getTotalPayout() {
+		log.info("PayoutServiceImpl.getTotalPayout() invoked");
+		ResponseDto responseDto = null;
+		try {
+			Double totalAmount = payoutServiceBL.getTotalPayout();
+			if (totalAmount != null) {
+				log.info("Retrieved total payout amount: {}", totalAmount);
+				responseDto = serviceUtil.getServiceResponse(totalAmount);
+			} else {
+				log.info("Unable to retrieve total payout amount.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving total payout amount.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS);
+		}
+		return responseDto;
+	}
 
 }

@@ -1,5 +1,6 @@
 package com.pos_main.Dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -27,5 +28,9 @@ public interface PayoutDao extends BaseDao<Payout> {
 	PayoutDto updatePayout(PayoutDto payoutDto);
 
 	PayoutDto checkPayoutAvailability(Integer payoutId);
+	
+	Double getTotalPayout();
+	
+	Integer getPayoutCount(LocalDateTime startDate, LocalDateTime endDate);
 
 }

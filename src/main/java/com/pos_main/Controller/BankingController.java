@@ -46,6 +46,12 @@ public class BankingController {
 		return bankingService.getAllPage(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 	
+	@GetMapping("/getTotalBanking")
+	public ResponseDto getTotalBanking() {
+		log.info("BankingController.getTotalBanking() invoked");
+		return bankingService.getTotalBanking();
+	}
+	
 }
 
 

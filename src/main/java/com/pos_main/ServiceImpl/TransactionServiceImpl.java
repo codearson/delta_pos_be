@@ -23,6 +23,8 @@ import com.pos_main.Dto.TransactionDto;
 import com.pos_main.Dto.UserPaymentDetailsDto;
 import com.pos_main.Service.SalesReportService;
 import com.pos_main.Service.TransactionService;
+import com.pos_main.Service.BL.BankingServiceBL;
+import com.pos_main.Service.BL.PayoutServiceBL;
 import com.pos_main.Service.BL.TransactionServiceBL;
 import com.pos_main.Service.Utils.ServiceUtil;
 
@@ -52,6 +54,12 @@ public class TransactionServiceImpl implements TransactionService {
 	
 	@Autowired
     private TransactionDao transactionDao;
+	
+	@Autowired
+	BankingServiceBL bankingServiceBL;
+	
+	@Autowired
+	PayoutServiceBL payoutServiceBL;
 
 	@Transactional	
 	@Override
@@ -343,13 +351,32 @@ public class TransactionServiceImpl implements TransactionService {
 	            Map<String, Object> xReport = transactionServiceBL.getXReport(userId, startDate, endDate);
 	            if (xReport != null) {
 	                log.info("X-Report generated successfully.");
-	                SalesReportDto salesReportDto = transformToSalesReportDtoForXReport(xReport);
-	                ResponseDto saveResponse = salesReportService.save(salesReportDto);
-	                if (saveResponse.getErrorCode() == 0) {
-	                    log.info("X-Report data saved successfully to salesReport table.");
-	                } else {
-	                    log.warn("Failed to save X-Report data: {}", saveResponse.getErrorDescription());
+	                
+	                // Get banking and payout totals and counts
+	                Double bankingTotal = bankingServiceBL.getTotalBanking();
+	                Double payoutTotal = payoutServiceBL.getTotalPayout();
+	                Integer bankingCount = bankingServiceBL.getBankingCount(startDate, endDate);
+	                Integer payoutCount = payoutServiceBL.getPayoutCount(startDate, endDate);
+	                
+	                // Get cash payment total from payment methods
+	                Map<String, Double> paymentTotals = (Map<String, Double>) xReport.get("overallPaymentTotals");
+	                Double cashTotal = paymentTotals.getOrDefault("Cash", 0.0);
+	                
+	                // Calculate difference as remaining cash in till after banking and payout
+	                Double totalDeductions = bankingTotal + payoutTotal;
+	                Double difference = cashTotal - totalDeductions;
+	                
+	                // If difference is negative, set it to 0
+	                if (difference < 0) {
+	                    difference = 0.0;
 	                }
+	                
+	                // Add banking, payout, counts and difference to the response
+	                xReport.put("bankingTotal", bankingTotal);
+	                xReport.put("payoutTotal", payoutTotal);
+	                xReport.put("bankingCount", bankingCount);
+	                xReport.put("payoutCount", payoutCount);
+	                xReport.put("difference", difference);
 	                
 	                responseDto = serviceUtil.getServiceResponse(xReport);
 	            } else {
@@ -377,6 +404,35 @@ public class TransactionServiceImpl implements TransactionService {
 	    dto.setEndDate((LocalDateTime) xReport.get("endDate"));
 	    dto.setFullyTotalSales((Double) xReport.get("totalSales"));
 	    dto.setReportType("xReport");
+
+	    // Get banking and payout totals and counts
+	    Double bankingTotal = bankingServiceBL.getTotalBanking();
+	    Double payoutTotal = payoutServiceBL.getTotalPayout();
+	    
+	    // Get counts for the specific date range
+	    Integer bankingCount = bankingServiceBL.getBankingCount(dto.getStartDate(), dto.getEndDate());
+	    Integer payoutCount = payoutServiceBL.getPayoutCount(dto.getStartDate(), dto.getEndDate());
+	    
+	    // Set banking and payout data
+	    dto.setBanking(bankingTotal);
+	    dto.setPayout(payoutTotal);
+	    dto.setBankingCount(bankingCount);
+	    dto.setPayoutCount(payoutCount);
+	    
+	    // Get cash payment total from payment methods
+	    Map<String, Double> paymentTotals = (Map<String, Double>) xReport.get("overallPaymentTotals");
+	    Double cashTotal = paymentTotals.getOrDefault("Cash", 0.0);
+	    
+	    // Calculate difference as remaining cash in till after banking and payout
+	    Double totalDeductions = bankingTotal + payoutTotal;
+	    Double difference = cashTotal - totalDeductions;
+	    
+	    // If difference is negative, set it to 0
+	    if (difference < 0) {
+	        difference = 0.0;
+	    }
+	    
+	    dto.setDifference(difference);
 
 	    List<SalesDateDetailsDto> salesDateDetails = new ArrayList<>();
 	    SalesDateDetailsDto dateDetailsDto = new SalesDateDetailsDto();
@@ -462,7 +518,41 @@ public class TransactionServiceImpl implements TransactionService {
 
 	            Map<String, Object> zReport = transactionServiceBL.getZReport(userId, startDate, endDate);
 	            if (zReport != null) {
-	                log.info("Y-Report generated successfully.");
+	                log.info("Z-Report generated successfully.");
+	                
+	                // Get banking and payout totals and counts
+	                Double bankingTotal = bankingServiceBL.getTotalBanking();
+	                Double payoutTotal = payoutServiceBL.getTotalPayout();
+	                Integer bankingCount = bankingServiceBL.getBankingCount(startDate, endDate);
+	                Integer payoutCount = payoutServiceBL.getPayoutCount(startDate, endDate);
+	                
+	                // Calculate total cash payments from all dates
+	                Double totalCash = 0.0;
+	                Map<String, Map<String, Object>> dateWiseTotals = (Map<String, Map<String, Object>>) zReport.get("dateWiseTotals");
+	                for (Map<String, Object> dateData : dateWiseTotals.values()) {
+	                    Map<String, Double> paymentTotals = (Map<String, Double>) dateData.get("overallPaymentTotals");
+	                    if (paymentTotals != null) {
+	                        totalCash += paymentTotals.getOrDefault("Cash", 0.0);
+	                    }
+	                }
+	                
+	                // Calculate difference as remaining cash in till after banking and payout
+	                Double totalDeductions = bankingTotal + payoutTotal;
+	                Double difference = totalCash - totalDeductions;
+	                
+	                // If difference is negative, set it to 0
+	                if (difference < 0) {
+	                    difference = 0.0;
+	                }
+	                
+	                // Add banking, payout, counts and difference to the response
+	                zReport.put("bankingTotal", bankingTotal);
+	                zReport.put("payoutTotal", payoutTotal);
+	                zReport.put("bankingCount", bankingCount);
+	                zReport.put("payoutCount", payoutCount);
+	                zReport.put("difference", difference);
+	                
+	                // Save to database
 	                SalesReportDto salesReportDto = transformToSalesReportDto(zReport);
 	                ResponseDto saveResponse = salesReportService.save(salesReportDto);
 	                if (saveResponse.getErrorCode() == 0) {
@@ -500,10 +590,45 @@ public class TransactionServiceImpl implements TransactionService {
 	    dto.setFullyTotalSales((Double) zReport.get("fullyTotalSales"));
 	    dto.setReportType("zReport");
 
+	    // Get banking and payout totals and counts
+	    Double bankingTotal = bankingServiceBL.getTotalBanking();
+	    Double payoutTotal = payoutServiceBL.getTotalPayout();
+	    
+	    // Get counts for the specific date range
+	    Integer bankingCount = bankingServiceBL.getBankingCount(dto.getStartDate(), dto.getEndDate());
+	    Integer payoutCount = payoutServiceBL.getPayoutCount(dto.getStartDate(), dto.getEndDate());
+	    
+	    // Set banking and payout data
+	    dto.setBanking(bankingTotal);
+	    dto.setPayout(payoutTotal);
+	    dto.setBankingCount(bankingCount);
+	    dto.setPayoutCount(payoutCount);
+	    
+	    // Calculate total cash payments from all dates
+	    Double totalCash = 0.0;
 	    Map<String, Map<String, Object>> dateWiseTotals = (Map<String, Map<String, Object>>) zReport.get("dateWiseTotals");
+	    for (Map<String, Object> dateData : dateWiseTotals.values()) {
+	        Map<String, Double> paymentTotals = (Map<String, Double>) dateData.get("overallPaymentTotals");
+	        if (paymentTotals != null) {
+	            totalCash += paymentTotals.getOrDefault("Cash", 0.0);
+	        }
+	    }
+	    
+	    // Calculate difference as remaining cash in till after banking and payout
+	    Double totalDeductions = bankingTotal + payoutTotal;
+	    Double difference = totalCash - totalDeductions;
+	    
+	    // If difference is negative, set it to 0
+	    if (difference < 0) {
+	        difference = 0.0;
+	    }
+	    
+	    dto.setDifference(difference);
+
+	    Map<String, Map<String, Object>> dateWiseTotalsMap = (Map<String, Map<String, Object>>) zReport.get("dateWiseTotals");
 	    List<SalesDateDetailsDto> salesDateDetails = new ArrayList<>();
 
-	    for (Map.Entry<String, Map<String, Object>> entry : dateWiseTotals.entrySet()) {
+	    for (Map.Entry<String, Map<String, Object>> entry : dateWiseTotalsMap.entrySet()) {
 	        String salesDate = entry.getKey();
 	        Map<String, Object> details = entry.getValue();
 
