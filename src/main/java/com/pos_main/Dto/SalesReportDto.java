@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 /**
  * Title: SalesReportDto.java. Company: www.codearson.com Copyright: Copyright (c) 2025.
@@ -16,6 +18,8 @@ import lombok.Data;
  **/
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SalesReportDto {
 	
 	private Integer id;
@@ -23,7 +27,12 @@ public class SalesReportDto {
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
 	private Double fullyTotalSales;
-	private List<SalesDateDetailsDto> salesDateDetails = new ArrayList<>();
 	private String reportType;
+	private List<SalesDateDetailsDto> salesDateDetails = new ArrayList<>();
+	private Integer bankingCount;
+	private Integer payoutCount;
+	private Double banking;
+	private Double payout;
+	private Double difference;
 
 }

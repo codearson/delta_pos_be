@@ -286,5 +286,9 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "ex.get.all.page.product.discount.type.details";
 		String ERR_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST = "err.retrieve.all.transaction.details.list";
 		String EX_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST = "ex.retrieve.all.transaction.details.list";
+		String ERR_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS = "err.retrieve.all.payout.total.details";
+		String EX_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS = "ex.retrieve.all.payout.total.details";
+		String ERR_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "err.retrieve.all.banking.total.details";
+		String EX_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "ex.retrieve.all.banking.total.details";
 	}
 }

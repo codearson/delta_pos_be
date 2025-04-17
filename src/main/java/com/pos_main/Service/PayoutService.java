@@ -26,5 +26,6 @@ public interface PayoutService {
 	
 	public ResponseDto updatePayoutStatus(Integer id, Boolean status);
 	
+	public ResponseDto getTotalPayout();
 
 }

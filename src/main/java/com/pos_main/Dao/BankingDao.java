@@ -1,5 +1,6 @@
 package com.pos_main.Dao;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 
 import com.pos_main.Domain.Banking;
@@ -18,6 +19,10 @@ public interface BankingDao extends BaseDao<Banking>{
 	BankingDto save (BankingDto bankingDto);
 	
 	PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams);
+	
+	Double getTotalBanking();
+	
+	Integer getBankingCount(LocalDateTime startDate, LocalDateTime endDate);
 	
 }
 

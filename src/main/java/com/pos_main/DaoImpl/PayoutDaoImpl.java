@@ -1,5 +1,6 @@
 package com.pos_main.DaoImpl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,12 +14,13 @@ import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.PayoutDao;
-import com.pos_main.Domain.Customer;
 import com.pos_main.Domain.Payout;
 import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.PayoutDto;
@@ -137,6 +139,84 @@ public class PayoutDaoImpl extends BaseDaoImpl<Payout> implements PayoutDao {
         } catch (Exception e) {
             log.error("Error checking payout availability for id {}: {}", payoutId, e.getMessage(), e);
             throw e;
+        }
+    }
+    
+    @Override
+    @Transactional
+    public Double getTotalPayout() {
+        log.info("PayoutDaoImpl.getTotalPayout() invoked");
+        Double totalAmount = 0.0;
+        int count = 0;
+        
+        try {
+            // Get all payout records ordered by ID
+            Criteria criteria = getCurrentSession().createCriteria(Payout.class);
+            criteria.addOrder(Order.asc("id"));
+            List<Payout> allPayoutList = criteria.list();
+            
+            if (allPayoutList != null && !allPayoutList.isEmpty()) {
+                // Check if any record has generatedDateTime
+                boolean hasGeneratedDateTime = allPayoutList.stream()
+                        .anyMatch(payout -> payout.getGeneratedDateTime() != null);
+                
+                if (hasGeneratedDateTime) {
+                    // Find the last record with generatedDateTime
+                    Payout lastGeneratedRecord = null;
+                    int lastGeneratedIndex = -1;
+                    
+                    for (int i = 0; i < allPayoutList.size(); i++) {
+                        Payout payout = allPayoutList.get(i);
+                        if (payout.getGeneratedDateTime() != null) {
+                            lastGeneratedRecord = payout;
+                            lastGeneratedIndex = i;
+                        }
+                    }
+                    
+                    // Sum amounts from records after the last generatedDateTime
+                    for (int i = lastGeneratedIndex + 1; i < allPayoutList.size(); i++) {
+                        Payout payout = allPayoutList.get(i);
+                        if (payout.getAmount() != null) {
+                            totalAmount += payout.getAmount();
+                            count++;
+                        }
+                    }
+                    
+                    log.info("Found last generatedDateTime at ID: {}, summing {} records after this", 
+                            lastGeneratedRecord.getId(), count);
+                } else {
+                    // Sum all amounts if no record has generatedDateTime
+                    for (Payout payout : allPayoutList) {
+                        if (payout.getAmount() != null) {
+                            totalAmount += payout.getAmount();
+                            count++;
+                        }
+                    }
+                    log.info("No generatedDateTime found, summing all {} records", count);
+                }
+            }
+            
+            log.info("Total payout amount: {}, Count of records summed: {}", totalAmount, count);
+            
+        } catch (Exception e) {
+            log.error("Exception occurs while calculating total payout amount.", e);
+        }
+        
+        return totalAmount;
+    }
+
+    @Override
+    @Transactional
+    public Integer getPayoutCount(LocalDateTime startDate, LocalDateTime endDate) {
+        log.info("PayoutDaoImpl.getPayoutCount() invoked for period: {} to {}", startDate, endDate);
+        try {
+            Criteria criteria = getCurrentSession().createCriteria(Payout.class);
+            criteria.add(Restrictions.between("dateTime", startDate, endDate));
+            criteria.add(Restrictions.eq("isActive", true));
+            return criteria.list().size();
+        } catch (Exception e) {
+            log.error("Error counting payout transactions: {}", e.getMessage(), e);
+            return 0;
         }
     }
 
