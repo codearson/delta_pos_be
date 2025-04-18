@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "6562de59-abf6-47b3-97bc-6282483a0bf2",
-		"name": "Cloud_Delta_POS",
+		"_postman_id": "825e2c52-4107-48c0-aa88-1e4c5cab1f7e",
+		"name": "Local_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40720747"
 	},
@@ -34,14 +34,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/register",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/register",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"register"
@@ -75,14 +73,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/admin",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/admin",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"admin"
@@ -116,14 +112,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/user",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/user",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"user"
@@ -148,14 +142,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getByName?firstName=Lathusan",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/getByName?firstName=Lathusan",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"getByName"
@@ -186,14 +178,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getById?id=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/getById?id=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"getById"
@@ -224,14 +214,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getByRole?userRole=USER",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/getByRole?userRole=USER",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"getByRole"
@@ -271,14 +259,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"update"
@@ -303,14 +289,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/updateStatus?userId=2&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/updateStatus?userId=2&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"updateStatus"
@@ -345,14 +329,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getByEmailAddress?emailAddress=lathusanthurairajah@codearson.com",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/getByEmailAddress?emailAddress=lathusanthurairajah@codearson.com",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"getByEmailAddress"
@@ -383,14 +365,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getAll?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/getAll?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"getAll"
@@ -425,14 +405,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/updatePassword?userId=1&password=Bavi123&changedByUserId=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/updatePassword?userId=1&password=Bavi123&changedByUserId=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"updatePassword"
@@ -475,14 +453,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/userRole/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/userRole/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"userRole",
 								"save"
@@ -507,14 +483,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/userRole/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/userRole/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"userRole",
 								"getAll"
@@ -546,14 +520,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://deltaposbe-production.up.railway.app/auth/forgot-password",
-									"protocol": "https",
+									"raw": "http://localhost:8080/auth/forgot-password",
+									"protocol": "http",
 									"host": [
-										"deltaposbe-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"auth",
 										"forgot-password"
@@ -577,14 +549,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://deltaposbe-production.up.railway.app/auth/reset-password",
-									"protocol": "https",
+									"raw": "http://localhost:8080/auth/reset-password",
+									"protocol": "http",
 									"host": [
-										"deltaposbe-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"auth",
 										"reset-password"
@@ -610,14 +580,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/login",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/login",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"login"
@@ -641,14 +609,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/login",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/login",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"login"
@@ -672,14 +638,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/login",
-							"protocol": "https",
+							"raw": "http://localhost:8080/user/login",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"user",
 								"login"
@@ -718,14 +682,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productCategory/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productCategory",
 								"save"
@@ -759,14 +721,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productCategory/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productCategory",
 								"update"
@@ -791,14 +751,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productCategory/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productCategory",
 								"getAll"
@@ -823,14 +781,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productCategory/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productCategory",
 								"getAllPage"
@@ -865,14 +821,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getByName?productCategoryName=Books",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productCategory/getByName?productCategoryName=Books",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productCategory",
 								"getByName"
@@ -903,14 +857,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/updateStatus?id=1&status=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productCategory/updateStatus?id=1&status=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productCategory",
 								"updateStatus"
@@ -959,14 +911,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"save"
@@ -1000,14 +950,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"update"
@@ -1039,14 +987,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"getAllPage"
@@ -1081,14 +1027,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/getByName?branchName=KFC",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/getByName?branchName=KFC",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"getByName"
@@ -1119,14 +1063,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/updateStatus?branchId=5&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/updateStatus?branchId=5&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"updateStatus"
@@ -1161,14 +1103,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"getAll"
@@ -1183,14 +1123,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/getAllBySBUid",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/getAllBySBUid",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"getAllBySBUid"
@@ -1215,14 +1153,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/getById?id=KFC",
-							"protocol": "https",
+							"raw": "http://localhost:8080/branch/getById?id=KFC",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"branch",
 								"getById"
@@ -1267,14 +1203,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"save"
@@ -1299,14 +1233,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"getAllPage"
@@ -1341,14 +1273,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"getAll"
@@ -1382,14 +1312,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"update"
@@ -1414,14 +1342,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/getByName?name=Shopping Bags-?",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/getByName?name=Shopping Bags-?",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"getByName"
@@ -1452,14 +1378,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/updateStatus?productId=7&status=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/updateStatus?productId=7&status=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"updateStatus"
@@ -1494,14 +1418,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/getByBarcode?barcode=57283669266",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/getByBarcode?barcode=57283669266",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"getByBarcode"
@@ -1532,14 +1454,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/getById?id=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/product/getById?id=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"product",
 								"getById"
@@ -1584,14 +1504,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/discount/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/discount/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"discount",
 								"save"
@@ -1630,14 +1548,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/tax/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"tax",
 								"save"
@@ -1671,14 +1587,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/tax/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"tax",
 								"update"
@@ -1703,14 +1617,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/updateStatus?id=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/tax/updateStatus?id=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"tax",
 								"updateStatus"
@@ -1745,14 +1657,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/getByName?taxPercentage=89.4",
-							"protocol": "https",
+							"raw": "http://localhost:8080/tax/getByName?taxPercentage=89.4",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"tax",
 								"getByName"
@@ -1783,14 +1693,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/tax/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"tax",
 								"getAll"
@@ -1815,14 +1723,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/getByPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/tax/getByPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"tax",
 								"getByPage"
@@ -1862,14 +1768,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"getAllPage"
@@ -1904,14 +1808,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/getByName?name=Nivethanan",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/getByName?name=Nivethanan",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"getByName"
@@ -1951,14 +1853,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"save"
@@ -1983,14 +1883,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/getById?id=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/getById?id=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"getById"
@@ -2021,14 +1919,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"getAll"
@@ -2062,14 +1958,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"update"
@@ -2094,14 +1988,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/getByMobileNumber?mobileNumber=0775868178",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/getByMobileNumber?mobileNumber=0775868178",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"getByMobileNumber"
@@ -2132,14 +2024,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/updateStatus?customerId=11&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/customer/updateStatus?customerId=11&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"customer",
 								"updateStatus"
@@ -2188,14 +2078,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"save"
@@ -2229,14 +2117,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"update"
@@ -2261,14 +2147,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/updateStatus?supplierId=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/updateStatus?supplierId=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"updateStatus"
@@ -2293,14 +2177,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/getByName?name=Packaging Masters",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/getByName?name=Packaging Masters",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"getByName"
@@ -2331,14 +2213,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/getById?id=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/getById?id=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"getById"
@@ -2369,14 +2249,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"getAll"
@@ -2401,14 +2279,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/supplier/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"supplier",
 								"getAllPage"
@@ -2457,14 +2333,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/paymentMethod/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/paymentMethod/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"paymentMethod",
 								"save"
@@ -2503,14 +2377,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"save"
@@ -2535,14 +2407,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/updateStatus?stockId=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/updateStatus?stockId=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"updateStatus"
@@ -2586,14 +2456,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"update"
@@ -2618,14 +2486,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"getAll"
@@ -2650,14 +2516,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/getAll?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"getAll"
@@ -2692,14 +2556,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getById?id=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/getById?id=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"getById"
@@ -2730,14 +2592,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getByProductId?productId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/getByProductId?productId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"getByProductId"
@@ -2768,14 +2628,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getByProductCategoryId?productCategoryId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/getByProductCategoryId?productCategoryId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"getByProductCategoryId"
@@ -2806,14 +2664,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getByQuantityRange?minQuantity=50&maxQuantity=150",
-							"protocol": "https",
+							"raw": "http://localhost:8080/stock/getByQuantityRange?minQuantity=50&maxQuantity=150",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"stock",
 								"getByQuantityRange"
@@ -2862,14 +2718,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"save"
@@ -2903,14 +2757,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"update"
@@ -2935,14 +2787,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByBranchId?branchId=3",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getByBranchId?branchId=3",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getByBranchId"
@@ -2973,14 +2823,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getById?id=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getById?id=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getById"
@@ -3011,14 +2859,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByUserId?userId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getByUserId?userId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getByUserId"
@@ -3049,14 +2895,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByPaymentMethodId?paymentMethodId=3",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getByPaymentMethodId?paymentMethodId=3",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getByPaymentMethodId"
@@ -3098,14 +2942,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByDateRange?startDate=2025-02-13T00:00:00&endDate=2025-02-17T00:00:00",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getByDateRange?startDate=2025-02-13T00:00:00&endDate=2025-02-17T00:00:00",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getByDateRange"
@@ -3130,14 +2972,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByProductId?productId=3",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getByProductId?productId=3",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getByProductId"
@@ -3168,14 +3008,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByCustomerId?customerId=3",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getByCustomerId?customerId=3",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getByCustomerId"
@@ -3206,14 +3044,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/xReport?userId=4",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/xReport?userId=4",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"xReport"
@@ -3254,14 +3090,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/zReport?userId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/zReport?userId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"zReport"
@@ -3292,14 +3126,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getAllPage"
@@ -3334,14 +3166,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transaction/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transaction/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transaction",
 								"getAll"
@@ -3380,14 +3210,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/userLogs/login",
-							"protocol": "https",
+							"raw": "http://localhost:8080/userLogs/login",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"userLogs",
 								"login"
@@ -3426,14 +3254,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/shopDetails/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"shopDetails",
 								"save"
@@ -3458,14 +3284,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/shopDetails/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"shopDetails",
 								"getAll"
@@ -3490,14 +3314,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getByName?name=KFC",
-							"protocol": "https",
+							"raw": "http://localhost:8080/shopDetails/getByName?name=KFC",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"shopDetails",
 								"getByName"
@@ -3528,14 +3350,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/shopDetails/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"shopDetails",
 								"getAllPage"
@@ -3584,14 +3404,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shifts/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/shifts/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"shifts",
 								"save"
@@ -3616,14 +3434,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shifts/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/shifts/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"shifts",
 								"getAllPage"
@@ -3662,14 +3478,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/save?barcode=48200198765",
-							"protocol": "https",
+							"raw": "http://localhost:8080/purchaseList/save?barcode=48200198765",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"purchaseList",
 								"save"
@@ -3700,14 +3514,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/purchaseList/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"purchaseList",
 								"getAll"
@@ -3732,14 +3544,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/purchaseList/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"purchaseList",
 								"getAllPage"
@@ -3774,14 +3584,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/deleteAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/purchaseList/deleteAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"purchaseList",
 								"deleteAll"
@@ -3796,14 +3604,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/deleteById",
-							"protocol": "https",
+							"raw": "http://localhost:8080/purchaseList/deleteById",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"purchaseList",
 								"deleteById"
@@ -3842,14 +3648,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/country/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/country/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"country",
 								"save"
@@ -3874,14 +3678,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/country/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/country/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"country",
 								"getAll"
@@ -3920,14 +3722,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/salesReport/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/salesReport/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"salesReport",
 								"save"
@@ -3952,14 +3752,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/salesReport/getAllByXReports",
-							"protocol": "https",
+							"raw": "http://localhost:8080/salesReport/getAllByXReports",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"salesReport",
 								"getAllByXReports"
@@ -3984,14 +3782,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/salesReport/getAllByZReports",
-							"protocol": "https",
+							"raw": "http://localhost:8080/salesReport/getAllByZReports",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"salesReport",
 								"getAllByZReports"
@@ -4030,14 +3826,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/managerToggle/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"managerToggle",
 								"save"
@@ -4071,14 +3865,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/managerToggle/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"managerToggle",
 								"update"
@@ -4103,14 +3895,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/updateStatus?id=3&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/managerToggle/updateStatus?id=3&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"managerToggle",
 								"updateStatus"
@@ -4145,14 +3935,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/managerToggle/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"managerToggle",
 								"getAll"
@@ -4177,14 +3965,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/getByName?action=Manual Discount",
-							"protocol": "https",
+							"raw": "http://localhost:8080/managerToggle/getByName?action=Manual Discount",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"managerToggle",
 								"getByName"
@@ -4229,14 +4015,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/employeeDiscount/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/employeeDiscount/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"employeeDiscount",
 								"save"
@@ -4270,14 +4054,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/employeeDiscount/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/employeeDiscount/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"employeeDiscount",
 								"update"
@@ -4302,14 +4084,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/employeeDiscount/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/employeeDiscount/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"employeeDiscount",
 								"getAll"
@@ -4339,14 +4119,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/nonScanProduct/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"nonScanProduct",
 								"getAll"
@@ -4371,14 +4149,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/nonScanProduct/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"nonScanProduct",
 								"getAllPage"
@@ -4422,14 +4198,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/nonScanProduct/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"nonScanProduct",
 								"save"
@@ -4463,14 +4237,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/nonScanProduct/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"nonScanProduct",
 								"update"
@@ -4495,14 +4267,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/getByName?nonScanProduct=Shopping Bags",
-							"protocol": "https",
+							"raw": "http://localhost:8080/nonScanProduct/getByName?nonScanProduct=Shopping Bags",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"nonScanProduct",
 								"getByName"
@@ -4533,14 +4303,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/updateStatus?id=1&status=1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/nonScanProduct/updateStatus?id=1&status=1",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"nonScanProduct",
 								"updateStatus"
@@ -4589,14 +4357,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payout/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payout",
 								"save"
@@ -4630,14 +4396,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payout/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payout",
 								"update"
@@ -4662,14 +4426,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/updateStatus?id=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payout/updateStatus?id=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payout",
 								"updateStatus"
@@ -4704,14 +4466,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payout/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payout",
 								"getAll"
@@ -4736,14 +4496,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payout/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payout",
 								"getAllPage"
@@ -4778,14 +4536,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/getTotalPayout",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payout/getTotalPayout",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payout",
 								"getTotalPayout"
@@ -4824,14 +4580,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payoutCategory/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payoutCategory",
 								"save"
@@ -4865,14 +4619,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payoutCategory/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payoutCategory",
 								"save"
@@ -4897,14 +4649,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payoutCategory/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payoutCategory",
 								"getAll"
@@ -4929,14 +4679,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/updateStatus?id=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payoutCategory/updateStatus?id=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payoutCategory",
 								"updateStatus"
@@ -4971,14 +4719,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getAll?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payoutCategory/getAll?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payoutCategory",
 								"getAll"
@@ -5013,14 +4759,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getByName?payoutCategory=sample",
-							"protocol": "https",
+							"raw": "http://localhost:8080/payoutCategory/getByName?payoutCategory=sample",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"payoutCategory",
 								"getByName"
@@ -5065,14 +4809,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/banking/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/banking/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"banking",
 								"save"
@@ -5097,14 +4839,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/banking/getTotalBanking",
-							"protocol": "https",
+							"raw": "http://localhost:8080/banking/getTotalBanking",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"banking",
 								"getTotalBanking"
@@ -5129,14 +4869,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/banking/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/banking/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"banking",
 								"getAllPage"
@@ -5176,14 +4914,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transactionDetailsList/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transactionDetailsList/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transactionDetailsList",
 								"getAll"
@@ -5208,14 +4944,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transactionDetailsList/getByTransactionId?transactionId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transactionDetailsList/getByTransactionId?transactionId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transactionDetailsList",
 								"getByTransactionId"
@@ -5251,14 +4985,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transactionEmployee/getByTransactionId?transactionId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transactionEmployee/getByTransactionId?transactionId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transactionEmployee",
 								"getByTransactionId"
@@ -5294,14 +5026,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/transactionPaymentMethod/getByTransactionId?transactionId=2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/transactionPaymentMethod/getByTransactionId?transactionId=2",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"transactionPaymentMethod",
 								"getByTransactionId"
@@ -5346,14 +5076,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/aiSales/predict",
-							"protocol": "https",
+							"raw": "http://localhost:8080/aiSales/predict",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"aiSales",
 								"predict"
@@ -5392,14 +5120,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscount/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscount",
 								"save"
@@ -5433,14 +5159,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscount/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscount",
 								"update"
@@ -5455,14 +5179,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/updateStatus?id=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscount/updateStatus?id=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscount",
 								"updateStatus"
@@ -5497,14 +5219,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/getAllPage?pageNumber=0&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscount/getAllPage?pageNumber=0&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscount",
 								"getAllPage"
@@ -5553,14 +5273,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscountType/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscountType",
 								"save"
@@ -5594,14 +5312,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscountType/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscountType",
 								"update"
@@ -5626,14 +5342,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/updateStatus?id=1&status=false",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscountType/updateStatus?id=1&status=false",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscountType",
 								"updateStatus"
@@ -5668,14 +5382,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/productDiscountType/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"productDiscountType",
 								"getAll"
@@ -5714,14 +5426,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/save",
-							"protocol": "https",
+							"raw": "http://localhost:8080/staffLeave/save",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"staffLeave",
 								"save"
@@ -5755,14 +5465,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/update",
-							"protocol": "https",
+							"raw": "http://localhost:8080/staffLeave/update",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"staffLeave",
 								"update"
@@ -5787,14 +5495,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/updateStatus?id=1&status=0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/staffLeave/updateStatus?id=1&status=0",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"staffLeave",
 								"updateStatus"
@@ -5829,14 +5535,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/getAll",
-							"protocol": "https",
+							"raw": "http://localhost:8080/staffLeave/getAll",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"staffLeave",
 								"getAll"
@@ -5861,14 +5565,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/getAllPage?pageNumber=0&pageSize=10",
-							"protocol": "https",
+							"raw": "http://localhost:8080/staffLeave/getAllPage?pageNumber=0&pageSize=10",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"staffLeave",
 								"getAllPage"
@@ -5903,14 +5605,12 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/sendEmail?to=recipient@example.com&subject=Test%20Email&body=Hello%20World",
-							"protocol": "https",
+							"raw": "http://localhost:8080/staffLeave/sendEmail?to=recipient@example.com&subject=Test%20Email&body=Hello%20World",
+							"protocol": "http",
 							"host": [
-								"deltaposbe-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"staffLeave",
 								"sendEmail"
