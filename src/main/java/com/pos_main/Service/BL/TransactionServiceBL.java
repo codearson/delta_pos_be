@@ -147,7 +147,7 @@ public class TransactionServiceBL {
 
 	                boolean isSpecialCategory = productDto.getProductCategoryDto() != null && 
 	                    ("Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName()) ||
-	                     "nonScan".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName()));
+	                     "Non Scan".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName()));
 
 	                if (!isSpecialCategory) { 
 	                    Integer newQuantity = productDto.getQuantity() - details.getQuantity();
