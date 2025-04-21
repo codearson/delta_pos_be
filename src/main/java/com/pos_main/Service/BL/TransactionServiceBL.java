@@ -86,51 +86,6 @@ public class TransactionServiceBL {
 	    return transactionDao.getTransactionByStatus(isActive);
 	}
 	
-//	public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
-//	    log.info("TransactionServiceBL.save() invoked.");
-//	    
-//	    for (TransactionDetailsListDto details : transactionDto.getTransactionDetailsList()) {
-//	        if (details.getProductDto() != null) {
-//	            Integer productId = details.getProductDto().getId();
-//
-//	            List<ProductDto> productList = productDao.getProductById(productId);
-//	            
-//	            alertMessage = null;
-//
-//	            if (productList != null && !productList.isEmpty()) {
-//	                ProductDto productDto = productList.get(0);
-//
-//	                boolean isCustomCategory = productDto.getProductCategoryDto() != null && 
-//	                    "Custom".equalsIgnoreCase(productDto.getProductCategoryDto().getProductCategoryName());
-//
-//	                if (!isCustomCategory) { 
-//	                    Integer newQuantity = productDto.getQuantity() - details.getQuantity();
-//	                    if (newQuantity < 0) {
-//	                        log.info("Not enough stock for productId: " + productId);
-//	                        throw new IllegalArgumentException("Insufficient stock for product ID: " + productId);
-//	                    }
-//	                    if (newQuantity <= productDto.getLowStock()) {
-//	                        alertMessage = "ALERT: Product '" + productDto.getName() + "' (ID: " + productDto.getId() + ") is low on stock. Remaining quantity: " + newQuantity;
-//	                        log.info(alertMessage);
-//	                    }
-//	                    productDto.setQuantity(newQuantity);
-//	                    productDao.updateProduct(productDto);
-//	                } else {
-//	                    log.info("Skipping quantity update for Custom category productId: " + productId);
-//	                }
-//	            } else {
-//	                log.info("Product not found for productId: " + productId);
-//	            }
-//	        } else {
-//	            log.info("ProductDto is null in TransactionDetailsListDto");
-//	        }
-//	    }
-//
-//	    transactionDto.setDateTime(LocalDateTime.now());
-//	    
-//	    return transactionDao.save(transactionDto, alertMessage);
-//	}
-	
 	public TransactionDto save(TransactionDto transactionDto, String alertMessage) {
 	    log.info("TransactionServiceBL.save() invoked.");
 	    
@@ -227,6 +182,7 @@ public class TransactionServiceBL {
 	    Map<String, Double> categoryTotals = new HashMap<>();
 	    Map<String, Double> overallPaymentMethodTotals = new HashMap<>();
 	    Map<String, Map<String, Double>> userPaymentDetails = new HashMap<>();
+	    Double totalBalanceAmount = 0.0;
 	    
 	    for (TransactionDto transaction : allTransactions) {
 	        String userName = transaction.getUserDto().getFirstName() + " " + transaction.getUserDto().getLastName();
@@ -245,6 +201,11 @@ public class TransactionServiceBL {
 	            userPaymentDetails
 	                .computeIfAbsent(userName, k -> new HashMap<>())
 	                .merge(methodName, amount, Double::sum);
+	        }
+	        
+	        // Add balance amount to total
+	        if (transaction.getBalanceAmount() != null) {
+	            totalBalanceAmount += transaction.getBalanceAmount();
 	        }
 	    }
 	    
@@ -265,6 +226,7 @@ public class TransactionServiceBL {
 	    response.put("userPaymentDetails", userPaymentSummary);
 	    response.put("totalTransactions", allTransactions.size());
 	    response.put("totalSales", categoryTotals.values().stream().mapToDouble(Double::doubleValue).sum());
+	    response.put("totalBalanceAmount", totalBalanceAmount);
 	    return response;
 	}
 
@@ -282,6 +244,7 @@ public class TransactionServiceBL {
 
         Map<String, Map<String, Object>> dateWiseTotals = new TreeMap<>();
         Double fullyTotalSales = 0.0;
+        Double totalBalanceAmount = 0.0;
 
         for (TransactionDto transaction : allTransactions) {
             LocalDate transactionDate = transaction.getDateTime().toLocalDate();
@@ -294,6 +257,7 @@ public class TransactionServiceBL {
                 put("userPaymentDetails", new HashMap<String, Map<String, Double>>());
                 put("totalSales", 0.0);
                 put("totalTransactions", 0);
+                put("balanceAmount", 0.0);
             }});
 
             Map<String, Object> dateTotals = dateWiseTotals.get(dateKey);
@@ -318,6 +282,13 @@ public class TransactionServiceBL {
                 userPaymentDetails.computeIfAbsent(userName, k -> new HashMap<>())
                         .merge(methodName, amount, Double::sum);
             }
+            
+            // Add balance amount to date totals and overall total
+            if (transaction.getBalanceAmount() != null) {
+                Double currentBalance = (Double) dateTotals.get("balanceAmount");
+                dateTotals.put("balanceAmount", currentBalance + transaction.getBalanceAmount());
+                totalBalanceAmount += transaction.getBalanceAmount();
+            }
         }
 
         Map<String, Object> response = new HashMap<>();
@@ -326,6 +297,7 @@ public class TransactionServiceBL {
         response.put("endDate", endDate);
         response.put("dateWiseTotals", dateWiseTotals);
         response.put("fullyTotalSales", fullyTotalSales);
+        response.put("totalBalanceAmount", totalBalanceAmount);
 
         return response;
     }

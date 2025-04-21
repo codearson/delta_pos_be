@@ -352,7 +352,7 @@ public class TransactionServiceImpl implements TransactionService {
 	            if (xReport != null) {
 	                log.info("X-Report generated successfully.");
 	                
-	                // Get banking and payout totals and counts
+	                // Get banking and pay out totals and counts
 	                Double bankingTotal = bankingServiceBL.getTotalBanking();
 	                Double payoutTotal = payoutServiceBL.getTotalPayout();
 	                Integer bankingCount = bankingServiceBL.getBankingCount(startDate, endDate);
@@ -362,21 +362,34 @@ public class TransactionServiceImpl implements TransactionService {
 	                Map<String, Double> paymentTotals = (Map<String, Double>) xReport.get("overallPaymentTotals");
 	                Double cashTotal = paymentTotals.getOrDefault("Cash", 0.0);
 	                
-	                // Calculate difference as remaining cash in till after banking and payout
-	                Double totalDeductions = bankingTotal + payoutTotal;
-	                Double difference = cashTotal - totalDeductions;
-	                
-	                // If difference is negative, set it to 0
-	                if (difference < 0) {
-	                    difference = 0.0;
+	                // Get balance amount total
+	                Double balanceTotal = (Double) xReport.get("totalBalanceAmount");
+	                if (balanceTotal == null) {
+	                    balanceTotal = 0.0;
 	                }
 	                
-	                // Add banking, payout, counts and difference to the response
+	                // Calculate difference
+	                Double difference;
+	                if (bankingTotal == 0.0 && payoutTotal == 0.0 && balanceTotal == 0.0) {
+	                    difference = 0.0;
+	                } else {
+	                    // Calculate difference as remaining cash in till after banking, pay out, and balance amount
+	                    Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
+	                    difference = cashTotal - totalDeductions;
+	                    
+	                    // If difference is negative, set it to 0
+	                    if (difference < 0) {
+	                        difference = 0.0;
+	                    }
+	                }
+	                
+	                // Add banking, pay out, counts, difference and balance amount to the response
 	                xReport.put("bankingTotal", bankingTotal);
 	                xReport.put("payoutTotal", payoutTotal);
 	                xReport.put("bankingCount", bankingCount);
 	                xReport.put("payoutCount", payoutCount);
 	                xReport.put("difference", difference);
+	                xReport.put("balanceTotal", balanceTotal);
 	                
 	                responseDto = serviceUtil.getServiceResponse(xReport);
 	            } else {
@@ -536,21 +549,34 @@ public class TransactionServiceImpl implements TransactionService {
 	                    }
 	                }
 	                
-	                // Calculate difference as remaining cash in till after banking and payout
-	                Double totalDeductions = bankingTotal + payoutTotal;
-	                Double difference = totalCash - totalDeductions;
-	                
-	                // If difference is negative, set it to 0
-	                if (difference < 0) {
-	                    difference = 0.0;
+	                // Get balance amount total
+	                Double balanceTotal = (Double) zReport.get("totalBalanceAmount");
+	                if (balanceTotal == null) {
+	                    balanceTotal = 0.0;
 	                }
 	                
-	                // Add banking, payout, counts and difference to the response
+	                // Calculate difference
+	                Double difference;
+	                if (bankingTotal == 0.0 && payoutTotal == 0.0 && balanceTotal == 0.0) {
+	                    difference = 0.0;
+	                } else {
+	                    // Calculate difference as remaining cash in till after banking, payout, and balance amount
+	                    Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
+	                    difference = totalCash - totalDeductions;
+	                    
+	                    // If difference is negative, set it to 0
+	                    if (difference < 0) {
+	                        difference = 0.0;
+	                    }
+	                }
+	                
+	                // Add banking, payout, counts, difference and balance amount to the response
 	                zReport.put("bankingTotal", bankingTotal);
 	                zReport.put("payoutTotal", payoutTotal);
 	                zReport.put("bankingCount", bankingCount);
 	                zReport.put("payoutCount", payoutCount);
 	                zReport.put("difference", difference);
+	                zReport.put("balanceTotal", balanceTotal);
 	                
 	                // Save to database
 	                SalesReportDto salesReportDto = transformToSalesReportDto(zReport);
@@ -614,13 +640,25 @@ public class TransactionServiceImpl implements TransactionService {
 	        }
 	    }
 	    
-	    // Calculate difference as remaining cash in till after banking and payout
-	    Double totalDeductions = bankingTotal + payoutTotal;
-	    Double difference = totalCash - totalDeductions;
+	    // Get balance amount total
+	    Double balanceTotal = (Double) zReport.get("totalBalanceAmount");
+	    if (balanceTotal == null) {
+	        balanceTotal = 0.0;
+	    }
 	    
-	    // If difference is negative, set it to 0
-	    if (difference < 0) {
+	    // Calculate difference
+	    Double difference;
+	    if (bankingTotal == 0.0 && payoutTotal == 0.0 && balanceTotal == 0.0) {
 	        difference = 0.0;
+	    } else {
+	        // Calculate difference as remaining cash in till after banking, payout, and balance amount
+	        Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
+	        difference = totalCash - totalDeductions;
+	        
+	        // If difference is negative, set it to 0
+	        if (difference < 0) {
+	            difference = 0.0;
+	        }
 	    }
 	    
 	    dto.setDifference(difference);
