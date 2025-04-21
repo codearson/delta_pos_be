@@ -55,6 +55,7 @@ public class TransactionTransformer implements BaseTransformer<Transaction,Trans
 			transactionDto.setGenerateDateTime(transaction.getGenerateDateTime());
 			transactionDto.setManualDiscount(transaction.getManualDiscount());
 			transactionDto.setEmployeeDiscount(transaction.getEmployeeDiscount());
+			transactionDto.setBalanceAmount(transaction.getBalanceAmount());
 		}
 		return transactionDto;
 	}
@@ -88,6 +89,7 @@ public class TransactionTransformer implements BaseTransformer<Transaction,Trans
 			transaction.setGenerateDateTime(transactionDto.getGenerateDateTime());
 			transaction.setManualDiscount(transactionDto.getManualDiscount());
 			transaction.setEmployeeDiscount(transactionDto.getEmployeeDiscount());
+			transaction.setBalanceAmount(transactionDto.getBalanceAmount());
 		}
 		return transaction;
 	}
