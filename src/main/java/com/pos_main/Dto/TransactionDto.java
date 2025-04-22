@@ -26,4 +26,5 @@ public class TransactionDto {
     private LocalDateTime generateDateTime;
     private Double manualDiscount;
     private Double employeeDiscount;
+    private Double balanceAmount;
 }

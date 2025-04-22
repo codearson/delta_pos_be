@@ -75,6 +75,28 @@ public class BankingServiceImpl implements BankingService{
 		}
 		return responseDto;
 	}
+	
+	@Override
+	public ResponseDto getTotalBanking() {
+		log.info("BankingServiceImpl.getTotalBanking() invoked");
+		ResponseDto responseDto = null;
+		try {
+			Double totalAmount = bankingServiceBL.getTotalBanking();
+			if (totalAmount != null) {
+				log.info("Retrieved total banking amount: {}", totalAmount);
+				responseDto = serviceUtil.getServiceResponse(totalAmount);
+			} else {
+				log.info("Unable to retrieve total banking amount.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_BANKING_TOTAL_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving total banking amount.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_BANKING_TOTAL_DETAILS);
+		}
+		return responseDto;
+	}
 
 	
 

@@ -264,6 +264,10 @@ public interface ApplicationMessageConstants {
         String EX_SEND_EMAIL = "ex.send.email";
         String ERR_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "err.get.all.page.supplier.details";
         String EX_RETRIEVE_ALL_PAGE_SUPPLIER_DETAILS = "ex.get.all.page.supplier.details";
+        String ERR_RETRIEVE_ALL_PAGE_TAX_DETAILS = "err.get.all.page.tax.details";
+        String EX_RETRIEVE_ALL_PAGE_TAX_DETAILS = "ex.get.all.page.tax.details";
+        String ERR_RETRIEVE_USER_LOGS_DETAILS = "err.get.all.page.user.logs.details";
+        String EX_RETRIEVE_USER_LOGS_DETAILS = "ex.get.all.page.user.logs.details";
         String ERR_SAVE_PRODUCT_DISCOUNT = "err.save.product.discount.details";
 		String EX_SAVE_PRODUCT_DISCOUNT = "ex.save.product.discount.details";
 		String ERR_UPDATE_PRODUCT_DISCOUNT = "err.update.product.discount.details";
@@ -280,5 +284,11 @@ public interface ApplicationMessageConstants {
 		String EX_UPDATE_PRODUCT_DISCOUNT_TYPE_STATUS = "ex.update.product.discount.type.status";
 		String ERR_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "err.get.all.page.product.discount.type.details";
 		String EX_RETRIEVE_PRODUCT_DISCOUNT_TYPE = "ex.get.all.page.product.discount.type.details";
+		String ERR_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST = "err.retrieve.all.transaction.details.list";
+		String EX_RETRIEVE_ALL_TRANSACTION_DETAILS_LIST = "ex.retrieve.all.transaction.details.list";
+		String ERR_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS = "err.retrieve.all.payout.total.details";
+		String EX_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS = "ex.retrieve.all.payout.total.details";
+		String ERR_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "err.retrieve.all.banking.total.details";
+		String EX_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "ex.retrieve.all.banking.total.details";
 	}
 }

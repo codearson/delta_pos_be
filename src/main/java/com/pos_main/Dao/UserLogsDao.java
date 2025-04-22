@@ -1,6 +1,9 @@
 package com.pos_main.Dao;
 
+import java.util.Map;
+
 import com.pos_main.Domain.UserLogs;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.UserLogsDto;
 
 /**
@@ -18,5 +21,7 @@ public interface UserLogsDao extends BaseDao<UserLogs>{
 	UserLogsDto login(UserLogsDto userLogsDto);
 	
 	UserLogsDto save(UserLogsDto userLogsDto);
+	
+	PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams);
 
 }

@@ -21,6 +21,7 @@ public class PayoutDto {
 	private PayoutCategoryDto payoutCategoryDto;
 	private LocalDateTime dateTime;
 	private UserDto userDto;
+	private LocalDateTime generatedDateTime;
 	private Boolean isActive;
 	
 }

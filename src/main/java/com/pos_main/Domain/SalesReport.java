@@ -44,5 +44,15 @@ public class SalesReport implements Serializable {
 	private Double fullyTotalSales;
 	@Column(name = "reportType")
 	private String reportType;
+	@Column(name = "banking")
+	private Double banking;
+	@Column(name = "bankingCount")
+	private Integer bankingCount;
+	@Column(name = "payout")
+	private Double payout;
+	@Column(name = "payoutCount")
+	private Integer payoutCount;
+	@Column(name = "difference")
+	private Double difference;
 
 }

@@ -14,4 +14,6 @@ public interface TransactionDetailsListService {
 	
 	ResponseDto getByTransactionId(Integer transactionId);
 	
+	ResponseDto getAll();
+	
 }

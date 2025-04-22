@@ -61,5 +61,7 @@ public class Transaction implements Serializable {
 	private Double manualDiscount;
     @Column(name = "employeeDiscount")
 	private Double employeeDiscount;
+    @Column(name = "balanceAmount")
+	private Double balanceAmount;
     
 }

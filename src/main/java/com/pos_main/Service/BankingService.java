@@ -18,6 +18,8 @@ public interface BankingService {
 	
 	public ResponseDto save(BankingDto bankingDto);
 	
+	public ResponseDto getTotalBanking();
+	
 }
 
 

@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.TaxDto;
 import com.pos_main.Service.TaxService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -60,4 +62,12 @@ public class TaxController {
         log.info("TaxController.getAll() invoked");
         return taxService.getAll();
     }
+    
+	@GetMapping("/getAllPage")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto getAllPageTax(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
+			WebRequest webRequest) {
+		log.info("TaxController.getAllPage() invoked.");
+		return taxService.getAllPageTax(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
 }

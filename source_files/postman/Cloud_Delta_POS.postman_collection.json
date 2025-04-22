@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "cee53c85-f689-43cf-84f0-d7a7293eb869",
+		"_postman_id": "6562de59-abf6-47b3-97bc-6282483a0bf2",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "9802460",
-		"_collection_link": "https://grey-spaceship-295309.postman.co/workspace/New-Team-Workspace~782a63dc-aca7-4d20-a281-4dd8d062cbff/collection/9802460-cee53c85-f689-43cf-84f0-d7a7293eb869?action=share&source=collection_link&creator=9802460"
+		"_exporter_id": "40720747"
 	},
 	"item": [
 		{
@@ -18,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMDQ5NTcwLCJleHAiOjE3NDAwNTMxNzB9.bMPnYNgtEnw9Qcc3dD2ehiW1lA9ypNBUYBbnsof3R9jbKnEuHgHoxX8pWtd45tOC",
 									"type": "string"
 								}
 							]
@@ -35,10 +34,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/register",
+							"raw": "https://deltaposbe-production.up.railway.app/user/register",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -59,7 +58,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM2NDM2ODk1LCJleHAiOjE3MzY0NDA0OTV9.SR4HwWVN4yhUns4LBwk8CXq848nA0zp1QfKY14O1on4wRIVNKV4pFg4QAn8JmmlV",
 									"type": "string"
 								}
 							]
@@ -76,10 +75,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/admin",
+							"raw": "https://deltaposbe-production.up.railway.app/user/admin",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -100,7 +99,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwb3MiLCJpYXQiOjE3MDgwMTIyMTMsInN1YiI6InZpbm9AZ21haWwuY29tIiwicm9sZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiZXhwIjoxNzA4MDE1ODEzfQ.RNwALgFZPCIP_hM89ubuoVo8H8h21gQKeIP6ggk_oOY",
 									"type": "string"
 								}
 							]
@@ -117,10 +116,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/user",
+							"raw": "https://deltaposbe-production.up.railway.app/user/user",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -141,7 +140,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3MjY1MTg3LCJleHAiOjE3MzcyNjg3ODd9.lz_f8jMddiQlrd2FOV2ERPjHeltGHeRFwPSTw-jZphfvOeSX_57GDCPRZjDtXj7C",
 									"type": "string"
 								}
 							]
@@ -149,10 +148,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/getByName?firstName=Lathusan",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getByName?firstName=Lathusan",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -179,7 +178,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDc4NTY2fQ.cQAZwhgQnNwGKp956cK6K3kF_ACOsU4xtzQo-FBFWF0Kbdg0-9Z571IaFGvyVQM5",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3Mjk3NjM1LCJleHAiOjE3MzczMDEyMzV9.ogEXUyLerIwJ3THMFSFVenjI-3UNaaSHwwZ9DOk5eA_fQnq9KlvkzW62iOCxzEz_",
 									"type": "string"
 								}
 							]
@@ -187,7 +186,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getById?id=5",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getById?id=2",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -202,7 +201,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "5"
+									"value": "2"
 								}
 							]
 						}
@@ -217,7 +216,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3MjE1MjE0LCJleHAiOjE3MzcyMTg4MTR9.MLwbERvGHxnhQeHs2efLX8w65jGLDpkEPS5oUoGpODbWf-izWO30F49NVzW_G9Sv",
 									"type": "string"
 								}
 							]
@@ -225,10 +224,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/getByRole?userRole=USER",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getByRole?userRole=USER",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -255,7 +254,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxOTU3NjM1fQ.ACm8wbnmDzrdnWwcO7GERVvu5jLQDXNqCYoFC1Av6D_TtEut0mCo8pTlop2zRBMd",
 									"type": "string"
 								}
 							]
@@ -264,7 +263,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Lathusan\",\r\n    \"lastName\": \"Thurairajah\",\r\n    \"password\": \"$2a$10$fje4amNbEEQfTvzYNMSPBOo3/fuz4eMIOZHJaLF4sknnwSa6yyNRO\",\r\n    \"address\": \"Jaffna\",\r\n    \"emailAddress\": \"lathu@gmail.com\",\r\n    \"mobileNumber\": \"076121266\",\r\n    \"isActive\": true,\r\n    \"userRoleDto\": {\r\n        \"id\": 1,\r\n        \"userRole\": \"ADMIN\",\r\n        \"isActive\": true\r\n    }            \r\n}",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Lathusan\",\r\n    \"lastName\": \"Thurairajah\",\r\n    \"password\": \"$2a$10$SqOLBggtIxXbBzWBzL8o2O9DmLlMMTA8SBANznAqGHEyfw9fybu7C\",\r\n    \"address\": \"Jaffna\",\r\n    \"emailAddress\": \"lathusanthurairajah@codearson.com\",\r\n    \"mobileNumber\": \"0761212608\",\r\n    \"isActive\": true,\r\n    \"branchDto\":{\r\n        \"id\": 1\r\n    },\r\n    \"userRoleDto\": {\r\n        \"id\": 1,\r\n        \"userRole\": \"ADMIN\",\r\n        \"isActive\": true\r\n    }            \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -272,10 +271,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/update",
+							"raw": "https://deltaposbe-production.up.railway.app/user/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -296,7 +295,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDc4NTY2fQ.cQAZwhgQnNwGKp956cK6K3kF_ACOsU4xtzQo-FBFWF0Kbdg0-9Z571IaFGvyVQM5",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3Mjk3NjM1LCJleHAiOjE3MzczMDEyMzV9.ogEXUyLerIwJ3THMFSFVenjI-3UNaaSHwwZ9DOk5eA_fQnq9KlvkzW62iOCxzEz_",
 									"type": "string"
 								}
 							]
@@ -304,7 +303,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/updateStatus?userId=4&status=0",
+							"raw": "https://deltaposbe-production.up.railway.app/user/updateStatus?userId=2&status=0",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -319,7 +318,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "4"
+									"value": "2"
 								},
 								{
 									"key": "status",
@@ -338,7 +337,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwNTAwNTEzfQ.EpL0gFLH6OcXhkp4_AHldyVS8xFFhSwm76zBSm-2kf7lY31fLjQks2MCt2l6IEfA",
 									"type": "string"
 								}
 							]
@@ -346,10 +345,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/getByEmailAddress?emailAddress=lathusanthurairajah@codearson.com",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getByEmailAddress?emailAddress=lathusanthurairajah@codearson.com",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -369,14 +368,14 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "getAllPage",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTc4MzMzLCJleHAiOjE3NDExODE5MzN9.dxF95f_AFu9ZTEGBWy3fzGcghhdML5IgsguM6tY20H2Nw0K832X71IaPPUIxNKFb",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxNjI3MzY2fQ.O_kZ6qbKZJ2MmYqu4PO0wO4Fd_h1td5RATgijIQYplYDmtFNOa2JhV1Uk5WkMnS2",
 									"type": "string"
 								}
 							]
@@ -384,10 +383,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getAll?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -426,10 +425,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/updatePassword?userId=4&password=Bavi123&changedByUserId=1",
+							"raw": "https://deltaposbe-production.up.railway.app/user/updatePassword?userId=1&password=Bavi123&changedByUserId=1",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -441,7 +440,7 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "4"
+									"value": "1"
 								},
 								{
 									"key": "password",
@@ -476,10 +475,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/userRole/save",
+							"raw": "https://deltaposbe-production.up.railway.app/userRole/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -487,6 +486,38 @@
 							"path": [
 								"userRole",
 								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTk4MDk0fQ.e1MapYFRgXfOjSAyOwf_QH88jkRJnc7GQRNNCW5VWn6yz7NmfhRB-ZEBw03Iv64W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/userRole/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"userRole",
+								"getAll"
 							]
 						}
 					},
@@ -515,10 +546,10 @@
 									}
 								},
 								"url": {
-									"raw": "https://grateful-playfulness-production.up.railway.app/auth/forgot-password",
+									"raw": "https://deltaposbe-production.up.railway.app/auth/forgot-password",
 									"protocol": "https",
 									"host": [
-										"grateful-playfulness-production",
+										"deltaposbe-production",
 										"up",
 										"railway",
 										"app"
@@ -546,10 +577,10 @@
 									}
 								},
 								"url": {
-									"raw": "https://grateful-playfulness-production.up.railway.app/auth/reset-password",
+									"raw": "https://deltaposbe-production.up.railway.app/auth/reset-password",
 									"protocol": "https",
 									"host": [
-										"grateful-playfulness-production",
+										"deltaposbe-production",
 										"up",
 										"railway",
 										"app"
@@ -579,10 +610,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/user/login",
+							"raw": "https://deltaposbe-production.up.railway.app/user/login",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -633,7 +664,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"vino@gmail.com\",\r\n    \"password\":\"Vino123\"\r\n}",
+							"raw": "{\r\n    \"username\":\"svinothini96s@gmail.com\",\r\n    \"password\":\"Vino123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -641,12 +672,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/user/login",
-							"protocol": "http",
+							"raw": "https://deltaposbe-production.up.railway.app/user/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "8080",
 							"path": [
 								"user",
 								"login"
@@ -668,7 +701,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDYwOTkyLCJleHAiOjE3Mzc0NjQ1OTJ9.e-M8vJACUl98th6YnWD9ej6B1xAEjjCLAWkSqcMdfkFFh2yeeQzFI0nbIcSLvPQ2",
 									"type": "string"
 								}
 							]
@@ -685,10 +718,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/save",
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -709,7 +742,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDYwOTkyLCJleHAiOjE3Mzc0NjQ1OTJ9.e-M8vJACUl98th6YnWD9ej6B1xAEjjCLAWkSqcMdfkFFh2yeeQzFI0nbIcSLvPQ2",
 									"type": "string"
 								}
 							]
@@ -726,10 +759,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/update",
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -750,7 +783,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3Mjk3NjM1LCJleHAiOjE3MzczMDEyMzV9.ogEXUyLerIwJ3THMFSFVenjI-3UNaaSHwwZ9DOk5eA_fQnq9KlvkzW62iOCxzEz_",
 									"type": "string"
 								}
 							]
@@ -758,10 +791,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -775,14 +808,14 @@
 					"response": []
 				},
 				{
-					"name": "getByName",
+					"name": "getAllPage",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3Mjk3NjM1LCJleHAiOjE3MzczMDEyMzV9.ogEXUyLerIwJ3THMFSFVenjI-3UNaaSHwwZ9DOk5eA_fQnq9KlvkzW62iOCxzEz_",
 									"type": "string"
 								}
 							]
@@ -790,10 +823,52 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/getByName?productCategoryName=Books",
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productCategory",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3MDY4NjczLCJleHAiOjE3MzcwNzIyNzN9.csY-AeeEKpMlYY4rZ7q6Ph_z6pKp92zK7u-O4fZufA-xTXYc7RpymFrLoljN3Kfx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getByName?productCategoryName=Books",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -820,7 +895,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDkyNDE0LCJleHAiOjE3Mzc0OTYwMTR9.C4tX87ncLAE9-av7q9RTI8OsWFqrsOOjZGX6ldNTRUoHtXBwOygQOsMm3YUylWRU",
 									"type": "string"
 								}
 							]
@@ -828,10 +903,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/updateStatus?id=1&status=1",
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/updateStatus?id=1&status=1",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -853,38 +928,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "getAllPage",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productCategory/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"productCategory",
-								"getAllPage"
-							],
-							"query": [
-								{
-									"key": "pageNumber",
-									"value": "1"
-								},
-								{
-									"key": "pageSize",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -899,7 +942,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM2NTE5NTg3LCJleHAiOjE3MzY1MjMxODd9.1xWusec1rLZ4JSYUaqIDRJAbyWkctI-LKTT-mpEoGS_9M2o_uV1MJgVia08lTGak",
 									"type": "string"
 								}
 							]
@@ -916,10 +959,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/save",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -940,7 +983,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDYwOTkyLCJleHAiOjE3Mzc0NjQ1OTJ9.e-M8vJACUl98th6YnWD9ej6B1xAEjjCLAWkSqcMdfkFFh2yeeQzFI0nbIcSLvPQ2",
 									"type": "string"
 								}
 							]
@@ -957,10 +1000,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/update",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -981,7 +1024,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJzdmlub3RoaW5pOTZzQGdtYWlsLmNvbSIsImlhdCI6MTc0MjgzODEwMH0.jzOY5kpI2xHAX9u8Mp1xVTx9XCBd0P4OIkf3cLhtovgrCf0_4PsIn-JEFEDcYjG1",
 									"type": "string"
 								}
 							]
@@ -996,10 +1039,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1030,7 +1073,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3MDY4NjczLCJleHAiOjE3MzcwNzIyNzN9.csY-AeeEKpMlYY4rZ7q6Ph_z6pKp92zK7u-O4fZufA-xTXYc7RpymFrLoljN3Kfx",
 									"type": "string"
 								}
 							]
@@ -1038,10 +1081,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/getByName?branchName=KFC",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/getByName?branchName=KFC",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1068,7 +1111,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NzAyNzQ4LCJleHAiOjE3Mzc3MDYzNDh9.jBa9Q5fMETZRoAgnOkfLCpTYSTuS1wb6HujxgMpKxkTnOsu-Si9D5PKK2KXmh_Vu",
 									"type": "string"
 								}
 							]
@@ -1076,10 +1119,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/updateStatus?branchId=5&status=0",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/updateStatus?branchId=5&status=0",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1110,7 +1153,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MTE3MjY4fQ.grSRbBpw-PLqUQpKk0r5a6WLt7wFfqvSdLhZYs6hCCKDtVbWsmE5ptsoB9r9yttX",
 									"type": "string"
 								}
 							]
@@ -1118,10 +1161,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1135,6 +1178,28 @@
 					"response": []
 				},
 				{
+					"name": "getAllBySBUid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/branch/getAllBySBUid",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"branch",
+								"getAllBySBUid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "getById",
 					"request": {
 						"auth": {
@@ -1142,7 +1207,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MTE3MjY4fQ.grSRbBpw-PLqUQpKk0r5a6WLt7wFfqvSdLhZYs6hCCKDtVbWsmE5ptsoB9r9yttX",
 									"type": "string"
 								}
 							]
@@ -1150,10 +1215,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/branch/getById?id=1",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/getById?id=KFC",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1165,7 +1230,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "KFC"
 								}
 							]
 						}
@@ -1185,7 +1250,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQyMzEwODY4fQ.l_z_Jk-iQBbAOfH-s31hx8uxcX7lkPeItxnmJ2PAg5dJxQ8WBsz8EvwvYlvtw5qt",
 									"type": "string"
 								}
 							]
@@ -1194,7 +1259,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Popcorn Chicken\",\r\n    \"barcode\":\"48392056789\",\r\n    \"pricePerUnit\":\t2100.00,\r\n    \"taxDto\":{\r\n        \"id\":3\r\n    },\r\n    \"isActive\":1,\r\n    \"productCategoryDto\":{\r\n        \"id\":4\r\n    },\r\n    \"expiryDate\": \"2025-12-31T23:59:59\",\r\n    \"lowStock\":12,\r\n    \"purchasePrice\":1680,\r\n    \"quantity\":47\r\n}",
+							"raw": "{\r\n    \"name\":\"Shopping Bags\",\r\n    \"barcode\":\"48392056788\",\r\n    \"pricePerUnit\":\t100.00,\r\n    \"taxDto\":{\r\n        \"id\":3\r\n    },\r\n    \"isActive\":1,\r\n    \"productCategoryDto\":{\r\n        \"id\":9\r\n    },\r\n    \"expiryDate\": \"2025-12-31T23:59:59\",\r\n    \"lowStock\":12,\r\n    \"purchasePrice\":1680,\r\n    \"quantity\":100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1202,10 +1267,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/save",
+							"raw": "https://deltaposbe-production.up.railway.app/product/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1226,7 +1291,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwNDc3NTE3fQ.1YvY37C3XVafby9hsyRV3H9b_iakjKJIlBrcgCwhhmxH5xBpLpXFFVSpK7H5tFwX",
 									"type": "string"
 								}
 							]
@@ -1234,10 +1299,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/product/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1268,7 +1333,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3MDY4NjczLCJleHAiOjE3MzcwNzIyNzN9.csY-AeeEKpMlYY4rZ7q6Ph_z6pKp92zK7u-O4fZufA-xTXYc7RpymFrLoljN3Kfx",
 									"type": "string"
 								}
 							]
@@ -1276,10 +1341,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/product/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1300,7 +1365,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0Mzc3NjM4fQ.sbohhaeaEUka4x4x7W23l4IzmGk_9abvp3MuM0o02uOYnQX2-n9rEqgf-YDv5rZt",
 									"type": "string"
 								}
 							]
@@ -1309,7 +1374,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 11,\r\n    \"name\":\"Seven Up\",\r\n    \"barcode\":\"50583841666\",\r\n    \"pricePerUnit\":2.15,\r\n    \"taxDto\":{\r\n        \"id\":2\r\n    },\r\n    \"isActive\":1,\r\n    \"productCategoryDto\":{\r\n        \"id\":1\r\n    },\r\n    \"expiryDate\": \"2025-07-24T23:59:59\",\r\n    \"lowStock\":12,\r\n    \"purchasePrice\":1680,\r\n    \"quantity\":47\r\n}",
+							"raw": "{\r\n    \"id\": 25,\r\n    \"name\":\"Shopping Bags-?\",\r\n    \"barcode\":\"11\",\r\n    \"pricePerUnit\":100,\r\n    \"taxDto\":{\r\n        \"id\":1\r\n    },\r\n    \"isActive\":0,\r\n    \"productCategoryDto\":{\r\n        \"id\":8\r\n    },\r\n    \"expiryDate\": \"2025-07-24T23:59:59\",\r\n    \"lowStock\":12,\r\n    \"purchasePrice\":1680,\r\n    \"quantity\":47\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1317,10 +1382,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/update",
+							"raw": "https://deltaposbe-production.up.railway.app/product/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1341,7 +1406,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MzA1ODQwfQ.dpOI6paGIL3w8d1Yg_dpndOApE-Oy-n_DW9l9pbBzz4LxGaozxjhDl8Wz78ee3Gx",
 									"type": "string"
 								}
 							]
@@ -1349,10 +1414,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/getByName?name=Banana",
+							"raw": "https://deltaposbe-production.up.railway.app/product/getByName?name=Shopping Bags-?",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1364,7 +1429,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Banana"
+									"value": "Shopping Bags-?"
 								}
 							]
 						}
@@ -1379,7 +1444,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQyNDkxMjk3fQ.iuA7kjbg1y0u9yVyNGWufkB7N-6KIuRrOfT_k0xSbIXO0ZMmEbAJ6MW88bkAcHfn",
 									"type": "string"
 								}
 							]
@@ -1387,10 +1452,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/updateStatus?productId=4&status=1",
+							"raw": "https://deltaposbe-production.up.railway.app/product/updateStatus?productId=7&status=1",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1402,7 +1467,7 @@
 							"query": [
 								{
 									"key": "productId",
-									"value": "4"
+									"value": "7"
 								},
 								{
 									"key": "status",
@@ -1421,7 +1486,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDYyODQ3LCJleHAiOjE3Mzc0NjY0NDd9.0S6l-KhpAkiZrJNXBVQ6KyK2gaB5ZnCbc-Q48kHXAAbnyVNgwmjgs1Fx44asOGDL",
 									"type": "string"
 								}
 							]
@@ -1429,10 +1494,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/getByBarcode?barcode=57283669266",
+							"raw": "https://deltaposbe-production.up.railway.app/product/getByBarcode?barcode=57283669266",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1459,7 +1524,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5MjkzNzU4LCJleHAiOjE3MzkyOTczNTh9.OYS2U_NPytYXLY01RNdKyArKb1aMM319Q8BuYGDHcJG9jcoPJ0kwUVSOi8iyCE2P",
 									"type": "string"
 								}
 							]
@@ -1467,10 +1532,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/product/getById?id=1",
+							"raw": "https://deltaposbe-production.up.railway.app/product/getById?id=1",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1492,6 +1557,52 @@
 			]
 		},
 		{
+			"name": "Discount",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDYwOTkyLCJleHAiOjE3Mzc0NjQ1OTJ9.e-M8vJACUl98th6YnWD9ej6B1xAEjjCLAWkSqcMdfkFFh2yeeQzFI0nbIcSLvPQ2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discountPercentage\" : 25,\r\n    \"isActive\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/discount/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"discount",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Tax",
 			"item": [
 				{
@@ -1502,7 +1613,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTc4NzUyLCJleHAiOjE3NDExODIzNTJ9.N4QloiOvToDBrkLNm5P3FiiTm2nOZqyqbSpWuiYwgq3nHdR4CgZK0lJwS_p-IEAX",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNTE0MzYyfQ.bKMeFhJNXbNk3cvLkraPfVc0ZZc9ZHgo4eYxIaF3otMy75RHiduPxqjNqV-kx_lD",
 									"type": "string"
 								}
 							]
@@ -1511,7 +1622,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"taxPersentage\" : 25,\r\n    \"isActive\" : 1\r\n}",
+							"raw": "{\r\n    \"taxPercentage\" : 42,\r\n    \"isActive\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1519,10 +1630,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/tax/save",
+							"raw": "https://deltaposbe-production.up.railway.app/tax/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1543,16 +1654,16 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTc4NzUyLCJleHAiOjE3NDExODIzNTJ9.N4QloiOvToDBrkLNm5P3FiiTm2nOZqyqbSpWuiYwgq3nHdR4CgZK0lJwS_p-IEAX",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNTE0MzYyfQ.bKMeFhJNXbNk3cvLkraPfVc0ZZc9ZHgo4eYxIaF3otMy75RHiduPxqjNqV-kx_lD",
 									"type": "string"
 								}
 							]
 						},
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"taxPersentage\" : 25,\r\n    \"isActive\" : 1\r\n}",
+							"raw": "{\r\n    \"id\":23,\r\n    \"taxPercentage\" : 42,\r\n    \"isActive\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1560,10 +1671,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/tax/update",
+							"raw": "https://deltaposbe-production.up.railway.app/tax/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1579,10 +1690,41 @@
 				{
 					"name": "updateStatus",
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNTE0MzYyfQ.bKMeFhJNXbNk3cvLkraPfVc0ZZc9ZHgo4eYxIaF3otMy75RHiduPxqjNqV-kx_lD",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "https://deltaposbe-production.up.railway.app/tax/updateStatus?id=1&status=0",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"tax",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
 						}
 					},
 					"response": []
@@ -1595,7 +1737,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTc4NzUyLCJleHAiOjE3NDExODIzNTJ9.N4QloiOvToDBrkLNm5P3FiiTm2nOZqyqbSpWuiYwgq3nHdR4CgZK0lJwS_p-IEAX",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNTE2MzUzfQ.fvLDcQ-Bj7yzuCjVZy6Bn6TYOIs__Bp28Vhfu4vyh9y_xi0dsvF7MQAzLgR-_zdz",
 									"type": "string"
 								}
 							]
@@ -1603,10 +1745,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/tax/getByName?taxPercentage=5",
+							"raw": "https://deltaposbe-production.up.railway.app/tax/getByName?taxPercentage=89.4",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1618,7 +1760,7 @@
 							"query": [
 								{
 									"key": "taxPercentage",
-									"value": "5"
+									"value": "89.4"
 								}
 							]
 						}
@@ -1628,13 +1770,23 @@
 				{
 					"name": "getAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNTE2MzUzfQ.fvLDcQ-Bj7yzuCjVZy6Bn6TYOIs__Bp28Vhfu4vyh9y_xi0dsvF7MQAzLgR-_zdz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/tax/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/tax/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1642,6 +1794,48 @@
 							"path": [
 								"tax",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNTE2MzUzfQ.fvLDcQ-Bj7yzuCjVZy6Bn6TYOIs__Bp28Vhfu4vyh9y_xi0dsvF7MQAzLgR-_zdz",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/tax/getByPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"tax",
+								"getByPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -1660,7 +1854,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDA3OTU0fQ.BhSEsbCBaGOCvSXR0jQ8HKX_UknODIBLBw8PdB4EHP5VmGO8oxTsa-bHUothtXuv",
 									"type": "string"
 								}
 							]
@@ -1668,10 +1862,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/customer/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/customer/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1702,7 +1896,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDI0MDk4fQ.rNBw-WBzzzn-p3PVfXhOR5JsTLilabFmOdxtRBrt08uI2AV_wk7yduERywmGLHD9",
 									"type": "string"
 								}
 							]
@@ -1710,17 +1904,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/customer/getBySearch?name=Nivethanan",
+							"raw": "https://deltaposbe-production.up.railway.app/customer/getByName?name=Nivethanan",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
 								"customer",
-								"getBySearch"
+								"getByName"
 							],
 							"query": [
 								{
@@ -1740,7 +1934,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwNDA2NDg2LCJleHAiOjE3NDA0MTAwODZ9.2N1zLlev6orAlXg7nI62KjeFH_Y9j51PqW6sQdlPeFcgozCPe1-L1n2J2vx3bQrI",
 									"type": "string"
 								}
 							]
@@ -1757,10 +1951,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/customer/save",
+							"raw": "https://deltaposbe-production.up.railway.app/customer/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1781,7 +1975,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NDE0MjgwLCJleHAiOjE3Mzk0MTc4ODB9.NCZhbX9kDtd3_7sp5ekft0iIyKk9276XsgrPnOVNEN95QwgrGbkvhol3Z7OttP8E",
 									"type": "string"
 								}
 							]
@@ -1789,10 +1983,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/customer/getById?id=2",
+							"raw": "https://deltaposbe-production.up.railway.app/customer/getById?id=2",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1805,6 +1999,159 @@
 								{
 									"key": "id",
 									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDA3OTU0fQ.BhSEsbCBaGOCvSXR0jQ8HKX_UknODIBLBw8PdB4EHP5VmGO8oxTsa-bHUothtXuv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/customer/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"customer",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDE0MDcxfQ.Uq6PWOt4L_Dln9DDknFWkeQb2du18dJy3ivnugXYtwF8dsCgfckCyJtSrBkZGyQG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 5,\r\n    \"name\" : \"Thuvaragan\",\r\n    \"mobileNumber\" : \"0775868178\",\r\n    \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/customer/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"customer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByMobileNumber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDIwNDAzfQ.a3Y72US5KuQNgGeWQ6edK6nVeSyOpCCo98mlVrIX00iIdVSml-Q57LpNWcJz-B5F",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/customer/getByMobileNumber?mobileNumber=0775868178",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"customer",
+								"getByMobileNumber"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "0775868178"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDIyMTc3fQ.OMDpLxroJeNV4f-BWiOp8ELBDF1hXodTBQBEffjzaSGKNrz2Q5R2vCa1K8h-xWvZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/customer/updateStatus?customerId=11&status=0",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"customer",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "11"
+								},
+								{
+									"key": "status",
+									"value": "0"
 								}
 							]
 						}
@@ -1824,7 +2171,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDY1Mjg2LCJleHAiOjE3Mzc0Njg4ODZ9.HFE_wp_WT2xhR74uDSjrdAToFl-yQA7sQhzoNriyp46_KyVq5kn0CzVApcQ2Myx7",
 									"type": "string"
 								}
 							]
@@ -1841,10 +2188,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/save",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1865,7 +2212,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDY1Mjg2LCJleHAiOjE3Mzc0Njg4ODZ9.HFE_wp_WT2xhR74uDSjrdAToFl-yQA7sQhzoNriyp46_KyVq5kn0CzVApcQ2Myx7",
 									"type": "string"
 								}
 							]
@@ -1882,10 +2229,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/update",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1906,7 +2253,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDQyOTI1LCJleHAiOjE3Mzc0NDY1MjV9.5BqH3U5g1Qx87SxaH1DuNQaP4NmK25zbAWYTCDbjyre2VlleUMVtE_9tZy1V8Ymh",
 									"type": "string"
 								}
 							]
@@ -1914,10 +2261,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/updateStatus?supplierId=1&status=0",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/updateStatus?supplierId=1&status=0",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1943,23 +2290,13 @@
 				{
 					"name": "getByName",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/getByName?name=Packaging Masters",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/getByName?name=Packaging Masters",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -1986,7 +2323,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NDkyNDE0LCJleHAiOjE3Mzc0OTYwMTR9.C4tX87ncLAE9-av7q9RTI8OsWFqrsOOjZGX6ldNTRUoHtXBwOygQOsMm3YUylWRU",
 									"type": "string"
 								}
 							]
@@ -1994,10 +2331,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/getById?id=1",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/getById?id=1",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2024,7 +2361,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NDQ1MjAxLCJleHAiOjE3Mzk0NDg4MDF9.Rm4b0nBwRo-s34BM5EcB0mmeKWaIsD_ACDehj7YH8siD5a08aUkhQKu73-eN6zMr",
 									"type": "string"
 								}
 							]
@@ -2032,10 +2369,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/supplier/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2043,6 +2380,48 @@
 							"path": [
 								"supplier",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NDQ1MjAxLCJleHAiOjE3Mzk0NDg4MDF9.Rm4b0nBwRo-s34BM5EcB0mmeKWaIsD_ACDehj7YH8siD5a08aUkhQKu73-eN6zMr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"supplier",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -2061,7 +2440,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3NjEwOTUwLCJleHAiOjE3Mzc2MTQ1NTB9.VRnIL8cQ3wpErWy-E0WSL3KrUJhxsM0iXWeCGRAtQs03WLWTSnpv1RpdpGvdplEL",
 									"type": "string"
 								}
 							]
@@ -2078,10 +2457,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/paymentMethod/save",
+							"raw": "https://deltaposbe-production.up.railway.app/paymentMethod/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2107,7 +2486,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5MzUyMjg0LCJleHAiOjE3MzkzNTU4ODR9.qccGHeKtda3ciBtJ0dFQ1geNtkCnRTQJVZUMNLOO3ZWT8M01b0Nl8x21oUXmakIN",
 									"type": "string"
 								}
 							]
@@ -2124,10 +2503,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/save",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2148,7 +2527,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5MzUyNTY5LCJleHAiOjE3MzkzNTYxNjl9.S2psNtDM2bmCJ_pDUk_FJB85VPdfNcFzNW8EA6sHGT1g3ADDaf3ayd3zLdMM5nCm",
 									"type": "string"
 								}
 							]
@@ -2156,10 +2535,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/updateStatus?stockId=1&status=0",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/updateStatus?stockId=1&status=0",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2190,7 +2569,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5MzgxNDU2LCJleHAiOjE3MzkzODUwNTZ9.6MFIeK3k_a2lvk0H45ALDgHaaoZNuLjGPrB88ZZag7arGrmH7PiXigdu06dPI0Vv",
 									"type": "string"
 								}
 							]
@@ -2207,10 +2586,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/update",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2231,7 +2610,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA2ODU2fQ.FDSFtQdFmW7zAAAtRzmHSaWrLLUbMzvaWNVj6BXdF0wlltR9sT1r7cWc8Yuyrfyj",
 									"type": "string"
 								}
 							]
@@ -2256,14 +2635,14 @@
 					"response": []
 				},
 				{
-					"name": "getById",
+					"name": "getAllPage",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA2ODU2fQ.FDSFtQdFmW7zAAAtRzmHSaWrLLUbMzvaWNVj6BXdF0wlltR9sT1r7cWc8Yuyrfyj",
 									"type": "string"
 								}
 							]
@@ -2271,10 +2650,52 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/getById?id=1",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"stock",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NDQ2MTYzLCJleHAiOjE3Mzk0NDk3NjN9.Ip3QVkDOkbUp1qN3xTnl5UVaF_AUuRfdN9P1ZRs3e6HC07bsqZM8KhkfHbW1tQGl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getById?id=1",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2301,7 +2722,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMDcxOTE5LCJleHAiOjE3NDAwNzU1MTl9.FVnijxhQZR5r4tqagW84GuquApIEYFt6RRT_2Gmdil3O4qA0rtz_lEa_6wIWs_5O",
 									"type": "string"
 								}
 							]
@@ -2309,10 +2730,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/getByProductId?productId=2",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getByProductId?productId=2",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2332,14 +2753,14 @@
 					"response": []
 				},
 				{
-					"name": "getByQuantityRange",
+					"name": "getByProductCategoryId",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMDcxOTE5LCJleHAiOjE3NDAwNzU1MTl9.FVnijxhQZR5r4tqagW84GuquApIEYFt6RRT_2Gmdil3O4qA0rtz_lEa_6wIWs_5O",
 									"type": "string"
 								}
 							]
@@ -2347,10 +2768,48 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/getByQuantityRange?minQuantity=50&maxQuantity=150",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getByProductCategoryId?productCategoryId=2",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"stock",
+								"getByProductCategoryId"
+							],
+							"query": [
+								{
+									"key": "productCategoryId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByQuantityRange",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMTQxMzM4LCJleHAiOjE3NDAxNDQ5Mzh9.cxjtUEg1nE9IJyQ4EikQWt10Ugn1bkVFDh9byMnSaqYnXPa8JAamZj0bDLiRn2eJ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getByQuantityRange?minQuantity=50&maxQuantity=150",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2372,44 +2831,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "getByProductCategoryId",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTc4NzUyLCJleHAiOjE3NDExODIzNTJ9.N4QloiOvToDBrkLNm5P3FiiTm2nOZqyqbSpWuiYwgq3nHdR4CgZK0lJwS_p-IEAX",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/stock/getByProductCategoryId?productCategoryId=1",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"stock",
-								"getByProductCategoryId"
-							],
-							"query": [
-								{
-									"key": "productCategoryId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -2424,7 +2845,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQyMzEwODY4fQ.l_z_Jk-iQBbAOfH-s31hx8uxcX7lkPeItxnmJ2PAg5dJxQ8WBsz8EvwvYlvtw5qt",
 									"type": "string"
 								}
 							]
@@ -2433,7 +2854,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"status\": \"Completed\",\r\n    \"isActive\":1,\r\n    \"branchDto\":{\r\n        \"id\":3\r\n    },\r\n    \"shopDetailsDto\":{\r\n        \"id\":1\r\n    },\r\n    \"customerDto\":{\r\n        \"id\":2\r\n    },\r\n    \"userDto\":{\r\n        \"id\":1\r\n    },\r\n    \"transactionDetailsList\": [\r\n        {\r\n            \"productDto\":{\r\n                \"id\":1\r\n            },\r\n            \"quantity\": 2,\r\n            \"discount\": 50.00\r\n        },\r\n        {\r\n            \"productDto\":{\r\n                \"id\":2\r\n            },\r\n            \"quantity\": 2,\r\n            \"discount\": 100.00\r\n        },\r\n        {\r\n            \"productDto\":{\r\n                \"id\":5\r\n            },\r\n            \"quantity\": 3,\r\n            \"discount\": 50.00\r\n        }\r\n    ],\r\n    \"transactionPaymentMethod\": [\r\n        {\r\n            \"paymentMethodDto\":{\r\n                \"id\":1\r\n            },\r\n            \"amount\": 4000.00,\r\n            \"isActive\":1\r\n        }\r\n    ]\r\n}\r\n",
+							"raw": "{\r\n    \"status\": \"Completed\",\r\n    \"isActive\": 1,\r\n    \"branchDto\": {\r\n        \"id\": 1\r\n    },\r\n    \"shopDetailsDto\": {\r\n        \"id\": 1\r\n    },\r\n    \"customerDto\": {\r\n        \"id\": 3\r\n    },\r\n    \"userDto\": {\r\n        \"id\": 2\r\n    },\r\n    \"totalAmount\": 2000.00,\r\n    \"manualDiscount\":10.00,\r\n    \"employeeDiscount\":10.00,\r\n    \"transactionDetailsList\": [\r\n        {\r\n            \"productDto\": {\r\n                \"id\": 9\r\n            },\r\n            \"quantity\": 1,\r\n            \"unitPrice\": 400.00,\r\n            \"discount\": 50.00\r\n        },\r\n        {\r\n            \"productDto\": {\r\n                \"id\": 13\r\n            },\r\n            \"quantity\": 1,\r\n            \"unitPrice\": 400.00,\r\n            \"discount\": 10.00\r\n        },\r\n        {\r\n            \"productDto\": {\r\n                \"id\": 11\r\n            },\r\n            \"quantity\": 1,\r\n            \"unitPrice\": 400.00,\r\n            \"discount\": 50.00\r\n        }\r\n    ],\r\n    \"transactionPaymentMethod\": [\r\n        {\r\n            \"paymentMethodDto\": {\r\n                \"id\": 2\r\n            },\r\n            \"amount\": 4000.00,\r\n            \"isActive\": 1\r\n        }\r\n    ],\r\n    \"transactionEmployee\":[\r\n        {\r\n            \"userDto\":{\r\n                \"id\":2\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2441,10 +2862,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/save",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2465,7 +2886,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NTEzNzY3LCJleHAiOjE3Mzk1MTczNjd9.ZU9JYh1Xp5weA59JOG3yT5vqnf83D9SPtjKxVrxpJBtMXanhPsJy3e818bnH9D-6",
 									"type": "string"
 								}
 							]
@@ -2482,10 +2903,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/update",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2506,7 +2927,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NzExMjg1LCJleHAiOjE3Mzk3MTQ4ODV9.5aB4tLhybzZiTmBPWgaWzeqZuOynKjJymgaM-zzTxmRm4cEUOqOWHE0UbY_xTF22",
 									"type": "string"
 								}
 							]
@@ -2514,10 +2935,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByBranchId?branchId=3",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByBranchId?branchId=3",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2537,14 +2958,14 @@
 					"response": []
 				},
 				{
-					"name": "getByPaymentMethodId",
+					"name": "getById",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NzExMjg1LCJleHAiOjE3Mzk3MTQ4ODV9.5aB4tLhybzZiTmBPWgaWzeqZuOynKjJymgaM-zzTxmRm4cEUOqOWHE0UbY_xTF22",
 									"type": "string"
 								}
 							]
@@ -2552,10 +2973,86 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByPaymentMethodId?paymentMethodId=3",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getById?id=2",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NzExMjg1LCJleHAiOjE3Mzk3MTQ4ODV9.5aB4tLhybzZiTmBPWgaWzeqZuOynKjJymgaM-zzTxmRm4cEUOqOWHE0UbY_xTF22",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByUserId?userId=2",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction",
+								"getByUserId"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByPaymentMethodId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NzEwNDk5LCJleHAiOjE3Mzk3MTQwOTl9.9YnyK2bWt1tWIerpmC4HfQHmvkm4YLOkwv15AXuINrskeNRVeDkRcdvEe9tMXuTs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByPaymentMethodId?paymentMethodId=3",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2577,37 +3074,10 @@
 				{
 					"name": "getByStatus",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByStatus?isActive=1",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"transaction",
-								"getByStatus"
-							],
-							"query": [
-								{
-									"key": "isActive",
-									"value": "1"
-								}
-							]
+							"raw": ""
 						}
 					},
 					"response": []
@@ -2620,7 +3090,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMTU0MzQ1LCJleHAiOjE3NDAxNTc5NDV9.EHhlmhd6Ppync-Av5tBbopeLbxw-VFVtug6GMUeoNE0SRbJTAv0jTI_Ez4nqoN5j",
 									"type": "string"
 								}
 							]
@@ -2628,10 +3098,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByDateRange?startDate=2025-02-13T00:00:00&endDate=2025-02-17T00:00:00",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByDateRange?startDate=2025-02-13T00:00:00&endDate=2025-02-17T00:00:00",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2657,23 +3127,13 @@
 				{
 					"name": "getByProductId",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByProductId?productId=3",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByProductId?productId=3",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2700,7 +3160,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwNDU5NTk4LCJleHAiOjE3NDA0NjMxOTh9.ZV1lQpoGAjNH2T4a8P2sl-fXc8IkmIjME6ucFutEt1B3Hmz_RNwCMHWfoqFcXBEU",
 									"type": "string"
 								}
 							]
@@ -2708,10 +3168,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByCustomerId?customerId=3",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getByCustomerId?customerId=3",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2731,25 +3191,14 @@
 					"response": []
 				},
 				{
-					"name": "getById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getByUserId",
+					"name": "getXReport",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTc4MzMzLCJleHAiOjE3NDExODE5MzN9.dxF95f_AFu9ZTEGBWy3fzGcghhdML5IgsguM6tY20H2Nw0K832X71IaPPUIxNKFb",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQyMjgxMjUyfQ.vJUIpojHkTwetp84Tp8XQjnf4ONJK8pdaYmdEUZDb4lVasT69WzjzHQg7OkEqmqw",
 									"type": "string"
 								}
 							]
@@ -2757,22 +3206,32 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/transaction/getByUserId?userId=1",
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/xReport?userId=4",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
 								"transaction",
-								"getByUserId"
+								"xReport"
 							],
 							"query": [
 								{
 									"key": "userId",
-									"value": "1"
+									"value": "4"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}
@@ -2780,12 +3239,39 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "getZReport",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/zReport?userId=2",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction",
+								"zReport"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
 						}
 					},
 					"response": []
@@ -2798,7 +3284,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMTY0ODU4fQ.8KzhPx6ngN0pBI5xmIPKsJcGyNji2TdY5elAHu8gcsHuceue53Zopcd2YVn7m8sR",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNDI0MjExfQ.XDfLslXI31W5J3r1lEAfocOOiU2CDFACTBbYfwK19r606tPr2Cq8sCoMyV4Cywfk",
 									"type": "string"
 								}
 							]
@@ -2831,6 +3317,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNDI0MjExfQ.XDfLslXI31W5J3r1lEAfocOOiU2CDFACTBbYfwK19r606tPr2Cq8sCoMyV4Cywfk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction",
+								"getAll"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2845,7 +3363,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMDc0NzMxLCJleHAiOjE3NDAwNzgzMzF9.wChz90efMcV1Byb-JbNfjzCIA3VLMP-Dh_48fBLVyVhNUhFEfVuJeTV0lqipK3BP",
 									"type": "string"
 								}
 							]
@@ -2862,10 +3380,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/userLogs/login",
+							"raw": "https://deltaposbe-production.up.railway.app/userLogs/login",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2891,7 +3409,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5OTY4ODU4LCJleHAiOjE3Mzk5NzI0NTh9.sICXbLcNGeDjGHdY2r6J-B0YbYlbxC2CMO_lxBtOssR3dUR2RH_kjYT8LH5Vspiw",
 									"type": "string"
 								}
 							]
@@ -2908,10 +3426,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/shopDetails/save",
+							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2925,15 +3443,95 @@
 					"response": []
 				},
 				{
-					"name": "getAllPage",
+					"name": "getAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/shopDetails/getAllPage",
+							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"shopDetails",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getByName?name=KFC",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"shopDetails",
+								"getByName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "KFC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2941,6 +3539,16 @@
 							"path": [
 								"shopDetails",
 								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -2959,7 +3567,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMTIzNTMzLCJleHAiOjE3NDExMjcxMzN9.TZbOlXsLARqlJidVweFOEOLx-ssST3IJP5Gj9VoT0u5y23gT7XP1No4JViu7-Ngm",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5OTc1Njc2LCJleHAiOjE3Mzk5NzkyNzZ9.A4KSDTaHGfrT8ghpLnrMKBc6SgmkcDW2oBp_FfvXl9AnkbONVMVVlOawR5cM032d",
 									"type": "string"
 								}
 							]
@@ -2976,10 +3584,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/shifts/save",
+							"raw": "https://deltaposbe-production.up.railway.app/shifts/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -2993,15 +3601,25 @@
 					"response": []
 				},
 				{
-					"name": "getAllPage",
+					"name": "getAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/shifts/getAllPage?pageNumber=1&PageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/shifts/getAllPage?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -3016,9 +3634,179 @@
 									"value": "1"
 								},
 								{
-									"key": "PageSize",
+									"key": "pageSize",
 									"value": "10"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase List",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/save?barcode=48200198765",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"purchaseList",
+								"save"
+							],
+							"query": [
+								{
+									"key": "barcode",
+									"value": "48200198765"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDMwMDUyfQ.LQxUqGvOxxe7YKbCjVWeO4Klg_WYTi5Ka57YNgsdK0TtISVl7Ib9xq3we1w0SbI6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"purchaseList",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMDMwMDUyfQ.LQxUqGvOxxe7YKbCjVWeO4Klg_WYTi5Ka57YNgsdK0TtISVl7Ib9xq3we1w0SbI6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"purchaseList",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMjc3OTcwfQ.wCa3zWrfDgM68hynBj9Y9-urNVxRcDd41n9qhB0zmarbxqRLskw_PusX9xWx7OTt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/deleteAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"purchaseList",
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/deleteById",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"purchaseList",
+								"deleteById"
 							]
 						}
 					},
@@ -3054,10 +3842,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/country/save",
+							"raw": "https://deltaposbe-production.up.railway.app/country/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -3086,10 +3874,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/country/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/country/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -3105,7 +3893,7 @@
 			]
 		},
 		{
-			"name": "Staff Leave",
+			"name": "SalesReport",
 			"item": [
 				{
 					"name": "save",
@@ -3115,7 +3903,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQyNDAyMjAyfQ.Jnb_cGR1qPoX4Ok5aI8gJyFQs8iGp0SxV451fL36Razy5wn1aGtMATg9f-bqJ2wH",
 									"type": "string"
 								}
 							]
@@ -3124,7 +3912,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"startDate\": \"2025-04-03\",\r\n    \"endDate\": \"2025-04-07\",\r\n    \"description\": \"Sick\",\r\n    \"isActive\":1,\r\n    \"userDto\":{\r\n        \"id\":1\r\n    }\r\n}",
+							"raw": "{\r\n  \"reportGeneratedBy\": \"Vinothini Sathithyaseelan\",\r\n  \"startDate\": \"2025-02-11T22:58:11\",\r\n  \"endDate\": \"2025-03-19T17:20:41.3855765\",\r\n  \"fullyTotalSales\": 26800.0,\r\n  \"salesDateDetails\": [\r\n    {\r\n      \"salesDate\": \"2025-02-11\",\r\n      \"totalTransactions\": 2,\r\n      \"totalSales\": 10025.0,\r\n      \"categoryTotals\": [\r\n        {\r\n          \"categoryName\": \"Soft Drinks\",\r\n          \"categoryTotal\": 3600.0\r\n        },\r\n        {\r\n          \"categoryName\": \"Snacks\",\r\n          \"categoryTotal\": 6425.0\r\n        }\r\n      ],\r\n      \"overallPaymentTotals\": [\r\n        {\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 6000.0\r\n        },\r\n        {\r\n          \"paymentMethod\": \"Card\",\r\n          \"paymentTotal\": 4175.0\r\n        }\r\n      ],\r\n      \"userPaymentDetails\": [\r\n        {\r\n          \"userName\": \"Vinothini Sathithyaseelan\",\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 3000.0\r\n        },\r\n        {\r\n          \"userName\": \"Vinothini Sathithyaseelan\",\r\n          \"paymentMethod\": \"Card\",\r\n          \"paymentTotal\": 2175.0\r\n        },\r\n        {\r\n          \"userName\": \"Lathusan Thurairajah\",\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 3000.0\r\n        },\r\n        {\r\n          \"userName\": \"Lathusan Thurairajah\",\r\n          \"paymentMethod\": \"Card\",\r\n          \"paymentTotal\": 2000.0\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"salesDate\": \"2025-02-12\",\r\n      \"totalTransactions\": 1,\r\n      \"totalSales\": 7575.0,\r\n      \"categoryTotals\": [\r\n        {\r\n          \"categoryName\": \"Soft Drinks\",\r\n          \"categoryTotal\": 450.0\r\n        },\r\n        {\r\n          \"categoryName\": \"Burgers\",\r\n          \"categoryTotal\": 7125.0\r\n        }\r\n      ],\r\n      \"overallPaymentTotals\": [\r\n        {\r\n          \"paymentMethod\": \"Cheque\",\r\n          \"paymentTotal\": 2000.0\r\n        },\r\n        {\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 2975.0\r\n        }\r\n      ],\r\n      \"userPaymentDetails\": [\r\n        {\r\n          \"userName\": \"Lathusan Thurairajah\",\r\n          \"paymentMethod\": \"Cheque\",\r\n          \"paymentTotal\": 2000.0\r\n        },\r\n        {\r\n          \"userName\": \"Lathusan Thurairajah\",\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 2975.0\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"salesDate\": \"2025-02-16\",\r\n      \"totalTransactions\": 1,\r\n      \"totalSales\": 9200.0,\r\n      \"categoryTotals\": [\r\n        {\r\n          \"categoryName\": \"Soft Drinks\",\r\n          \"categoryTotal\": 2050.0\r\n        },\r\n        {\r\n          \"categoryName\": \"Burgers\",\r\n          \"categoryTotal\": 7150.0\r\n        }\r\n      ],\r\n      \"overallPaymentTotals\": [\r\n        {\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 4000.0\r\n        }\r\n      ],\r\n      \"userPaymentDetails\": [\r\n        {\r\n          \"userName\": \"Lathusan Thurairajah\",\r\n          \"paymentMethod\": \"Cash\",\r\n          \"paymentTotal\": 4000.0\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3132,16 +3920,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/staffLeave/save",
+							"raw": "https://deltaposbe-production.up.railway.app/salesReport/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"staffLeave",
+								"salesReport",
 								"save"
 							]
 						}
@@ -3149,14 +3937,14 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "getAllByXReport",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJzdmlub3RoaW5pOTZzQGdtYWlsLmNvbSIsImlhdCI6MTc0MjkwMTExNX0.4Ehgs4FCGst5ArjWbseWKFYVn_WsJmTW-EwC0AF0jPXF_iX8JSbVPyMEjvlW4dte",
 									"type": "string"
 								}
 							]
@@ -3164,17 +3952,95 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/staffLeave/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/salesReport/getAllByXReports",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"staffLeave",
-								"getAll"
+								"salesReport",
+								"getAllByXReports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllByZReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJzdmlub3RoaW5pOTZzQGdtYWlsLmNvbSIsImlhdCI6MTc0MjkwMTExNX0.4Ehgs4FCGst5ArjWbseWKFYVn_WsJmTW-EwC0AF0jPXF_iX8JSbVPyMEjvlW4dte",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/salesReport/getAllByZReports",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"salesReport",
+								"getAllByZReports"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ManagerToggle",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action\": \"Non Scan Product\",\r\n    \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"managerToggle",
+								"save"
 							]
 						}
 					},
@@ -3188,7 +4054,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
 									"type": "string"
 								}
 							]
@@ -3197,7 +4063,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"createdOn\": \"2025-03-20\",\r\n    \"startDate\": \"2025-04-03\",\r\n    \"endDate\": \"2025-04-07\",\r\n    \"description\": \"Casual\",\r\n    \"isActive\":1,\r\n    \"userDto\":{\r\n        \"id\":1\r\n    }\r\n}",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"action\": \"Manual Discount2\",\r\n    \"isActive\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3205,16 +4071,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/staffLeave/update",
+							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"staffLeave",
+								"managerToggle",
 								"update"
 							]
 						}
@@ -3229,7 +4095,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
 									"type": "string"
 								}
 							]
@@ -3237,16 +4103,446 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/staffLeave/updateStatus?id=1&status=1",
+							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/updateStatus?id=3&status=0",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"staffLeave",
+								"managerToggle",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"managerToggle",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/managerToggle/getByName?action=Manual Discount",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"managerToggle",
+								"getByName"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "Manual Discount"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee Discount",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userDto\": {\r\n    \"id\": 2\r\n  },\r\n  \"discount\": 10.5,\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/employeeDiscount/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"employeeDiscount",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 3,\r\n  \"userDto\": {\r\n    \"id\": 1\r\n  },\r\n  \"discount\": 20,\r\n  \"isActive\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/employeeDiscount/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"employeeDiscount",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzNzc4MDYzfQ.Nh031jdpti3yDaFPP7LRK_miAEDdzbslD524DinI21-YoSh7T9Yxlx-vgCUHhAsv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/employeeDiscount/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"employeeDiscount",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NonScanProduct",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"nonScanProduct",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"nonScanProduct",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nonScanProduct\": \"Waterproof Beach Bag\",\r\n    \"icon\": \"🏖️\",\r\n    \"price\": 20.0,\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"nonScanProduct",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"nonScanProduct\": \"Shopping Bagss\",\r\n  \"icon\": \"🛍️\",\r\n  \"price\": 25.00,\r\n  \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"nonScanProduct",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/getByName?nonScanProduct=Shopping Bags",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"nonScanProduct",
+								"getByName"
+							],
+							"query": [
+								{
+									"key": "nonScanProduct",
+									"value": "Shopping Bags"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/nonScanProduct/updateStatus?id=1&status=1",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"nonScanProduct",
 								"updateStatus"
 							],
 							"query": [
@@ -3269,44 +4565,41 @@
 			"name": "Payout",
 			"item": [
 				{
-					"name": "getAll",
+					"name": "save",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/payout/getAll",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"payout",
-								"getAll"
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateStatus",
-					"request": {
-						"method": "PUT",
+						},
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 150,\r\n  \"payoutCategoryDto\": {\r\n    \"id\": 1\r\n  },\r\n  \"userDto\": {\r\n    \"id\": 2\r\n  },\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/payout/updateStatus",
+							"raw": "https://deltaposbe-production.up.railway.app/payout/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
 								"payout",
-								"updateStatus"
+								"save"
 							]
 						}
 					},
@@ -3315,13 +4608,32 @@
 				{
 					"name": "update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n  \"amount\": 150,\r\n  \"payoutCategoryDto\": {\r\n    \"id\": 1\r\n  },\r\n  \"userDto\": {\r\n    \"id\": 2\r\n  },\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/payout/update",
+							"raw": "https://deltaposbe-production.up.railway.app/payout/update",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -3335,26 +4647,67 @@
 					"response": []
 				},
 				{
-					"name": "save",
+					"name": "updateStatus",
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "https://deltaposbe-production.up.railway.app/payout/updateStatus?id=1&status=0",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"payout",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "getAllPage",
+					"name": "getAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/payout/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/payout/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -3362,6 +4715,38 @@
 							"path": [
 								"payout",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/payout/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"payout",
+								"getAllPage"
 							],
 							"query": [
 								{
@@ -3376,11 +4761,43 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getTotalPayout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODIxNzA4fQ.begYOv-G7qodxxGKBo8gHBnawwchUHpqPXA3ZfVsbpxfXhovnSNMk2OD5xJzEwbw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/payout/getTotalPayout",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"payout",
+								"getTotalPayout"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
-			"name": "Product Discount Type",
+			"name": "PayoutCategory",
 			"item": [
 				{
 					"name": "save",
@@ -3390,7 +4807,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
 									"type": "string"
 								}
 							]
@@ -3399,7 +4816,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type\": \"Cash\",\r\n    \"isActive\": true\r\n}",
+							"raw": "{\r\n    \"payoutCategory\":\"sample\",\r\n    \"isActive\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3407,16 +4824,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscountType/save",
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"productDiscountType",
+								"payoutCategory",
 								"save"
 							]
 						}
@@ -3431,7 +4848,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
 									"type": "string"
 								}
 							]
@@ -3440,7 +4857,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type\": \"Cash\",\r\n    \"isActive\": true\r\n}",
+							"raw": "{\r\n    \"id\":1,\r\n    \"payoutCategory\":\"sample\",\r\n    \"isActive\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3448,17 +4865,17 @@
 							}
 						},
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscountType/update",
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/save",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"productDiscountType",
-								"update"
+								"payoutCategory",
+								"save"
 							]
 						}
 					},
@@ -3472,7 +4889,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
 									"type": "string"
 								}
 							]
@@ -3480,16 +4897,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscountType/getAll",
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getAll",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"productDiscountType",
+								"payoutCategory",
 								"getAll"
 							]
 						}
@@ -3504,7 +4921,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQzMDA3NzQ1fQ.OUt265xIQLw0d8zO2vJvABDSFuZ5sdUqKSg9JPfDLUwpC6NWGGf53JW_9YDsWyxY",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
 									"type": "string"
 								}
 							]
@@ -3512,145 +4929,16 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscountType/updateStatus?id=1&status=1",
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/updateStatus?id=1&status=0",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
 							],
 							"path": [
-								"productDiscountType",
-								"updateStatus"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "1"
-								},
-								{
-									"key": "status",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Product Discount",
-			"item": [
-				{
-					"name": "save",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzIxNjc4fQ.uaXwqqwAgS_fX3lZev88Xtw6gzWa2nWgHXBSYWV8H_llCL142TW1uafkUK77Z23x",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"discount\" : 25,\r\n    \"quantity\" : 2,\r\n    \"endDate\" : \"2025-04-15\",\r\n    \"isActive\" : 1,\r\n    \"productDiscountTypeDto\": {\r\n        \"id\": 1\r\n    },\r\n    \"productDto\": {\r\n        \"id\": 1\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscount/save",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"productDiscount",
-								"save"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzIxNjc4fQ.uaXwqqwAgS_fX3lZev88Xtw6gzWa2nWgHXBSYWV8H_llCL142TW1uafkUK77Z23x",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"discount\" : 25,\r\n    \"quantity\" : 3,\r\n    \"endDate\" : \"2025-04-15\",\r\n    \"isActive\" : 1,\r\n    \"productDiscountTypeDto\": {\r\n        \"id\": 1\r\n    },\r\n    \"productDto\": {\r\n        \"id\": 1\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscount/update",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"productDiscount",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateStatus",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzIxNjc4fQ.uaXwqqwAgS_fX3lZev88Xtw6gzWa2nWgHXBSYWV8H_llCL142TW1uafkUK77Z23x",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscount/updateStatus?id=1&status=0",
-							"protocol": "https",
-							"host": [
-								"grateful-playfulness-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"productDiscount",
+								"payoutCategory",
 								"updateStatus"
 							],
 							"query": [
@@ -3675,7 +4963,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzIxNjc4fQ.uaXwqqwAgS_fX3lZev88Xtw6gzWa2nWgHXBSYWV8H_llCL142TW1uafkUK77Z23x",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
 									"type": "string"
 								}
 							]
@@ -3683,10 +4971,536 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://grateful-playfulness-production.up.railway.app/productDiscount/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getAll?pageNumber=1&pageSize=10",
 							"protocol": "https",
 							"host": [
-								"grateful-playfulness-production",
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"payoutCategory",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getByName?payoutCategory=sample",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"payoutCategory",
+								"getByName"
+							],
+							"query": [
+								{
+									"key": "payoutCategory",
+									"value": "sample"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banking",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0NzQwMDI1fQ.2RNZ9bH5HsCqQsJ6_OciM6a3E2PSCZMJo1_Df-B57W7pUzh5Oy8E_H4oV5ENqNLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 250.50,\r\n  \"userDto\": {\r\n    \"id\": 3\r\n  },\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/banking/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"banking",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTotalBanking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODIxNzA4fQ.begYOv-G7qodxxGKBo8gHBnawwchUHpqPXA3ZfVsbpxfXhovnSNMk2OD5xJzEwbw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/banking/getTotalBanking",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"banking",
+								"getTotalBanking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/banking/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"banking",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Detail List",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transactionDetailsList/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transactionDetailsList",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByTransactionId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transactionDetailsList/getByTransactionId?transactionId=2",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transactionDetailsList",
+								"getByTransactionId"
+							],
+							"query": [
+								{
+									"key": "transactionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Employee",
+			"item": [
+				{
+					"name": "getByTransactionId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transactionEmployee/getByTransactionId?transactionId=2",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transactionEmployee",
+								"getByTransactionId"
+							],
+							"query": [
+								{
+									"key": "transactionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Payment Method",
+			"item": [
+				{
+					"name": "getByTransactionId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transactionPaymentMethod/getByTransactionId?transactionId=2",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transactionPaymentMethod",
+								"getByTransactionId"
+							],
+							"query": [
+								{
+									"key": "transactionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AISales",
+			"item": [
+				{
+					"name": "predict",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/aiSales/predict",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"aiSales",
+								"predict"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductDiscount",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"discount\": 10.0,\r\n  \"quantity\": 100,\r\n  \"endDate\": \"2025-12-31\",\r\n  \"isActive\": true,\r\n  \"productDiscountTypeDto\": {\r\n    \"id\":1\r\n  },\r\n  \"productDto\": {\r\n    \"id\":1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscount",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"discount\": 10.0,\r\n  \"quantity\": 100,\r\n  \"endDate\": \"2025-12-31\",\r\n  \"isActive\": true,\r\n  \"productDiscountTypeDto\": {\r\n    \"id\":1\r\n  },\r\n  \"productDto\": {\r\n    \"id\":1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscount",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/updateStatus?id=1&status=0",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscount",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/getAllPage?pageNumber=0&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
 								"up",
 								"railway",
 								"app"
@@ -3698,11 +5512,421 @@
 							"query": [
 								{
 									"key": "pageNumber",
-									"value": "1"
+									"value": "0"
 								},
 								{
 									"key": "pageSize",
 									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductDiscountType",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"Percentage\",\r\n  \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscountType",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"type\": \"Fixed\",\r\n  \"isActive\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscountType",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/updateStatus?id=1&status=false",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscountType",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscountType/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"productDiscountType",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StaffLeave",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createdOn\": \"2025-04-18\",\r\n    \"startDate\": \"2025-04-20\",\r\n    \"endDate\": \"2025-04-22\",\r\n    \"description\": \"Vacation\",\r\n    \"status\": \"PENDING\",\r\n    \"isActive\": 1,\r\n    \"userDto\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"createdOn\": \"2025-04-18\",\r\n    \"startDate\": \"2025-04-20\",\r\n    \"endDate\": \"2025-04-22\",\r\n    \"description\": \"Vacation\",\r\n    \"status\": \"PENDING\",\r\n    \"isActive\": 1,\r\n    \"userDto\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/updateStatus?id=1&status=0",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/getAllPage?pageNumber=0&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/sendEmail?to=recipient@example.com&subject=Test%20Email&body=Hello%20World",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"staffLeave",
+								"sendEmail"
+							],
+							"query": [
+								{
+									"key": "to",
+									"value": "recipient@example.com"
+								},
+								{
+									"key": "subject",
+									"value": "Test%20Email"
+								},
+								{
+									"key": "body",
+									"value": "Hello%20World"
 								}
 							]
 						}

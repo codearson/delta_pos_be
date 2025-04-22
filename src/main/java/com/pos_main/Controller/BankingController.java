@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @CrossOrigin(origins = "*")
 @RequestMapping("banking")
 public class BankingController {
-
+	
 	@Autowired
 	BankingService bankingService;
 	
@@ -44,6 +44,12 @@ public class BankingController {
 			WebRequest webRequest) {
 		log.info("BankingController.getAll() invoked.");
 		return bankingService.getAllPage(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
+	
+	@GetMapping("/getTotalBanking")
+	public ResponseDto getTotalBanking() {
+		log.info("BankingController.getTotalBanking() invoked");
+		return bankingService.getTotalBanking();
 	}
 	
 }

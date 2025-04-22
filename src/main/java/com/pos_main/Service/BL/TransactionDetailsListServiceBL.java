@@ -22,4 +22,9 @@ public class TransactionDetailsListServiceBL {
 	    return transactionDetailsListDao.getByTransactionId(transactionId);
 	}
 	
+	public List<TransactionDetailsListDto> getAll() {
+	    log.info("TransactionDetailsListServiceBL.getAll() invoked");
+	    return transactionDetailsListDao.getAll();
+	}
+	
 }

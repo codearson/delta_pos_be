@@ -1,11 +1,13 @@
 package com.pos_main.Service.BL;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.UserLogsDao;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.UserLogsDto;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,4 +42,9 @@ public class UserLogsServiceBL {
         log.info("UserLogsServiceBL.save() invoked.");
         return userLogsDao.login(userLogsDto);
     }
+	
+	public PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams) {
+		log.info("UserLogsServiceBL.getAllPageUserLogs()invoked");
+		return userLogsDao.getAllPageUserLogs(pageNumber, pageSize, searchParams);
+	}
 }
