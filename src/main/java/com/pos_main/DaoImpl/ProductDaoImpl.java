@@ -57,27 +57,33 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
 
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams, Boolean status) {
 		log.info("ProductDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Product> allProductList = null;
-		int recordCount = 0;
-		String countString = "SELECT COUNT(*) FROM product";
+
+		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
+		criteria.add(Restrictions.eq("product.isActive", status));
+		
+		criteria.addOrder(Order.desc("id"));
+		
+		String countString = "SELECT COUNT(*) FROM product WHERE is_active = " + (status ? "1" : "0");
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+		
 		if (pageSize == 0) {
 			pageSize = count;
 		}
-		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
-		criteria.addOrder(Order.asc("id"));
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
+		
 		allProductList = criteria.list();
-		recordCount = allProductList.size();
+		
 		if (allProductList != null && !allProductList.isEmpty()) {
 			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allProductList, pageNumber, pageSize, count);
-			paginatedResponseDto.setPayload(allProductList.stream().map(Invoice -> {
-				return productTransformer.transform(Invoice);
-			}).collect(Collectors.toList()));
+			paginatedResponseDto.setPayload(allProductList.stream()
+					.map(product -> productTransformer.transform(product))
+					.collect(Collectors.toList()));
 		}
 		return paginatedResponseDto;
 	}
@@ -87,7 +93,8 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
 	public List<ProductDto> getAllProducts() {
 		log.info("ProductDaoImpl.getAllProducts() invoked");
 		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
-		criteria.addOrder(Order.asc("id"));
+		criteria.add(Restrictions.eq("product.isActive", true));
+		criteria.addOrder(Order.desc("id"));
 		List<ProductDto> productDtoList = null;
 		List<Product> productList = (List<Product>) criteria.list();
 		if (productList != null && !productList.isEmpty()) {

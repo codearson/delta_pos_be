@@ -20,6 +20,8 @@ import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Map;
+
 /**
  * Feb 17, 2024 
  * 10:32:16 PM
@@ -44,9 +46,9 @@ public class ProductController {
 	
 	@GetMapping("/getAllPage")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status) {
 		log.info("ProductController.getAll() invoked.");
-		return productService.getAll(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return productService.getAll(pageNumber, pageSize, Map.of(), status);
 	}
 	
 	@GetMapping("/getAll")
