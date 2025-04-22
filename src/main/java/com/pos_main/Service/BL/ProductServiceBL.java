@@ -32,9 +32,9 @@ public class ProductServiceBL {
 		return productDao.save(productDto);
 	}
 
-	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams, Boolean status) {
 		log.info("ProductServiceBL.getAll()invoked");
-		return productDao.getAll(pageNumber, pageSize, searchParams);
+		return productDao.getAll(pageNumber, pageSize, searchParams, status	);
 	}
 
 	public List<ProductDto> getAllProducts() {
