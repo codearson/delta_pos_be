@@ -72,7 +72,6 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
 		log.info("ProductDiscountDaoImpl.getAllPage() invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
-		List<ProductDiscount> allProductDiscountList;
 
 		String countString = "SELECT COUNT(*) FROM product_discount";
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
@@ -84,7 +83,17 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 		Criteria criteria = getCurrentSession().createCriteria(ProductDiscount.class);
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
-		allProductDiscountList = criteria.list();
+
+		@SuppressWarnings("unchecked")
+		List<ProductDiscount> allProductDiscountList = criteria.list();
+
+		// Update isActive if endDate has passed
+		for (ProductDiscount pd : allProductDiscountList) {
+			if (pd.getEndDate() != null && pd.getEndDate().isBefore(LocalDate.now())) {
+				pd.setIsActive(false);
+				saveOrUpdate(pd); // Make sure this properly updates the DB
+			}
+		}
 
 		if (allProductDiscountList != null && !allProductDiscountList.isEmpty()) {
 			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allProductDiscountList, pageNumber,
@@ -92,6 +101,8 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 			paginatedResponseDto.setPayload(allProductDiscountList.stream().map(productDiscountTransformer::transform)
 					.collect(Collectors.toList()));
 		}
+
 		return paginatedResponseDto;
 	}
+
 }
