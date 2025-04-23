@@ -3349,6 +3349,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getCashTotal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/transaction/getCashTotal?userId=2",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction",
+								"getCashTotal"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -3995,6 +4023,38 @@
 							"path": [
 								"salesReport",
 								"getAllByZReports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllByZReportsPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/salesReport/getAllByZReportsPage?pageNumber=1&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"salesReport",
+								"getAllByZReportsPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},

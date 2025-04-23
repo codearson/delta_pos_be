@@ -3179,6 +3179,42 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getCashTotal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1NDI3Nzc4fQ.DQXN05HWC4aGl41ejO65kgGVP7FoyLDdAuQeWWLza0tsnAyWiGDIyHu4hlqibhsf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transaction/getCashTotal?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"getCashTotal"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -3791,6 +3827,46 @@
 							"path": [
 								"salesReport",
 								"getAllByZReports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllByZReportsPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJzdmlub3RoaW5pOTZzQGdtYWlsLmNvbSIsImlhdCI6MTc0MjkwMTExNX0.4Ehgs4FCGst5ArjWbseWKFYVn_WsJmTW-EwC0AF0jPXF_iX8JSbVPyMEjvlW4dte",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/salesReport/getAllByZReportsPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"salesReport",
+								"getAllByZReportsPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
