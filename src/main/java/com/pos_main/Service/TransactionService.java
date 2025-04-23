@@ -44,4 +44,5 @@ public interface TransactionService {
 	
 	public ResponseDto getAllPageTransaction(int pageNumber, int pageSize, Map<String, String> searchParameters);
 	
+	public ResponseDto getCashTotal(Integer userId);
 }

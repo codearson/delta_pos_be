@@ -137,4 +137,10 @@ public class TransactionController {
 		return transactionService.getAllPageTransaction(pageNumber, pageSize,
 				HttpReqRespUtils.getSearchParameters(webRequest));
 	}
+	
+	@GetMapping("/getCashTotal")
+	public ResponseDto getCashTotal(@RequestParam("userId") Integer userId) {
+		log.info("TransactionController.getCashTotal() invoked with userId: {}", userId);
+		return transactionService.getCashTotal(userId);
+	}
 }

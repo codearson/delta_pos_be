@@ -369,18 +369,10 @@ public class TransactionServiceImpl implements TransactionService {
 	                }
 	                
 	                // Calculate difference
-	                Double difference;
-	                if (bankingTotal == 0.0 && payoutTotal == 0.0 && balanceTotal == 0.0) {
-	                    difference = 0.0;
-	                } else {
-	                    // Calculate difference as remaining cash in till after banking, pay out, and balance amount
+	                Double difference = cashTotal;
+	                if (bankingTotal != 0.0 || payoutTotal != 0.0 || balanceTotal != 0.0) {
 	                    Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
 	                    difference = cashTotal - totalDeductions;
-	                    
-	                    // If difference is negative, set it to 0
-	                    if (difference < 0) {
-	                        difference = 0.0;
-	                    }
 	                }
 	                
 	                // Add banking, pay out, counts, difference and balance amount to the response
@@ -418,7 +410,7 @@ public class TransactionServiceImpl implements TransactionService {
 	    dto.setFullyTotalSales((Double) xReport.get("totalSales"));
 	    dto.setReportType("xReport");
 
-	    // Get banking and payout totals and counts
+	    // Get banking and pay out totals and counts
 	    Double bankingTotal = bankingServiceBL.getTotalBanking();
 	    Double payoutTotal = payoutServiceBL.getTotalPayout();
 	    
@@ -426,7 +418,7 @@ public class TransactionServiceImpl implements TransactionService {
 	    Integer bankingCount = bankingServiceBL.getBankingCount(dto.getStartDate(), dto.getEndDate());
 	    Integer payoutCount = payoutServiceBL.getPayoutCount(dto.getStartDate(), dto.getEndDate());
 	    
-	    // Set banking and payout data
+	    // Set banking and pay out data
 	    dto.setBanking(bankingTotal);
 	    dto.setPayout(payoutTotal);
 	    dto.setBankingCount(bankingCount);
@@ -436,8 +428,8 @@ public class TransactionServiceImpl implements TransactionService {
 	    Map<String, Double> paymentTotals = (Map<String, Double>) xReport.get("overallPaymentTotals");
 	    Double cashTotal = paymentTotals.getOrDefault("Cash", 0.0);
 	    
-	    // Calculate difference as remaining cash in till after banking and payout
-	    Double totalDeductions = bankingTotal + payoutTotal;
+	    // Calculate difference
+	    Double totalDeductions = bankingTotal + payoutTotal + (Double) xReport.get("totalBalanceAmount");
 	    Double difference = cashTotal - totalDeductions;
 	    
 	    // If difference is negative, set it to 0
@@ -556,18 +548,10 @@ public class TransactionServiceImpl implements TransactionService {
 	                }
 	                
 	                // Calculate difference
-	                Double difference;
-	                if (bankingTotal == 0.0 && payoutTotal == 0.0 && balanceTotal == 0.0) {
-	                    difference = 0.0;
-	                } else {
-	                    // Calculate difference as remaining cash in till after banking, payout, and balance amount
+	                Double difference = totalCash;
+	                if (bankingTotal != 0.0 || payoutTotal != 0.0 || balanceTotal != 0.0) {
 	                    Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
 	                    difference = totalCash - totalDeductions;
-	                    
-	                    // If difference is negative, set it to 0
-	                    if (difference < 0) {
-	                        difference = 0.0;
-	                    }
 	                }
 	                
 	                // Add banking, payout, counts, difference and balance amount to the response
@@ -616,7 +600,7 @@ public class TransactionServiceImpl implements TransactionService {
 	    dto.setFullyTotalSales((Double) zReport.get("fullyTotalSales"));
 	    dto.setReportType("zReport");
 
-	    // Get banking and payout totals and counts
+	    // Get banking and pay out totals and counts
 	    Double bankingTotal = bankingServiceBL.getTotalBanking();
 	    Double payoutTotal = payoutServiceBL.getTotalPayout();
 	    
@@ -624,7 +608,7 @@ public class TransactionServiceImpl implements TransactionService {
 	    Integer bankingCount = bankingServiceBL.getBankingCount(dto.getStartDate(), dto.getEndDate());
 	    Integer payoutCount = payoutServiceBL.getPayoutCount(dto.getStartDate(), dto.getEndDate());
 	    
-	    // Set banking and payout data
+	    // Set banking and pay out data
 	    dto.setBanking(bankingTotal);
 	    dto.setPayout(payoutTotal);
 	    dto.setBankingCount(bankingCount);
@@ -647,18 +631,15 @@ public class TransactionServiceImpl implements TransactionService {
 	    }
 	    
 	    // Calculate difference
-	    Double difference;
-	    if (bankingTotal == 0.0 && payoutTotal == 0.0 && balanceTotal == 0.0) {
-	        difference = 0.0;
-	    } else {
-	        // Calculate difference as remaining cash in till after banking, payout, and balance amount
+	    Double difference = totalCash;
+	    if (bankingTotal != 0.0 || payoutTotal != 0.0 || balanceTotal != 0.0) {
 	        Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
 	        difference = totalCash - totalDeductions;
-	        
-	        // If difference is negative, set it to 0
-	        if (difference < 0) {
-	            difference = 0.0;
-	        }
+	    }
+	    
+	    // If difference is negative, set it to 0
+	    if (difference < 0) {
+	        difference = 0.0;
 	    }
 	    
 	    dto.setDifference(difference);
@@ -735,6 +716,70 @@ public class TransactionServiceImpl implements TransactionService {
 			log.error("Exception occurs while retrieving All Transaction details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_TRANSACTION_DETAILS);
+		}
+		return responseDto;
+	}
+
+	@Override
+	public ResponseDto getCashTotal(Integer userId) {
+		log.info("TransactionServiceImpl.getCashTotal() invoked with userId: {}", userId);
+		ResponseDto responseDto = null;
+		try {
+			Map<String, Object> lastTransactionInfo = transactionServiceBL.getLastTransactionInfo();
+			LocalDateTime endDate = LocalDateTime.now();
+			LocalDateTime startDate;
+
+			if (lastTransactionInfo != null) {
+				if (transactionDao.areAllGenerateDateTimesNull()) {
+					log.info("All generateDateTime values are null, using dateTime of transaction ID 1");
+					startDate = transactionDao.getDateTimeForTransactionIdOne();
+					if (startDate == null) {
+						log.warn("No transaction found with ID 1, using first transaction dateTime");
+						startDate = transactionServiceBL.getFirstTransactionDateTime();
+					}
+				} else {
+					log.info("Using the last non-null generateDateTime as startDate");
+					startDate = transactionDao.getLastGenerateDateTime();
+					if (startDate == null) {
+						log.warn("No non-null generateDateTime found, falling back to first transaction dateTime");
+						startDate = transactionServiceBL.getFirstTransactionDateTime();
+					}
+				}
+
+				LocalDateTime nextStartDate = transactionServiceBL.getNextTransactionDateTimeAfter(startDate);
+				if (nextStartDate != null) {
+					log.info("Found next transaction after startDate, new startDate: {}", nextStartDate);
+					startDate = nextStartDate;
+				} else {
+					log.warn("No transaction found after startDate: {}, using original startDate", startDate);
+				}
+
+				Map<String, Object> xReport = transactionServiceBL.getXReport(userId, startDate, endDate);
+				if (xReport != null) {
+					log.info("Cash total retrieved successfully.");
+					
+					// Get only cash amount from overallPaymentTotals
+					Map<String, Double> paymentTotals = (Map<String, Double>) xReport.get("overallPaymentTotals");
+					Double cashTotal = paymentTotals != null ? paymentTotals.getOrDefault("Cash", 0.0) : 0.0;
+					
+					Map<String, Object> response = new HashMap<>();
+					response.put("difference", cashTotal);
+					
+					responseDto = serviceUtil.getServiceResponse(response);
+				} else {
+					log.info("Unable to retrieve cash total.");
+					responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_TRANSACTION_BY_X_REPORT);
+				}
+			} else {
+				log.info("No transactions found to retrieve cash total.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+					ApplicationMessageConstants.ServiceErrorMessages.ERR_NO_TRANSACTIONS_FOUND);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurred while retrieving cash total: {}", e.getMessage(), e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+				ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_TRANSACTION_BY_X_REPORT);
 		}
 		return responseDto;
 	}
