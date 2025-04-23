@@ -19,4 +19,6 @@ public interface SalesReportService {
 	ResponseDto getXReports();
 	
 	ResponseDto getZReports();
+
+	ResponseDto getZReportsWithPagination(int pageNumber, int pageSize);
 }

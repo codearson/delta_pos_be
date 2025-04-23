@@ -35,4 +35,10 @@ public class SalesReportServiceBL {
         log.info("SalesReportServiceBL.findByReportType() invoked for: {}", reportType);
         return salesReportDao.findByReportType(reportType);
     }
+
+    public List<SalesReportDto> findByReportTypeWithPagination(String reportType, int pageNumber, int pageSize) {
+        log.info("SalesReportServiceBL.findByReportTypeWithPagination() invoked for: {}, page: {}, size: {}", 
+                reportType, pageNumber, pageSize);
+        return salesReportDao.findByReportTypeWithPagination(reportType, pageNumber, pageSize);
+    }
 }

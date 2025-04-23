@@ -108,6 +108,25 @@ public class SalesReportDaoImpl implements SalesReportDao {
                 .setParameter("reportType", reportType)
                 .getResultList();
         
+        return transformSalesReports(salesReports);
+    }
+
+    @Override
+    public List<SalesReportDto> findByReportTypeWithPagination(String reportType, int pageNumber, int pageSize) {
+        log.info("SalesReportDaoImpl.findByReportTypeWithPagination() invoked for: {}, page: {}, size: {}", 
+                reportType, pageNumber, pageSize);
+        
+        String jpql = "SELECT sr FROM SalesReport sr WHERE sr.reportType = :reportType";
+        List<SalesReport> salesReports = entityManager.createQuery(jpql, SalesReport.class)
+                .setParameter("reportType", reportType)
+                .setFirstResult((pageNumber - 1) * pageSize)
+                .setMaxResults(pageSize)
+                .getResultList();
+        
+        return transformSalesReports(salesReports);
+    }
+
+    private List<SalesReportDto> transformSalesReports(List<SalesReport> salesReports) {
         List<SalesReportDto> reportDtos = new ArrayList<>();
         
         for (SalesReport report : salesReports) {

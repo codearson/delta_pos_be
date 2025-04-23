@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.SalesReportDto;
@@ -50,5 +51,14 @@ public class SalesReportController {
     public ResponseDto getZReports() {
         log.info("SalesReportController.getZReports() invoked");
         return salesReportService.getZReports();
+    }
+
+    @GetMapping("/getAllByZReportsPage")
+    public ResponseDto getZReportsWithPagination(
+            @RequestParam("pageNumber") int pageNumber,
+            @RequestParam("pageSize") int pageSize) {
+        log.info("SalesReportController.getZReportsWithPagination() invoked for page: {}, size: {}", 
+                pageNumber, pageSize);
+        return salesReportService.getZReportsWithPagination(pageNumber, pageSize);
     }
 }

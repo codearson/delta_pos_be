@@ -290,5 +290,7 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_PAYOUT_TOTAL_DETAILS = "ex.retrieve.all.payout.total.details";
 		String ERR_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "err.retrieve.all.banking.total.details";
 		String EX_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "ex.retrieve.all.banking.total.details";
+		String ERR_NO_Z_REPORTS_PAGE_FOUND = "err.no.z.reports page.found";
+        String EX_GET_Z_REPORTS_PAGE = "ex.get.z.reports page";
 	}
 }

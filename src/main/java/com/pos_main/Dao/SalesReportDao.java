@@ -16,4 +16,5 @@ public interface SalesReportDao {
     
 	SalesReportDto save(SalesReportDto salesReportDto);
 	List<SalesReportDto> findByReportType(String reportType);
+	List<SalesReportDto> findByReportTypeWithPagination(String reportType, int pageNumber, int pageSize);
 }
