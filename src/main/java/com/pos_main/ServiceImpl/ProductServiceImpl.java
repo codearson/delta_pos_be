@@ -58,11 +58,11 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-	public ResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams, Boolean status) {
 		log.info("ProductServiceImpl.getAll() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = productServiceBL.getAll(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = productServiceBL.getAll(pageNumber, pageSize, searchParams, status);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Product Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
