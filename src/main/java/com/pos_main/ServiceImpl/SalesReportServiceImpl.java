@@ -99,4 +99,27 @@ public class SalesReportServiceImpl implements SalesReportService {
         }
         return responseDto;
     }
+
+    @Override
+    public ResponseDto getZReportsWithPagination(int pageNumber, int pageSize) {
+        log.info("SalesReportServiceImpl.getZReportsWithPagination() invoked for page: {}, size: {}", 
+                pageNumber, pageSize);
+        ResponseDto responseDto = null;
+        try {
+            List<SalesReportDto> zReports = salesReportServiceBL.findByReportTypeWithPagination("zReport", pageNumber, pageSize);
+            if (zReports != null && !zReports.isEmpty()) {
+                log.info("Z Reports retrieved successfully, count: {}", zReports.size());
+                responseDto = serviceUtil.getServiceResponse(zReports);
+            } else {
+                log.info("No Z Reports found");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_NO_Z_REPORTS_PAGE_FOUND);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurred while retrieving Z Reports", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_GET_Z_REPORTS_PAGE);
+        }
+        return responseDto;
+    }
 }
