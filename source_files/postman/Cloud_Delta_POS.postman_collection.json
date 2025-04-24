@@ -5994,6 +5994,125 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "MinimanBanking",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1NDk1MzczfQ.Vg-HOmG6YCPUHRLt6iSy9nd3oIyUG7BDfF3wl8aW6TrjPZoOX-JZX-SumJbr6OhX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":1000,\r\n    \"isActive\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/minimamBanking/save",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"minimamBanking",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1NDk1MzczfQ.Vg-HOmG6YCPUHRLt6iSy9nd3oIyUG7BDfF3wl8aW6TrjPZoOX-JZX-SumJbr6OhX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"amount\":1500,\r\n    \"isActive\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/minimamBanking/update",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"minimamBanking",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1NDk1MzczfQ.Vg-HOmG6YCPUHRLt6iSy9nd3oIyUG7BDfF3wl8aW6TrjPZoOX-JZX-SumJbr6OhX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/minimamBanking/getAll",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"minimamBanking",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -292,5 +292,11 @@ public interface ApplicationMessageConstants {
 		String EX_RETRIEVE_ALL_BANKING_TOTAL_DETAILS = "ex.retrieve.all.banking.total.details";
 		String ERR_NO_Z_REPORTS_PAGE_FOUND = "err.no.z.reports page.found";
         String EX_GET_Z_REPORTS_PAGE = "ex.get.z.reports page";
+		String ERR_SAVE_MINIMAM_BANKING_DETAILS = "err.save.minimam.banking.details";
+		String EX_SAVE_MINIMAM_BANKING_DETAILS = "ex.save.minimam.banking.details";
+		String ERR_UPDATE_MINIMAM_BANKING_DETAILS = "err.update.minimam.banking.details";
+		String EX_UPDATE_MINIMAM_BANKING_DETAILS = "ex.update.minimam.banking.details";
+		String ERR_RETRIEVE_ALL_MINIMAM_BANKING_DETAILS = "err.retrieve.all.minimam.banking.details";
+		String EX_RETRIEVE_ALL_MINIMAM_BANKING_DETAILS = "ex.retrieve.all.minimam.banking.details";
 	}
 }
