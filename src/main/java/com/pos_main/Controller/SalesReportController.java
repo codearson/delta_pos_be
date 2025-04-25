@@ -55,10 +55,16 @@ public class SalesReportController {
 
     @GetMapping("/getAllByZReportsPage")
     public ResponseDto getZReportsWithPagination(
-            @RequestParam("pageNumber") int pageNumber,
-            @RequestParam("pageSize") int pageSize) {
+            @RequestParam(value = "pageNumber", defaultValue = "1") int pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
         log.info("SalesReportController.getZReportsWithPagination() invoked for page: {}, size: {}", 
                 pageNumber, pageSize);
         return salesReportService.getZReportsWithPagination(pageNumber, pageSize);
+    }
+
+    @GetMapping("/getTotalCount")
+    public ResponseDto getTotalCount(@RequestParam("reportType") String reportType) {
+        log.info("SalesReportController.getTotalCount() invoked for reportType: {}", reportType);
+        return salesReportService.getTotalCount(reportType);
     }
 }

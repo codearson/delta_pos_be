@@ -18,10 +18,10 @@ import com.pos_main.Dto.SalesReportDto;
 import com.pos_main.Service.SalesReportService;
 import com.pos_main.Service.BL.SalesReportServiceBL;
 import com.pos_main.Service.Utils.ServiceUtil;
+import com.pos_main.Dto.PaginatedResponseDto;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -107,9 +107,18 @@ public class SalesReportServiceImpl implements SalesReportService {
         ResponseDto responseDto = null;
         try {
             List<SalesReportDto> zReports = salesReportServiceBL.findByReportTypeWithPagination("zReport", pageNumber, pageSize);
+            long totalCount = salesReportServiceBL.getTotalCount("zReport");
+            
             if (zReports != null && !zReports.isEmpty()) {
                 log.info("Z Reports retrieved successfully, count: {}", zReports.size());
-                responseDto = serviceUtil.getServiceResponse(zReports);
+                
+                PaginatedResponseDto paginatedResponse = new PaginatedResponseDto();
+                paginatedResponse.setPageNumber(pageNumber);
+                paginatedResponse.setPageSize(pageSize);
+                paginatedResponse.setTotalRecords((int) totalCount);
+                paginatedResponse.setPayload(zReports);
+                
+                responseDto = serviceUtil.getServiceResponse(paginatedResponse);
             } else {
                 log.info("No Z Reports found");
                 responseDto = serviceUtil.getErrorServiceResponse(
@@ -119,6 +128,22 @@ public class SalesReportServiceImpl implements SalesReportService {
             log.error("Exception occurred while retrieving Z Reports", e);
             responseDto = serviceUtil.getExceptionServiceResponseByProperties(
                 ApplicationMessageConstants.ServiceErrorMessages.EX_GET_Z_REPORTS_PAGE);
+        }
+        return responseDto;
+    }
+
+    @Override
+    public ResponseDto getTotalCount(String reportType) {
+        log.info("SalesReportServiceImpl.getTotalCount() invoked for reportType: {}", reportType);
+        ResponseDto responseDto = null;
+        try {
+            long count = salesReportServiceBL.getTotalCount(reportType);
+            log.info("Total count retrieved successfully for reportType {}: {}", reportType, count);
+            responseDto = serviceUtil.getServiceResponse(count);
+        } catch (Exception e) {
+            log.error("Exception occurred while retrieving total count for reportType: {}", reportType, e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_GET_Z_REPORTS);
         }
         return responseDto;
     }

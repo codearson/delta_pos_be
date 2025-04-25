@@ -21,4 +21,6 @@ public interface SalesReportService {
 	ResponseDto getZReports();
 
 	ResponseDto getZReportsWithPagination(int pageNumber, int pageSize);
+	
+	ResponseDto getTotalCount(String reportType);
 }
