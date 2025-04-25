@@ -49,7 +49,6 @@ public class MinimamBankingController {
     }
     
     @GetMapping("/getAll")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getAll() {
         log.info("MinimamBankingController.getAll() invoked");
         return minimamBankingService.getAll();
