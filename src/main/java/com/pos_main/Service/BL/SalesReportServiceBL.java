@@ -41,4 +41,9 @@ public class SalesReportServiceBL {
                 reportType, pageNumber, pageSize);
         return salesReportDao.findByReportTypeWithPagination(reportType, pageNumber, pageSize);
     }
+
+    public long getTotalCount(String reportType) {
+        log.info("SalesReportServiceBL.getTotalCount() invoked for reportType: {}", reportType);
+        return salesReportDao.getTotalCount(reportType);
+    }
 }

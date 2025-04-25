@@ -116,7 +116,7 @@ public class SalesReportDaoImpl implements SalesReportDao {
         log.info("SalesReportDaoImpl.findByReportTypeWithPagination() invoked for: {}, page: {}, size: {}", 
                 reportType, pageNumber, pageSize);
         
-        String jpql = "SELECT sr FROM SalesReport sr WHERE sr.reportType = :reportType";
+        String jpql = "SELECT sr FROM SalesReport sr WHERE sr.reportType = :reportType ORDER BY sr.endDate DESC";
         List<SalesReport> salesReports = entityManager.createQuery(jpql, SalesReport.class)
                 .setParameter("reportType", reportType)
                 .setFirstResult((pageNumber - 1) * pageSize)
@@ -124,6 +124,15 @@ public class SalesReportDaoImpl implements SalesReportDao {
                 .getResultList();
         
         return transformSalesReports(salesReports);
+    }
+
+    @Override
+    public long getTotalCount(String reportType) {
+        log.info("SalesReportDaoImpl.getTotalCount() invoked for reportType: {}", reportType);
+        String jpql = "SELECT COUNT(sr) FROM SalesReport sr WHERE sr.reportType = :reportType";
+        return entityManager.createQuery(jpql, Long.class)
+                .setParameter("reportType", reportType)
+                .getSingleResult();
     }
 
     private List<SalesReportDto> transformSalesReports(List<SalesReport> salesReports) {
