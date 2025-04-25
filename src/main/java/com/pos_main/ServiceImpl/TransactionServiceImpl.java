@@ -758,12 +758,33 @@ public class TransactionServiceImpl implements TransactionService {
 				if (xReport != null) {
 					log.info("Cash total retrieved successfully.");
 					
-					// Get only cash amount from overallPaymentTotals
+					// Get banking and pay out totals
+					Double bankingTotal = bankingServiceBL.getTotalBanking();
+					Double payoutTotal = payoutServiceBL.getTotalPayout();
+					
+					// Get cash payment total from payment methods
 					Map<String, Double> paymentTotals = (Map<String, Double>) xReport.get("overallPaymentTotals");
 					Double cashTotal = paymentTotals != null ? paymentTotals.getOrDefault("Cash", 0.0) : 0.0;
 					
+					// Get balance amount total
+					Double balanceTotal = (Double) xReport.get("totalBalanceAmount");
+					if (balanceTotal == null) {
+						balanceTotal = 0.0;
+					}
+					
+					// Calculate difference using the same logic as in X Report
+					Double difference = cashTotal;
+					if (bankingTotal != 0.0 || payoutTotal != 0.0 || balanceTotal != 0.0) {
+						Double totalDeductions = bankingTotal + payoutTotal + balanceTotal;
+						difference = cashTotal - totalDeductions;
+					}
+					
 					Map<String, Object> response = new HashMap<>();
-					response.put("difference", cashTotal);
+					response.put("payoutTotal", payoutTotal);
+					response.put("balanceTotal", balanceTotal);
+					response.put("bankingTotal", bankingTotal);
+					response.put("overallPaymentTotals", paymentTotals);
+					response.put("difference", difference);
 					
 					responseDto = serviceUtil.getServiceResponse(response);
 				} else {
