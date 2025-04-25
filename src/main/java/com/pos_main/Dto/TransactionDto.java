@@ -27,4 +27,5 @@ public class TransactionDto {
     private Double manualDiscount;
     private Double employeeDiscount;
     private Double balanceAmount;
+    private Double taxAmount;
 }
