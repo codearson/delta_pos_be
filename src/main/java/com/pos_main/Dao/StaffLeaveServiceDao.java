@@ -25,6 +25,6 @@ public interface StaffLeaveServiceDao {
 
 	List<StaffLeaveDto> getAll();
 	
-	PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 
 }

@@ -53,12 +53,12 @@ public class UserController {
 		return "Hi from user !!!";
 	}
 
-	@GetMapping("/getAll")
+	@GetMapping("/getAllPage")
 	// @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("UserController.getAll() invoked.");
-		return userService.getAll(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return userService.getAll(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 	
 	@GetMapping("/getByName")

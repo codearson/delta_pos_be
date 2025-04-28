@@ -148,7 +148,7 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 	
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("SupplierDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Supplier> allSupplierList = null;
@@ -161,6 +161,9 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Supplier.class, "supplier");
+		if (status != null) {
+			criteria.add(Restrictions.eq("isActive", status));
+		}
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allSupplierList = criteria.list();

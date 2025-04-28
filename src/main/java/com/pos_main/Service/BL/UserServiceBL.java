@@ -82,9 +82,9 @@ public class UserServiceBL {
 		}
 	}
 
-	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("UserServiceBL.getAll()invoked");
-		return userDao.getAll(pageNumber, pageSize, searchParams);
+		return userDao.getAll(pageNumber, pageSize, status, searchParams);
 	}
 	
 	public List<UserDto> getUserByName(String firstName, String lastName) {

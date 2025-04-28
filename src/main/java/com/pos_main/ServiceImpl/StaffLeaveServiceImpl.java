@@ -120,11 +120,11 @@ public class StaffLeaveServiceImpl implements StaffLeaveService {
 	}
 	
 	@Override
-	public ResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("StaffLeaveServiceImpl.getAllPageStaffLeave() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = staffLeaveServiceBL.getAllPageStaffLeave(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = staffLeaveServiceBL.getAllPageStaffLeave(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All StaffLeave Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

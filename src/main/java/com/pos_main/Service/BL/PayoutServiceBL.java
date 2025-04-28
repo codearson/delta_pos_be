@@ -25,9 +25,9 @@ public class PayoutServiceBL {
 		return payoutDao.getAllPayout();
 	}
 
-    public PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParams) {
+    public PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
     	log.info("PayoutServiceBL.getAllPagePayout()invoked");
-		return payoutDao.getAllPagePayout(pageNumber, pageSize, searchParams);
+		return payoutDao.getAllPagePayout(pageNumber, pageSize, status, searchParams);
     }
 
     public PayoutDto save(PayoutDto payoutDto) {

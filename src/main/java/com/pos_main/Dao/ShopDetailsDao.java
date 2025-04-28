@@ -22,7 +22,7 @@ public interface ShopDetailsDao extends BaseDao<ShopDetails>{
 	
 	List<ShopDetailsDto> getAll();
 	
-	PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 	List<ShopDetailsDto> getByName (String name);
 

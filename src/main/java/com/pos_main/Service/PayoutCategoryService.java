@@ -15,7 +15,7 @@ public interface PayoutCategoryService {
     
     ResponseDto getAllPayoutCategory();
     
-    ResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Map<String, String> searchParameters);
+    ResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
     
     ResponseDto getAllByName(String payoutCategory);
 }

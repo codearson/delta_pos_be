@@ -13,7 +13,7 @@ public interface TaxService {
 	
     public ResponseDto getAll();
     
-    public ResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParameters);
+    public ResponseDto getAllPageTax(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
     
     public ResponseDto update(TaxDto taxDto);
     

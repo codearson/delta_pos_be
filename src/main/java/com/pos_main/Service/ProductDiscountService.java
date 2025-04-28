@@ -13,5 +13,5 @@ public interface ProductDiscountService {
 
 	ResponseDto updateStatus(Integer id, Boolean status);
 
-	ResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	ResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 }

@@ -13,7 +13,7 @@ public interface CustomerDao extends BaseDao<Customer>{
 	
 	List<CustomerDto> getCustomerByMobileNumber(String mobileNumber);
 
-	PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 	CustomerDto saveCustomer (CustomerDto customerDto);
 	

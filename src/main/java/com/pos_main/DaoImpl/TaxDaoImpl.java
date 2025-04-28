@@ -109,7 +109,7 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
     
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("TaxDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Tax> allTaxList = null;
@@ -122,6 +122,9 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Tax.class, "tax");
+		if (status != null) {
+			criteria.add(Restrictions.eq("isActive", status));
+		}
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allTaxList = criteria.list();

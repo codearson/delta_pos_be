@@ -22,6 +22,6 @@ public interface ShopDetailsService {
 	
 	ResponseDto getByName(String name);
 	
-	public ResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 }

@@ -73,11 +73,11 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	@Override
-	public ResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageCustomer(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("CustomerServiceImpl.getAllPageCustomer() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = customerServiceBL.getAllPageCustomer(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = customerServiceBL.getAllPageCustomer(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Customer Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

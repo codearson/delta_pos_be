@@ -20,6 +20,6 @@ public interface UserLogsService {
 	
 	public ResponseDto save(UserLogsDto userLogsDto);
 	
-	public ResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 }

@@ -39,9 +39,9 @@ public class ShopDetailsServiceBL {
 		return shopDetailsDao.getAll();
 	}
 	
-	public PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShopDetailsServiceBL.getAllPageShopDetails()invoked");
-		return shopDetailsDao.getAllPageShopDetails(pageNumber, pageSize, searchParams);
+		return shopDetailsDao.getAllPageShopDetails(pageNumber, pageSize, status, searchParams);
 	}
 	
 	public List<ShopDetailsDto> getByName(String name) {

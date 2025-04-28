@@ -38,9 +38,9 @@ public class PayoutController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPagePayout(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("PayoutController.getAllPage() invoked.");
-		return payoutService.getAllPagePayout(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return payoutService.getAllPagePayout(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
     @PostMapping("/save")

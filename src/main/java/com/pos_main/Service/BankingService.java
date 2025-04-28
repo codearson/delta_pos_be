@@ -14,7 +14,7 @@ import com.pos_main.Dto.ResponseDto;
 
 public interface BankingService {
 
-	ResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams);
+	ResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 	public ResponseDto save(BankingDto bankingDto);
 	

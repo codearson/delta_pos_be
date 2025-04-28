@@ -20,7 +20,7 @@ public interface StockService {
 
 	public ResponseDto getAllStock();
 	
-	public ResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageStock(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 	public ResponseDto updateStock(StockDto stockDto);
 

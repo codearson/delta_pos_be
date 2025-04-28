@@ -66,8 +66,8 @@ public class TaxController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageTax(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("TaxController.getAllPage() invoked.");
-		return taxService.getAllPageTax(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return taxService.getAllPageTax(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 }

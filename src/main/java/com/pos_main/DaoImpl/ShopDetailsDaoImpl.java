@@ -78,7 +78,7 @@ public class ShopDetailsDaoImpl extends BaseDaoImpl<ShopDetails> implements Shop
 	
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShopDetailsDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<ShopDetails> allShopDetailsList = null;
@@ -91,6 +91,12 @@ public class ShopDetailsDaoImpl extends BaseDaoImpl<ShopDetails> implements Shop
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(ShopDetails.class, "shopDetails");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allShopDetailsList = criteria.list();

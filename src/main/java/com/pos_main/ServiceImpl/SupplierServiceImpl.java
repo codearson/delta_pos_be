@@ -160,11 +160,11 @@ public class SupplierServiceImpl implements SupplierService{
 	}
 	
 	@Override
-	public ResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageSupplier(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("SupplierServiceImpl.getAllPageSupplier() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = supplierServiceBL.getAllPageSupplier(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = supplierServiceBL.getAllPageSupplier(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Supplier Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

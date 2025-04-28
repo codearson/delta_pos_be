@@ -108,7 +108,7 @@ public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements
     
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("StaffLeaveDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<StaffLeave> allStaffLeaveList = null;
@@ -121,6 +121,12 @@ public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(StaffLeave.class, "staffLeave");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allStaffLeaveList = criteria.list();

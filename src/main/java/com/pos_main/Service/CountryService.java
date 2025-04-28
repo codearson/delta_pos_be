@@ -13,6 +13,7 @@ public interface CountryService {
 
     ResponseDto save(CountryDto countryDto);
     ResponseDto getAll();
+    ResponseDto getAllPage(int pageNumber, int pageSize);
     
     
 }

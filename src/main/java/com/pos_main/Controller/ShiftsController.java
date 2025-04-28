@@ -61,9 +61,9 @@ public class ShiftsController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageShifts(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("ShiftsController.getAllPage() invoked.");
-		return shiftsService.getAllPageShifts(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return shiftsService.getAllPageShifts(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 }

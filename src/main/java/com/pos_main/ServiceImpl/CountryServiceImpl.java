@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.pos_main.Constants.ApplicationMessageConstants;
 import com.pos_main.Dto.CountryDto;
+import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Service.CountryService;
 import com.pos_main.Service.BL.CountryServiceBL;
@@ -61,6 +62,28 @@ public class CountryServiceImpl implements CountryService {
 				}
 			} catch (Exception e) {
 				log.error("Exception occurs while retrieving All Country details.", e);
+				responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+						ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_COUNTRY_DETAILS);
+			}
+			return responseDto;
+		}
+	    
+	    @Override
+		public ResponseDto getAllPage(int pageNumber, int pageSize) {
+			log.info("CountryServiceImpl.getAllPage() invoked");
+			ResponseDto responseDto = null;
+			try {
+				PaginatedResponseDto paginatedResponseDto = countryServiceBL.getAllPage(pageNumber, pageSize);
+				if (paginatedResponseDto != null) {
+					log.info("Retrieved paginated Country Details.");
+					responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+				} else {
+					log.info("Unable to retrieve paginated Country details.");
+					responseDto = serviceUtil.getErrorServiceResponse(
+							ApplicationMessageConstants.ServiceErrorMessages.ERR_SAVE_COUNTRY_DETAILS);
+				}
+			} catch (Exception e) {
+				log.error("Exception occurs while retrieving paginated Country details.", e);
 				responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 						ApplicationMessageConstants.ServiceErrorMessages.EX_SAVE_COUNTRY_DETAILS);
 			}

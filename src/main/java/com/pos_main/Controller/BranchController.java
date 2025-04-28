@@ -20,6 +20,8 @@ import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Map;
+
 /**
  * Title: Branch.java. Company: www.codearson.com Copyright: Copyright (c) 2018.
  * 
@@ -40,9 +42,11 @@ public class BranchController {
 	@GetMapping("/getAllPage")
 	//@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("BranchController.getAll() invoked.");
-		return branchService.getAll(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		Map<String, String> searchParams = HttpReqRespUtils.getSearchParameters(webRequest);
+		searchParams.put("status", status.toString());
+		return branchService.getAll(pageNumber, pageSize, searchParams);
 	}
 	
 	@GetMapping("/getAll")

@@ -13,7 +13,7 @@ public interface PurchaseListDao extends BaseDao<PurchaseList> {
 	
 	List<PurchaseListDto> getAll();
 	
-	PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 	boolean deleteAll();
 	

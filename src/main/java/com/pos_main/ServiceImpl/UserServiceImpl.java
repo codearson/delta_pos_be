@@ -74,11 +74,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public ResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAll(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("UserServiceImpl.getAll() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = userServiceBL.getAll(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = userServiceBL.getAll(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All User Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

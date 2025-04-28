@@ -90,7 +90,7 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao{
 	
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("StockDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Stock> allStockList = null;
@@ -103,6 +103,12 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao{
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Stock.class, "stock");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allStockList = criteria.list();

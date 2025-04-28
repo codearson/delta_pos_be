@@ -59,11 +59,11 @@ public class PayoutServiceImpl implements PayoutService {
 	}
 	
 	@Override
-	public ResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPagePayout(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("PayoutServiceImpl.getAllPagePayout() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = payoutServiceBL.getAllPagePayout(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = payoutServiceBL.getAllPagePayout(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Payout Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

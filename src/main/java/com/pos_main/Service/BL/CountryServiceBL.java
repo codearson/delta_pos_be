@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.pos_main.Dao.CountryDao;
 import com.pos_main.Dto.CountryDto;
+import com.pos_main.Dto.PaginatedResponseDto;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,5 +32,10 @@ public class CountryServiceBL {
 	public List<CountryDto> getAll() {
 		log.info("CountryServiceBL.getAll() invoked");
 		return countryDao.getAll();
+	}
+	
+	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize) {
+		log.info("CountryServiceBL.getAllPage() invoked");
+		return countryDao.getAllPage(pageNumber, pageSize);
 	}
 }

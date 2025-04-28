@@ -22,6 +22,6 @@ public interface UserLogsDao extends BaseDao<UserLogs>{
 	
 	UserLogsDto save(UserLogsDto userLogsDto);
 	
-	PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 
 }

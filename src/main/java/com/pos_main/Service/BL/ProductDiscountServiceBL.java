@@ -38,8 +38,8 @@ public class ProductDiscountServiceBL {
         return null;
     }
     
-    public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
+    public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
         log.info("ProductDiscountServiceBL.getAllPage() invoked");
-        return productDiscountDao.getAllPage(pageNumber, pageSize, searchParams);
+        return productDiscountDao.getAllPage(pageNumber, pageSize, status, searchParams);
     }
 }

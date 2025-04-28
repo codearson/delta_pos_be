@@ -59,9 +59,9 @@ public class PurchaseListServiceBL {
 		return purchaseListDao.getAll();
 	}
     
-	public PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("PurchaseListServiceBL.getAllPagePurchaseList()invoked");
-		return purchaseListDao.getAllPagePurchaseList(pageNumber, pageSize, searchParams);
+		return purchaseListDao.getAllPagePurchaseList(pageNumber, pageSize, status, searchParams);
 	}
     
     public boolean deleteAll() {

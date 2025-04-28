@@ -46,9 +46,9 @@ public class ProductController {
 	
 	@GetMapping("/getAllPage")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			@RequestParam("status") Boolean status) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("ProductController.getAll() invoked.");
-		return productService.getAll(pageNumber, pageSize, Map.of(), status);
+		return productService.getAll(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest), status);
 	}
 	
 	@GetMapping("/getAll")

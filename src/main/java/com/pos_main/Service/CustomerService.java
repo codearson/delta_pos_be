@@ -9,7 +9,7 @@ public interface CustomerService {
 
 	public ResponseDto saveCustomer(CustomerDto customerDto);
 	
-	public ResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageCustomer(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 	public ResponseDto getCustomerBySearch(String name);
 	

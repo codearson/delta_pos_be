@@ -68,9 +68,9 @@ public class StaffLeaveController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageStaffLeave(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("StaffLeaveController.getAllPage() invoked.");
-		return staffLeaveService.getAllPageStaffLeave(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return staffLeaveService.getAllPageStaffLeave(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 	
 	@PostMapping("/sendEmail")

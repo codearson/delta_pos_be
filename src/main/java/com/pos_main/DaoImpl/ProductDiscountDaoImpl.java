@@ -69,7 +69,7 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ProductDiscountDaoImpl.getAllPage() invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 
@@ -81,6 +81,12 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(ProductDiscount.class);
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 

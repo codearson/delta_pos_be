@@ -21,7 +21,7 @@ public interface PayoutDao extends BaseDao<Payout> {
 	
 	List<PayoutDto> getAllPayout();
 	
-	PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 	PayoutDto save (PayoutDto payoutDto);
 	

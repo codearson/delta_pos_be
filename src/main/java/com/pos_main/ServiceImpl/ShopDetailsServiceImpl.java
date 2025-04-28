@@ -82,11 +82,11 @@ public class ShopDetailsServiceImpl implements ShopDetailsService{
 	}
 	
 	@Override
-	public ResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageShopDetails(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShopDetailsServiceImpl.getAllPageShopDetails() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = shopDetailsServiceBL.getAllPageShopDetails(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = shopDetailsServiceBL.getAllPageShopDetails(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All ShopDetails Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

@@ -61,9 +61,9 @@ public class StaffLeaveServiceBL {
 		return staffLeaveServiceDao.getAll();
 	}
 	
-	public PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("StaffLeaveServiceBL.getAllPageStaffLeave()invoked");
-		return staffLeaveServiceDao.getAllPageStaffLeave(pageNumber, pageSize, searchParams);
+		return staffLeaveServiceDao.getAllPageStaffLeave(pageNumber, pageSize, status, searchParams);
 	}
 	
 	public void sendEmail(String to, String subject, String body) {

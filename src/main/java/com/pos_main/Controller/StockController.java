@@ -55,9 +55,9 @@ public class StockController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageStock(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("StockController.getAllPage() invoked.");
-		return stockService.getAllPageStock(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return stockService.getAllPageStock(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 

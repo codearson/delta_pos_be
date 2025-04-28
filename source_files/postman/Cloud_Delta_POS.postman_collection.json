@@ -383,7 +383,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/user/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/user/getAll?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -403,6 +403,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -823,7 +827,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/productCategory/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -843,6 +847,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1039,7 +1047,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/branch/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/branch/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -1059,6 +1067,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1299,7 +1311,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/product/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/product/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -1319,6 +1331,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1815,7 +1831,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/tax/getByPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/tax/getByPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -1835,6 +1851,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1862,7 +1882,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/customer/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/customer/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -1882,6 +1902,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -2401,7 +2425,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/supplier/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/supplier/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -2421,6 +2445,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -2650,7 +2678,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/stock/getAll?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -2670,6 +2698,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -3353,6 +3385,16 @@
 				{
 					"name": "getCashTotal",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1NjAyNTQ1fQ.ERYv6Oi6KOdmHigA62-TAdhivXs78MQs9cLFs0S_4FhqimF6d_2AwJviw0j8qeHI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -3419,6 +3461,105 @@
 							"path": [
 								"userLogs",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMDc0NzMxLCJleHAiOjE3NDAwNzgzMzF9.wChz90efMcV1Byb-JbNfjzCIA3VLMP-Dh_48fBLVyVhNUhFEfVuJeTV0lqipK3BP",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userDto\": {\r\n        \"id\": 3\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/userLogs/login",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"userLogs",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQwMDc0NzMxLCJleHAiOjE3NDAwNzgzMzF9.wChz90efMcV1Byb-JbNfjzCIA3VLMP-Dh_48fBLVyVhNUhFEfVuJeTV0lqipK3BP",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userDto\": {\r\n        \"id\": 3\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/userLogs/getAllPage?pageNumber=1&pageSize=10&status=true",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"userLogs",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
+								}
 							]
 						}
 					},
@@ -3556,7 +3697,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/shopDetails/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -3576,6 +3717,15 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}
@@ -3629,7 +3779,7 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "getAllPage",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -3644,7 +3794,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/shifts/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/shifts/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -3664,6 +3814,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -3760,7 +3914,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/purchaseList/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -3780,6 +3934,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -4796,7 +4954,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payout/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/payout/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -4816,6 +4974,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -5031,7 +5193,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getAll?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/payoutCategory/getAll?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -5051,6 +5213,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -5189,7 +5355,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/banking/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/banking/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -5209,6 +5375,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -5542,7 +5712,7 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "getAllPage",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -5557,7 +5727,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/getAllPage?pageNumber=0&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/productDiscount/getAllPage?pageNumber=0&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -5577,6 +5747,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -5921,7 +6095,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/getAllPage?pageNumber=0&pageSize=10",
+							"raw": "https://deltaposbe-production.up.railway.app/staffLeave/getAllPage?pageNumber=0&pageSize=10&status=true",
 							"protocol": "https",
 							"host": [
 								"deltaposbe-production",
@@ -5941,6 +6115,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}

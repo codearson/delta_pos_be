@@ -115,11 +115,11 @@ public class PayoutCategoryServiceImpl implements PayoutCategoryService {
     }
 
     @Override
-    public ResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Map<String, String> searchParams) {
+    public ResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
         log.info("PayoutCategoryServiceImpl.getAllPagePayoutCategory() invoked");
         ResponseDto responseDto = null;
         try {
-            PaginatedResponseDto paginatedDto = payoutCategoryServiceBL.getAllPagePayoutCategory(pageNumber, pageSize, searchParams);
+            PaginatedResponseDto paginatedDto = payoutCategoryServiceBL.getAllPagePayoutCategory(pageNumber, pageSize, status, searchParams);
             if (paginatedDto != null) {
                 log.info("Paginated Payout Categories retrieved successfully");
                 responseDto = serviceUtil.getServiceResponse(paginatedDto);

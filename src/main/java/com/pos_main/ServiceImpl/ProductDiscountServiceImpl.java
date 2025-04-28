@@ -91,12 +91,11 @@ public class ProductDiscountServiceImpl implements ProductDiscountService {
 	}
 
 	@Override
-	public ResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("PayoutCategoryServiceImpl.getAllPage() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedDto = productDiscountServiceBL.getAllPage(pageNumber, pageSize,
-					searchParams);
+			PaginatedResponseDto paginatedDto = productDiscountServiceBL.getAllPage(pageNumber, pageSize, status, searchParams);
 			if (paginatedDto != null) {
 				log.info("Paginated Payout Categories retrieved successfully");
 				responseDto = serviceUtil.getServiceResponse(paginatedDto);

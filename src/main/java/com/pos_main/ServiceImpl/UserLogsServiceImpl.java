@@ -81,11 +81,11 @@ public class UserLogsServiceImpl implements UserLogsService {
 	}
 	
 	@Override
-	public ResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("UserLogsServiceImpl.getAllPageUserLogs() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = userLogsServiceBL.getAllPageUserLogs(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = userLogsServiceBL.getAllPageUserLogs(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All UserLogs Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

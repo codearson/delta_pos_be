@@ -43,8 +43,8 @@ public class UserLogsServiceBL {
         return userLogsDao.login(userLogsDto);
     }
 	
-	public PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("UserLogsServiceBL.getAllPageUserLogs()invoked");
-		return userLogsDao.getAllPageUserLogs(pageNumber, pageSize, searchParams);
+		return userLogsDao.getAllPageUserLogs(pageNumber, pageSize, status, searchParams);
 	}
 }

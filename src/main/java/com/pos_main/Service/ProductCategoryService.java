@@ -15,7 +15,7 @@ public interface ProductCategoryService {
 	
 	ResponseDto getAll();
 	
-	public ResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 	
 	public ResponseDto save(ProductCategoryDto productCategoryDto);
 	

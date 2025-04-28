@@ -101,11 +101,11 @@ public class ShiftsServiceImpl implements ShiftsService{
 	}
 	
 	@Override
-	public ResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShiftServiceImpl.getAllPageShift() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = shiftsServiceBL.getAllPageShifts(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = shiftsServiceBL.getAllPageShifts(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Shifts Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
