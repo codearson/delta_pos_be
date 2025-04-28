@@ -55,11 +55,11 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 	}
 	
 	@Override
-	public ResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("CustomerServiceImpl.getAllPageCustomer() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = productCategoryServiceBL.getAllPageProductCategory(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = productCategoryServiceBL.getAllPageProductCategory(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All ProductCategory Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

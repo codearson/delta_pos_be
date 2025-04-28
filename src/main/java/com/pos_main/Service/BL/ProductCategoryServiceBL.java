@@ -32,9 +32,9 @@ public class ProductCategoryServiceBL {
 
 	}
 	
-	public PaginatedResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ProductCategoryServiceBL.getAllPageProductCategory()invoked");
-		return productCategoryDao.getAllPageProductCategory(pageNumber, pageSize, searchParams);
+		return productCategoryDao.getAllPageProductCategory(pageNumber, pageSize, status, searchParams);
 	}
 	
 	public ProductCategoryDto save(ProductCategoryDto productCategoryDto) {

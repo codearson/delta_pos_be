@@ -53,9 +53,9 @@ public class SupplierServiceBL {
 		return supplierDao.getAllSupplier();
 	}
 	
-	public PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("SupplierServiceBL.getAllPageSupplier()invoked");
-		return supplierDao.getAllPageSupplier(pageNumber, pageSize, searchParams);
+		return supplierDao.getAllPageSupplier(pageNumber, pageSize, status, searchParams);
 	}
 
 }

@@ -39,9 +39,9 @@ public class StockServiceBL {
 		return stockDao.getAllStock();
 	}
 	
-	public PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("StockServiceBL.getAllPageStock()invoked");
-		return stockDao.getAllPageStock(pageNumber, pageSize, searchParams);
+		return stockDao.getAllPageStock(pageNumber, pageSize, status, searchParams);
 	}
 
 	public StockDto updateStock(StockDto stockDto) {

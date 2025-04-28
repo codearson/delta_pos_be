@@ -60,7 +60,15 @@ public class BranchDaoImpl extends BaseDaoImpl<Branch> implements BranchDao {
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Branch.class, "branch");
-	 	criteria.add(Restrictions.eq("isActive", true));
+		
+		// Check if status is provided in searchParams
+		if (searchParams != null && searchParams.containsKey("status")) {
+			Boolean status = Boolean.parseBoolean(searchParams.get("status"));
+			criteria.add(Restrictions.eq("isActive", status));
+		} else {
+			criteria.add(Restrictions.eq("isActive", true));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allBranchList = criteria.list();

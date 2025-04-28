@@ -47,9 +47,9 @@ public class PurchaseListController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPagePurchaseList(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("PurchaseListController.getAllPage() invoked.");
-		return purchaseListService.getAllPagePurchaseList(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return purchaseListService.getAllPagePurchaseList(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
     
     @DeleteMapping("/deleteAll")

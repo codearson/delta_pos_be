@@ -18,7 +18,7 @@ public interface UserService {
 
 	public ResponseDto login(LoginRequestDto loginDto);
 
-	public ResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAll(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 	
 	public ResponseDto getUserByName(String firstName, String lastName);
 	

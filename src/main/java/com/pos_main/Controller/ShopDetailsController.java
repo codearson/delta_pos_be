@@ -61,8 +61,8 @@ public class ShopDetailsController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageShopDetails(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("CustomerController.getAllPage() invoked.");
-		return shopDetailsService.getAllPageShopDetails(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return shopDetailsService.getAllPageShopDetails(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 }

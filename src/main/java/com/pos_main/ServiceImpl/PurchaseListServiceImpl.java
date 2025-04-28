@@ -69,11 +69,11 @@ public class PurchaseListServiceImpl implements PurchaseListService {
 	}
     
 	@Override
-	public ResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("PurchaseListServiceImpl.getAllPagePurchaseList() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = purchaseListServiceBL.getAllPagePurchaseList(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = purchaseListServiceBL.getAllPagePurchaseList(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All PurchaseList Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

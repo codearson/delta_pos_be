@@ -24,7 +24,7 @@ public interface StaffLeaveService {
 
 	public ResponseDto updateStatus(Integer id, Boolean status);
 	
-	public ResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageStaffLeave(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 	
 	public ResponseDto sendEmail(String to, String subject, String body);
 

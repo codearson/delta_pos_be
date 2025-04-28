@@ -16,7 +16,7 @@ import com.pos_main.Dto.ResponseDto;
 
 public interface PayoutService {
 	
-	public ResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPagePayout(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 	ResponseDto getAllPayout();
 	

@@ -49,7 +49,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 	
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("CustomerDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Customer> allCustomerList = null;
@@ -62,6 +62,12 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Customer.class, "customer");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allCustomerList = criteria.list();

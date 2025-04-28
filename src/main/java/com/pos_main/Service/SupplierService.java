@@ -19,7 +19,7 @@ public interface SupplierService {
 	
 	public ResponseDto getAllSupplier();
 	
-	public ResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParameters);
+	public ResponseDto getAllPageSupplier(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 
 }

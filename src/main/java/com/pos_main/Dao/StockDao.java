@@ -24,7 +24,7 @@ public interface StockDao extends BaseDao<Stock> {
 
 	List<StockDto> getAllStock();
 	
-	PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageStock(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 
 	StockDto updateStock(StockDto stockDto);
 

@@ -34,9 +34,9 @@ public class CustomerServiceBL {
 		return customerDao.saveCustomer(customerDto);
 	}
 	
-	public PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageCustomer(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("CustomerServiceBL.getAllPageCustomer()invoked");
-		return customerDao.getAllPageCustomer(pageNumber, pageSize, searchParams);
+		return customerDao.getAllPageCustomer(pageNumber, pageSize, status, searchParams);
 	}
 	
 	public List<CustomerDto> getCustomerById(Integer id) {

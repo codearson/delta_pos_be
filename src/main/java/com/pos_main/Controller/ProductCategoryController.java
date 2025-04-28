@@ -46,9 +46,9 @@ public class ProductCategoryController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageProductCategory(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("ProductCategoryController.getAllPage() invoked.");
-		return productCategoryService.getAllPageProductCategory(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return productCategoryService.getAllPageProductCategory(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 

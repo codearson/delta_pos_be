@@ -54,7 +54,7 @@ public class ShiftsDaoImpl extends BaseDaoImpl<Shifts> implements ShiftsDao {
 	
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShiftsDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Shifts> allShiftsList = null;
@@ -67,6 +67,12 @@ public class ShiftsDaoImpl extends BaseDaoImpl<Shifts> implements ShiftsDao {
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Shifts.class, "shifts");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allShiftsList = criteria.list();

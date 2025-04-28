@@ -50,8 +50,8 @@ public class TaxServiceBL {
         return taxDao.getAll();
     }
     
-	public PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("TaxServiceBL.getAllPageTax()invoked");
-		return taxDao.getAllPageTax(pageNumber, pageSize, searchParams);
+		return taxDao.getAllPageTax(pageNumber, pageSize, status, searchParams);
 	}
 }

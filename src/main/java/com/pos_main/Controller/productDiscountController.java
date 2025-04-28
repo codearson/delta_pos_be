@@ -53,10 +53,9 @@ public class productDiscountController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPagePayoutCategory(@RequestParam("pageNumber") int pageNumber,
-			@RequestParam("pageSize") int pageSize, WebRequest webRequest) {
+			@RequestParam("pageSize") int pageSize, @RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("ProductDiscountController.getAllPage() invoked");
-		return productDiscountService.getAllPage(pageNumber, pageSize,
-				HttpReqRespUtils.getSearchParameters(webRequest));
+		return productDiscountService.getAllPage(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 }

@@ -21,7 +21,7 @@ public interface UserDao extends BaseDao<User>{
 
 	User findByByEmail(String email);
 
-	PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAll(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 	List<UserDto> getUserByName(String firstName, String lastName);
 	

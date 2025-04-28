@@ -18,7 +18,7 @@ public interface PayoutCategoryDao extends BaseDao<PayoutCategory> {
     
     List<PayoutCategoryDto> getAllPayoutCategory();
     
-    PaginatedResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Map<String, String> searchParams);
+    PaginatedResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 
     List<PayoutCategoryDto> getAllByName(String payoutCategory); 
 }

@@ -18,6 +18,6 @@ public interface TaxDao {
 	
     List<TaxDto> getAll();
     
-	PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageTax(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 	
 }

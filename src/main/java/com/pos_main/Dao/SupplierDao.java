@@ -21,7 +21,7 @@ public interface SupplierDao extends BaseDao<Supplier>{
 	
 	List<SupplierDto> getAllSupplier();
 	
-	PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageSupplier(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 
 
 }

@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -60,7 +61,7 @@ public class UserLogsDaoImpl extends BaseDaoImpl<UserLogs> implements UserLogsDa
     
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageUserLogs(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("UserLogsImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<UserLogs> allUserLogsList = null;
@@ -73,14 +74,20 @@ public class UserLogsDaoImpl extends BaseDaoImpl<UserLogs> implements UserLogsDa
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(UserLogs.class, "userLogs");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(Restrictions.eq("signOff", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allUserLogsList = criteria.list();
 		recordCount = allUserLogsList.size();
 		if (allUserLogsList != null && !allUserLogsList.isEmpty()) {
 			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allUserLogsList, pageNumber, pageSize, count);
-			paginatedResponseDto.setPayload(allUserLogsList.stream().map(Invoice -> {
-				return userLogsTransformer.transform(Invoice);
+			paginatedResponseDto.setPayload(allUserLogsList.stream().map(userLogs -> {
+				return userLogsTransformer.transform(userLogs);
 			}).collect(Collectors.toList()));
 		}
 		return paginatedResponseDto;

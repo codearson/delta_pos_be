@@ -68,7 +68,7 @@ public class PayoutDaoImpl extends BaseDaoImpl<Payout> implements PayoutDao {
 
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPagePayout(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("PayoutDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Payout> allPayoutList = null;
@@ -81,6 +81,12 @@ public class PayoutDaoImpl extends BaseDaoImpl<Payout> implements PayoutDao {
 		}
 		
 		Criteria criteria = getCurrentSession().createCriteria(Payout.class, "payout");
+		
+		// Add status filter if provided
+		if (status != null) {
+			criteria.add(Restrictions.eq("isActive", status));
+		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allPayoutList = criteria.list();

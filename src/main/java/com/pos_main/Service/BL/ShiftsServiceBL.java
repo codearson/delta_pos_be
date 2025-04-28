@@ -35,9 +35,9 @@ public class ShiftsServiceBL {
 		return shiftsDao.save(shiftsDto);
 	}
 	
-	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShiftsServiceBL.getAllPageShifts()invoked");
-		return shiftsDao.getAllPageShifts(pageNumber, pageSize, searchParams);
+		return shiftsDao.getAllPageShifts(pageNumber, pageSize, status, searchParams);
 	}
 
 }

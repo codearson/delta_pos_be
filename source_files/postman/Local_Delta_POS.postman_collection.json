@@ -365,7 +365,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/user/getAll?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/user/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -373,7 +373,7 @@
 							"port": "8080",
 							"path": [
 								"user",
-								"getAll"
+								"getAllPage"
 							],
 							"query": [
 								{
@@ -383,6 +383,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -773,7 +777,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM3Mjk3NjM1LCJleHAiOjE3MzczMDEyMzV9.ogEXUyLerIwJ3THMFSFVenjI-3UNaaSHwwZ9DOk5eA_fQnq9KlvkzW62iOCxzEz_",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1ODUyNTc4fQ.SXHWfJJ0arBhO_QtOJtt7-Q2bvI_2hEEEBNuAu4NnguMb6pm5bjMaXuXePqATgC4",
 									"type": "string"
 								}
 							]
@@ -781,7 +785,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/productCategory/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/productCategory/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -799,6 +803,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -987,7 +995,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/branch/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/branch/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1005,6 +1013,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1233,7 +1245,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/product/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/product/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1251,6 +1263,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1723,7 +1739,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/tax/getByPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/tax/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1731,7 +1747,7 @@
 							"port": "8080",
 							"path": [
 								"tax",
-								"getByPage"
+								"getAllPage"
 							],
 							"query": [
 								{
@@ -1741,6 +1757,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -1768,7 +1788,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/customer/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1786,6 +1806,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -2271,7 +2295,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVAZ21haWwuY29tIiwiaWF0IjoxNzM5NDQ1MjAxLCJleHAiOjE3Mzk0NDg4MDF9.Rm4b0nBwRo-s34BM5EcB0mmeKWaIsD_ACDehj7YH8siD5a08aUkhQKu73-eN6zMr",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1ODUyNTc4fQ.SXHWfJJ0arBhO_QtOJtt7-Q2bvI_2hEEEBNuAu4NnguMb6pm5bjMaXuXePqATgC4",
 									"type": "string"
 								}
 							]
@@ -2279,7 +2303,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/supplier/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/supplier/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2297,6 +2321,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -2516,7 +2544,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/stock/getAll?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/stock/getAll?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2534,6 +2562,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -3378,7 +3410,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1ODUyNTc4fQ.SXHWfJJ0arBhO_QtOJtt7-Q2bvI_2hEEEBNuAu4NnguMb6pm5bjMaXuXePqATgC4",
 									"type": "string"
 								}
 							]
@@ -3386,7 +3418,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/shopDetails/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/shopDetails/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3404,6 +3436,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -3455,14 +3491,14 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "getAllPage",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1ODUyNTc4fQ.SXHWfJJ0arBhO_QtOJtt7-Q2bvI_2hEEEBNuAu4NnguMb6pm5bjMaXuXePqATgC4",
 									"type": "string"
 								}
 							]
@@ -3470,7 +3506,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/shifts/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/shifts/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3488,6 +3524,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -3580,7 +3620,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/purchaseList/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/purchaseList/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3598,6 +3638,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -3723,6 +3767,51 @@
 							"path": [
 								"country",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQxMzQxNzk5fQ.Ypfw7ae9eYd6NI4cU5QWdJkSylgATV3ejz4t0QjPPz5K8Fgif96e0dw94uTPXT3x",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/country/getAllPage?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"country",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -3894,7 +3983,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"action\": \"Non Scan Product\",\r\n    \"isActive\": 1\r\n}",
+							"raw": "{\r\n    \"action\": \"Add Customer\",\r\n    \"isActive\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4177,235 +4266,6 @@
 			]
 		},
 		{
-			"name": "NonScanProduct",
-			"item": [
-				{
-					"name": "getAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/nonScanProduct/getAll",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"nonScanProduct",
-								"getAll"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAllPage",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/nonScanProduct/getAllPage?pageNumber=1&pageSize=10",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"nonScanProduct",
-								"getAllPage"
-							],
-							"query": [
-								{
-									"key": "pageNumber",
-									"value": "1"
-								},
-								{
-									"key": "pageSize",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "save",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nonScanProduct\": \"Waterproof Beach Bag\",\r\n    \"icon\": \"🏖️\",\r\n    \"price\": 20.0,\r\n    \"isActive\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/nonScanProduct/save",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"nonScanProduct",
-								"save"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"id\": 1,\r\n  \"nonScanProduct\": \"Shopping Bagss\",\r\n  \"icon\": \"🛍️\",\r\n  \"price\": 25.00,\r\n  \"isActive\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/nonScanProduct/update",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"nonScanProduct",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getByName",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/nonScanProduct/getByName?nonScanProduct=Shopping Bags",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"nonScanProduct",
-								"getByName"
-							],
-							"query": [
-								{
-									"key": "nonScanProduct",
-									"value": "Shopping Bags"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateStatus",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0MjEwODg3fQ.FJWqMKfx4UdYoAFG4BF_QFGHJMUEIVnF6tUntAZSr132sP9XAzzjxmbcaz6VO9mI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/nonScanProduct/updateStatus?id=1&status=1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"nonScanProduct",
-								"updateStatus"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "1"
-								},
-								{
-									"key": "status",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Payout",
 			"item": [
 				{
@@ -4572,7 +4432,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/payout/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/payout/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4590,6 +4450,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -4795,7 +4659,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/payoutCategory/getAll?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/payoutCategory/getAll?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4813,6 +4677,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -4937,7 +4805,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1ODUyNTc4fQ.SXHWfJJ0arBhO_QtOJtt7-Q2bvI_2hEEEBNuAu4NnguMb6pm5bjMaXuXePqATgC4",
 									"type": "string"
 								}
 							]
@@ -4945,7 +4813,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/banking/getAllPage?pageNumber=1&pageSize=10",
+							"raw": "http://localhost:8080/banking/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4963,6 +4831,10 @@
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}
@@ -5633,7 +5505,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0OTgzNTI1fQ.n6rbzrY2U1twWedwJHyQ3-E80xAUPnImfNodFBNerhTvUm0cPNiY-MmkTtgLwQ6a\n",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ1ODUyNTc4fQ.SXHWfJJ0arBhO_QtOJtt7-Q2bvI_2hEEEBNuAu4NnguMb6pm5bjMaXuXePqATgC4",
 									"type": "string"
 								}
 							]
@@ -5641,7 +5513,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/staffLeave/getAllPage?pageNumber=0&pageSize=10",
+							"raw": "http://localhost:8080/staffLeave/getAllPage?pageNumber=1&pageSize=10&status=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5654,11 +5526,15 @@
 							"query": [
 								{
 									"key": "pageNumber",
-									"value": "0"
+									"value": "1"
 								},
 								{
 									"key": "pageSize",
 									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}

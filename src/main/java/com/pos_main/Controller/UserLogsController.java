@@ -44,9 +44,9 @@ public class UserLogsController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageUserLogs(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("UserLogsServiceController.getAllPage() invoked.");
-		return userLogsService.getAllPageUserLogs(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return userLogsService.getAllPageUserLogs(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 }

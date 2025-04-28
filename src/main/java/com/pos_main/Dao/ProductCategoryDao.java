@@ -18,7 +18,7 @@ public interface ProductCategoryDao extends BaseDao<ProductCategory>{
 
 	List<ProductCategoryDto> getAll();
 	
-	PaginatedResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPageProductCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 
 	ProductCategoryDto save(ProductCategoryDto productCategoryDto);
 

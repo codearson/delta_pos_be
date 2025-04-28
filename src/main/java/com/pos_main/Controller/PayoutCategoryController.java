@@ -60,9 +60,10 @@ public class PayoutCategoryController {
     @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getAllPagePayoutCategory(@RequestParam("pageNumber") int pageNumber, 
             @RequestParam("pageSize") int pageSize,
+            @RequestParam("status") Boolean status,
             WebRequest webRequest) {
         log.info("PayoutCategoryController.getAllPagePayoutCategory() invoked");
-        return payoutCategoryService.getAllPagePayoutCategory(pageNumber, pageSize, 
+        return payoutCategoryService.getAllPagePayoutCategory(pageNumber, pageSize, status, 
                 HttpReqRespUtils.getSearchParameters(webRequest));
     }
     

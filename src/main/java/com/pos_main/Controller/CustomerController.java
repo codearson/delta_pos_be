@@ -46,9 +46,9 @@ public class CustomerController {
 	@GetMapping("/getAllPage")
 	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 	public ResponseDto getAllPageCustomer(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			WebRequest webRequest) {
+			@RequestParam("status") Boolean status, WebRequest webRequest) {
 		log.info("CustomerController.getAllPage() invoked.");
-		return customerService.getAllPageCustomer(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+		return customerService.getAllPageCustomer(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 
 	@PostMapping("/save")

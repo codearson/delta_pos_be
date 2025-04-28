@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pos_main.Dto.CountryDto;
@@ -44,6 +45,16 @@ public class CountryController {
     public ResponseEntity<ResponseDto> getAll() {
         log.info("CountryController.getAll() invoked");
         ResponseDto response = countryService.getAll();
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/getAllPage")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseEntity<ResponseDto> getAllPage(
+            @RequestParam("pageNumber") int pageNumber, 
+            @RequestParam("pageSize") int pageSize) {
+        log.info("CountryController.getAllPage() invoked");
+        ResponseDto response = countryService.getAllPage(pageNumber, pageSize);
         return ResponseEntity.ok(response);
     }
 }

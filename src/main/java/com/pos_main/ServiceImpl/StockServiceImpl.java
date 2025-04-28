@@ -83,11 +83,11 @@ public class StockServiceImpl implements StockService {
 	}
 	
 	@Override
-	public ResponseDto getAllPageStock(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageStock(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("StockServiceImpl.getAllPageStock() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = stockServiceBL.getAllPageStock(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = stockServiceBL.getAllPageStock(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Stock Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

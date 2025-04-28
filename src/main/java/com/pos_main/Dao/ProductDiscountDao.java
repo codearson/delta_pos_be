@@ -13,5 +13,5 @@ public interface ProductDiscountDao {
 
 	ProductDiscountDto checkPayoutCategoryAvailability(Integer id);
 	
-	PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
 }

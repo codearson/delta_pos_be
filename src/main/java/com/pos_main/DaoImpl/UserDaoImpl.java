@@ -77,7 +77,7 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("UserDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<User> allUserList = null;
@@ -89,7 +89,10 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 		}
 		Criteria criteria = getCurrentSession().createCriteria(User.class, "user");
 		criteria.createAlias("user.userRole", "userRole");
-        	criteria.addOrder(Order.desc("userRole.id"));   
+        criteria.addOrder(Order.desc("userRole.id"));   
+		if (status != null) {
+			criteria.add(Restrictions.eq("isActive", status));
+		}
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allUserList = criteria.list();

@@ -75,7 +75,7 @@ public class PayoutCategoryDaoImpl extends BaseDaoImpl<PayoutCategory> implement
 
     @Override
     @Transactional
-    public PaginatedResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Map<String, String> searchParams) {
+    public PaginatedResponseDto getAllPagePayoutCategory(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
         log.info("PayoutCategoryDaoImpl.getAllPagePayoutCategory() invoked");
         PaginatedResponseDto paginatedResponseDto = null;
         List<PayoutCategory> allPayoutCategoryList;
@@ -88,6 +88,12 @@ public class PayoutCategoryDaoImpl extends BaseDaoImpl<PayoutCategory> implement
         }
 
         Criteria criteria = getCurrentSession().createCriteria(PayoutCategory.class);
+        
+        // Add status filter if provided
+        if (status != null) {
+            criteria.add(Restrictions.eq("isActive", status));
+        }
+        
         criteria.setFirstResult((pageNumber - 1) * pageSize);
         criteria.setMaxResults(pageSize);
         allPayoutCategoryList = criteria.list();

@@ -129,11 +129,11 @@ public class TaxServiceImpl implements TaxService{
     }
     
 	@Override
-	public ResponseDto getAllPageTax(int pageNumber, int pageSize, Map<String, String> searchParams) {
+	public ResponseDto getAllPageTax(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("TaxServiceImpl.getAllPageTax() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = taxServiceBL.getAllPageTax(pageNumber, pageSize, searchParams);
+			PaginatedResponseDto paginatedResponseDto = taxServiceBL.getAllPageTax(pageNumber, pageSize, status, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Tax Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
