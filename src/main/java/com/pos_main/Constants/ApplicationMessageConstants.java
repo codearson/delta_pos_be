@@ -298,5 +298,10 @@ public interface ApplicationMessageConstants {
 		String EX_UPDATE_MINIMAM_BANKING_DETAILS = "ex.update.minimam.banking.details";
 		String ERR_RETRIEVE_ALL_MINIMAM_BANKING_DETAILS = "err.retrieve.all.minimam.banking.details";
 		String EX_RETRIEVE_ALL_MINIMAM_BANKING_DETAILS = "ex.retrieve.all.minimam.banking.details";
+		String ERR_UPDATE_SHIFTS_DETAILS = "err.update.shifts.details";
+		String EX_UPDATE_SHIFTS_DETAILS = "ex.update.shifts.details";
+		String ERR_UPDATE_SHIFTS_DETAILS_STATUS = "err.update.shifts.details.status";
+		String EX_UPDATE_SHIFTS_DETAILS_STATUS = "ex.update.shifts.details.status";
+		
 	}
 }

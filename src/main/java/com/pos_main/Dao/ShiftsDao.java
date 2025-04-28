@@ -20,6 +20,10 @@ public interface ShiftsDao extends BaseDao<Shifts>{
 	
 	ShiftsDto save(ShiftsDto shiftsDto);
 	
+	ShiftsDto update(ShiftsDto shiftsDto);
+	
+	ShiftsDto checkShiftAvailability(Integer shiftId);
+	
 	PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Map<String, String> searchParams);
 
 }
