@@ -19,6 +19,10 @@ public interface ShiftsService {
 	
 	public ResponseDto save(ShiftsDto shiftsDto);
 	
+	public ResponseDto update(ShiftsDto shiftsDto);
+	
+	public ResponseDto updateStatus(Integer shiftId, Boolean status);
+	
 	public ResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
 
 }

@@ -1,7 +1,8 @@
 package com.pos_main.Domain;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -27,13 +28,20 @@ public class Shifts implements Serializable{
 	@Basic(optional = false)
 	@Column(name = "id")
 	private Integer id;
-	@JoinColumn(name = "user", referencedColumnName = "id")
+	@JoinColumn(name = "userId", referencedColumnName = "id")
 	@ManyToOne(optional = false)
 	private User user;
+	@JoinColumn(name = "managerId", referencedColumnName = "id")
+	@ManyToOne(optional = false)
+	private User manager;
+	@Column(name = "date")
+	private LocalDate date;
 	@Column(name =  "startTime")
-	private LocalDateTime startTime;
+	private LocalTime startTime;
 	@Column(name =  "endTime")
-	private LocalDateTime endTime;
+	private LocalTime endTime;
+	@Column(name = "status")
+	private String status;
 	@Column(name = "isActive")
 	private Boolean isActive;
 	

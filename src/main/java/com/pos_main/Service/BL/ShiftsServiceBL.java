@@ -1,6 +1,5 @@
 package com.pos_main.Service.BL;
 
-import java.time.LocalDateTime;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +32,21 @@ public class ShiftsServiceBL {
 	public ShiftsDto save(ShiftsDto shiftsDto) {
 		log.info("ShiftsServiceBL.save() invoked.");
 		return shiftsDao.save(shiftsDto);
+	}
+	
+	public ShiftsDto update(ShiftsDto shiftsDto) {
+		log.info("ShiftsServiceBL.update() invoked.");
+		return shiftsDao.update(shiftsDto);
+	}
+	
+	public ShiftsDto updateStatus(Integer shiftId, Boolean status) {
+		ShiftsDto shiftsDto = shiftsDao.checkShiftAvailability(shiftId);
+		if (shiftsDto != null) {
+			shiftsDto.setIsActive(status);
+			return shiftsDao.update(shiftsDto);
+		} else {
+			return null;
+		}
 	}
 	
 	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
