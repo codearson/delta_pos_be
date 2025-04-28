@@ -65,9 +65,15 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
 		Criteria criteria = getCurrentSession().createCriteria(Product.class, "product");
 		criteria.add(Restrictions.eq("product.isActive", status));
 		
+		// Add restrictions to exclude products with "Non Scan" and "Custom" categories
+		criteria.createAlias("product.productCategory", "productCategory");
+		criteria.add(Restrictions.ne("productCategory.productCategoryName", "Non Scan"));
+		criteria.add(Restrictions.ne("productCategory.productCategoryName", "Custom"));
+		
 		criteria.addOrder(Order.desc("id"));
 		
-		String countString = "SELECT COUNT(*) FROM product WHERE is_active = " + (status ? "1" : "0");
+		String countString = "SELECT COUNT(*) FROM product p JOIN product_category pc ON p.product_category = pc.id WHERE p.is_active = " + (status ? "1" : "0") + 
+		                     " AND pc.product_category_name != 'Non Scan' AND pc.product_category_name != 'Custom'";
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
 		
 		if (pageSize == 0) {
