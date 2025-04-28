@@ -1,6 +1,7 @@
 package com.pos_main.Dto;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import lombok.Data;
 
@@ -9,7 +10,10 @@ public class ShiftsDto {
 
 	private Integer id;
 	private UserDto userDto;
-	private LocalDateTime startTime;
-	private LocalDateTime endTime;
+	private UserDto managerDto;
+	private LocalDate date;
+	private LocalTime startTime;
+	private LocalTime endTime;
+	private String status;
 	private Boolean isActive;
 }

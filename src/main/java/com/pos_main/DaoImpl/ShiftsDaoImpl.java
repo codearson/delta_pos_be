@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -50,6 +51,28 @@ public class ShiftsDaoImpl extends BaseDaoImpl<Shifts> implements ShiftsDao {
 		Shifts shifts = shiftsTransformer.reverseTransform(shiftsDto);
 		Shifts saveShifts = saveOrUpdate(shifts);
 		return shiftsTransformer.transform(saveShifts);
+	}
+	
+	@Override
+	@Transactional
+	public ShiftsDto update(ShiftsDto shiftsDto) {
+		log.info("ShiftsDaoImpl.save() invoked.");
+		Shifts shifts = shiftsTransformer.reverseTransform(shiftsDto);
+		Shifts updateShifts = saveOrUpdate(shifts);
+		return shiftsTransformer.transform(updateShifts);
+	}
+	
+	@Override
+	@Transactional
+	public ShiftsDto checkShiftAvailability(Integer shiftId) {
+		Criteria criteria = getCurrentSession().createCriteria(Shifts.class, "Shifts");
+		criteria.add(Restrictions.eq("Shifts.id", shiftId));
+		Shifts shifts = (Shifts) criteria.uniqueResult();
+		ShiftsDto shiftsDto = null;
+		if (shifts != null) {
+			shiftsDto = shiftsTransformer.transform(shifts);
+		}
+		return shiftsDto;
 	}
 	
 	@Override

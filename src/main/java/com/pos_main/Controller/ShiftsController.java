@@ -5,6 +5,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +42,20 @@ public class ShiftsController {
 	public ResponseDto save(@RequestBody ShiftsDto shiftsDto) {
 		log.info("ShiftsController.save() invoked");
 		return shiftsService.save(shiftsDto);
+	}
+	
+	@PostMapping("/update")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto update(@RequestBody ShiftsDto shiftsDto) {
+		log.info("ShiftsController.update() invoked");
+		return shiftsService.update(shiftsDto);
+	}
+	
+	@PutMapping("/updateStatus")
+	@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+	public ResponseDto updateStatus(@RequestParam("shiftId") Integer shiftId, @RequestParam("status") Boolean status) {
+		log.info("ShiftsController.updateStatus() invoked");
+		return shiftsService.updateStatus(shiftId, status);
 	}
 	
 	@GetMapping("/getAllPage")
