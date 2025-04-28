@@ -53,6 +53,10 @@ public class BranchDaoImpl extends BaseDaoImpl<Branch> implements BranchDao {
 		List<Branch> allBranchList = null;
 		int recordCount = 0;
 		String countString = "SELECT COUNT(*) FROM branch";
+		if (searchParams != null && searchParams.containsKey("status")) {
+			Boolean status = Boolean.parseBoolean(searchParams.get("status"));
+			countString += " WHERE is_active = " + (status ? "true" : "false");
+		}
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
 
 		if (pageSize == 0) {

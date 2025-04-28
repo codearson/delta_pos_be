@@ -41,9 +41,9 @@ public class BankingController {
 	
 	@GetMapping("/getAllPage")
 	public ResponseDto getAll(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize,
-			@RequestParam("status") Boolean status, WebRequest webRequest) {
+			WebRequest webRequest) {
 		log.info("BankingController.getAll() invoked.");
-		return bankingService.getAllPage(pageNumber, pageSize, status, HttpReqRespUtils.getSearchParameters(webRequest));
+		return bankingService.getAllPage(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 	
 	@GetMapping("/getTotalBanking")

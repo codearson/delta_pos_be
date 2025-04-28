@@ -84,6 +84,9 @@ public class ShopDetailsDaoImpl extends BaseDaoImpl<ShopDetails> implements Shop
 		List<ShopDetails> allShopDetailsList = null;
 		int recordCount = 0;
 		String countString = "SELECT COUNT(*) FROM shop_details";
+		if (status != null) {
+			countString += " WHERE is_active = " + (status ? "true" : "false");
+		}
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
 
 		if (pageSize == 0) {

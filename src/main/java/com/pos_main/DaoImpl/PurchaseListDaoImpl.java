@@ -67,7 +67,7 @@ public class PurchaseListDaoImpl extends BaseDaoImpl<PurchaseList> implements Pu
     
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParams) {
 		log.info("PurchaseListDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<PurchaseList> allPurchaseListList = null;
@@ -80,11 +80,6 @@ public class PurchaseListDaoImpl extends BaseDaoImpl<PurchaseList> implements Pu
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(PurchaseList.class, "purchaseList");
-		
-		// Add status filter if provided
-		if (status != null) {
-			criteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
-		}
 		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);

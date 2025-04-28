@@ -54,7 +54,12 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Customer> allCustomerList = null;
 		int recordCount = 0;
+		
+		// Modify the count query to consider the status filter
 		String countString = "SELECT COUNT(*) FROM customer";
+		if (status != null) {
+			countString += " WHERE is_active = " + (status ? "true" : "false");
+		}
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
 
 		if (pageSize == 0) {
@@ -71,7 +76,10 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allCustomerList = criteria.list();
-		recordCount = allCustomerList.size();
+		
+		// Don't set recordCount to the size of the filtered list
+		// recordCount = allCustomerList.size();
+		
 		if (allCustomerList != null && !allCustomerList.isEmpty()) {
 			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allCustomerList, pageNumber, pageSize, count);
 			paginatedResponseDto.setPayload(allCustomerList.stream().map(Invoice -> {

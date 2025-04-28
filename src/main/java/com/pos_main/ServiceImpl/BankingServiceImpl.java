@@ -55,11 +55,11 @@ public class BankingServiceImpl implements BankingService{
 	}
 	
 	@Override
-	public ResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
+	public ResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
 		log.info("BankingServiceImpl.getAllPage() invoked");
 		ResponseDto responseDto = null;
 		try {
-			PaginatedResponseDto paginatedResponseDto = bankingServiceBL.getAllPage(pageNumber, pageSize, status, searchParams);
+			PaginatedResponseDto paginatedResponseDto = bankingServiceBL.getAllPage(pageNumber, pageSize, searchParams);
 			if (paginatedResponseDto != null) {
 				log.info("Retrieve All Banking Details.");
 				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);

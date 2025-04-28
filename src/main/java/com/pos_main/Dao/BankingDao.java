@@ -18,7 +18,7 @@ public interface BankingDao extends BaseDao<Banking>{
 
 	BankingDto save (BankingDto bankingDto);
 	
-	PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams);
+	PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams);
 	
 	Double getTotalBanking();
 	

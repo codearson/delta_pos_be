@@ -3,6 +3,7 @@ package com.pos_main.DaoImpl;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -11,6 +12,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -80,11 +82,16 @@ public class PayoutCategoryDaoImpl extends BaseDaoImpl<PayoutCategory> implement
         PaginatedResponseDto paginatedResponseDto = null;
         List<PayoutCategory> allPayoutCategoryList;
         
-        String countString = "SELECT COUNT(*) FROM payout_category";
-        int count = jdbcTemplate.queryForObject(countString, Integer.class);
+        // Create criteria for count query
+        Criteria countCriteria = getCurrentSession().createCriteria(PayoutCategory.class);
+        if (status != null) {
+            countCriteria.add(Restrictions.eq("isActive", status));
+        }
+        countCriteria.setProjection(Projections.rowCount());
+        Long count = (Long) countCriteria.uniqueResult();
 
         if (pageSize == 0) {
-            pageSize = count;
+            pageSize = count.intValue();
         }
 
         Criteria criteria = getCurrentSession().createCriteria(PayoutCategory.class);
@@ -99,10 +106,20 @@ public class PayoutCategoryDaoImpl extends BaseDaoImpl<PayoutCategory> implement
         allPayoutCategoryList = criteria.list();
 
         if (allPayoutCategoryList != null && !allPayoutCategoryList.isEmpty()) {
-            paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allPayoutCategoryList, pageNumber, pageSize, count);
+            paginatedResponseDto = new PaginatedResponseDto();
+            paginatedResponseDto.setPageNumber(pageNumber);
+            paginatedResponseDto.setPageSize(pageSize);
+            paginatedResponseDto.setTotalRecords(count.intValue());
             paginatedResponseDto.setPayload(allPayoutCategoryList.stream()
                     .map(payoutCategoryTransformer::transform)
                     .collect(Collectors.toList()));
+        } else {
+            // Return empty paginated response with correct structure
+            paginatedResponseDto = new PaginatedResponseDto();
+            paginatedResponseDto.setPageNumber(pageNumber);
+            paginatedResponseDto.setPageSize(pageSize);
+            paginatedResponseDto.setTotalRecords(count.intValue());
+            paginatedResponseDto.setPayload(new ArrayList<>());
         }
         return paginatedResponseDto;
     }

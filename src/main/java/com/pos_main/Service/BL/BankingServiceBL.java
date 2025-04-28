@@ -33,9 +33,9 @@ public class BankingServiceBL {
 		return bankingDao.save(bankingDto);
 	}
 	
-	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
 		log.info("BankingServiceBL.getAllPage()invoked");
-		return bankingDao.getAllPage(pageNumber, pageSize, status, searchParams);
+		return bankingDao.getAllPage(pageNumber, pageSize, searchParams);
 	}
 	
 	public Double getTotalBanking() {
