@@ -1,13 +1,17 @@
 package com.pos_main.DaoImpl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -40,9 +44,9 @@ public class ShiftsDaoImpl extends BaseDaoImpl<Shifts> implements ShiftsDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
+	
 	@Autowired
-    private SessionFactory sessionFactory;
+    private EntityManager entityManager;
 	
 	@Override
 	@Transactional
@@ -108,5 +112,25 @@ public class ShiftsDaoImpl extends BaseDaoImpl<Shifts> implements ShiftsDao {
 		}
 		return paginatedResponseDto;
 	}
+	
+	@Override
+    @Transactional
+    public List<ShiftsDto> getAllByDateRange(LocalDate startDate, LocalDate endDate) {
+        log.info("ShiftsDaoImpl.getAllByDateRange() invoked");
+
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Shifts> cq = cb.createQuery(Shifts.class);
+        Root<Shifts> root = cq.from(Shifts.class);
+
+        cq.select(root).where(
+            cb.between(root.get("date"), startDate, endDate)
+        );
+
+        List<Shifts> shiftsList = entityManager.createQuery(cq).getResultList();
+
+        return shiftsList.stream()
+                .map(shiftsTransformer::transform)
+                .collect(Collectors.toList());
+    }
 
 }

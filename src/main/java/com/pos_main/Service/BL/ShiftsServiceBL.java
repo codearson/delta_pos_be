@@ -1,5 +1,7 @@
 package com.pos_main.Service.BL;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +54,11 @@ public class ShiftsServiceBL {
 	public PaginatedResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
 		log.info("ShiftsServiceBL.getAllPageShifts()invoked");
 		return shiftsDao.getAllPageShifts(pageNumber, pageSize, status, searchParams);
+	}
+	
+	public List<ShiftsDto> getAllByDateRange(LocalDate startDate, LocalDate endDate) {
+		log.info("ShiftsServiceBL.getAllByDateRange()invoked");
+		return shiftsDao.getAllByDateRange(startDate, endDate);
 	}
 
 }

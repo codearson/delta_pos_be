@@ -1,5 +1,7 @@
 package com.pos_main.ServiceImpl;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -118,6 +120,28 @@ public class ShiftsServiceImpl implements ShiftsService{
 			log.error("Exception occurs while retrieving All shifts details.", e);
 			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
 					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SHIFTS_DETAILS);
+		}
+		return responseDto;
+	}
+	
+	@Override
+	public ResponseDto getAllByDateRange(LocalDate startDate, LocalDate endDate) {
+		log.info("ShiftServiceImpl.getAllByDateRange() invoked");
+		ResponseDto responseDto = null;
+		try {
+			List<ShiftsDto> shiftsDtoList = shiftsServiceBL.getAllByDateRange(startDate, endDate);
+			if (shiftsDtoList != null && !shiftsDtoList.isEmpty()) {
+				log.info("Retrieve All Shift Details.");
+				responseDto = serviceUtil.getServiceResponse(shiftsDtoList);
+			} else {
+				log.info("Unable to retrieve All Shift details.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_SHIFTS_DETAILS_BY_DATERANGE);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving all Shift details.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_SHIFTS_DETAILS_BY_DATERANGE);
 		}
 		return responseDto;
 	}

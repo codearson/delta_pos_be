@@ -302,6 +302,8 @@ public interface ApplicationMessageConstants {
 		String EX_UPDATE_SHIFTS_DETAILS = "ex.update.shifts.details";
 		String ERR_UPDATE_SHIFTS_DETAILS_STATUS = "err.update.shifts.details.status";
 		String EX_UPDATE_SHIFTS_DETAILS_STATUS = "ex.update.shifts.details.status";
+		String ERR_RETRIEVE_ALL_SHIFTS_DETAILS_BY_DATERANGE = "err.retrieve.all.shifts.details.by.daterange";
+		String EX_RETRIEVE_ALL_SHIFTS_DETAILS_BY_DATERANGE = "ex.retrieve.all.shifts.details.by.daterange";
 		String ERR_SAVE_DEVICE_AUTH_DETAILS = "err.save.device.auth.details";
         String EX_SAVE_DEVICE_AUTH_DETAILS = "ex.save.device.auth.details";
         String ERR_APPROVE_DEVICE_AUTH = "err.approve.device.auth";
@@ -312,6 +314,6 @@ public interface ApplicationMessageConstants {
         String ERR_BLOCK_DEVICE_AUTH = "err.block.device.auth";
         String EX_LOGIN_DEVICE_AUTH = "ex.login.device.auth";
         String ERR_LOGIN_DEVICE_AUTH = "err.login.device.auth";
-		
+
 	}
 }
