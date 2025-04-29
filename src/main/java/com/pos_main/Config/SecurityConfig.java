@@ -47,7 +47,7 @@ public class SecurityConfig {
         	.and()	//Disable CSRF if not needed
             .csrf().disable()
             .authorizeHttpRequests()
-            .antMatchers("/user/**", "/auth/reset-password", "/auth/forgot-password").permitAll()  // Allow access without JWT
+            .antMatchers("/user/**", "/auth/reset-password", "/auth/forgot-password", "/deviceAuth/register", "/deviceAuth/login").permitAll()  // Allow access without JWT
             .anyRequest().authenticated()
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
