@@ -1,6 +1,7 @@
 package com.pos_main.Service;
 
 
+import java.time.LocalDate;
 import java.util.Map;
 
 import com.pos_main.Dto.ResponseDto;
@@ -24,5 +25,7 @@ public interface ShiftsService {
 	public ResponseDto updateStatus(Integer shiftId, Boolean status);
 	
 	public ResponseDto getAllPageShifts(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
+	
+	public ResponseDto getAllByDateRange(LocalDate startDate, LocalDate endDate);
 
 }
