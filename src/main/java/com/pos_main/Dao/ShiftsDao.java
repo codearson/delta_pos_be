@@ -1,5 +1,7 @@
 package com.pos_main.Dao;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 import com.pos_main.Domain.Shifts;
@@ -25,5 +27,7 @@ public interface ShiftsDao extends BaseDao<Shifts>{
 	ShiftsDto update(ShiftsDto shiftsDto);
 	
 	ShiftsDto checkShiftAvailability(Integer shiftId);
+	
+	public List<ShiftsDto> getAllByDateRange(LocalDate startDate, LocalDate endDate);
 
 }
