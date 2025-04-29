@@ -13,6 +13,7 @@ import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -78,29 +79,38 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 	@Override
 	@Transactional
 	public PaginatedResponseDto getAll(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
-		log.info("UserDaoImpl.getAll()invoked");
+		log.info("UserDaoImpl.getAll() invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<User> allUserList = null;
 		int recordCount = 0;
-		String countString = "SELECT COUNT(*) FROM user";
-		int count = jdbcTemplate.queryForObject(countString, Integer.class);
-		if (pageSize == 0) {
-			pageSize = count;
+		
+		// Create criteria for count query
+		Criteria countCriteria = getCurrentSession().createCriteria(User.class);
+		if (status != null) {
+			countCriteria.add(Restrictions.eq("isActive", status));
 		}
+		countCriteria.setProjection(Projections.rowCount());
+		Long count = (Long) countCriteria.uniqueResult();
+
+		if (pageSize == 0) {
+			pageSize = count.intValue();
+		}
+
 		Criteria criteria = getCurrentSession().createCriteria(User.class, "user");
 		criteria.createAlias("user.userRole", "userRole");
-        criteria.addOrder(Order.desc("userRole.id"));   
+		criteria.addOrder(Order.desc("userRole.id"));   
 		if (status != null) {
 			criteria.add(Restrictions.eq("isActive", status));
 		}
+		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allUserList = criteria.list();
 		recordCount = allUserList.size();
 		if (allUserList != null && !allUserList.isEmpty()) {
-			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allUserList, pageNumber, pageSize, count);
-			paginatedResponseDto.setPayload(allUserList.stream().map(Invoice -> {
-				return userTransfomer.transform(Invoice);
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allUserList, pageNumber, pageSize, count.intValue());
+			paginatedResponseDto.setPayload(allUserList.stream().map(user -> {
+				return userTransfomer.transform(user);
 			}).collect(Collectors.toList()));
 		}
 		return paginatedResponseDto;

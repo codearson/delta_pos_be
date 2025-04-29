@@ -3,6 +3,7 @@ package com.pos_main.DaoImpl;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -11,6 +12,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -113,12 +115,17 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
 		log.info("TaxDaoImpl.getAll()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Tax> allTaxList = null;
-		int recordCount = 0;
-		String countString = "SELECT COUNT(*) FROM tax";
-		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+		
+		// Create criteria for count query
+		Criteria countCriteria = getCurrentSession().createCriteria(Tax.class);
+		if (status != null) {
+			countCriteria.add(Restrictions.eq("isActive", status));
+		}
+		countCriteria.setProjection(Projections.rowCount());
+		Long count = (Long) countCriteria.uniqueResult();
 
 		if (pageSize == 0) {
-			pageSize = count;
+			pageSize = count.intValue();
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Tax.class, "tax");
@@ -128,12 +135,22 @@ public class TaxDaoImpl extends BaseDaoImpl<Tax> implements TaxDao{
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allTaxList = criteria.list();
-		recordCount = allTaxList.size();
+
 		if (allTaxList != null && !allTaxList.isEmpty()) {
-			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allTaxList, pageNumber, pageSize, count);
-			paginatedResponseDto.setPayload(allTaxList.stream().map(Invoice -> {
-				return taxTransformer.transform(Invoice);
-			}).collect(Collectors.toList()));
+			paginatedResponseDto = new PaginatedResponseDto();
+			paginatedResponseDto.setPageNumber(pageNumber);
+			paginatedResponseDto.setPageSize(pageSize);
+			paginatedResponseDto.setTotalRecords(count.intValue());
+			paginatedResponseDto.setPayload(allTaxList.stream()
+					.map(taxTransformer::transform)
+					.collect(Collectors.toList()));
+		} else {
+			// Return empty paginated response with correct structure
+			paginatedResponseDto = new PaginatedResponseDto();
+			paginatedResponseDto.setPageNumber(pageNumber);
+			paginatedResponseDto.setPageSize(pageSize);
+			paginatedResponseDto.setTotalRecords(count.intValue());
+			paginatedResponseDto.setPayload(new ArrayList<>());
 		}
 		return paginatedResponseDto;
 	}

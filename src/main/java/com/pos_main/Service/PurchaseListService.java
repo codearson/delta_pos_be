@@ -11,7 +11,7 @@ public interface PurchaseListService {
     
     ResponseDto getAll();
     
-    public ResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParameters);
+    public ResponseDto getAllPagePurchaseList(int pageNumber, int pageSize, Map<String, String> searchParameters);
     
     ResponseDto deleteAll();
     

@@ -52,7 +52,7 @@ public class BankingDaoImpl extends BaseDaoImpl<Banking> implements BankingDao{
 
 	@Override
 	@Transactional
-	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Boolean status, Map<String, String> searchParams) {
+	public PaginatedResponseDto getAllPage(int pageNumber, int pageSize, Map<String, String> searchParams) {
 		log.info("BankingDaoImpl.getAllPage()invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Banking> allBankingList = null;
@@ -65,11 +65,6 @@ public class BankingDaoImpl extends BaseDaoImpl<Banking> implements BankingDao{
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Banking.class, "banking");
-		
-		// Add status filter if provided
-		if (status != null) {
-			criteria.add(Restrictions.eq("isActive", status));
-		}
 		
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);

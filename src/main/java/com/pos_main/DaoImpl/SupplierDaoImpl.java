@@ -153,7 +153,12 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Supplier> allSupplierList = null;
 		int recordCount = 0;
+		
+		// Modify the count query to consider the status filter
 		String countString = "SELECT COUNT(*) FROM supplier";
+		if (status != null) {
+			countString += " WHERE is_active = " + (status ? "true" : "false");
+		}
 		int count = jdbcTemplate.queryForObject(countString, Integer.class);
 
 		if (pageSize == 0) {
@@ -167,7 +172,10 @@ public class SupplierDaoImpl extends BaseDaoImpl<Supplier> implements SupplierDa
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allSupplierList = criteria.list();
-		recordCount = allSupplierList.size();
+		
+		// Don't set recordCount to the size of the filtered list
+		// recordCount = allSupplierList.size();
+		
 		if (allSupplierList != null && !allSupplierList.isEmpty()) {
 			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allSupplierList, pageNumber, pageSize, count);
 			paginatedResponseDto.setPayload(allSupplierList.stream().map(Invoice -> {

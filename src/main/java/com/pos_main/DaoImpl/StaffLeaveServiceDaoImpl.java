@@ -113,8 +113,22 @@ public class StaffLeaveServiceDaoImpl extends BaseDaoImpl<StaffLeave> implements
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<StaffLeave> allStaffLeaveList = null;
 		int recordCount = 0;
-		String countString = "SELECT COUNT(*) FROM staff_leave";
-		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+		
+		// Create a criteria for counting records with the same filters
+		Criteria countCriteria = getCurrentSession().createCriteria(StaffLeave.class, "staffLeave");
+		
+		// Add status filter if provided
+		if (status != null) {
+			countCriteria.add(org.hibernate.criterion.Restrictions.eq("isActive", status));
+		}
+		
+		// Get the count of records that match the filter
+		int count = countCriteria.list().size();
+		
+		// If no records match the filter, return empty paginated response
+		if (count == 0) {
+			return HttpReqRespUtils.paginatedResponseMapper(null, pageNumber, pageSize, 0);
+		}
 
 		if (pageSize == 0) {
 			pageSize = count;

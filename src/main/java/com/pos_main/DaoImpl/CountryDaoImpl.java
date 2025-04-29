@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Projections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -70,11 +71,14 @@ public class CountryDaoImpl extends BaseDaoImpl<Country> implements CountryDao {
 		PaginatedResponseDto paginatedResponseDto = null;
 		List<Country> allCountryList = null;
 		int recordCount = 0;
-		String countString = "SELECT COUNT(*) FROM country";
-		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+		
+		// Create criteria for count query
+		Criteria countCriteria = getCurrentSession().createCriteria(Country.class);
+		countCriteria.setProjection(Projections.rowCount());
+		Long count = (Long) countCriteria.uniqueResult();
 
 		if (pageSize == 0) {
-			pageSize = count;
+			pageSize = count.intValue();
 		}
 
 		Criteria criteria = getCurrentSession().createCriteria(Country.class, "country");
@@ -84,7 +88,7 @@ public class CountryDaoImpl extends BaseDaoImpl<Country> implements CountryDao {
 		allCountryList = criteria.list();
 		recordCount = allCountryList.size();
 		if (allCountryList != null && !allCountryList.isEmpty()) {
-			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allCountryList, pageNumber, pageSize, count);
+			paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(allCountryList, pageNumber, pageSize, count.intValue());
 			paginatedResponseDto.setPayload(allCountryList.stream().map(country -> {
 				return countryTransformer.transform(country);
 			}).collect(Collectors.toList()));

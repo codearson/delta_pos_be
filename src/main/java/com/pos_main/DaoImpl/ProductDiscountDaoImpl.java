@@ -73,8 +73,17 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 		log.info("ProductDiscountDaoImpl.getAllPage() invoked");
 		PaginatedResponseDto paginatedResponseDto = null;
 
-		String countString = "SELECT COUNT(*) FROM product_discount";
-		int count = jdbcTemplate.queryForObject(countString, Integer.class);
+		String countString = "SELECT COUNT(*) FROM product_discount WHERE 1=1";
+		if (status != null) {
+			countString += " AND is_active = ?";
+		}
+		
+		int count;
+		if (status != null) {
+			count = jdbcTemplate.queryForObject(countString, Integer.class, status);
+		} else {
+			count = jdbcTemplate.queryForObject(countString, Integer.class);
+		}
 
 		if (pageSize == 0) {
 			pageSize = count;
@@ -97,7 +106,7 @@ public class ProductDiscountDaoImpl extends BaseDaoImpl<ProductDiscount> impleme
 		for (ProductDiscount pd : allProductDiscountList) {
 			if (pd.getEndDate() != null && pd.getEndDate().isBefore(LocalDate.now())) {
 				pd.setIsActive(false);
-				saveOrUpdate(pd); // Make sure this properly updates the DB
+				saveOrUpdate(pd);
 			}
 		}
 
