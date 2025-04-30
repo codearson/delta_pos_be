@@ -56,6 +56,13 @@ public class ManagerToggleController {
         return managerToggleService.updateStatus(id, status);
     }
     
+    @PutMapping("/updateAdminStatus")
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    public ResponseDto updateAdminStatus(@RequestParam("id") Integer id, @RequestParam("status") Boolean status) {
+        log.info("ManagerToggleController.updateStatus() invoked");
+        return managerToggleService.updateAdminStatus(id, status);
+    }
+    
     @GetMapping("/getAll")
     public ResponseDto getAll() {
         log.info("ManagerToggleController.getAll() invoked");

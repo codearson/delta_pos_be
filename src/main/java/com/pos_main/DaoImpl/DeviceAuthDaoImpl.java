@@ -1,5 +1,7 @@
 package com.pos_main.DaoImpl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
@@ -64,6 +66,52 @@ public class DeviceAuthDaoImpl extends BaseDaoImpl<DeviceAuth> implements Device
             return query.getSingleResult();
         } catch (Exception e) {
             log.error("No DeviceAuth found for tillId: {}", tillId, e);
+            return null;
+        }
+    }
+    
+    @Transactional
+    @Override
+    public List<DeviceAuth> getAllPending() {
+        log.info("DeviceAuthDaoImpl.getAllPending() invoked");
+        try {
+            TypedQuery<DeviceAuth> query = entityManager.createQuery(
+                    "SELECT da FROM DeviceAuth da WHERE da.approveStatus = :status", DeviceAuth.class);
+            query.setParameter("status", "Pending");
+            return query.getResultList();
+        } catch (Exception e) {
+            log.error("Error retrieving pending DeviceAuth records", e);
+            return null;
+        }
+    }
+    
+    @Transactional
+    @Override
+    public List<DeviceAuth> getAllApprovedOrDeclined() {
+        log.info("DeviceAuthDaoImpl.getAllApprovedOrDeclined() invoked");
+        try {
+            TypedQuery<DeviceAuth> query = entityManager.createQuery(
+                    "SELECT da FROM DeviceAuth da WHERE da.approveStatus IN (:approved, :declined)", DeviceAuth.class);
+            query.setParameter("approved", "Approved");
+            query.setParameter("declined", "Declined");
+            return query.getResultList();
+        } catch (Exception e) {
+            log.error("Error retrieving approved or declined DeviceAuth records", e);
+            return null;
+        }
+    }
+    
+    @Transactional
+    @Override
+    public DeviceAuth getDeviceAuthByTillName(String tillName) {
+        log.info("DeviceAuthDaoImpl.getDeviceAuthByTillName() invoked with tillName: {}", tillName);
+        try {
+            TypedQuery<DeviceAuth> query = entityManager.createQuery(
+                    "SELECT da FROM DeviceAuth da WHERE LOWER(da.tillName) LIKE LOWER(:tillName)", DeviceAuth.class);
+            query.setParameter("tillName", "%" + tillName + "%");
+            return query.getSingleResult();
+        } catch (Exception e) {
+            log.error("No DeviceAuth found for tillName: {}", tillName, e);
             return null;
         }
     }

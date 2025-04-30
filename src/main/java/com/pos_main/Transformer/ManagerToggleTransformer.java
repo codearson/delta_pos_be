@@ -24,6 +24,7 @@ public class ManagerToggleTransformer implements BaseTransformer<ManagerToggle, 
 			managerToggleDto.setId(managerToggle.getId());
 			managerToggleDto.setAction(managerToggle.getAction());
 			managerToggleDto.setIsActive(managerToggle.getIsActive());
+			managerToggleDto.setAdminActive(managerToggle.getAdminActive());
 		}
 		return managerToggleDto;
 
@@ -39,6 +40,7 @@ public class ManagerToggleTransformer implements BaseTransformer<ManagerToggle, 
 			managerToggle.setId(managerToggleDto.getId());
 			managerToggle.setAction(managerToggleDto.getAction());
 			managerToggle.setIsActive(managerToggleDto.getIsActive());
+			managerToggle.setAdminActive(managerToggleDto.getAdminActive());
 		}
 		return managerToggle;
 		

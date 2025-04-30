@@ -1,5 +1,7 @@
 package com.pos_main.ServiceImpl;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -128,6 +130,78 @@ public class DeviceAuthServiceImpl implements DeviceAuthService {
             log.error("Exception while logging in DeviceAuth", e);
             return serviceUtil.getExceptionServiceResponseByProperties(
                     ApplicationMessageConstants.ServiceErrorMessages.EX_LOGIN_DEVICE_AUTH);
+        }
+    }
+    
+    @Override
+    public ResponseDto getAllPending() {
+        log.info("DeviceAuthServiceImpl.getAllPending() invoked");
+        try {
+            List<DeviceAuthDto> pendingDevices = deviceAuthServiceBL.getAllPending();
+            if (!pendingDevices.isEmpty()) {
+                return serviceUtil.getServiceResponse(pendingDevices);
+            } else {
+                return serviceUtil.getErrorServiceResponse(
+                		ApplicationMessageConstants.ServiceErrorMessages.ERR_GET_ALL_PENDING_TILL_DETAILS);
+            }
+        } catch (Exception e) {
+            log.error("Exception while retrieving pending DeviceAuth records", e);
+            return serviceUtil.getExceptionServiceResponseByProperties(
+            		ApplicationMessageConstants.ServiceErrorMessages.EX_GET_ALL_PENDING_TILL_DETAILS);
+        }
+    }
+    
+    @Override
+    public ResponseDto getAll() {
+        log.info("DeviceAuthServiceImpl.getAll() invoked");
+        try {
+            List<DeviceAuthDto> devices = deviceAuthServiceBL.getAll();
+            if (!devices.isEmpty()) {
+                return serviceUtil.getServiceResponse(devices);
+            } else {
+                return serviceUtil.getErrorServiceResponse(
+                		ApplicationMessageConstants.ServiceErrorMessages.ERR_GET_ALL_TILL_DETAILS);
+            }
+        } catch (Exception e) {
+            log.error("Exception while retrieving approved or declined DeviceAuth records", e);
+            return serviceUtil.getExceptionServiceResponseByProperties(
+            		ApplicationMessageConstants.ServiceErrorMessages.EX_GET_ALL_TILL_DETAILS);
+        }
+    }
+    
+    @Override
+    public ResponseDto getByTillName(String tillName) {
+        log.info("DeviceAuthServiceImpl.getByTillName() invoked with tillName: {}", tillName);
+        try {
+            DeviceAuthDto deviceAuthDto = deviceAuthServiceBL.getByTillName(tillName);
+            if (deviceAuthDto != null) {
+                return serviceUtil.getServiceResponse(deviceAuthDto);
+            } else {
+                return serviceUtil.getErrorServiceResponse(
+                		ApplicationMessageConstants.ServiceErrorMessages.ERR_GET_BY_TILL_NAME_DETAILS);
+            }
+        } catch (Exception e) {
+            log.error("Exception while retrieving DeviceAuth by tillName", e);
+            return serviceUtil.getExceptionServiceResponseByProperties(
+            		ApplicationMessageConstants.ServiceErrorMessages.EX_GET_BY_TILL_NAME_DETAILS);
+        }
+    }
+
+    @Override
+    public ResponseDto getByTillId(String tillId) {
+        log.info("DeviceAuthServiceImpl.getByTillId() invoked with tillId: {}", tillId);
+        try {
+            DeviceAuthDto deviceAuthDto = deviceAuthServiceBL.getByTillId(tillId);
+            if (deviceAuthDto != null) {
+                return serviceUtil.getServiceResponse(deviceAuthDto);
+            } else {
+                return serviceUtil.getErrorServiceResponse(
+                		ApplicationMessageConstants.ServiceErrorMessages.ERR_GET_BY_TILL_ID_DETAILS);
+            }
+        } catch (Exception e) {
+            log.error("Exception while retrieving DeviceAuth by tillId", e);
+            return serviceUtil.getExceptionServiceResponseByProperties(
+            		ApplicationMessageConstants.ServiceErrorMessages.EX_GET_BY_TILL_ID_DETAILS);
         }
     }
 }

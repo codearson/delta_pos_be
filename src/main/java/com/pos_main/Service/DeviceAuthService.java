@@ -23,4 +23,13 @@ public interface DeviceAuthService {
     ResponseDto blockDeviceAuth(Integer id);
     
     ResponseDto loginDeviceAuth(String tillId);
+    
+    ResponseDto getAllPending();
+    
+    ResponseDto getAll();
+    
+    ResponseDto getByTillName(String tillName);
+    
+    ResponseDto getByTillId(String tillId);
+
 }

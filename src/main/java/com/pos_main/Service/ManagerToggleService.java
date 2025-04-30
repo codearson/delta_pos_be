@@ -20,6 +20,8 @@ public interface ManagerToggleService {
     
     ResponseDto updateStatus(Integer id, Boolean status);
     
+    ResponseDto updateAdminStatus(Integer id, Boolean status);
+    
     ResponseDto getAll();
     
     ResponseDto getByName(String action);

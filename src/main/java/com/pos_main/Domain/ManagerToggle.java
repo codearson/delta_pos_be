@@ -38,5 +38,7 @@ public class ManagerToggle implements Serializable {
 	private String action;
 	@Column(name = "isActive")
 	private Boolean isActive;
+	@Column(name = "adminActive")
+	private Boolean adminActive;
 
 }

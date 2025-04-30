@@ -3,6 +3,7 @@ package com.pos_main.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,21 +43,21 @@ public class DeviceAuthController {
     }
     
     @PutMapping("/approve")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseDto approveDeviceAuth(@RequestParam("id") Integer id) {
         log.info("DeviceAuthController.approveDeviceAuth() invoked with id: {}", id);
         return deviceAuthService.approveDeviceAuth(id);
     }
     
     @PutMapping("/decline")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseDto declineDeviceAuth(@RequestParam("id") Integer id) {
         log.info("DeviceAuthController.declineDeviceAuth() invoked with id: {}", id);
         return deviceAuthService.declineDeviceAuth(id);
     }
     
     @PutMapping("/block")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseDto blockDeviceAuth(@RequestParam("id") Integer id) {
         log.info("DeviceAuthController.blockDeviceAuth() invoked with id: {}", id);
         return deviceAuthService.blockDeviceAuth(id);
@@ -66,6 +67,32 @@ public class DeviceAuthController {
     public ResponseDto loginDeviceAuth(@RequestParam("tillId") String tillId) {
         log.info("DeviceAuthController.loginDeviceAuth() invoked with tillId: {}", tillId);
         return deviceAuthService.loginDeviceAuth(tillId);
+    }
+    
+    @GetMapping("/getAllPending")
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    public ResponseDto getAllPending() {
+        log.info("DeviceAuthController.getAllPending() invoked");
+        return deviceAuthService.getAllPending();
+    }
+    
+    @GetMapping("/getAll")
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    public ResponseDto getAll() {
+        log.info("DeviceAuthController.getAll() invoked");
+        return deviceAuthService.getAll();
+    }
+    
+    @GetMapping("/getByTillName")
+    public ResponseDto getByTillName(@RequestParam("tillName") String tillName) {
+        log.info("DeviceAuthController.getByTillName() invoked with tillName: {}", tillName);
+        return deviceAuthService.getByTillName(tillName);
+    }
+
+    @GetMapping("/getByTillId")
+    public ResponseDto getByTillId(@RequestParam("tillId") String tillId) {
+        log.info("DeviceAuthController.getByTillId() invoked with tillId: {}", tillId);
+        return deviceAuthService.getByTillId(tillId);
     }
 
 }

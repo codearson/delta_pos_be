@@ -1,5 +1,7 @@
 package com.pos_main.Dao;
 
+import java.util.List;
+
 import com.pos_main.Domain.DeviceAuth;
 import com.pos_main.Dto.DeviceAuthDto;
 
@@ -19,5 +21,11 @@ public interface DeviceAuthDao extends BaseDao<DeviceAuth> {
     DeviceAuth getDeviceAuthById(Integer id);
     
     DeviceAuth getDeviceAuthByTillId(String tillId);
+    
+    List<DeviceAuth> getAllPending();
+    
+    List<DeviceAuth> getAllApprovedOrDeclined();
+    
+    DeviceAuth getDeviceAuthByTillName(String tillName);
 
 }
