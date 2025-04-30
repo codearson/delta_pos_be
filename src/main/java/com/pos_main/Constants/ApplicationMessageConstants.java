@@ -314,6 +314,14 @@ public interface ApplicationMessageConstants {
         String ERR_BLOCK_DEVICE_AUTH = "err.block.device.auth";
         String EX_LOGIN_DEVICE_AUTH = "ex.login.device.auth";
         String ERR_LOGIN_DEVICE_AUTH = "err.login.device.auth";
+        String ERR_GET_ALL_PENDING_TILL_DETAILS = "err.get.all.pending.till.details";
+        String EX_GET_ALL_PENDING_TILL_DETAILS = "ex.get.all.pending.till.details";
+        String ERR_GET_ALL_TILL_DETAILS = "err.get.all.till.details";
+        String EX_GET_ALL_TILL_DETAILS = "ex.get.all.till.details";
+        String ERR_GET_BY_TILL_NAME_DETAILS = "err.get.by.till.name.details";
+        String EX_GET_BY_TILL_NAME_DETAILS = "ex.get.by.till.name.details";
+        String ERR_GET_BY_TILL_ID_DETAILS = "err.get.by.till.id.details";
+        String EX_GET_BY_TILL_ID_DETAILS = "ex.get.by.till.id.details";
 
 	}
 }

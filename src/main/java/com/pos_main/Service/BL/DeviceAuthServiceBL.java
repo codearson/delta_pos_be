@@ -1,5 +1,9 @@
 package com.pos_main.Service.BL;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -86,6 +90,50 @@ public class DeviceAuthServiceBL {
                         tillId, deviceAuth.getApproveStatus(), deviceAuth.getLoginStatus());
                 return null;
             }
+        }
+        log.info("No DeviceAuth found for tillId: {}", tillId);
+        return null;
+    }
+    
+    public List<DeviceAuthDto> getAllPending() {
+        log.info("DeviceAuthServiceBL.getAllPending() invoked");
+        List<DeviceAuth> pendingDevices = deviceAuthDao.getAllPending();
+        if (pendingDevices == null || pendingDevices.isEmpty()) {
+            log.info("No pending DeviceAuth records found");
+            return Collections.emptyList();
+        }
+        return pendingDevices.stream()
+                .map(deviceAuthTransformer::transform)
+                .collect(Collectors.toList());
+    }
+    
+    public List<DeviceAuthDto> getAll() {
+        log.info("DeviceAuthServiceBL.getAll() invoked");
+        List<DeviceAuth> devices = deviceAuthDao.getAllApprovedOrDeclined();
+        if (devices == null || devices.isEmpty()) {
+            log.info("No approved or declined DeviceAuth records found");
+            return Collections.emptyList();
+        }
+        return devices.stream()
+                .map(deviceAuthTransformer::transform)
+                .collect(Collectors.toList());
+    }
+    
+    public DeviceAuthDto getByTillName(String tillName) {
+        log.info("DeviceAuthServiceBL.getByTillName() invoked with tillName: {}", tillName);
+        DeviceAuth deviceAuth = deviceAuthDao.getDeviceAuthByTillName(tillName);
+        if (deviceAuth != null) {
+            return deviceAuthTransformer.transform(deviceAuth);
+        }
+        log.info("No DeviceAuth found for tillName: {}", tillName);
+        return null;
+    }
+
+    public DeviceAuthDto getByTillId(String tillId) {
+        log.info("DeviceAuthServiceBL.getByTillId() invoked with tillId: {}", tillId);
+        DeviceAuth deviceAuth = deviceAuthDao.getDeviceAuthByTillId(tillId);
+        if (deviceAuth != null) {
+            return deviceAuthTransformer.transform(deviceAuth);
         }
         log.info("No DeviceAuth found for tillId: {}", tillId);
         return null;

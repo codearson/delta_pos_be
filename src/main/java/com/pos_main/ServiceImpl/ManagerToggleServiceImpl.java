@@ -98,6 +98,28 @@ public class ManagerToggleServiceImpl implements ManagerToggleService {
         }
         return responseDto;
     }
+    
+    @Override
+    public ResponseDto updateAdminStatus(Integer id, Boolean status) {
+        log.info("ManagerToggleServiceImpl.updateStatus() invoked");
+        ResponseDto responseDto = null;
+        try {
+            ManagerToggleDto updatedStatusDto = managerToggleServiceBL.updateAdminStatus(id, status);
+            if (updatedStatusDto != null) {
+                log.info("Manager Toggle Status updated.");
+                responseDto = serviceUtil.getServiceResponse(updatedStatusDto);
+            } else {
+                log.info("Unable to update Manager Toggle status.");
+                responseDto = serviceUtil.getErrorServiceResponse(
+                    ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_MANAGER_TOGGLE_STATUS);
+            }
+        } catch (Exception e) {
+            log.error("Exception occurs while updating Manager Toggle status.", e);
+            responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+                ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_MANAGER_TOGGLE_STATUS);
+        }
+        return responseDto;
+    }
 
     @Override
     public ResponseDto getAll() {

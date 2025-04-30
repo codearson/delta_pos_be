@@ -46,6 +46,17 @@ public class ManagerToggleServiceBL {
         return null;
     }
     
+    public ManagerToggleDto updateAdminStatus(Integer id, Boolean status) {
+        log.info("ManagerToggleServiceBL.updateStatus() invoked");
+        ManagerToggleDto toggleDto = managerToggleDao.checkToggleAvailability(id);
+        log.info("AAAAAAAAAAAAAA",toggleDto);
+        if (toggleDto != null) {
+            toggleDto.setAdminActive(status);
+            return managerToggleDao.update(toggleDto);
+        }
+        return null;
+    }
+    
     public List<ManagerToggleDto> getAll() {
         log.info("ManagerToggleServiceBL.getAll() invoked");
         return managerToggleDao.getAll();

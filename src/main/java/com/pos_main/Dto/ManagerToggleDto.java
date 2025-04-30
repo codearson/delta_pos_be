@@ -19,5 +19,7 @@ public class ManagerToggleDto {
 	private String action;
 	
 	private Boolean isActive;
+	
+	private Boolean adminActive;
 
 }
