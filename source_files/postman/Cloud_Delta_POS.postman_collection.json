@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0bb3e92c-cc48-4f00-b0ff-28591545ec03",
+		"_postman_id": "3ead7c67-0357-40f8-8c0c-963e18c3e133",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40723516"
@@ -1564,6 +1564,106 @@
 								{
 									"key": "id",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByProductCategoryName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ2MDEzNjMyfQ.w2o6VV-1YSVhHxL6mR-RCG2b4VAve7SCacRu2KNWmXRsMKV1Vu0IfRxEOvV7ElLO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/product/getByProductCategoryName?pageNumber=1&pageSize=10&categoryName=Snacks&status=false",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"product",
+								"getByProductCategoryName"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "categoryName",
+									"value": "Snacks"
+								},
+								{
+									"key": "status",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByTaxPercentage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ2MDEzNjMyfQ.w2o6VV-1YSVhHxL6mR-RCG2b4VAve7SCacRu2KNWmXRsMKV1Vu0IfRxEOvV7ElLO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/product/getByTaxPercentage?pageNumber=1&pageSize=10&taxPercentage=10&status=true",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"product",
+								"getByTaxPercentage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "taxPercentage",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}

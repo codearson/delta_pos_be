@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
@@ -19,7 +20,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.pos_main.Dao.ProductDao;
+import com.pos_main.Domain.Branch;
 import com.pos_main.Domain.Product;
+import com.pos_main.Domain.ProductCategory;
+import com.pos_main.Domain.Tax;
+import com.pos_main.Domain.Transaction;
 import com.pos_main.Dto.PaginatedResponseDto;
 import com.pos_main.Dto.ProductDto;
 import com.pos_main.Service.Utils.HttpReqRespUtils;
@@ -212,6 +217,95 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao {
         }
 
         return productDtoList;
+    }
+
+    @Override
+    @Transactional
+    public PaginatedResponseDto getByProductCategoryName(int pageNumber, int pageSize, Map<String, String> searchParams, String categoryName, Boolean status) {
+        log.info("ProductDaoImpl.getByProductCategoryName() invoked");
+        PaginatedResponseDto paginatedResponseDto = null;
+        List<Product> productList = null;
+
+        CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+        CriteriaQuery<Product> cq = cb.createQuery(Product.class);
+        Root<Product> root = cq.from(Product.class);
+
+        Join<Product, ProductCategory> productCategoryJoin = root.join("productCategory");
+        
+        cq.select(root)
+          .where(
+              cb.and(
+                  cb.equal(productCategoryJoin.get("productCategoryName"), categoryName),
+                  cb.equal(root.get("isActive"), status)
+              )
+          )
+          .orderBy(cb.desc(root.get("id")));
+        
+        // Get total count
+        String countString = "SELECT COUNT(*) FROM product p JOIN product_category pc ON p.product_category = pc.id " +
+                           "WHERE p.is_active = " + (status ? "1" : "0") + " AND pc.product_category_name = '" + categoryName + "'";
+        int count = jdbcTemplate.queryForObject(countString, Integer.class);
+        
+        if (pageSize == 0) {
+            pageSize = count;
+        }
+        
+        productList = getCurrentSession().createQuery(cq)
+                .setFirstResult((pageNumber - 1) * pageSize)
+                .setMaxResults(pageSize)
+                .getResultList();
+        
+        if (productList != null && !productList.isEmpty()) {
+            paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(productList, pageNumber, pageSize, count);
+            paginatedResponseDto.setPayload(productList.stream()
+                    .map(product -> productTransformer.transform(product))
+                    .collect(Collectors.toList()));
+        }
+        return paginatedResponseDto;
+    }
+
+    @Override
+    @Transactional
+    public PaginatedResponseDto getByTaxPercentage(int pageNumber, int pageSize, Map<String, String> searchParams, Double taxPercentage, Boolean status) {
+        log.info("ProductDaoImpl.getByTaxPercentage() invoked");
+        PaginatedResponseDto paginatedResponseDto = null;
+        List<Product> productList = null;
+
+        CriteriaBuilder cb = getCurrentSession().getCriteriaBuilder();
+        CriteriaQuery<Product> cq = cb.createQuery(Product.class);
+        Root<Product> root = cq.from(Product.class);
+
+        Join<Product, Tax> taxJoin = root.join("tax");
+        
+        cq.select(root)
+          .where(
+              cb.and(
+                  cb.equal(taxJoin.get("taxPercentage"), taxPercentage),
+                  cb.equal(root.get("isActive"), status)
+              )
+          )
+          .orderBy(cb.desc(root.get("id")));
+        
+        String countString = "SELECT COUNT(*) FROM product p JOIN tax t ON p.tax = t.id " +
+                           "WHERE p.is_active = " + (status ? "1" : "0") + " AND t.tax_percentage = " + taxPercentage;
+        int count = jdbcTemplate.queryForObject(countString, Integer.class);
+        
+        if (pageSize == 0) {
+            pageSize = count;
+        }
+        
+        productList = getCurrentSession().createQuery(cq)
+                .setFirstResult((pageNumber - 1) * pageSize)
+                .setMaxResults(pageSize)
+                .getResultList();
+        
+        if (productList != null && !productList.isEmpty()) {
+            paginatedResponseDto = HttpReqRespUtils.paginatedResponseMapper(productList, pageNumber, pageSize, count);
+            paginatedResponseDto.setPayload(productList.stream()
+                    .map(product -> productTransformer.transform(product))
+                    .collect(Collectors.toList()));
+        }
+        return paginatedResponseDto;
     }
 
 }

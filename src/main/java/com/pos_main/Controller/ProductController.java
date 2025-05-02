@@ -89,4 +89,24 @@ public class ProductController {
     return productService.getProductById(id);
 	}
 
+	@GetMapping("/getByProductCategoryName")
+	public ResponseDto getByProductCategoryName(@RequestParam("pageNumber") int pageNumber, 
+			@RequestParam("pageSize") int pageSize,
+			@RequestParam("categoryName") String categoryName,
+			@RequestParam("status") Boolean status,
+			WebRequest webRequest) {
+		log.info("ProductController.getByProductCategoryName() invoked with categoryName: {}", categoryName);
+		return productService.getByProductCategoryName(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest), categoryName, status);
+	}
+
+	@GetMapping("/getByTaxPercentage")
+	public ResponseDto getByTaxPercentage(@RequestParam("pageNumber") int pageNumber, 
+			@RequestParam("pageSize") int pageSize,
+			@RequestParam("taxPercentage") Double taxPercentage,
+			@RequestParam("status") Boolean status,
+			WebRequest webRequest) {
+		log.info("ProductController.getByTaxPercentage() invoked with taxPercentage: {}", taxPercentage);
+		return productService.getByTaxPercentage(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest), taxPercentage, status);
+	}
+
 }

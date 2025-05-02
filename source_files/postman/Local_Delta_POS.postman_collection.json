@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fee8e817-e620-4014-b859-2f3e6acc8504",
+		"_postman_id": "9d8516ae-3b64-4615-8f46-39574f38114d",
 		"name": "Local_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40723516"
@@ -1484,6 +1484,102 @@
 								{
 									"key": "id",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByProductCategoryName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ2MDEzNjMyfQ.w2o6VV-1YSVhHxL6mR-RCG2b4VAve7SCacRu2KNWmXRsMKV1Vu0IfRxEOvV7ElLO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/getByProductCategoryName?pageNumber=1&pageSize=10&categoryName=Snacks&status=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"getByProductCategoryName"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "categoryName",
+									"value": "Snacks"
+								},
+								{
+									"key": "status",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByTaxPercentage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ2MDEzNjMyfQ.w2o6VV-1YSVhHxL6mR-RCG2b4VAve7SCacRu2KNWmXRsMKV1Vu0IfRxEOvV7ElLO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/getByTaxPercentage?pageNumber=1&pageSize=10&taxPercentage=10&status=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"getByTaxPercentage"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "taxPercentage",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "true"
 								}
 							]
 						}

@@ -24,7 +24,7 @@ public class Tax implements Serializable{
 	@Basic(optional = false)
 	@Column(name = "id")
 	private Integer id;
-	@Column(name = "taxpercentage")
+	@Column(name = "taxPercentage")
 	private Double taxPercentage;
 	@Column(name = "isActive")
 	private Boolean isActive;
