@@ -29,4 +29,8 @@ public interface ProductService {
 	
 	public ResponseDto getProductById(Integer id);
 
+	ResponseDto getByProductCategoryName(int pageNumber, int pageSize, Map<String, String> searchParams, String categoryName, Boolean status);
+
+	ResponseDto getByTaxPercentage(int pageNumber, int pageSize, Map<String, String> searchParams, Double taxPercentage, Boolean status);
+
 }

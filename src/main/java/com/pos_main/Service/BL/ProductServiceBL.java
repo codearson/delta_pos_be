@@ -72,4 +72,14 @@ public class ProductServiceBL {
 		return productDao.getProductById(id);
 	}
 	
+	public PaginatedResponseDto getByProductCategoryName(int pageNumber, int pageSize, Map<String, String> searchParams, String categoryName, Boolean status) {
+		log.info("ProductServiceBL.getByProductCategoryName() invoked");
+		return productDao.getByProductCategoryName(pageNumber, pageSize, searchParams, categoryName, status);
+	}
+	
+	public PaginatedResponseDto getByTaxPercentage(int pageNumber, int pageSize, Map<String, String> searchParams, Double taxPercentage, Boolean status) {
+		log.info("ProductServiceBL.getByTaxPercentage() invoked");
+		return productDao.getByTaxPercentage(pageNumber, pageSize, searchParams, taxPercentage, status);
+	}
+	
 }

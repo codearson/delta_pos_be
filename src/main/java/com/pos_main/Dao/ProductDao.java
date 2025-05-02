@@ -31,4 +31,8 @@ public interface ProductDao extends BaseDao<Product> {
 	
 	List<ProductDto> getProductById(Integer id);
 
+	PaginatedResponseDto getByProductCategoryName(int pageNumber, int pageSize, Map<String, String> searchParams, String categoryName, Boolean status);
+
+	PaginatedResponseDto getByTaxPercentage(int pageNumber, int pageSize, Map<String, String> searchParams, Double taxPercentage, Boolean status);
+
 }

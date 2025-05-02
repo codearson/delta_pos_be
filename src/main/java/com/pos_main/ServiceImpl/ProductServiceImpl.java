@@ -212,4 +212,48 @@ public class ProductServiceImpl implements ProductService{
 		return responseDto;
 	}
 
+	@Override
+	public ResponseDto getByProductCategoryName(int pageNumber, int pageSize, Map<String, String> searchParams, String categoryName, Boolean status) {
+		log.info("ProductServiceImpl.getByProductCategoryName() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = productServiceBL.getByProductCategoryName(pageNumber, pageSize, searchParams, categoryName, status);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieved products by category name successfully.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve products by category name.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PRODUCT_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving products by category name.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PRODUCT_DETAILS);
+		}
+		return responseDto;
+	}
+
+	@Override
+	public ResponseDto getByTaxPercentage(int pageNumber, int pageSize, Map<String, String> searchParams, Double taxPercentage, Boolean status) {
+		log.info("ProductServiceImpl.getByTaxPercentage() invoked");
+		ResponseDto responseDto = null;
+		try {
+			PaginatedResponseDto paginatedResponseDto = productServiceBL.getByTaxPercentage(pageNumber, pageSize, searchParams, taxPercentage, status);
+			if (paginatedResponseDto != null) {
+				log.info("Retrieved products by tax percentage successfully.");
+				responseDto = serviceUtil.getServiceResponse(paginatedResponseDto);
+			} else {
+				log.info("Unable to retrieve products by tax percentage.");
+				responseDto = serviceUtil.getErrorServiceResponse(
+						ApplicationMessageConstants.ServiceErrorMessages.ERR_RETRIEVE_ALL_PRODUCT_DETAILS);
+			}
+		} catch (Exception e) {
+			log.error("Exception occurs while retrieving products by tax percentage.", e);
+			responseDto = serviceUtil.getExceptionServiceResponseByProperties(
+					ApplicationMessageConstants.ServiceErrorMessages.EX_RETRIEVE_ALL_PRODUCT_DETAILS);
+		}
+		return responseDto;
+	}
+
 }
