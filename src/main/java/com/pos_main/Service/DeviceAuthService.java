@@ -31,5 +31,7 @@ public interface DeviceAuthService {
     ResponseDto getByTillName(String tillName);
     
     ResponseDto getByTillId(String tillId);
+    
+    ResponseDto updateTillName(Integer id, String tillName);
 
 }

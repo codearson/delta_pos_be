@@ -36,14 +36,14 @@ public class ManagerToggleController {
     ManagerToggleService managerToggleService;
     
     @PostMapping("/save")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseDto save(@RequestBody ManagerToggleDto managerToggleDto) {
         log.info("ManagerToggleController.save() invoked");
         return managerToggleService.save(managerToggleDto);
     }
     
     @PutMapping("/update")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseDto update(@RequestBody ManagerToggleDto managerToggleDto) {
         log.info("ManagerToggleController.update() invoked");
         return managerToggleService.update(managerToggleDto);
@@ -70,7 +70,6 @@ public class ManagerToggleController {
     }
     
     @GetMapping("/getByName")
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public ResponseDto getByName(@RequestParam("action") String action) {
         log.info("ManagerToggleController.getByName() invoked");
         return managerToggleService.getByName(action);

@@ -138,4 +138,16 @@ public class DeviceAuthServiceBL {
         log.info("No DeviceAuth found for tillId: {}", tillId);
         return null;
     }
+    
+    public DeviceAuthDto updateTillName(Integer id, String tillName) {
+        log.info("DeviceAuthServiceBL.updateTillName() invoked with id: {}, tillName: {}", id, tillName);
+        DeviceAuth deviceAuth = deviceAuthDao.getDeviceAuthById(id);
+        if (deviceAuth != null) {
+            deviceAuth.setTillName(tillName);
+            DeviceAuth updatedDeviceAuth = deviceAuthDao.saveOrUpdate(deviceAuth);
+            return deviceAuthTransformer.transform(updatedDeviceAuth);
+        }
+        log.info("No DeviceAuth found for id: {}", id);
+        return null;
+    }
 }
