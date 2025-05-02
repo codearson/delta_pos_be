@@ -48,7 +48,7 @@ public class SecurityConfig {
             .csrf().disable()
             .authorizeHttpRequests()
             .antMatchers("/user/**", "/auth/reset-password", "/auth/forgot-password", "/deviceAuth/register", "/deviceAuth/login",
-            		"/deviceAuth/getByTillName","/deviceAuth/getByTillId").permitAll()  // Allow access without JWT
+            		"/deviceAuth/getByTillName", "/deviceAuth/getByTillId", "/managerToggle/getByName").permitAll()  // Allow access without JWT
             .anyRequest().authenticated()
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

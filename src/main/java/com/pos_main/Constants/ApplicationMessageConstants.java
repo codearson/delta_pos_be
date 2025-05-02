@@ -322,6 +322,8 @@ public interface ApplicationMessageConstants {
         String EX_GET_BY_TILL_NAME_DETAILS = "ex.get.by.till.name.details";
         String ERR_GET_BY_TILL_ID_DETAILS = "err.get.by.till.id.details";
         String EX_GET_BY_TILL_ID_DETAILS = "ex.get.by.till.id.details";
+        String ERR_UPDATE_TILL_NAME_DETAILS = "err.update.till.name.details";
+        String EX_UPDATE_TILL_NAME_DETAILS = "ex.update.till.name.details";
 
 	}
 }

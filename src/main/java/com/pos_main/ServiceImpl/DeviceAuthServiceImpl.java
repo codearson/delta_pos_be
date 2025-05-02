@@ -204,4 +204,23 @@ public class DeviceAuthServiceImpl implements DeviceAuthService {
             		ApplicationMessageConstants.ServiceErrorMessages.EX_GET_BY_TILL_ID_DETAILS);
         }
     }
+    
+    @Transactional
+    @Override
+    public ResponseDto updateTillName(Integer id, String tillName) {
+        log.info("DeviceAuthServiceImpl.updateTillName() invoked with id: {}, tillName: {}", id, tillName);
+        try {
+            DeviceAuthDto updatedDeviceAuthDto = deviceAuthServiceBL.updateTillName(id, tillName);
+            if (updatedDeviceAuthDto != null) {
+                return serviceUtil.getServiceResponse(updatedDeviceAuthDto);
+            } else {
+                return serviceUtil.getErrorServiceResponse(
+                		ApplicationMessageConstants.ServiceErrorMessages.ERR_UPDATE_TILL_NAME_DETAILS);
+            }
+        } catch (Exception e) {
+            log.error("Exception while updating till name for id: {}", id, e);
+            return serviceUtil.getExceptionServiceResponseByProperties(
+            		ApplicationMessageConstants.ServiceErrorMessages.EX_UPDATE_TILL_NAME_DETAILS);
+        }
+    }
 }

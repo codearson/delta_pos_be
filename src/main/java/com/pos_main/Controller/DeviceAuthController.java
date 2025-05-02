@@ -94,5 +94,12 @@ public class DeviceAuthController {
         log.info("DeviceAuthController.getByTillId() invoked with tillId: {}", tillId);
         return deviceAuthService.getByTillId(tillId);
     }
+    
+    @PutMapping("/updateTillName")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public ResponseDto updateTillName(@RequestParam("id") Integer id, @RequestParam("tillName") String tillName) {
+        log.info("DeviceAuthController.updateTillName() invoked with id: {}, tillName: {}", id, tillName);
+        return deviceAuthService.updateTillName(id, tillName);
+    }
 
 }
