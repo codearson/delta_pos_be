@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import com.pos_main.Domain.Banking;
 import com.pos_main.Dto.BankingDto;
-import com.pos_main.Dto.BranchDto;
 
 /**
  * Title: BankingTransformer.java. Company: www.codearson.com | Copyright:

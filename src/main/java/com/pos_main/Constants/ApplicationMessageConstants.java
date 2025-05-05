@@ -324,6 +324,10 @@ public interface ApplicationMessageConstants {
         String EX_GET_BY_TILL_ID_DETAILS = "ex.get.by.till.id.details";
         String ERR_UPDATE_TILL_NAME_DETAILS = "err.update.till.name.details";
         String EX_UPDATE_TILL_NAME_DETAILS = "ex.update.till.name.details";
+        String ERR_SAVE_RE_VOID_HISTORY_DETAILS = "err.save.re.void.history.details";
+        String EX_SAVE_RE_VOID_HISTORY_DETAILS = "ex.save.re.void.history.details";
+        String ERR_RETRIEVE_ALL_VOID_HISTORY_DETAILS = "err.retrieve.all.void.history.details";
+        String EX_RETRIEVE_ALL_VOID_HISTORY_DETAILS = "ex.retrieve.all.void.history.details";
 
 	}
 }
