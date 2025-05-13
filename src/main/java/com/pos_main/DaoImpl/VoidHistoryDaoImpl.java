@@ -81,7 +81,6 @@ public class VoidHistoryDaoImpl extends BaseDaoImpl<VoidHistory> implements Void
 
 		Criteria criteria = getCurrentSession().createCriteria(VoidHistory.class, "voidHistory");
 
-		criteria.addOrder(Order.desc("id"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allVoidHistoryList = criteria.list();
@@ -113,7 +112,6 @@ public class VoidHistoryDaoImpl extends BaseDaoImpl<VoidHistory> implements Void
 		criteria.createAlias("User", "user");
 		criteria.add(Restrictions.eq("user.id", userId));
 
-		criteria.addOrder(Order.desc("id"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allVoidHistoryList = criteria.list();
@@ -143,7 +141,6 @@ public class VoidHistoryDaoImpl extends BaseDaoImpl<VoidHistory> implements Void
 
 		Criteria criteria = getCurrentSession().createCriteria(VoidHistory.class, "voidHistory");
 		criteria.add(Restrictions.sqlRestriction("DATE(this_.date_time) = ?", date, org.hibernate.type.StringType.INSTANCE));
-		criteria.addOrder(Order.desc("id"));
 		criteria.setFirstResult((pageNumber - 1) * pageSize);
 		criteria.setMaxResults(pageSize);
 		allVoidHistoryList = criteria.list();
