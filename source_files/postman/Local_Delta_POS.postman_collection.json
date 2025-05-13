@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "181702c3-2917-4d45-89d6-518ae00c00ef",
+		"_postman_id": "9542f0fd-d1c3-477f-ae77-b718e6a79c10",
 		"name": "Local_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40723516"
@@ -5951,7 +5951,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"itemName\": \"Banana\",\r\n    \"price\": 100,\r\n    \"quantity\": 2,\r\n    \"total\": 200\r\n}",
+							"raw": "{\r\n    \"itemName\": \"Pepsi\",\r\n    \"price\": 345,\r\n    \"quantity\": 1,\r\n    \"total\": 345,\r\n    \"userDto\":{\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5998,6 +5998,134 @@
 							"path": [
 								"voidHistory",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/voidHistory/getAllPage?pageSize=10&pageNumber=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voidHistory",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPagebyDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/voidHistory/getAllPageByDate?pageSize=10&pageNumber=1&date=2025-05-13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voidHistory",
+								"getAllPageByDate"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPageByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/voidHistory/getAllPageByUserId?pageSize=10&pageNumber=1&userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voidHistory",
+								"getAllPageByUserId"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
 							]
 						}
 					},

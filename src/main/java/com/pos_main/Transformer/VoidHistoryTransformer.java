@@ -1,5 +1,6 @@
 package com.pos_main.Transformer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pos_main.Domain.VoidHistory;
@@ -14,6 +15,9 @@ import com.pos_main.Dto.VoidHistoryDto;
  **/
 @Component
 public class VoidHistoryTransformer implements BaseTransformer<VoidHistory, VoidHistoryDto> {
+	
+	@Autowired
+	UserTransfomer userTransformer;
 
 	@Override
 	public VoidHistoryDto transform(VoidHistory voidHistory) {
@@ -25,6 +29,10 @@ public class VoidHistoryTransformer implements BaseTransformer<VoidHistory, Void
 			voidHistoryDto.setQuantity(voidHistory.getQuantity());
 			voidHistoryDto.setPrice(voidHistory.getPrice());
 			voidHistoryDto.setTotal(voidHistory.getTotal());
+			voidHistoryDto.setDateTime(voidHistory.getDateTime());
+			if (voidHistory.getUser() != null) {
+				voidHistoryDto.setUserDto(userTransformer.transform(voidHistory.getUser()));
+			}
 		}
 		return voidHistoryDto;
 	}
@@ -39,6 +47,10 @@ public class VoidHistoryTransformer implements BaseTransformer<VoidHistory, Void
 			voidHistory.setQuantity(voidHistoryDto.getQuantity());
 			voidHistory.setPrice(voidHistoryDto.getPrice());
 			voidHistory.setTotal(voidHistoryDto.getTotal());
+			voidHistory.setDateTime(voidHistoryDto.getDateTime());
+			if (voidHistoryDto.getUserDto() != null) {
+				voidHistory.setUser(userTransformer.reverseTransform(voidHistoryDto.getUserDto()));
+			}
 		}
 		return voidHistory;
 	}

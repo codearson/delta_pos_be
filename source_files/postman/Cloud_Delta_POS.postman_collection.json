@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "024544cb-1195-4abb-85a0-ff1582769453",
+		"_postman_id": "ed4df97b-84aa-45c9-b90c-7672dab6b89f",
 		"name": "Cloud_Delta_POS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40723516"
@@ -6537,7 +6537,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"itemName\": \"Banana\",\r\n    \"price\": 100,\r\n    \"quantity\": 2,\r\n    \"total\": 200\r\n}",
+							"raw": "{\r\n    \"itemName\": \"Banana\",\r\n    \"price\": 100,\r\n    \"quantity\": 2,\r\n    \"total\": 200,\r\n    \"userDto\":{\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6588,6 +6588,274 @@
 							"path": [
 								"voidHistory",
 								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/voidHistory/getAllPage?pageSize=10&pageNumber=1",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"voidHistory",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPagebyDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/voidHistory/getAllPageByDate?pageSize=10&pageNumber=1&date=2025-05-13",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"voidHistory",
+								"getAllPageByDate"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPageByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/voidHistory/getAllPageByUserId?pageSize=10&pageNumber=1&userId=1",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"voidHistory",
+								"getAllPageByUserId"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/voidHistory/getAllPage?pageSize=10&pageNumber=1",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"voidHistory",
+								"getAllPage"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPagebyDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/voidHistory/getAllPageByDate?pageSize=10&pageNumber=1&date=2025-05-13",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"voidHistory",
+								"getAllPageByDate"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPageByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoibGF0aHVzYW50aHVyYWlyYWphaEBjb2RlYXJzb24uY29tIiwiaWF0IjoxNzQ0ODA0MzYxfQ.vn6-72aA6ZNGt0gSSeubFbvyqjdKVydyFJMnaKWxTZGMCP5gXhVBDwrp9BrB9ZVy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deltaposbe-production.up.railway.app/voidHistory/getAllPageByUserId?pageSize=10&pageNumber=1&userId=1",
+							"protocol": "https",
+							"host": [
+								"deltaposbe-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"voidHistory",
+								"getAllPageByUserId"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
 							]
 						}
 					},

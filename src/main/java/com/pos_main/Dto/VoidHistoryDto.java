@@ -1,5 +1,7 @@
 package com.pos_main.Dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Data;
 
 /**
@@ -17,5 +19,7 @@ public class VoidHistoryDto {
 	private Double quantity;
 	private Double price;
 	private Double total;
+	private LocalDateTime dateTime;
+	private UserDto userDto;
 	
 }

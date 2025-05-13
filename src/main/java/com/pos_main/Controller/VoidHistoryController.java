@@ -6,11 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.pos_main.Dto.ResponseDto;
 import com.pos_main.Dto.VoidHistoryDto;
 import com.pos_main.Service.VoidHistoryService;
+import com.pos_main.Service.Utils.HttpReqRespUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -41,6 +44,25 @@ public class VoidHistoryController {
 	public ResponseDto getAll() {
 		log.info("VoidHistoryController.getAll() invoked");
 		return voidHistoryService.getAll();
+	}
+	
+	@GetMapping("/getAllPage")
+	public ResponseDto getAllPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, WebRequest webRequest) {
+		log.info("VoidHistoryController.getAllPage() invoked.");
+		return voidHistoryService.getAllPage(pageNumber, pageSize, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
+	
+	@GetMapping("/getAllPageByDate")
+	public ResponseDto getAllPageByDate(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, @RequestParam("date") String date,
+			WebRequest webRequest) {
+		log.info("VoidHistoryController.getAllPageByDate() invoked.");
+		return voidHistoryService.getAllPageByDate(pageNumber, pageSize, date, HttpReqRespUtils.getSearchParameters(webRequest));
+	}
+	
+	@GetMapping("/getAllPageByUserId")
+	public ResponseDto getAllPageByUserId(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, @RequestParam("userId") Integer userId, WebRequest webRequest) {
+		log.info("VoidHistoryController.getAllPageByUserId() invoked.");
+		return voidHistoryService.getAllPageByUserId(pageNumber, pageSize, userId, HttpReqRespUtils.getSearchParameters(webRequest));
 	}
 	
 }
